@@ -51,52 +51,122 @@ def order_quad(pts: np.ndarray) -> np.ndarray:
     )
 
 
+def _fit_edge(points: np.ndarray) -> tuple:
+    """Least-squares line through edge samples with one outlier-rejection pass.
+
+    Returns (a, b, c) for ax + by + c = 0.
+    """
+    pts = np.asarray(points, dtype=np.float64)
+    for _ in range(2):
+        mean = pts.mean(axis=0)
+        u, s_, vt = np.linalg.svd(pts - mean)
+        direction = vt[0]
+        normal = np.array([-direction[1], direction[0]])
+        c = -normal @ mean
+        resid = np.abs(pts @ normal + c)
+        keep = resid <= max(2.0, 2.5 * np.median(resid))
+        if keep.sum() >= max(8, 0.4 * len(pts)):
+            pts = pts[keep]
+    return float(normal[0]), float(normal[1]), float(c)
+
+
+def _intersect(l1: tuple, l2: tuple) -> np.ndarray:
+    a1, b1, c1 = l1
+    a2, b2, c2 = l2
+    d = a1 * b2 - a2 * b1
+    if abs(d) < 1e-9:
+        raise ValueError("parallel edges")
+    return np.array([(b1 * c2 - b2 * c1) / d, (c1 * a2 - c2 * a1) / d], dtype=np.float32)
+
+
 def auto_detect_quad(bgr: np.ndarray) -> tuple[np.ndarray | None, dict]:
     """
     Find the canvas quadrilateral.
 
-    Strategy: the canvas is the single large bright-ish rectangle against a
-    comparatively flat background. We work on a downscaled copy, take the
-    strongest edges, close them so the canvas outline becomes one contour, and
-    keep the largest 4-gon that covers a plausible fraction of the frame.
+    These canvases are dark objects photographed on a light floor, and the
+    painting's own interior edges are stronger than its boundary -- which is why
+    contour approximation on a Canny map finds the composition rather than the
+    canvas. Scanning instead for the dark-to-light transition along each side is
+    both more robust and more precise: it samples the real boundary hundreds of
+    times per edge and fits a line, rather than trusting a polygon
+    approximation to land its vertices in the right place.
 
     Returns (quad_in_full_res_coords | None, diagnostics).
     """
     h, w = bgr.shape[:2]
-    scale = 1000.0 / max(h, w)
+    scale = 1200.0 / max(h, w)
     small = cv2.resize(bgr, None, fx=scale, fy=scale, interpolation=cv2.INTER_AREA)
     gray = cv2.cvtColor(small, cv2.COLOR_BGR2GRAY)
-    gray = cv2.bilateralFilter(gray, 9, 75, 75)
+    gray = cv2.GaussianBlur(gray, (9, 9), 0)
 
-    v = float(np.median(gray))
-    lo, hi = int(max(0, 0.66 * v)), int(min(255, 1.33 * v))
-    edges = cv2.Canny(gray, lo, hi)
-    edges = cv2.morphologyEx(
-        edges, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_RECT, (9, 9))
-    )
+    # Canvas = dark, floor = light. Otsu splits them; the canvas is then the
+    # largest dark component, which drops the odd bright object on the floor.
+    t, mask = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+    mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, np.ones((21, 21), np.uint8))
+    mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, np.ones((11, 11), np.uint8))
+    n, labels, stats, _ = cv2.connectedComponentsWithStats(mask, 8)
+    if n < 2:
+        return None, {"reason": "no dark component", "otsu": float(t)}
+    idx = 1 + int(np.argmax(stats[1:, cv2.CC_STAT_AREA]))
+    comp = (labels == idx)
+    sh, sw = comp.shape
+    frac = float(comp.sum()) / (sh * sw)
 
-    contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    frame_area = small.shape[0] * small.shape[1]
-    best, best_area = None, 0.0
-    for c in contours:
-        area = cv2.contourArea(c)
-        if area < 0.25 * frame_area:
+    # Sample each side. A column whose canvas run touches the frame edge is
+    # discarded: the boundary is outside the photograph there, so any sample
+    # would be a guess.
+    edges = {"top": [], "bottom": [], "left": [], "right": []}
+    for x in range(sw):
+        col = np.flatnonzero(comp[:, x])
+        if col.size < 10:
             continue
-        peri = cv2.arcLength(c, True)
-        for eps in (0.02, 0.03, 0.05):
-            approx = cv2.approxPolyDP(c, eps * peri, True)
-            if len(approx) == 4 and cv2.isContourConvex(approx) and area > best_area:
-                best, best_area = approx.reshape(4, 2).astype(np.float32), area
-                break
+        if col[0] > 0:
+            edges["top"].append((x, col[0]))
+        if col[-1] < sh - 1:
+            edges["bottom"].append((x, col[-1]))
+    for y in range(sh):
+        row = np.flatnonzero(comp[y, :])
+        if row.size < 10:
+            continue
+        if row[0] > 0:
+            edges["left"].append((row[0], y))
+        if row[-1] < sw - 1:
+            edges["right"].append((row[-1], y))
 
-    diag = {
-        "frame_area_fraction": round(best_area / frame_area, 4) if best is not None else None,
-        "canny_thresholds": [lo, hi],
-        "contours_considered": len(contours),
-    }
-    if best is None:
+    counts = {k: len(v) for k, v in edges.items()}
+    diag = {"method": "edge_scan", "otsu": float(t), "frame_area_fraction": round(frac, 4),
+            "edge_samples": counts}
+    if min(counts.values()) < 40:
+        diag["reason"] = ("an edge of the canvas is outside the photograph or "
+                          "too poorly separated to sample")
         return None, diag
-    return order_quad(best / scale), diag
+
+    # Trim the ends of each sample set: near a corner the scan picks up the
+    # adjacent edge instead of the one being fitted.
+    lines = {}
+    for k, v in edges.items():
+        arr = np.array(v, dtype=np.float64)
+        cut = max(2, int(0.06 * len(arr)))
+        lines[k] = _fit_edge(arr[cut:-cut] if len(arr) > 4 * cut else arr)
+
+    try:
+        quad = np.array([_intersect(lines["top"], lines["left"]),
+                         _intersect(lines["top"], lines["right"]),
+                         _intersect(lines["bottom"], lines["right"]),
+                         _intersect(lines["bottom"], lines["left"])], dtype=np.float32)
+    except ValueError as e:
+        diag["reason"] = str(e)
+        return None, diag
+
+    if (quad < -20).any() or (quad[:, 0] > sw + 20).any() or (quad[:, 1] > sh + 20).any():
+        diag["reason"] = "fitted corners fall outside the photograph"
+        return None, diag
+
+    q = order_quad(quad)
+    wa = (np.linalg.norm(q[1] - q[0]) + np.linalg.norm(q[2] - q[3])) / 2
+    ha = (np.linalg.norm(q[3] - q[0]) + np.linalg.norm(q[2] - q[1])) / 2
+    diag["measured_aspect"] = round(float(wa / ha), 4)
+    return q / scale, diag
 
 
 def rectify(photo: pathlib.Path, quad: np.ndarray, out_w: int, out_h: int):

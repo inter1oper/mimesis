@@ -1,0 +1,68 @@
+{
+  "panel": "B",
+  "source_photo": "data/paintings/panel_b_photo.jpg",
+  "source_photo_px": [
+    4032,
+    3024
+  ],
+  "canvas_cm": [
+    40.0,
+    30.0
+  ],
+  "px_per_cm": 120.0,
+  "rectified_px": [
+    4800,
+    3600
+  ],
+  "corner_method": "auto_quad",
+  "corners_photo_px": [
+    [
+      69.67379760742188,
+      174.1464385986328
+    ],
+    [
+      3698.380126953125,
+      115.79851531982422
+    ],
+    [
+      4008.2958984375,
+      2976.218994140625
+    ],
+    [
+      80.36515045166016,
+      2998.002685546875
+    ]
+  ],
+  "homography_photo_to_painting": [
+    [
+      1.3474690863592467,
+      -0.00510162918687489,
+      -92.9948578513067
+    ],
+    [
+      0.022274635136053343,
+      1.3852782577339777,
+      -242.79323347273976
+    ],
+    [
+      4.214773049164068e-06,
+      2.8901870708128576e-05,
+      1.0
+    ]
+  ],
+  "auto_detect_diagnostics": {
+    "method": "edge_scan",
+    "otsu": 127.0,
+    "frame_area_fraction": 0.8285,
+    "edge_samples": {
+      "top": 1200,
+      "bottom": 191,
+      "left": 383,
+      "right": 791
+    },
+    "measured_aspect": 1.3256
+  },
+  "rectified_image": "out/panel_b_rectified.png",
+  "qa_image": "out/panel_b_rectify_qa.jpg",
+  "note": "Verify qa_image before trusting downstream coordinates. If the drawn quad does not sit on the canvas edges, re-run with --corners."
+}

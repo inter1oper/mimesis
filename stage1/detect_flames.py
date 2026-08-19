@@ -50,6 +50,13 @@ def main() -> None:
     ap.add_argument("--panel", required=True, choices=["A", "B"])
     ap.add_argument("--rectified", required=True, type=pathlib.Path)
     ap.add_argument("--detection", required=True, type=pathlib.Path)
+    ap.add_argument("--faces", choices=["consensus", "all"], default="consensus",
+                    help="Which detections count as a face for the orphan test. "
+                         "'consensus' uses only faces both detectors found, which "
+                         "is the honest default: at a permissive threshold the "
+                         "single-detector boxes are near the noise floor, and "
+                         "letting them count means any candle lands near some box "
+                         "and nothing is ever unattached.")
     ap.add_argument("--orphan-threshold", type=float, default=2.5,
                     help="nearest-face distance, in face-box heights, beyond which "
                          "a flame is flagged unattached")
@@ -114,7 +121,9 @@ def main() -> None:
         })
 
     det = json.loads(args.detection.read_text())
-    faces = det["faces"]
+    all_faces = det["faces"]
+    faces = ([f for f in all_faces if len(f.get("detectors", {})) >= 2]
+             if args.faces == "consensus" else all_faces)
     for b in blobs:
         if b["kind"] != "flame":
             b["nearest_face"] = None
@@ -143,6 +152,9 @@ def main() -> None:
             "min_area_frac": MIN_AREA_FRAC, "max_area_frac": MAX_AREA_FRAC,
             "warm_hue_range": list(WARM_HUE), "orphan_threshold_face_heights":
                 args.orphan_threshold,
+            "faces_counted": args.faces,
+            "faces_available": len(all_faces),
+            "faces_used": len(faces),
             "kind_rule": ("ceiling_fixture: centroid above y=0.2 and aspect<1.2; "
                           "flame: aspect>=1.0 and (warm hue or sat<40) and high local "
                           "contrast; bright_other: everything else"),
@@ -160,7 +172,8 @@ def main() -> None:
     path.write_text(json.dumps(doc, indent=2))
     print(json.dumps({k: doc[k] for k in ("panel", "counts")}, indent=2))
     for b in orphans:
-        print(f'  UNATTACHED {b["blob_id"]} at {b["centroid"]} '
+        print(f"  UNATTACHED {b['blob_id']} at "
+              f"({b['centroid'][0]:.3f}, {b['centroid'][1]:.3f})  "
               f'nearest {b["nearest_face"]["face_id"]} '
               f'{b["nearest_face"]["distance_in_face_heights"]} face-heights away')
 
