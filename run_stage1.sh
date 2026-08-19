@@ -68,3 +68,10 @@ for panel in A B; do
   "$PY" stage1/field_scan.py --panel "$panel" \
       --rectified "$OUT/panel_${lower}_rectified.png" --out "$OUT"
 done
+
+echo "== inferred structure: gaze, similarity, proximity, attribution, disagreement"
+"$PY" stage1/infer_structure.py --out "$OUT"
+for panel in A B; do
+  "$PY" stage1/preview_overlay.py --panel "$panel" --out "$OUT"
+  "$PY" stage1/preview_structure.py --panel "$panel" --out "$OUT"
+done

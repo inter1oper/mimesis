@@ -231,7 +231,16 @@
                   "unattached_flame_marker",
                   "count_readout",
                   "claim_anchor",
-                  "reasoning_pointer"
+                  "reasoning_pointer",
+                  "gaze_ray",
+                  "gaze_convergence",
+                  "proximity_edge",
+                  "mst_edge",
+                  "similarity_edge",
+                  "depth_rank",
+                  "attribution_link",
+                  "disagreement_vector",
+                  "containment_link"
                 ],
                 "description": "Closed set. Every entry corresponds to a quantity Stage 1 measures; adding a cue type means adding a measurement, not a decoration. See docs/OVERLAY_VOCABULARY.md for the element-to-source table."
               },
@@ -252,7 +261,8 @@
                       "face_analysis",
                       "field",
                       "overlay_plan",
-                      "noise_floor"
+                      "noise_floor",
+                      "structure"
                     ]
                   },
                   "pointer": {
