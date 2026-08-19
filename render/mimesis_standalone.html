@@ -52,8 +52,20 @@ svg text.status{font-size:10px;letter-spacing:.08em;opacity:.75}
 .answer{font-family:"MimesisSerif","Tiempos Text",Georgia,serif;
   font-size:var(--serif);line-height:1.65;color:var(--paper);
   letter-spacing:-.008em;font-weight:300}
-.caret{display:inline-block;width:1px;height:1.02em;background:var(--paper);
-  vertical-align:-.14em}
+/* the answer is a continuous column that scrolls, not a reveal.
+   the mask lets lines enter and leave without a hard edge; it is a legibility
+   device, not motion -- the scroll itself is linear and clock-driven. */
+.viewport{position:absolute;left:0;right:0;top:2.6em;bottom:0;overflow:hidden;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%);
+          mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.column{position:absolute;left:0;right:0;top:0;will-change:transform}
+.column p{margin:0 0 .72em}
+.column p.supplied{opacity:.72}
+.column p.unsupported{opacity:.72}
+.column p.unsupported::after{content:" \2014 UNSUPPORTED";font-family:ui-monospace,monospace;
+  font-size:11px;letter-spacing:.08em;color:var(--doubt);vertical-align:.35em}
+.column .sec{font-family:ui-monospace,Menlo,monospace;font-size:11px;
+  letter-spacing:.1em;color:var(--measure);opacity:.5;margin:1.6em 0 .6em}
 .banner{font-family:ui-monospace,Menlo,monospace;font-size:11px;line-height:1.6;
   color:var(--measure);opacity:.5;margin-bottom:1.2em;letter-spacing:.06em}
 
@@ -211,7 +223,8 @@ function mk(tag,a,txt){ const e=document.createElementNS(NS,tag);
   if(txt!=null) e.textContent=txt; return e; }
 /* a label types in, hard, one character at a time — no blur out here.
    the blur reveal belongs to the answer, this layer is telemetry. */
-function typed(text,t,t0,cps){ const n=Math.floor(Math.max(0,(t-t0))*cps);
+function typed(text,t,t0,cps){ if(!text) return "";
+  const n=Math.floor(Math.max(0,(t-t0))*cps);
   return text.slice(0,Math.min(text.length,n)); }
 
 function drawOverlay(z){
@@ -448,7 +461,7 @@ function drawCue(g,c,rec,face,W,H,t,score){
       push(mk("path",{class:"s "+cls,d:`M${px-38} ${py}h76M${px} ${py-38}v76`}));
       const l1=typed(c.label,t,c.t_in+1.2,40);
       push(mk("text",{class:cls,x:px+42,y:py-14},l1));
-      if(l1.length>=c.label.length)
+      if(c.label2&&l1.length>=(c.label||"").length)
         push(mk("text",{class:cls,x:px+42,y:py-1,opacity:.62},
           typed(c.label2,t,c.t_in+1.2+c.label.length/40,40)));
     }
@@ -487,7 +500,7 @@ function drawCue(g,c,rec,face,W,H,t,score){
     if(kk>=1){
       const l1=typed(c.label,t,c.t_in+1,40);
       push(mk("text",{class:"doubt",x:bx+22,y:by-16},l1));
-      if(l1.length>=c.label.length)
+      if(c.label2&&l1.length>=(c.label||"").length)
         push(mk("text",{class:"doubt",x:bx+22,y:by-3,opacity:.62},
           typed(c.label2,t,c.t_in+1+c.label.length/40,40)));
     }
@@ -508,31 +521,53 @@ function drawCue(g,c,rec,face,W,H,t,score){
   return 0;
 }
 
-/* ---------- text ---------- */
+/* ---------- text ----------
+   The answer scrolls as one continuous column. Position is a pure function of
+   the clock: the whole column passes exactly once per loop, so a seek lands at
+   the right line and fifteen minutes cannot drift. Built once, then only
+   transformed. */
+function buildColumn(z,score){
+  const el=z.answerEl;
+  const sess=(score.source_state||{}).sessions||[];
+  const st=(score.source_state||{}).answer||"";
+  const head = st==="model_output"
+    ? `PANEL ${z.panel} · ${sess.join(" · ")}`
+    : st.startsWith("type_specimen")
+    ? `PANEL ${z.panel} · TYPE SPECIMEN — NOT MODEL OUTPUT`
+    : `PANEL ${z.panel} · ANSWER TRACK EMPTY · AWAITING TRANSCRIPTS`;
+  // Markdown markers are stripped for DISPLAY only. claims.json keeps the text
+  // verbatim with its character offsets intact; this is typesetting, not editing.
+  const clean = s => s.replace(/^\s*[*\-]\s+/,"").replace(/^#{1,6}\s*/,"")
+                      .replace(/\*\*(.+?)\*\*/g,"$1").replace(/\*(.+?)\*/g,"$1")
+                      .replace(/\s+/g," ").trim();
+  let body="", sec=null;
+  for(const c of score.tracks.answer){
+    if(c.section&&c.section!==sec){ sec=c.section;
+      body+=`<div class="sec">${esc(clean(sec))}</div>`; }
+    const txt=clean(c.text);
+    // a claim that is only its own heading would print the heading twice
+    if(!txt || (sec&&clean(sec).toLowerCase()===txt.toLowerCase())) continue;
+    const cls=[c.evidence==="supplied"?"supplied":"",
+               c.unsupportable?"unsupported":""].filter(Boolean).join(" ");
+    body+=`<p class="${cls}">${esc(txt)}</p>`;
+  }
+  const html=`<div class="banner">${head}</div>`+
+             `<div class="viewport"><div class="column">${body}</div></div>`;
+  el.innerHTML=html;
+  z.viewport=el.querySelector(".viewport");
+  z.column=el.querySelector(".column");
+  z.builtFor=score.tracks.answer.length;
+}
 function drawText(z){
   const score=D["score_"+z.panel.toLowerCase()]; if(!score) return;
-  const t=loopT(score), el=z.answerEl;
-  const cue=score.tracks.answer.find(c=>t>=c.t_in&&t<c.t_out);
-  const st=(score.source_state||{}).answer||"";
-  const sess=(score.source_state||{}).sessions||[];
-  const banner = st==="model_output"
-    ? `<div class="banner">PANEL ${z.panel} · ${sess.join(" · ")}` +
-      (cue? ` · ${(cue.evidence||"").toUpperCase()}`+(cue.unsupportable?" · UNSUPPORTED":"") : "") +
-      `</div>`
-    : st.startsWith("type_specimen")
-    ? `<div class="banner">PANEL ${z.panel} · TYPE SPECIMEN — NOT MODEL OUTPUT</div>`
-    : `<div class="banner">PANEL ${z.panel} · ANSWER TRACK EMPTY · AWAITING TRANSCRIPTS</div>`;
-  if(!cue){ el.innerHTML=banner; return; }
-  const ms=(t-cue.t_in)*1000, on=cue.char_onsets_ms,
-        R=(score.reveal||{}).blur_resolve_ms||120;
-  let html="";
-  for(let i=0;i<cue.text.length;i++){
-    const age=ms-on[i]; if(age<0) break;
-    if(age<R){ const k=age/R;
-      html+=`<span style="filter:blur(${(6*(1-k)).toFixed(2)}px);opacity:${(0.4+0.6*k).toFixed(3)}">${esc(cue.text[i])}</span>`;
-    } else html+=esc(cue.text[i]);
-  }
-  el.innerHTML=banner+html+`<span class="caret"></span>`;
+  if(z.builtFor!==score.tracks.answer.length) buildColumn(z,score);
+  if(!z.column) return;
+  const t=loopT(score), L=score.loop_duration_s||900;
+  const ch=z.column.scrollHeight, vh=z.viewport.clientHeight;
+  // start just below the viewport, end just above the column's last line
+  const travel=ch+vh*0.25;
+  const y=vh - (t/L)*travel;
+  z.column.style.transform=`translateY(${y.toFixed(2)}px)`;
 }
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
 
