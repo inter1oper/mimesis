@@ -15,7 +15,7 @@
   --relate:#bdeede;       /* RELATE — comparison */
   --doubt:#ff4a4a;        /* DOUBT — the floor, the rejects */
   --paper:#efece4;
-  --stroke:1px;
+  --stroke:0.9px;
   --num:11px;
   --serif:34px;
 }
@@ -32,7 +32,7 @@ body.config{cursor:default}
    leader lines read as one instrument. Colour is carried by the labels alone,
    so the pass is legible without the drawing changing hue. */
 svg .s{fill:none;stroke:var(--obs);stroke-width:var(--stroke);
-  vector-effect:non-scaling-stroke;stroke-linecap:butt}
+  vector-effect:non-scaling-stroke;stroke-linecap:butt;opacity:.88}
 svg .s.alarm{stroke:var(--doubt)}
 svg text{fill:currentColor;font-family:ui-monospace,Menlo,Consolas,monospace;
   font-size:var(--num);letter-spacing:.04em;dominant-baseline:hanging}
@@ -46,7 +46,7 @@ svg image{opacity:.5}
 svg rect.tab{fill:#0a0a0aE6;stroke:currentColor;stroke-width:var(--stroke);
   vector-effect:non-scaling-stroke}
 svg text.tab{font-size:10px;letter-spacing:.05em}
-svg text.trace{font-size:9px;letter-spacing:.02em;opacity:.38}
+svg text.trace{font-size:9px;letter-spacing:.02em;opacity:.30}
 svg text.status{font-size:10px;letter-spacing:.08em;opacity:.75}
 
 .answer{font-family:"MimesisSerif","Tiempos Text",Georgia,serif;
@@ -252,7 +252,7 @@ function drawOverlay(z){
   // the reasoning trace, small and fast, on and around the paint
   const rz=score.tracks.reasoning||[];
   if(rz.length){
-    const live=rz.filter(r=>t>=r.t_in&&t<r.t_out).slice(-14);
+    const live=rz.filter(r=>t>=r.t_in&&t<r.t_out).slice(-4);
     live.forEach((r,i)=>{
       const chars=Math.floor(Math.max(0,(t-r.t_in))*1000/(r.line_interval_ms||34));
       const txt=r.text.slice(0,Math.min(r.text.length,chars)).slice(0,86);

@@ -173,201 +173,153 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
         c.update(kw)
         cues.append(c)
 
-    def stagger(items, pass_name, hold_frac, lead_frac=0.55):
+    # ------------------------------------------------------------------
+    # DENSITY
+    #
+    # The reference images carry roughly fifteen marks. Attention moves; it
+    # does not accumulate. So each face gets an ATTENTION WINDOW -- box,
+    # circle, connector and one label appear together and retire together --
+    # and the windows are spaced so only CONCURRENT of them overlap. The paint
+    # stays visible, which is the point of projecting onto it.
+    # ------------------------------------------------------------------
+    CONCURRENT = 3.0
+
+    def windows(items, pass_name):
         t0, t1 = window(pass_name, loop)
-        span = (t1 - t0) * lead_frac
         n = max(1, len(items))
+        step = (t1 - t0) / n
+        hold = step * CONCURRENT
         for i, it in enumerate(items):
-            a = t0 + span * i / n
-            yield it, a, min(t1, a + (t1 - t0) * hold_frac)
+            a = t0 + i * step
+            yield it, a, min(t1, a + hold)
 
-    # ---------- PASS 1 DETECT ----------
-    for f, a, b in stagger(cons, "DETECT", 0.92):
-        fid = f["face_id"]; i = idx[fid]
-        d = f["detectors"]
-        bf, yn = d["blazeface"]["score"], d["yunet"]["score"]
-        floor_bf = nf["floor"]["blazeface"]["false_positive_ceiling"]
-        # the armature persists for the whole loop; only its contents and its
-        # labels change from pass to pass
-        add("box_emerge", "DETECT", "detection", f"/faces/{i}", a, loop,
-            face_ids=[fid], grow_s=0.9)
-        add("node", "DETECT", "detection", f"/faces/{i}", a + 0.6, loop,
-            face_ids=[fid], at=nodes[fid], r=0.019, value=f"{max(bf, yn):.3f}")
-        add("connector", "DETECT", "detection", f"/faces/{i}", a + 0.6, loop,
-            face_ids=[fid], at=nodes[fid], grow_s=0.7)
-        add("connector_label", "DETECT", "detection", f"/faces/{i}", a + 1.3, b,
-            face_ids=[fid], at=nodes[fid],
-            label=f"{max(bf, yn):.3f}",
-            label2=("confirmed" if min(bf, yn) > floor_bf else "under floor"))
-        add("box_content", "DETECT", "detection", f"/faces/{i}", a + 0.9, b,
-            face_ids=[fid], mode="confidence", value=max(bf, yn))
+    kw_by_face = {}
+    for sess in mine:
+        for cl in sess["answer_claims"]:
+            k = cl.get("keyword")
+            fid = (cl.get("anchor") or {}).get("face_id")
+            if k and fid and fid not in kw_by_face:
+                kw_by_face[fid] = (k, cl["unsupportable"])
+    loose = [(sess_i, ci, cl) for sess_i, sess in
+             ((sessions.index(x), x) for x in mine)
+             for ci, cl in enumerate(sess["answer_claims"])
+             if cl.get("keyword") and not (cl.get("anchor") or {}).get("face_id")]
 
-    # ---------- PASS 2 RESOLVE ----------
-    for f, a, b in stagger(cons, "RESOLVE", 0.86):
+    # ---------- PASS 1 DETECT: a box, a circle, one number ----------
+    for f, a, b in windows(cons, "DETECT"):
         fid = f["face_id"]; i = idx[fid]
-        t = tier.get(fid, {}).get("effective_tier", "box_only")
-        n_pts = len(f.get("landmarks") or [])
+        d = f["detectors"]; bf, yn = d["blazeface"]["score"], d["yunet"]["score"]
+        add("box_emerge", "DETECT", "detection", f"/faces/{i}", a, b,
+            face_ids=[fid], grow_s=0.8)
+        add("node", "DETECT", "detection", f"/faces/{i}", a + 0.5, b,
+            face_ids=[fid], at=nodes[fid], r=0.017)
+        add("connector", "DETECT", "detection", f"/faces/{i}", a + 0.5, b,
+            face_ids=[fid], at=nodes[fid], grow_s=0.6)
+        add("connector_label", "DETECT", "detection", f"/faces/{i}", a + 1.1, b,
+            face_ids=[fid], at=nodes[fid], label=f"{max(bf, yn):.3f}")
+
+    # ---------- PASS 2 RESOLVE: geometry, or the absence of it ----------
+    for f, a, b in windows(cons, "RESOLVE"):
+        fid = f["face_id"]; i = idx[fid]
+        add("box_emerge", "RESOLVE", "detection", f"/faces/{i}", a, b,
+            face_ids=[fid], grow_s=0.8)
         if f["mesh_ok"]:
-            add("box_content", "RESOLVE", "detection", f"/faces/{i}", a, b,
-                face_ids=[fid], mode="subdivide", cells=3, grow_s=0.8)
-            add("connector_label", "RESOLVE", "detection", f"/faces/{i}", a + 0.4, b,
-                face_ids=[fid], at=nodes[fid],
-                label=f"{n_pts}/478",
-                label2=t.replace("_", " "))
+            t_ = tier.get(fid, {}).get("effective_tier", "box_only")
             cue = {"full_mesh": "mesh_full", "contour": "mesh_contour",
-                   "landmarks": "mesh_points"}.get(t, "mesh_points")
-            add(cue, "RESOLVE", "detection", f"/faces/{i}/landmarks", a + 0.9, loop,
+                   "landmarks": "mesh_points"}.get(t_, "mesh_points")
+            add(cue, "RESOLVE", "detection", f"/faces/{i}/landmarks", a + 0.5, b,
                 face_ids=[fid])
+            add("connector_label", "RESOLVE", "detection", f"/faces/{i}", a + 0.9, b,
+                face_ids=[fid], at=nodes[fid], label=f"{len(f['landmarks'])}/478")
         else:
-            add("box_content", "RESOLVE", "detection", f"/faces/{i}", a, loop,
-                face_ids=[fid], mode="fail", grow_s=0.8, alarm=True)
-            add("connector_label", "RESOLVE", "detection", f"/faces/{i}", a + 0.4, b,
-                face_ids=[fid], at=nodes[fid], alarm=True,
-                label="no geometry", label2="unresolved")
+            add("box_content", "RESOLVE", "detection", f"/faces/{i}", a, b,
+                face_ids=[fid], mode="fail", grow_s=0.7, alarm=True)
+            add("connector_label", "RESOLVE", "detection", f"/faces/{i}", a + 0.5, b,
+                face_ids=[fid], at=nodes[fid], alarm=True, label="no geometry")
 
-    # ---------- PASS 3 MEASURE ----------
-    for f, a, b in stagger(cons, "MEASURE", 0.80):
-        fid = f["face_id"]
-        if fid not in anal:
-            continue
-        k = anal_index[fid]; r = anal[fid]
-        rows = []
-        if r.get("geometry"):
-            rows.append((f"iod {r['geometry']['interocular_px']:.0f}",
-                         "face_analysis", f"/panels/{panel}/{k}/geometry"))
-        if r.get("head_pose"):
-            hp = r["head_pose"]
-            rows.append((f"yaw {hp['yaw_deg']:+.0f}  roll {hp['roll_deg']:+.0f}",
-                         "face_analysis", f"/panels/{panel}/{k}/head_pose"))
-        if r.get("symmetry"):
-            rows.append((f"sym {r['symmetry']['residual_mean_iod']:.4f}",
-                         "face_analysis", f"/panels/{panel}/{k}/symmetry"))
-        for bs in (r.get("blendshapes_top8") or [])[:3]:
-            rows.append((f"{bs['name'][:14]} {bs['pct']:.0f}%",
-                         "face_analysis", f"/panels/{panel}/{k}/blendshapes_top8"))
-        if r.get("photometry"):
-            rows.append((f"luma {r['photometry']['luma_mean']:.0f}",
-                         "face_analysis", f"/panels/{panel}/{k}/photometry"))
-        step = (b - a) / max(1, len(rows))
-        for j, (text, sf, sp) in enumerate(rows):
-            add("connector_label", "MEASURE", sf, sp, a + j * step, b,
-                face_ids=[fid], at=nodes[fid], row=j, label=text)
-        bars = [(bs["name"], bs["pct"]) for bs in (r.get("blendshapes_top8") or [])[:4]]
-        if bars:
-            add("box_content", "MEASURE", "face_analysis",
-                f"/panels/{panel}/{k}/blendshapes_top8", a, b,
-                face_ids=[fid], mode="bars", bars=bars, grow_s=1.1)
-        add("node_pulse", "MEASURE", "detection", f"/faces/{idx[fid]}", a, b,
-            face_ids=[fid], at=nodes[fid], r=0.019, rows=len(rows))
+    # ---------- PASS 3 MEASURE: the model's word, and one number ----------
+    for f, a, b in windows(cons, "MEASURE"):
+        fid = f["face_id"]; i = idx[fid]
+        add("box_emerge", "MEASURE", "detection", f"/faces/{i}", a, b,
+            face_ids=[fid], grow_s=0.8)
+        r = anal.get(fid)
+        if r and r.get("head_pose"):
+            k = anal_index[fid]
+            add("node", "MEASURE", "detection", f"/faces/{i}", a + 0.4, b,
+                face_ids=[fid], at=nodes[fid], r=0.017)
+            add("connector", "MEASURE", "detection", f"/faces/{i}", a + 0.4, b,
+                face_ids=[fid], at=nodes[fid], grow_s=0.6)
+            add("connector_label", "MEASURE", "face_analysis",
+                f"/panels/{panel}/{k}/head_pose", a + 1.0, b,
+                face_ids=[fid], at=nodes[fid],
+                label=f"yaw {r['head_pose']['yaw_deg']:+.0f}")
+        if fid in kw_by_face:
+            w, unsup = kw_by_face[fid]
+            add("claim_word", "MEASURE", "claims", "/0", a + 1.4, b,
+                face_ids=[fid], label=w, unsupportable=unsup, alarm=unsup)
 
-    # ---------- PASS 4 RELATE ----------
+    # a few of the model's unanchored words, drifting on the canvas
+    seed = 7
+    for (si, ci, cl), a, b in windows(loose[:10], "MEASURE"):
+        seed = (seed * 1103515245 + 12345) & 0x7fffffff
+        add("claim_word", "MEASURE", "claims", f"/{si}/answer_claims/{ci}", a, b,
+            at=[round(0.10 + (seed % 780) / 1000.0, 4),
+                round(0.12 + ((seed >> 11) % 740) / 1000.0, 4)],
+            label=cl["keyword"], unsupportable=cl["unsupportable"],
+            alarm=cl["unsupportable"])
+
+    # ---------- PASS 4 RELATE: only what crosses the threshold ----------
     E = stru["edges"]
-    rel = []
-    for n, e in enumerate(E):
-        if e["type"] == "similarity" and e["above_same_identity_threshold"]:
-            a_in = e["from"] in nodes
-            b_in = e["to"] in nodes
-            if a_in and b_in:
-                rel.append((n, e, "similarity"))
-            elif (a_in or b_in) and e["cross_panel"]:
-                rel.append((n, e, "cross"))
-        elif e["type"] == "proximity" and e.get("panel") == panel and e["in_mst"]:
-            rel.append((n, e, "mst"))
-    for (n, e, kind), a, b in stagger(rel, "RELATE", 0.62):
-        if kind == "mst":
-            add("relation", "RELATE", "structure", f"/edges/{n}", a, b,
-                face_ids=[e["from"], e["to"]], grow_s=0.6, style="solid",
-                label=f"{e['distance_canvas']:.3f}")
-        else:
-            thr = stru["same_identity_cosine"]
-            add("relation", "RELATE", "structure", f"/edges/{n}", a, b,
-                face_ids=[e["from"], e["to"]], grow_s=0.9, style="dashed",
-                cross=(kind == "cross"), alarm=(kind == "cross"),
-                label=f"cos {e['cosine']:.3f}", label2="cannot separate")
+    rel = [(n, e) for n, e in enumerate(E)
+           if e["type"] == "similarity" and e["above_same_identity_threshold"]
+           and e["from"] in nodes and e["to"] in nodes]
+    for (n, e), a, b in windows(rel[:6], "RELATE"):
+        for fid in (e["from"], e["to"]):
+            add("box_emerge", "RELATE", "detection", f"/faces/{idx[fid]}", a, b,
+                face_ids=[fid], grow_s=0.6)
+        add("relation", "RELATE", "structure", f"/edges/{n}", a + 0.4, b,
+            face_ids=[e["from"], e["to"]], grow_s=0.9, style="dashed",
+            label=f"cos {e['cosine']:.3f}")
     gz = stru["per_panel"][panel]["gaze_convergence"]
     ga, gb = window("RELATE", loop)
-    for e_i, e in [(n, e) for n, e in enumerate(E)
-                   if e["type"] == "gaze" and e["from"] in nodes]:
-        add("gaze_ray", "RELATE", "structure", f"/edges/{e_i}",
-            ga + (gb - ga) * 0.45, gb, face_ids=[e["from"]], grow_s=1.2)
     if gz.get("converges"):
-        add("convergence", "RELATE", "structure", f"/per_panel/{panel}/gaze_convergence",
-            ga + (gb - ga) * 0.6, gb, at=gz["point"],
-            label=f"res {gz['residual_mean']:.4f}",
-            label2=("shared attention" if gz["residual_mean"] < 0.09
-                    else "no shared attention"))
+        for e_i, e in [(n, e) for n, e in enumerate(E)
+                       if e["type"] == "gaze" and e["from"] in nodes]:
+            add("gaze_ray", "RELATE", "structure", f"/edges/{e_i}",
+                ga + (gb - ga) * 0.55, gb, face_ids=[e["from"]], grow_s=1.4)
+        add("convergence", "RELATE", "structure",
+            f"/per_panel/{panel}/gaze_convergence",
+            ga + (gb - ga) * 0.7, gb, at=gz["point"],
+            label=f"res {gz['residual_mean']:.4f}")
 
-    # ---------- PASS 5 DOUBT ----------
+    # ---------- PASS 5 DOUBT: what was thrown away ----------
     ghosts = [f for f in faces if len(f["detectors"]) < 2
               and (stabr.get(f["face_id"], {}).get("flash_hz", 0) or 0) > 0]
     da, db = window("DOUBT", loop)
-    for f in ghosts:
+    for f, a, b in windows(ghosts[:14], "DOUBT"):
         fid = f["face_id"]; i = idx[fid]
-        r = stabr[fid]
-        add("ghost", "DOUBT", "detection", f"/faces/{i}", da, db, face_ids=[fid],
-            hatch=True,
-            state=r["track_state"],
-            flash_from={"file": "stability", "pointer": f"/panels/{panel}/{stab_index[fid]}",
-                        "field": "flash_hz"})
-    dis = [(n, e) for n, e in enumerate(E)
-           if e["type"] == "disagreement" and e.get("panel") == panel
-           and e["box_iou"] < 0.75]
-    for (n, e), a, b in stagger(dis, "DOUBT", 0.55):
-        add("disagreement", "DOUBT", "structure", f"/edges/{n}", a, b,
-            face_ids=[e["from"]], label=f"IoU {e['box_iou']:.2f}")
+        add("ghost", "DOUBT", "detection", f"/faces/{i}", a, b, face_ids=[fid],
+            state=stabr[fid]["track_state"],
+            flash_from={"file": "stability", "pointer":
+                        f"/panels/{panel}/{stab_index[fid]}", "field": "flash_hz"})
     orph = [(n, e) for n, e in enumerate(E)
             if e["type"] == "attribution" and e.get("panel") == panel and e["unattached"]]
-    for (n, e), a, b in stagger(orph, "DOUBT", 0.7):
+    for (n, e), a, b in windows(orph, "DOUBT"):
         add("orphan", "DOUBT", "structure", f"/edges/{n}", a, b,
-            face_ids=[e["to"]], blob_ids=[e["from"]], alarm=True,
-            label="no face", label2=f"{e['distance_face_heights']:.2f}h")
-    add("floor", "DOUBT", "noise_floor", "/floor", da + (db - da) * 0.2, db,
-        label=f"floor {nf['floor']['blazeface']['false_positive_ceiling']} / "
-              f"{nf['floor']['yunet']['false_positive_ceiling']}",
-        label2="below this is not evidence")
-    add("tally", "DOUBT", "detection", "/counts", da + (db - da) * 0.45, db,
-        label=f"{det['counts']['merged']} / "
-              f"{det['counts']['both_detectors_agree']} / "
-              f"{det['counts']['mesh_converged']}",
-        label2=f"{len(ghosts)} rejected")
+            face_ids=[e["to"]], blob_ids=[e["from"]], alarm=True, label="no face")
+    add("floor", "DOUBT", "noise_floor", "/floor", da + (db - da) * 0.35, db,
+        label=f"floor {nf['floor']['blazeface']['false_positive_ceiling']}")
 
-    # ---------- the model's own words, on the paint ----------
-    # One or two words lifted verbatim from a claim, placed at the face the
-    # claim refers to when it names a position, and scattered on the canvas
-    # when it does not. The reference look prints single words; these are the
-    # model's, not ours.
-    words = []
-    for sess in mine:
-        si = sessions.index(sess)
-        for ci, cl in enumerate(sess["answer_claims"]):
-            if cl.get("keyword"):
-                words.append((si, ci, cl))
-    seed = 0
-    for (si, ci, cl), a, b in stagger(words[:64], "MEASURE", 0.34, lead_frac=0.94):
-        fid = (cl.get("anchor") or {}).get("face_id")
-        pos = None
-        if not fid:
-            seed = (seed * 1103515245 + 12345) & 0x7fffffff
-            pos = [round(0.08 + (seed % 840) / 1000.0, 4),
-                   round(0.10 + ((seed >> 10) % 800) / 1000.0, 4)]
-        add("claim_word", "MEASURE", "claims", f"/{si}/answer_claims/{ci}", a, b, face_ids=[fid] if fid else [], at=pos,
-            label=cl["keyword"],
-            evidence=cl["evidence"], unsupportable=cl["unsupportable"],
-            alarm=cl["unsupportable"])
-
-    # a status block, as on an instrument that is telling you it is struggling
-    sa, sb = window("DETECT", loop)
+    # ---------- the status block, always on ----------
     if mine:
         s0 = mine[0]
-        add("status_block", "DETECT", "claims", f"/{sessions.index(s0)}", sa, loop,
+        add("status_block", "DETECT", "claims", f"/{sessions.index(s0)}", 0.0, loop,
             lines=[f"PANEL      {panel}",
-                   f"SESSIONS   {len(mine)}",
-                   f"CLAIMS     {sum(len(x['answer_claims']) for x in mine)}",
-                   f"SEEN       {sum(1 for x in mine for c2 in x['answer_claims'] if c2['evidence']=='seen')}",
-                   f"SUPPLIED   {sum(1 for x in mine for c2 in x['answer_claims'] if c2['evidence']=='supplied')}",
-                   f"UNSUPPORT  {sum(1 for x in mine for c2 in x['answer_claims'] if c2['unsupportable'])}",
-                   f"HEDGE/100W {s0['hedges']['per_hundred_words']}",
-                   f"HEADCOUNT  {s0['headcount']['stated']}  DETECTOR {det['counts']['both_detectors_agree']}"])
+                   f"DETECTED   {det['counts']['merged']}",
+                   f"CONFIRMED  {det['counts']['both_detectors_agree']}",
+                   f"GEOMETRY   {det['counts']['mesh_converged']}",
+                   f"MODEL SAID {s0['headcount']['stated']}",
+                   f"HEDGE      {s0['hedges']['per_hundred_words']}/100W"])
 
     cues.sort(key=lambda c: (c["t_in"], c["cue_id"]))
 

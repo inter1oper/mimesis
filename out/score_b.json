@@ -10888,7 +10888,7 @@
         "pass": "DETECT",
         "role": "obs",
         "t_in": 0.0,
-        "t_out": 900.0,
+        "t_out": 74.25,
         "source": {
           "file": "detection",
           "pointer": "/faces/4"
@@ -10896,10 +10896,10 @@
         "face_ids": [
           "B05"
         ],
-        "grow_s": 0.9
+        "grow_s": 0.8
       },
       {
-        "cue_id": "B-status_block-0254",
+        "cue_id": "B-status_block-0144",
         "cue": "status_block",
         "pass": "DETECT",
         "role": "obs",
@@ -10911,13 +10911,11 @@
         },
         "lines": [
           "PANEL      B",
-          "SESSIONS   2",
-          "CLAIMS     166",
-          "SEEN       133",
-          "SUPPLIED   33",
-          "UNSUPPORT  7",
-          "HEDGE/100W 2.27",
-          "HEADCOUNT  None  DETECTOR 8"
+          "DETECTED   34",
+          "CONFIRMED  8",
+          "GEOMETRY   15",
+          "MODEL SAID None",
+          "HEDGE      2.27/100W"
         ]
       },
       {
@@ -10925,8 +10923,8 @@
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 0.6,
-        "t_out": 900.0,
+        "t_in": 0.5,
+        "t_out": 74.25,
         "source": {
           "file": "detection",
           "pointer": "/faces/4"
@@ -10938,15 +10936,15 @@
           0.08849,
           0.11048
         ],
-        "grow_s": 0.7
+        "grow_s": 0.6
       },
       {
         "cue_id": "B-node-0001",
         "cue": "node",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 0.6,
-        "t_out": 900.0,
+        "t_in": 0.5,
+        "t_out": 74.25,
         "source": {
           "file": "detection",
           "pointer": "/faces/4"
@@ -10958,33 +10956,15 @@
           0.08849,
           0.11048
         ],
-        "r": 0.019,
-        "value": "0.960"
-      },
-      {
-        "cue_id": "B-box_content-0004",
-        "cue": "box_content",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 0.9,
-        "t_out": 182.16,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/4"
-        },
-        "face_ids": [
-          "B05"
-        ],
-        "mode": "confidence",
-        "value": 0.9601
+        "r": 0.017
       },
       {
         "cue_id": "B-connector_label-0003",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 1.3,
-        "t_out": 182.16,
+        "t_in": 1.1,
+        "t_out": 74.25,
         "source": {
           "file": "detection",
           "pointer": "/faces/4"
@@ -10996,16 +10976,15 @@
           0.08849,
           0.11048
         ],
-        "label": "0.960",
-        "label2": "confirmed"
+        "label": "0.960"
       },
       {
-        "cue_id": "B-box_emerge-0005",
+        "cue_id": "B-box_emerge-0004",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 13.613,
-        "t_out": 900.0,
+        "t_in": 24.75,
+        "t_out": 99.0,
         "source": {
           "file": "detection",
           "pointer": "/faces/1"
@@ -11013,15 +10992,15 @@
         "face_ids": [
           "B02"
         ],
-        "grow_s": 0.9
+        "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0007",
+        "cue_id": "B-connector-0006",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 14.213,
-        "t_out": 900.0,
+        "t_in": 25.25,
+        "t_out": 99.0,
         "source": {
           "file": "detection",
           "pointer": "/faces/1"
@@ -11033,15 +11012,15 @@
           0.18431,
           0.72781
         ],
-        "grow_s": 0.7
+        "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0006",
+        "cue_id": "B-node-0005",
         "cue": "node",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 14.213,
-        "t_out": 900.0,
+        "t_in": 25.25,
+        "t_out": 99.0,
         "source": {
           "file": "detection",
           "pointer": "/faces/1"
@@ -11053,33 +11032,15 @@
           0.18431,
           0.72781
         ],
-        "r": 0.019,
-        "value": "0.938"
+        "r": 0.017
       },
       {
-        "cue_id": "B-box_content-0009",
-        "cue": "box_content",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 14.513,
-        "t_out": 195.773,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/1"
-        },
-        "face_ids": [
-          "B02"
-        ],
-        "mode": "confidence",
-        "value": 0.9382
-      },
-      {
-        "cue_id": "B-connector_label-0008",
+        "cue_id": "B-connector_label-0007",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 14.913,
-        "t_out": 195.773,
+        "t_in": 25.85,
+        "t_out": 99.0,
         "source": {
           "file": "detection",
           "pointer": "/faces/1"
@@ -11091,16 +11052,15 @@
           0.18431,
           0.72781
         ],
-        "label": "0.938",
-        "label2": "confirmed"
+        "label": "0.938"
       },
       {
-        "cue_id": "B-box_emerge-0010",
+        "cue_id": "B-box_emerge-0008",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 27.225,
-        "t_out": 900.0,
+        "t_in": 49.5,
+        "t_out": 123.75,
         "source": {
           "file": "detection",
           "pointer": "/faces/33"
@@ -11108,15 +11068,15 @@
         "face_ids": [
           "B34"
         ],
-        "grow_s": 0.9
+        "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0012",
+        "cue_id": "B-connector-0010",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 27.825,
-        "t_out": 900.0,
+        "t_in": 50.0,
+        "t_out": 123.75,
         "source": {
           "file": "detection",
           "pointer": "/faces/33"
@@ -11128,15 +11088,15 @@
           0.96165,
           0.12524
         ],
-        "grow_s": 0.7
+        "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0011",
+        "cue_id": "B-node-0009",
         "cue": "node",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 27.825,
-        "t_out": 900.0,
+        "t_in": 50.0,
+        "t_out": 123.75,
         "source": {
           "file": "detection",
           "pointer": "/faces/33"
@@ -11148,33 +11108,15 @@
           0.96165,
           0.12524
         ],
-        "r": 0.019,
-        "value": "0.920"
+        "r": 0.017
       },
       {
-        "cue_id": "B-box_content-0014",
-        "cue": "box_content",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 28.125,
-        "t_out": 198.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/33"
-        },
-        "face_ids": [
-          "B34"
-        ],
-        "mode": "confidence",
-        "value": 0.9205
-      },
-      {
-        "cue_id": "B-connector_label-0013",
+        "cue_id": "B-connector_label-0011",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 28.525,
-        "t_out": 198.0,
+        "t_in": 50.6,
+        "t_out": 123.75,
         "source": {
           "file": "detection",
           "pointer": "/faces/33"
@@ -11186,16 +11128,15 @@
           0.96165,
           0.12524
         ],
-        "label": "0.920",
-        "label2": "under floor"
+        "label": "0.920"
       },
       {
-        "cue_id": "B-box_emerge-0015",
+        "cue_id": "B-box_emerge-0012",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 40.838,
-        "t_out": 900.0,
+        "t_in": 74.25,
+        "t_out": 148.5,
         "source": {
           "file": "detection",
           "pointer": "/faces/22"
@@ -11203,15 +11144,15 @@
         "face_ids": [
           "B23"
         ],
-        "grow_s": 0.9
+        "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0017",
+        "cue_id": "B-connector-0014",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 41.438,
-        "t_out": 900.0,
+        "t_in": 74.75,
+        "t_out": 148.5,
         "source": {
           "file": "detection",
           "pointer": "/faces/22"
@@ -11223,15 +11164,15 @@
           0.91323,
           0.57327
         ],
-        "grow_s": 0.7
+        "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0016",
+        "cue_id": "B-node-0013",
         "cue": "node",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 41.438,
-        "t_out": 900.0,
+        "t_in": 74.75,
+        "t_out": 148.5,
         "source": {
           "file": "detection",
           "pointer": "/faces/22"
@@ -11243,33 +11184,15 @@
           0.91323,
           0.57327
         ],
-        "r": 0.019,
-        "value": "0.917"
+        "r": 0.017
       },
       {
-        "cue_id": "B-box_content-0019",
-        "cue": "box_content",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 41.738,
-        "t_out": 198.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/22"
-        },
-        "face_ids": [
-          "B23"
-        ],
-        "mode": "confidence",
-        "value": 0.9175
-      },
-      {
-        "cue_id": "B-connector_label-0018",
+        "cue_id": "B-connector_label-0015",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 42.138,
-        "t_out": 198.0,
+        "t_in": 75.35,
+        "t_out": 148.5,
         "source": {
           "file": "detection",
           "pointer": "/faces/22"
@@ -11281,184 +11204,146 @@
           0.91323,
           0.57327
         ],
-        "label": "0.917",
-        "label2": "confirmed"
+        "label": "0.917"
+      },
+      {
+        "cue_id": "B-box_emerge-0016",
+        "cue": "box_emerge",
+        "pass": "DETECT",
+        "role": "obs",
+        "t_in": 99.0,
+        "t_out": 173.25,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/17"
+        },
+        "face_ids": [
+          "B18"
+        ],
+        "grow_s": 0.8
+      },
+      {
+        "cue_id": "B-connector-0018",
+        "cue": "connector",
+        "pass": "DETECT",
+        "role": "obs",
+        "t_in": 99.5,
+        "t_out": 173.25,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/17"
+        },
+        "face_ids": [
+          "B18"
+        ],
+        "at": [
+          0.92815,
+          0.83545
+        ],
+        "grow_s": 0.6
+      },
+      {
+        "cue_id": "B-node-0017",
+        "cue": "node",
+        "pass": "DETECT",
+        "role": "obs",
+        "t_in": 99.5,
+        "t_out": 173.25,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/17"
+        },
+        "face_ids": [
+          "B18"
+        ],
+        "at": [
+          0.92815,
+          0.83545
+        ],
+        "r": 0.017
+      },
+      {
+        "cue_id": "B-connector_label-0019",
+        "cue": "connector_label",
+        "pass": "DETECT",
+        "role": "obs",
+        "t_in": 100.1,
+        "t_out": 173.25,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/17"
+        },
+        "face_ids": [
+          "B18"
+        ],
+        "at": [
+          0.92815,
+          0.83545
+        ],
+        "label": "0.913"
       },
       {
         "cue_id": "B-box_emerge-0020",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 54.45,
-        "t_out": 900.0,
+        "t_in": 123.75,
+        "t_out": 198.0,
         "source": {
           "file": "detection",
-          "pointer": "/faces/17"
+          "pointer": "/faces/15"
         },
         "face_ids": [
-          "B18"
+          "B16"
         ],
-        "grow_s": 0.9
+        "grow_s": 0.8
       },
       {
         "cue_id": "B-connector-0022",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 55.05,
-        "t_out": 900.0,
+        "t_in": 124.25,
+        "t_out": 198.0,
         "source": {
           "file": "detection",
-          "pointer": "/faces/17"
+          "pointer": "/faces/15"
         },
         "face_ids": [
-          "B18"
+          "B16"
         ],
         "at": [
-          0.92815,
-          0.83545
+          0.38198,
+          0.53767
         ],
-        "grow_s": 0.7
+        "grow_s": 0.6
       },
       {
         "cue_id": "B-node-0021",
         "cue": "node",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 55.05,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/17"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": [
-          0.92815,
-          0.83545
-        ],
-        "r": 0.019,
-        "value": "0.913"
-      },
-      {
-        "cue_id": "B-box_content-0024",
-        "cue": "box_content",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 55.35,
+        "t_in": 124.25,
         "t_out": 198.0,
         "source": {
           "file": "detection",
-          "pointer": "/faces/17"
+          "pointer": "/faces/15"
         },
         "face_ids": [
-          "B18"
+          "B16"
         ],
-        "mode": "confidence",
-        "value": 0.9132
+        "at": [
+          0.38198,
+          0.53767
+        ],
+        "r": 0.017
       },
       {
         "cue_id": "B-connector_label-0023",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 55.75,
-        "t_out": 198.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/17"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": [
-          0.92815,
-          0.83545
-        ],
-        "label": "0.913",
-        "label2": "confirmed"
-      },
-      {
-        "cue_id": "B-box_emerge-0025",
-        "cue": "box_emerge",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 68.062,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/15"
-        },
-        "face_ids": [
-          "B16"
-        ],
-        "grow_s": 0.9
-      },
-      {
-        "cue_id": "B-connector-0027",
-        "cue": "connector",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 68.662,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/15"
-        },
-        "face_ids": [
-          "B16"
-        ],
-        "at": [
-          0.38198,
-          0.53767
-        ],
-        "grow_s": 0.7
-      },
-      {
-        "cue_id": "B-node-0026",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 68.662,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/15"
-        },
-        "face_ids": [
-          "B16"
-        ],
-        "at": [
-          0.38198,
-          0.53767
-        ],
-        "r": 0.019,
-        "value": "0.909"
-      },
-      {
-        "cue_id": "B-box_content-0029",
-        "cue": "box_content",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 68.963,
-        "t_out": 198.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/15"
-        },
-        "face_ids": [
-          "B16"
-        ],
-        "mode": "confidence",
-        "value": 0.9086
-      },
-      {
-        "cue_id": "B-connector_label-0028",
-        "cue": "connector_label",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 69.362,
+        "t_in": 124.85,
         "t_out": 198.0,
         "source": {
           "file": "detection",
@@ -11471,72 +11356,14 @@
           0.38198,
           0.53767
         ],
-        "label": "0.909",
-        "label2": "confirmed"
+        "label": "0.909"
       },
       {
-        "cue_id": "B-box_emerge-0030",
+        "cue_id": "B-box_emerge-0024",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 81.675,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/26"
-        },
-        "face_ids": [
-          "B27"
-        ],
-        "grow_s": 0.9
-      },
-      {
-        "cue_id": "B-connector-0032",
-        "cue": "connector",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 82.275,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/26"
-        },
-        "face_ids": [
-          "B27"
-        ],
-        "at": [
-          0.61547,
-          0.10503
-        ],
-        "grow_s": 0.7
-      },
-      {
-        "cue_id": "B-node-0031",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 82.275,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/26"
-        },
-        "face_ids": [
-          "B27"
-        ],
-        "at": [
-          0.61547,
-          0.10503
-        ],
-        "r": 0.019,
-        "value": "0.895"
-      },
-      {
-        "cue_id": "B-box_content-0034",
-        "cue": "box_content",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 82.575,
+        "t_in": 148.5,
         "t_out": 198.0,
         "source": {
           "file": "detection",
@@ -11545,150 +11372,75 @@
         "face_ids": [
           "B27"
         ],
-        "mode": "confidence",
-        "value": 0.8952
-      },
-      {
-        "cue_id": "B-connector_label-0033",
-        "cue": "connector_label",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 82.975,
-        "t_out": 198.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/26"
-        },
-        "face_ids": [
-          "B27"
-        ],
-        "at": [
-          0.61547,
-          0.10503
-        ],
-        "label": "0.895",
-        "label2": "confirmed"
-      },
-      {
-        "cue_id": "B-box_emerge-0035",
-        "cue": "box_emerge",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 95.288,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/8"
-        },
-        "face_ids": [
-          "B09"
-        ],
-        "grow_s": 0.9
-      },
-      {
-        "cue_id": "B-connector-0037",
-        "cue": "connector",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 95.888,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/8"
-        },
-        "face_ids": [
-          "B09"
-        ],
-        "at": [
-          0.23997,
-          0.29699
-        ],
-        "grow_s": 0.7
-      },
-      {
-        "cue_id": "B-node-0036",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 95.888,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/8"
-        },
-        "face_ids": [
-          "B09"
-        ],
-        "at": [
-          0.23997,
-          0.29699
-        ],
-        "r": 0.019,
-        "value": "0.829"
-      },
-      {
-        "cue_id": "B-box_content-0039",
-        "cue": "box_content",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 96.188,
-        "t_out": 198.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/8"
-        },
-        "face_ids": [
-          "B09"
-        ],
-        "mode": "confidence",
-        "value": 0.8289
-      },
-      {
-        "cue_id": "B-connector_label-0038",
-        "cue": "connector_label",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 96.588,
-        "t_out": 198.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/8"
-        },
-        "face_ids": [
-          "B09"
-        ],
-        "at": [
-          0.23997,
-          0.29699
-        ],
-        "label": "0.829",
-        "label2": "under floor"
-      },
-      {
-        "cue_id": "B-box_content-0040",
-        "cue": "box_content",
-        "pass": "RESOLVE",
-        "role": "obs",
-        "t_in": 171.0,
-        "t_out": 349.02,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/4"
-        },
-        "face_ids": [
-          "B05"
-        ],
-        "mode": "subdivide",
-        "cells": 3,
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector_label-0041",
+        "cue_id": "B-connector-0026",
+        "cue": "connector",
+        "pass": "DETECT",
+        "role": "obs",
+        "t_in": 149.0,
+        "t_out": 198.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/26"
+        },
+        "face_ids": [
+          "B27"
+        ],
+        "at": [
+          0.61547,
+          0.10503
+        ],
+        "grow_s": 0.6
+      },
+      {
+        "cue_id": "B-node-0025",
+        "cue": "node",
+        "pass": "DETECT",
+        "role": "obs",
+        "t_in": 149.0,
+        "t_out": 198.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/26"
+        },
+        "face_ids": [
+          "B27"
+        ],
+        "at": [
+          0.61547,
+          0.10503
+        ],
+        "r": 0.017
+      },
+      {
+        "cue_id": "B-connector_label-0027",
         "cue": "connector_label",
+        "pass": "DETECT",
+        "role": "obs",
+        "t_in": 149.6,
+        "t_out": 198.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/26"
+        },
+        "face_ids": [
+          "B27"
+        ],
+        "at": [
+          0.61547,
+          0.10503
+        ],
+        "label": "0.895"
+      },
+      {
+        "cue_id": "B-box_emerge-0032",
+        "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 171.4,
-        "t_out": 349.02,
+        "t_in": 171.0,
+        "t_out": 248.625,
         "source": {
           "file": "detection",
           "pointer": "/faces/4"
@@ -11696,20 +11448,15 @@
         "face_ids": [
           "B05"
         ],
-        "at": [
-          0.08849,
-          0.11048
-        ],
-        "label": "478/478",
-        "label2": "landmarks"
+        "grow_s": 0.8
       },
       {
-        "cue_id": "B-mesh_points-0042",
+        "cue_id": "B-mesh_points-0033",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 171.9,
-        "t_out": 900.0,
+        "t_in": 171.5,
+        "t_out": 248.625,
         "source": {
           "file": "detection",
           "pointer": "/faces/4/landmarks"
@@ -11719,12 +11466,108 @@
         ]
       },
       {
-        "cue_id": "B-box_content-0043",
-        "cue": "box_content",
+        "cue_id": "B-connector_label-0034",
+        "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 185.231,
-        "t_out": 363.251,
+        "t_in": 171.9,
+        "t_out": 248.625,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/4"
+        },
+        "face_ids": [
+          "B05"
+        ],
+        "at": [
+          0.08849,
+          0.11048
+        ],
+        "label": "478/478"
+      },
+      {
+        "cue_id": "B-box_emerge-0028",
+        "cue": "box_emerge",
+        "pass": "DETECT",
+        "role": "obs",
+        "t_in": 173.25,
+        "t_out": 198.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/8"
+        },
+        "face_ids": [
+          "B09"
+        ],
+        "grow_s": 0.8
+      },
+      {
+        "cue_id": "B-connector-0030",
+        "cue": "connector",
+        "pass": "DETECT",
+        "role": "obs",
+        "t_in": 173.75,
+        "t_out": 198.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/8"
+        },
+        "face_ids": [
+          "B09"
+        ],
+        "at": [
+          0.23997,
+          0.29699
+        ],
+        "grow_s": 0.6
+      },
+      {
+        "cue_id": "B-node-0029",
+        "cue": "node",
+        "pass": "DETECT",
+        "role": "obs",
+        "t_in": 173.75,
+        "t_out": 198.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/8"
+        },
+        "face_ids": [
+          "B09"
+        ],
+        "at": [
+          0.23997,
+          0.29699
+        ],
+        "r": 0.017
+      },
+      {
+        "cue_id": "B-connector_label-0031",
+        "cue": "connector_label",
+        "pass": "DETECT",
+        "role": "obs",
+        "t_in": 174.35,
+        "t_out": 198.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/8"
+        },
+        "face_ids": [
+          "B09"
+        ],
+        "at": [
+          0.23997,
+          0.29699
+        ],
+        "label": "0.829"
+      },
+      {
+        "cue_id": "B-box_emerge-0035",
+        "cue": "box_emerge",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 196.875,
+        "t_out": 274.5,
         "source": {
           "file": "detection",
           "pointer": "/faces/1"
@@ -11732,17 +11575,30 @@
         "face_ids": [
           "B02"
         ],
-        "mode": "subdivide",
-        "cells": 3,
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector_label-0044",
+        "cue_id": "B-mesh_contour-0036",
+        "cue": "mesh_contour",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 197.375,
+        "t_out": 274.5,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/1/landmarks"
+        },
+        "face_ids": [
+          "B02"
+        ]
+      },
+      {
+        "cue_id": "B-connector_label-0037",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 185.631,
-        "t_out": 363.251,
+        "t_in": 197.775,
+        "t_out": 274.5,
         "source": {
           "file": "detection",
           "pointer": "/faces/1"
@@ -11754,31 +11610,15 @@
           0.18431,
           0.72781
         ],
-        "label": "478/478",
-        "label2": "contour"
+        "label": "478/478"
       },
       {
-        "cue_id": "B-mesh_contour-0045",
-        "cue": "mesh_contour",
+        "cue_id": "B-box_emerge-0038",
+        "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 186.131,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/1/landmarks"
-        },
-        "face_ids": [
-          "B02"
-        ]
-      },
-      {
-        "cue_id": "B-box_content-0046",
-        "cue": "box_content",
-        "pass": "RESOLVE",
-        "role": "obs",
-        "t_in": 199.463,
-        "t_out": 377.483,
+        "t_in": 222.75,
+        "t_out": 300.375,
         "source": {
           "file": "detection",
           "pointer": "/faces/33"
@@ -11786,17 +11626,30 @@
         "face_ids": [
           "B34"
         ],
-        "mode": "subdivide",
-        "cells": 3,
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector_label-0047",
+        "cue_id": "B-mesh_points-0039",
+        "cue": "mesh_points",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 223.25,
+        "t_out": 300.375,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/33/landmarks"
+        },
+        "face_ids": [
+          "B34"
+        ]
+      },
+      {
+        "cue_id": "B-connector_label-0040",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 199.863,
-        "t_out": 377.483,
+        "t_in": 223.65,
+        "t_out": 300.375,
         "source": {
           "file": "detection",
           "pointer": "/faces/33"
@@ -11808,31 +11661,15 @@
           0.96165,
           0.12524
         ],
-        "label": "478/478",
-        "label2": "landmarks"
+        "label": "478/478"
       },
       {
-        "cue_id": "B-mesh_points-0048",
-        "cue": "mesh_points",
+        "cue_id": "B-box_emerge-0041",
+        "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 200.363,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/33/landmarks"
-        },
-        "face_ids": [
-          "B34"
-        ]
-      },
-      {
-        "cue_id": "B-box_content-0049",
-        "cue": "box_content",
-        "pass": "RESOLVE",
-        "role": "obs",
-        "t_in": 213.694,
-        "t_out": 378.0,
+        "t_in": 248.625,
+        "t_out": 326.25,
         "source": {
           "file": "detection",
           "pointer": "/faces/22"
@@ -11840,17 +11677,30 @@
         "face_ids": [
           "B23"
         ],
-        "mode": "subdivide",
-        "cells": 3,
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector_label-0050",
+        "cue_id": "B-mesh_points-0042",
+        "cue": "mesh_points",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 249.125,
+        "t_out": 326.25,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/22/landmarks"
+        },
+        "face_ids": [
+          "B23"
+        ]
+      },
+      {
+        "cue_id": "B-connector_label-0043",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 214.094,
-        "t_out": 378.0,
+        "t_in": 249.525,
+        "t_out": 326.25,
         "source": {
           "file": "detection",
           "pointer": "/faces/22"
@@ -11862,31 +11712,15 @@
           0.91323,
           0.57327
         ],
-        "label": "478/478",
-        "label2": "landmarks"
+        "label": "478/478"
       },
       {
-        "cue_id": "B-mesh_points-0051",
-        "cue": "mesh_points",
+        "cue_id": "B-box_emerge-0044",
+        "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 214.594,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/22/landmarks"
-        },
-        "face_ids": [
-          "B23"
-        ]
-      },
-      {
-        "cue_id": "B-box_content-0052",
-        "cue": "box_content",
-        "pass": "RESOLVE",
-        "role": "obs",
-        "t_in": 227.925,
-        "t_out": 378.0,
+        "t_in": 274.5,
+        "t_out": 352.125,
         "source": {
           "file": "detection",
           "pointer": "/faces/17"
@@ -11894,17 +11728,30 @@
         "face_ids": [
           "B18"
         ],
-        "mode": "subdivide",
-        "cells": 3,
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector_label-0053",
+        "cue_id": "B-mesh_contour-0045",
+        "cue": "mesh_contour",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 275.0,
+        "t_out": 352.125,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/17/landmarks"
+        },
+        "face_ids": [
+          "B18"
+        ]
+      },
+      {
+        "cue_id": "B-connector_label-0046",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 228.325,
-        "t_out": 378.0,
+        "t_in": 275.4,
+        "t_out": 352.125,
         "source": {
           "file": "detection",
           "pointer": "/faces/17"
@@ -11916,30 +11763,14 @@
           0.92815,
           0.83545
         ],
-        "label": "478/478",
-        "label2": "contour"
+        "label": "478/478"
       },
       {
-        "cue_id": "B-mesh_contour-0054",
-        "cue": "mesh_contour",
+        "cue_id": "B-box_emerge-0047",
+        "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 228.825,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/17/landmarks"
-        },
-        "face_ids": [
-          "B18"
-        ]
-      },
-      {
-        "cue_id": "B-box_content-0055",
-        "cue": "box_content",
-        "pass": "RESOLVE",
-        "role": "obs",
-        "t_in": 242.156,
+        "t_in": 300.375,
         "t_out": 378.0,
         "source": {
           "file": "detection",
@@ -11948,16 +11779,29 @@
         "face_ids": [
           "B16"
         ],
-        "mode": "subdivide",
-        "cells": 3,
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector_label-0056",
+        "cue_id": "B-mesh_points-0048",
+        "cue": "mesh_points",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 300.875,
+        "t_out": 378.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/15/landmarks"
+        },
+        "face_ids": [
+          "B16"
+        ]
+      },
+      {
+        "cue_id": "B-connector_label-0049",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 242.556,
+        "t_in": 301.275,
         "t_out": 378.0,
         "source": {
           "file": "detection",
@@ -11970,30 +11814,14 @@
           0.38198,
           0.53767
         ],
-        "label": "478/478",
-        "label2": "landmarks"
+        "label": "478/478"
       },
       {
-        "cue_id": "B-mesh_points-0057",
-        "cue": "mesh_points",
+        "cue_id": "B-box_emerge-0050",
+        "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 243.056,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/15/landmarks"
-        },
-        "face_ids": [
-          "B16"
-        ]
-      },
-      {
-        "cue_id": "B-box_content-0058",
-        "cue": "box_content",
-        "pass": "RESOLVE",
-        "role": "obs",
-        "t_in": 256.387,
+        "t_in": 326.25,
         "t_out": 378.0,
         "source": {
           "file": "detection",
@@ -12002,16 +11830,29 @@
         "face_ids": [
           "B27"
         ],
-        "mode": "subdivide",
-        "cells": 3,
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector_label-0059",
+        "cue_id": "B-mesh_contour-0051",
+        "cue": "mesh_contour",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 326.75,
+        "t_out": 378.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/26/landmarks"
+        },
+        "face_ids": [
+          "B27"
+        ]
+      },
+      {
+        "cue_id": "B-connector_label-0052",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 256.787,
+        "t_in": 327.15,
         "t_out": 378.0,
         "source": {
           "file": "detection",
@@ -12024,161 +11865,50 @@
           0.61547,
           0.10503
         ],
-        "label": "478/478",
-        "label2": "contour"
+        "label": "478/478"
       },
       {
-        "cue_id": "B-mesh_contour-0060",
-        "cue": "mesh_contour",
-        "pass": "RESOLVE",
-        "role": "obs",
-        "t_in": 257.287,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/26/landmarks"
-        },
-        "face_ids": [
-          "B27"
-        ]
-      },
-      {
-        "cue_id": "B-box_content-0061",
-        "cue": "box_content",
-        "pass": "RESOLVE",
-        "role": "obs",
-        "t_in": 270.619,
-        "t_out": 378.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/8"
-        },
-        "face_ids": [
-          "B09"
-        ],
-        "mode": "subdivide",
-        "cells": 3,
-        "grow_s": 0.8
-      },
-      {
-        "cue_id": "B-connector_label-0062",
-        "cue": "connector_label",
-        "pass": "RESOLVE",
-        "role": "obs",
-        "t_in": 271.019,
-        "t_out": 378.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/8"
-        },
-        "face_ids": [
-          "B09"
-        ],
-        "at": [
-          0.23997,
-          0.29699
-        ],
-        "label": "478/478",
-        "label2": "landmarks"
-      },
-      {
-        "cue_id": "B-mesh_points-0063",
-        "cue": "mesh_points",
-        "pass": "RESOLVE",
-        "role": "obs",
-        "t_in": 271.519,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/8/landmarks"
-        },
-        "face_ids": [
-          "B09"
-        ]
-      },
-      {
-        "cue_id": "B-box_content-0071",
-        "cue": "box_content",
+        "cue_id": "B-box_emerge-0056",
+        "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
         "t_in": 351.0,
-        "t_out": 516.6,
+        "t_out": 428.625,
         "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/1/blendshapes_top8"
+          "file": "detection",
+          "pointer": "/faces/4"
         },
         "face_ids": [
           "B05"
         ],
-        "mode": "bars",
-        "bars": [
-          [
-            "eyeLookDownLeft",
-            53.66
-          ],
-          [
-            "eyeLookDownRight",
-            49.32
-          ],
-          [
-            "eyeSquintLeft",
-            38.38
-          ],
-          [
-            "eyeSquintRight",
-            21.57
-          ]
-        ],
-        "grow_s": 1.1
+        "grow_s": 0.8
       },
       {
-        "cue_id": "B-claim_word-0190",
+        "cue_id": "B-claim_word-0092",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
         "t_in": 351.0,
-        "t_out": 421.38,
+        "t_out": 413.1,
         "source": {
           "file": "claims",
-          "pointer": "/0/answer_claims/2"
+          "pointer": "/0/answer_claims/4"
         },
-        "face_ids": [
-          "B02"
-        ],
-        "at": null,
-        "label": "flame",
-        "evidence": "seen",
-        "unsupportable": true,
-        "alarm": true
-      },
-      {
-        "cue_id": "B-connector_label-0064",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 351.0,
-        "t_out": 516.6,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/1/geometry"
-        },
-        "face_ids": [
-          "B05"
-        ],
         "at": [
-          0.08849,
-          0.11048
+          0.316,
+          0.138
         ],
-        "row": 0,
-        "label": "iod 313"
+        "label": "cropped",
+        "unsupportable": false,
+        "alarm": false
       },
       {
-        "cue_id": "B-node_pulse-0072",
-        "cue": "node_pulse",
+        "cue_id": "B-connector-0058",
+        "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 351.0,
-        "t_out": 516.6,
+        "t_in": 351.4,
+        "t_out": 428.625,
         "source": {
           "file": "detection",
           "pointer": "/faces/4"
@@ -12190,239 +11920,35 @@
           0.08849,
           0.11048
         ],
-        "r": 0.019,
-        "rows": 7
+        "grow_s": 0.6
       },
       {
-        "cue_id": "B-claim_word-0191",
-        "cue": "claim_word",
+        "cue_id": "B-node-0057",
+        "cue": "node",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 354.04,
-        "t_out": 424.42,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/4"
-        },
-        "face_ids": [],
-        "at": [
-          0.665,
-          0.112
-        ],
-        "label": "cropped",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-claim_word-0192",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 357.081,
-        "t_out": 427.461,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/10"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": null,
-        "label": "blurred",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-claim_word-0193",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 360.121,
-        "t_out": 430.501,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/11"
-        },
-        "face_ids": [],
-        "at": [
-          0.726,
-          0.457
-        ],
-        "label": "flame",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-claim_word-0194",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 363.161,
-        "t_out": 433.541,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/13"
-        },
-        "face_ids": [],
-        "at": [
-          0.415,
-          0.141
-        ],
-        "label": "candle",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-box_content-0080",
-        "cue": "box_content",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 365.231,
-        "t_out": 530.831,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/0/blendshapes_top8"
-        },
-        "face_ids": [
-          "B02"
-        ],
-        "mode": "bars",
-        "bars": [
-          [
-            "eyeLookInLeft",
-            70.04
-          ],
-          [
-            "eyeLookOutRight",
-            67.14
-          ],
-          [
-            "eyeSquintLeft",
-            49.75
-          ],
-          [
-            "browOuterUpLeft",
-            22.37
-          ]
-        ],
-        "grow_s": 1.1
-      },
-      {
-        "cue_id": "B-connector_label-0073",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 365.231,
-        "t_out": 530.831,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/0/geometry"
-        },
-        "face_ids": [
-          "B02"
-        ],
-        "at": [
-          0.18431,
-          0.72781
-        ],
-        "row": 0,
-        "label": "iod 376"
-      },
-      {
-        "cue_id": "B-node_pulse-0081",
-        "cue": "node_pulse",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 365.231,
-        "t_out": 530.831,
+        "t_in": 351.4,
+        "t_out": 428.625,
         "source": {
           "file": "detection",
-          "pointer": "/faces/1"
+          "pointer": "/faces/4"
         },
         "face_ids": [
-          "B02"
+          "B05"
         ],
         "at": [
-          0.18431,
-          0.72781
+          0.08849,
+          0.11048
         ],
-        "r": 0.019,
-        "rows": 7
+        "r": 0.017
       },
       {
-        "cue_id": "B-claim_word-0195",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 366.202,
-        "t_out": 436.582,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/25"
-        },
-        "face_ids": [],
-        "at": [
-          0.804,
-          0.395
-        ],
-        "label": "cropped",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-claim_word-0196",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 369.242,
-        "t_out": 439.622,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/27"
-        },
-        "face_ids": [],
-        "at": [
-          0.613,
-          0.809
-        ],
-        "label": "candle",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-claim_word-0197",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 372.282,
-        "t_out": 442.662,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/28"
-        },
-        "face_ids": [],
-        "at": [
-          0.178,
-          0.235
-        ],
-        "label": "shadowed",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0065",
+        "cue_id": "B-connector_label-0059",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 374.657,
-        "t_out": 516.6,
+        "t_in": 352.0,
+        "t_out": 428.625,
         "source": {
           "file": "face_analysis",
           "pointer": "/panels/B/1/head_pose"
@@ -12434,195 +11960,159 @@
           0.08849,
           0.11048
         ],
-        "row": 1,
-        "label": "yaw +10  roll -13"
+        "label": "yaw +10"
       },
       {
-        "cue_id": "B-claim_word-0198",
+        "cue_id": "B-box_emerge-0053",
+        "cue": "box_emerge",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 352.125,
+        "t_out": 378.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/8"
+        },
+        "face_ids": [
+          "B09"
+        ],
+        "grow_s": 0.8
+      },
+      {
+        "cue_id": "B-claim_word-0060",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 375.322,
-        "t_out": 445.702,
+        "t_in": 352.4,
+        "t_out": 428.625,
         "source": {
           "file": "claims",
-          "pointer": "/0/answer_claims/29"
+          "pointer": "/0"
         },
         "face_ids": [
           "B05"
         ],
-        "at": null,
         "label": "candle",
-        "evidence": "seen",
         "unsupportable": false,
         "alarm": false
       },
       {
-        "cue_id": "B-claim_word-0199",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 378.363,
-        "t_out": 448.743,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/33"
-        },
-        "face_ids": [],
-        "at": [
-          0.739,
-          0.604
-        ],
-        "label": "candle",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-box_content-0089",
-        "cue": "box_content",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 379.462,
-        "t_out": 545.062,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/7/blendshapes_top8"
-        },
-        "face_ids": [
-          "B34"
-        ],
-        "mode": "bars",
-        "bars": [
-          [
-            "eyeSquintLeft",
-            48.45
-          ],
-          [
-            "eyeLookInRight",
-            48.35
-          ],
-          [
-            "eyeLookOutLeft",
-            46.75
-          ],
-          [
-            "eyeSquintRight",
-            42.13
-          ]
-        ],
-        "grow_s": 1.1
-      },
-      {
-        "cue_id": "B-connector_label-0082",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 379.462,
-        "t_out": 545.062,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/7/geometry"
-        },
-        "face_ids": [
-          "B34"
-        ],
-        "at": [
-          0.96165,
-          0.12524
-        ],
-        "row": 0,
-        "label": "iod 395"
-      },
-      {
-        "cue_id": "B-node_pulse-0090",
-        "cue": "node_pulse",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 379.462,
-        "t_out": 545.062,
+        "cue_id": "B-mesh_points-0054",
+        "cue": "mesh_points",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 352.625,
+        "t_out": 378.0,
         "source": {
           "file": "detection",
-          "pointer": "/faces/33"
+          "pointer": "/faces/8/landmarks"
         },
         "face_ids": [
-          "B34"
+          "B09"
+        ]
+      },
+      {
+        "cue_id": "B-connector_label-0055",
+        "cue": "connector_label",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 353.025,
+        "t_out": 378.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/8"
+        },
+        "face_ids": [
+          "B09"
         ],
         "at": [
-          0.96165,
-          0.12524
+          0.23997,
+          0.29699
         ],
-        "r": 0.019,
-        "rows": 7
+        "label": "478/478"
       },
       {
-        "cue_id": "B-claim_word-0200",
+        "cue_id": "B-claim_word-0093",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 381.403,
-        "t_out": 451.783,
+        "t_in": 371.7,
+        "t_out": 433.8,
         "source": {
           "file": "claims",
-          "pointer": "/0/answer_claims/34"
+          "pointer": "/0/answer_claims/11"
         },
-        "face_ids": [],
         "at": [
-          0.192,
-          0.375
+          0.253,
+          0.161
         ],
-        "label": "glasses",
-        "evidence": "seen",
+        "label": "flame",
         "unsupportable": false,
         "alarm": false
       },
       {
-        "cue_id": "B-claim_word-0201",
-        "cue": "claim_word",
+        "cue_id": "B-box_emerge-0061",
+        "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 384.443,
-        "t_out": 454.823,
+        "t_in": 376.875,
+        "t_out": 454.5,
         "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/35"
+          "file": "detection",
+          "pointer": "/faces/1"
         },
         "face_ids": [
-          "B18"
+          "B02"
         ],
-        "at": null,
-        "label": "candle",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
+        "grow_s": 0.8
       },
       {
-        "cue_id": "B-claim_word-0202",
-        "cue": "claim_word",
+        "cue_id": "B-connector-0063",
+        "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 387.484,
-        "t_out": 457.864,
+        "t_in": 377.275,
+        "t_out": 454.5,
         "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/36"
+          "file": "detection",
+          "pointer": "/faces/1"
         },
         "face_ids": [
-          "B18"
+          "B02"
         ],
-        "at": null,
-        "label": "candle",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
+        "at": [
+          0.18431,
+          0.72781
+        ],
+        "grow_s": 0.6
       },
       {
-        "cue_id": "B-connector_label-0074",
+        "cue_id": "B-node-0062",
+        "cue": "node",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 377.275,
+        "t_out": 454.5,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/1"
+        },
+        "face_ids": [
+          "B02"
+        ],
+        "at": [
+          0.18431,
+          0.72781
+        ],
+        "r": 0.017
+      },
+      {
+        "cue_id": "B-connector_label-0064",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 388.888,
-        "t_out": 530.831,
+        "t_in": 377.875,
+        "t_out": 454.5,
         "source": {
           "file": "face_analysis",
           "pointer": "/panels/B/0/head_pose"
@@ -12634,217 +12124,108 @@
           0.18431,
           0.72781
         ],
-        "row": 1,
-        "label": "yaw +18  roll -18"
+        "label": "yaw +18"
       },
       {
-        "cue_id": "B-claim_word-0203",
+        "cue_id": "B-claim_word-0065",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 390.524,
-        "t_out": 460.904,
+        "t_in": 378.275,
+        "t_out": 454.5,
         "source": {
           "file": "claims",
-          "pointer": "/0/answer_claims/37"
+          "pointer": "/0"
+        },
+        "face_ids": [
+          "B02"
+        ],
+        "label": "flame",
+        "unsupportable": true,
+        "alarm": true
+      },
+      {
+        "cue_id": "B-claim_word-0094",
+        "cue": "claim_word",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 392.4,
+        "t_out": 454.5,
+        "source": {
+          "file": "claims",
+          "pointer": "/0/answer_claims/13"
+        },
+        "at": [
+          0.458,
+          0.846
+        ],
+        "label": "candle",
+        "unsupportable": false,
+        "alarm": false
+      },
+      {
+        "cue_id": "B-box_emerge-0066",
+        "cue": "box_emerge",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 402.75,
+        "t_out": 480.375,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/33"
         },
         "face_ids": [
           "B34"
         ],
-        "at": null,
-        "label": "glasses",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
+        "grow_s": 0.8
       },
       {
-        "cue_id": "B-claim_word-0204",
-        "cue": "claim_word",
+        "cue_id": "B-connector-0068",
+        "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 393.564,
-        "t_out": 463.944,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/38"
-        },
-        "face_ids": [],
-        "at": [
-          0.713,
-          0.751
-        ],
-        "label": "cropped",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-box_content-0098",
-        "cue": "box_content",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 393.694,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/5/blendshapes_top8"
-        },
-        "face_ids": [
-          "B23"
-        ],
-        "mode": "bars",
-        "bars": [
-          [
-            "browInnerUp",
-            73.74
-          ],
-          [
-            "mouthLowerDownRight",
-            71.97
-          ],
-          [
-            "mouthUpperUpRight",
-            57.73
-          ],
-          [
-            "mouthLowerDownLeft",
-            53.81
-          ]
-        ],
-        "grow_s": 1.1
-      },
-      {
-        "cue_id": "B-connector_label-0091",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 393.694,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/5/geometry"
-        },
-        "face_ids": [
-          "B23"
-        ],
-        "at": [
-          0.91323,
-          0.57327
-        ],
-        "row": 0,
-        "label": "iod 244"
-      },
-      {
-        "cue_id": "B-node_pulse-0099",
-        "cue": "node_pulse",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 393.694,
-        "t_out": 558.0,
+        "t_in": 403.15,
+        "t_out": 480.375,
         "source": {
           "file": "detection",
-          "pointer": "/faces/22"
+          "pointer": "/faces/33"
         },
         "face_ids": [
-          "B23"
+          "B34"
         ],
         "at": [
-          0.91323,
-          0.57327
+          0.96165,
+          0.12524
         ],
-        "r": 0.019,
-        "rows": 7
+        "grow_s": 0.6
       },
       {
-        "cue_id": "B-claim_word-0205",
-        "cue": "claim_word",
+        "cue_id": "B-node-0067",
+        "cue": "node",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 396.605,
-        "t_out": 466.985,
+        "t_in": 403.15,
+        "t_out": 480.375,
         "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/39"
+          "file": "detection",
+          "pointer": "/faces/33"
         },
-        "face_ids": [],
-        "at": [
-          0.55,
-          0.769
+        "face_ids": [
+          "B34"
         ],
-        "label": "crowded",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
+        "at": [
+          0.96165,
+          0.12524
+        ],
+        "r": 0.017
       },
       {
-        "cue_id": "B-connector_label-0066",
+        "cue_id": "B-connector_label-0069",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 398.314,
-        "t_out": 516.6,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/1/symmetry"
-        },
-        "face_ids": [
-          "B05"
-        ],
-        "at": [
-          0.08849,
-          0.11048
-        ],
-        "row": 2,
-        "label": "sym 0.0435"
-      },
-      {
-        "cue_id": "B-claim_word-0206",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 399.645,
-        "t_out": 470.025,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/42"
-        },
-        "face_ids": [],
-        "at": [
-          0.367,
-          0.816
-        ],
-        "label": "candle",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-claim_word-0207",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 402.685,
-        "t_out": 473.065,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/43"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": null,
-        "label": "cropped",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0083",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 403.12,
-        "t_out": 545.062,
+        "t_in": 403.75,
+        "t_out": 480.375,
         "source": {
           "file": "face_analysis",
           "pointer": "/panels/B/7/head_pose"
@@ -12856,197 +12237,108 @@
           0.96165,
           0.12524
         ],
-        "row": 1,
-        "label": "yaw -13  roll +20"
+        "label": "yaw -13"
       },
       {
-        "cue_id": "B-claim_word-0208",
+        "cue_id": "B-claim_word-0070",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 405.726,
-        "t_out": 476.106,
+        "t_in": 404.15,
+        "t_out": 480.375,
         "source": {
           "file": "claims",
-          "pointer": "/0/answer_claims/46"
+          "pointer": "/0"
         },
-        "face_ids": [],
-        "at": [
-          0.284,
-          0.277
+        "face_ids": [
+          "B34"
         ],
-        "label": "candle",
-        "evidence": "seen",
+        "label": "glasses",
         "unsupportable": false,
         "alarm": false
       },
       {
-        "cue_id": "B-box_content-0107",
-        "cue": "box_content",
+        "cue_id": "B-claim_word-0095",
+        "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 407.925,
-        "t_out": 558.0,
+        "t_in": 413.1,
+        "t_out": 475.2,
         "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/4/blendshapes_top8"
+          "file": "claims",
+          "pointer": "/0/answer_claims/25"
         },
-        "face_ids": [
-          "B18"
-        ],
-        "mode": "bars",
-        "bars": [
-          [
-            "eyeSquintLeft",
-            68.22
-          ],
-          [
-            "browInnerUp",
-            63.37
-          ],
-          [
-            "eyeLookInRight",
-            55.43
-          ],
-          [
-            "eyeLookOutLeft",
-            53.4
-          ]
-        ],
-        "grow_s": 1.1
-      },
-      {
-        "cue_id": "B-connector_label-0100",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 407.925,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/4/geometry"
-        },
-        "face_ids": [
-          "B18"
-        ],
         "at": [
-          0.92815,
-          0.83545
+          0.271,
+          0.506
         ],
-        "row": 0,
-        "label": "iod 340"
+        "label": "cropped",
+        "unsupportable": false,
+        "alarm": false
       },
       {
-        "cue_id": "B-node_pulse-0108",
-        "cue": "node_pulse",
+        "cue_id": "B-box_emerge-0071",
+        "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 407.925,
-        "t_out": 558.0,
+        "t_in": 428.625,
+        "t_out": 506.25,
         "source": {
           "file": "detection",
-          "pointer": "/faces/17"
+          "pointer": "/faces/22"
         },
         "face_ids": [
-          "B18"
+          "B23"
         ],
-        "at": [
-          0.92815,
-          0.83545
-        ],
-        "r": 0.019,
-        "rows": 7
+        "grow_s": 0.8
       },
       {
-        "cue_id": "B-claim_word-0209",
-        "cue": "claim_word",
+        "cue_id": "B-connector-0073",
+        "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 408.766,
-        "t_out": 479.146,
+        "t_in": 429.025,
+        "t_out": 506.25,
         "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/53"
+          "file": "detection",
+          "pointer": "/faces/22"
         },
         "face_ids": [
-          "B02"
+          "B23"
         ],
-        "at": null,
-        "label": "shadowed",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
+        "at": [
+          0.91323,
+          0.57327
+        ],
+        "grow_s": 0.6
       },
       {
-        "cue_id": "B-claim_word-0210",
-        "cue": "claim_word",
+        "cue_id": "B-node-0072",
+        "cue": "node",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 411.806,
-        "t_out": 482.186,
+        "t_in": 429.025,
+        "t_out": 506.25,
         "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/54"
+          "file": "detection",
+          "pointer": "/faces/22"
         },
-        "face_ids": [],
-        "at": [
-          0.357,
-          0.719
+        "face_ids": [
+          "B23"
         ],
-        "label": "candle",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
+        "at": [
+          0.91323,
+          0.57327
+        ],
+        "r": 0.017
       },
       {
-        "cue_id": "B-connector_label-0075",
+        "cue_id": "B-connector_label-0074",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 412.546,
-        "t_out": 530.831,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/0/symmetry"
-        },
-        "face_ids": [
-          "B02"
-        ],
-        "at": [
-          0.18431,
-          0.72781
-        ],
-        "row": 2,
-        "label": "sym 0.0500"
-      },
-      {
-        "cue_id": "B-claim_word-0211",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 414.847,
-        "t_out": 485.227,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/61"
-        },
-        "face_ids": [],
-        "at": [
-          0.402,
-          0.656
-        ],
-        "label": "hidden",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0092",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 417.166,
-        "t_out": 558.0,
+        "t_in": 429.625,
+        "t_out": 506.25,
         "source": {
           "file": "face_analysis",
           "pointer": "/panels/B/5/head_pose"
@@ -13058,134 +12350,181 @@
           0.91323,
           0.57327
         ],
-        "row": 1,
-        "label": "yaw -2  roll +10"
+        "label": "yaw -2"
       },
       {
-        "cue_id": "B-claim_word-0212",
+        "cue_id": "B-claim_word-0096",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 417.887,
-        "t_out": 488.267,
+        "t_in": 433.8,
+        "t_out": 495.9,
         "source": {
           "file": "claims",
-          "pointer": "/0/answer_claims/67"
+          "pointer": "/0/answer_claims/27"
         },
-        "face_ids": [],
         "at": [
-          0.291,
-          0.881
+          0.7,
+          0.69
         ],
         "label": "candle",
-        "evidence": "seen",
         "unsupportable": false,
         "alarm": false
       },
       {
-        "cue_id": "B-claim_word-0213",
+        "cue_id": "B-box_emerge-0075",
+        "cue": "box_emerge",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 454.5,
+        "t_out": 532.125,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/17"
+        },
+        "face_ids": [
+          "B18"
+        ],
+        "grow_s": 0.8
+      },
+      {
+        "cue_id": "B-claim_word-0097",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 420.927,
-        "t_out": 491.307,
+        "t_in": 454.5,
+        "t_out": 516.6,
         "source": {
           "file": "claims",
-          "pointer": "/0/answer_claims/70"
+          "pointer": "/0/answer_claims/28"
         },
-        "face_ids": [],
         "at": [
-          0.848,
-          0.126
+          0.461,
+          0.516
         ],
-        "label": "obscured",
-        "evidence": "seen",
+        "label": "shadowed",
         "unsupportable": false,
         "alarm": false
       },
       {
-        "cue_id": "B-connector_label-0067",
+        "cue_id": "B-connector-0077",
+        "cue": "connector",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 454.9,
+        "t_out": 532.125,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/17"
+        },
+        "face_ids": [
+          "B18"
+        ],
+        "at": [
+          0.92815,
+          0.83545
+        ],
+        "grow_s": 0.6
+      },
+      {
+        "cue_id": "B-node-0076",
+        "cue": "node",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 454.9,
+        "t_out": 532.125,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/17"
+        },
+        "face_ids": [
+          "B18"
+        ],
+        "at": [
+          0.92815,
+          0.83545
+        ],
+        "r": 0.017
+      },
+      {
+        "cue_id": "B-connector_label-0078",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 421.971,
-        "t_out": 516.6,
+        "t_in": 455.5,
+        "t_out": 532.125,
         "source": {
           "file": "face_analysis",
-          "pointer": "/panels/B/1/blendshapes_top8"
+          "pointer": "/panels/B/4/head_pose"
         },
         "face_ids": [
-          "B05"
+          "B18"
         ],
         "at": [
-          0.08849,
-          0.11048
+          0.92815,
+          0.83545
         ],
-        "row": 3,
-        "label": "eyeLookDownLef 54%"
+        "label": "yaw -10"
       },
       {
-        "cue_id": "B-box_content-0116",
-        "cue": "box_content",
+        "cue_id": "B-claim_word-0079",
+        "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 422.156,
+        "t_in": 455.9,
+        "t_out": 532.125,
+        "source": {
+          "file": "claims",
+          "pointer": "/0"
+        },
+        "face_ids": [
+          "B18"
+        ],
+        "label": "blurred",
+        "unsupportable": false,
+        "alarm": false
+      },
+      {
+        "cue_id": "B-claim_word-0098",
+        "cue": "claim_word",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 475.2,
+        "t_out": 537.3,
+        "source": {
+          "file": "claims",
+          "pointer": "/0/answer_claims/33"
+        },
+        "at": [
+          0.322,
+          0.329
+        ],
+        "label": "candle",
+        "unsupportable": false,
+        "alarm": false
+      },
+      {
+        "cue_id": "B-box_emerge-0080",
+        "cue": "box_emerge",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 480.375,
         "t_out": 558.0,
         "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/3/blendshapes_top8"
+          "file": "detection",
+          "pointer": "/faces/15"
         },
         "face_ids": [
           "B16"
         ],
-        "mode": "bars",
-        "bars": [
-          [
-            "eyeSquintLeft",
-            65.16
-          ],
-          [
-            "eyeSquintRight",
-            42.85
-          ],
-          [
-            "mouthPressLeft",
-            16.72
-          ],
-          [
-            "mouthPressRight",
-            14.07
-          ]
-        ],
-        "grow_s": 1.1
+        "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector_label-0109",
-        "cue": "connector_label",
+        "cue_id": "B-connector-0082",
+        "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 422.156,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/3/geometry"
-        },
-        "face_ids": [
-          "B16"
-        ],
-        "at": [
-          0.38198,
-          0.53767
-        ],
-        "row": 0,
-        "label": "iod 264"
-      },
-      {
-        "cue_id": "B-node_pulse-0117",
-        "cue": "node_pulse",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 422.156,
+        "t_in": 480.775,
         "t_out": 558.0,
         "source": {
           "file": "detection",
@@ -13198,302 +12537,34 @@
           0.38198,
           0.53767
         ],
-        "r": 0.019,
-        "rows": 7
+        "grow_s": 0.6
       },
       {
-        "cue_id": "B-claim_word-0214",
-        "cue": "claim_word",
+        "cue_id": "B-node-0081",
+        "cue": "node",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 423.967,
-        "t_out": 494.347,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/72"
-        },
-        "face_ids": [],
-        "at": [
-          0.385,
-          0.49
-        ],
-        "label": "obscured",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0084",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 426.777,
-        "t_out": 545.062,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/7/symmetry"
-        },
-        "face_ids": [
-          "B34"
-        ],
-        "at": [
-          0.96165,
-          0.12524
-        ],
-        "row": 2,
-        "label": "sym 0.0349"
-      },
-      {
-        "cue_id": "B-claim_word-0215",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 427.008,
-        "t_out": 497.388,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/76"
-        },
-        "face_ids": [],
-        "at": [
-          0.886,
-          0.618
-        ],
-        "label": "candle",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0101",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 429.364,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/4/head_pose"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": [
-          0.92815,
-          0.83545
-        ],
-        "row": 1,
-        "label": "yaw -10  roll +23"
-      },
-      {
-        "cue_id": "B-claim_word-0216",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 430.048,
-        "t_out": 500.428,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/78"
-        },
-        "face_ids": [],
-        "at": [
-          0.367,
-          0.117
-        ],
-        "label": "glasses",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-claim_word-0217",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 433.088,
-        "t_out": 503.468,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/79"
-        },
-        "face_ids": [],
-        "at": [
-          0.26,
-          0.862
-        ],
-        "label": "shadowed",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-claim_word-0218",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 436.129,
-        "t_out": 506.509,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/80"
-        },
-        "face_ids": [],
-        "at": [
-          0.421,
-          0.653
-        ],
-        "label": "unclear",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0076",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 436.203,
-        "t_out": 530.831,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/0/blendshapes_top8"
-        },
-        "face_ids": [
-          "B02"
-        ],
-        "at": [
-          0.18431,
-          0.72781
-        ],
-        "row": 3,
-        "label": "eyeLookInLeft 70%"
-      },
-      {
-        "cue_id": "B-box_content-0125",
-        "cue": "box_content",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 436.387,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/6/blendshapes_top8"
-        },
-        "face_ids": [
-          "B27"
-        ],
-        "mode": "bars",
-        "bars": [
-          [
-            "eyeSquintLeft",
-            46.27
-          ],
-          [
-            "eyeSquintRight",
-            31.42
-          ],
-          [
-            "eyeLookOutLeft",
-            30.62
-          ],
-          [
-            "eyeLookInRight",
-            29.47
-          ]
-        ],
-        "grow_s": 1.1
-      },
-      {
-        "cue_id": "B-connector_label-0118",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 436.387,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/6/geometry"
-        },
-        "face_ids": [
-          "B27"
-        ],
-        "at": [
-          0.61547,
-          0.10503
-        ],
-        "row": 0,
-        "label": "iod 322"
-      },
-      {
-        "cue_id": "B-node_pulse-0126",
-        "cue": "node_pulse",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 436.387,
+        "t_in": 480.775,
         "t_out": 558.0,
         "source": {
           "file": "detection",
-          "pointer": "/faces/26"
+          "pointer": "/faces/15"
         },
         "face_ids": [
-          "B27"
+          "B16"
         ],
         "at": [
-          0.61547,
-          0.10503
+          0.38198,
+          0.53767
         ],
-        "r": 0.019,
-        "rows": 7
+        "r": 0.017
       },
       {
-        "cue_id": "B-claim_word-0219",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 439.169,
-        "t_out": 509.549,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/82"
-        },
-        "face_ids": [],
-        "at": [
-          0.402,
-          0.371
-        ],
-        "label": "hidden",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0093",
+        "cue_id": "B-connector_label-0083",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 440.638,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/5/symmetry"
-        },
-        "face_ids": [
-          "B23"
-        ],
-        "at": [
-          0.91323,
-          0.57327
-        ],
-        "row": 2,
-        "label": "sym 0.0349"
-      },
-      {
-        "cue_id": "B-connector_label-0110",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 441.562,
+        "t_in": 481.375,
         "t_out": 558.0,
         "source": {
           "file": "face_analysis",
@@ -13506,238 +12577,89 @@
           0.38198,
           0.53767
         ],
-        "row": 1,
-        "label": "yaw +6  roll -10"
+        "label": "yaw +6"
       },
       {
-        "cue_id": "B-claim_word-0220",
+        "cue_id": "B-claim_word-0099",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 442.209,
-        "t_out": 512.589,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/85"
-        },
-        "face_ids": [],
-        "at": [
-          0.595,
-          0.26
-        ],
-        "label": "candle",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-claim_word-0221",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 445.25,
-        "t_out": 515.63,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/87"
-        },
-        "face_ids": [],
-        "at": [
-          0.224,
-          0.655
-        ],
-        "label": "teeth",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0068",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 445.629,
-        "t_out": 516.6,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/1/blendshapes_top8"
-        },
-        "face_ids": [
-          "B05"
-        ],
-        "at": [
-          0.08849,
-          0.11048
-        ],
-        "row": 4,
-        "label": "eyeLookDownRig 49%"
-      },
-      {
-        "cue_id": "B-claim_word-0222",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 448.29,
-        "t_out": 518.67,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/88"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": null,
-        "label": "hidden",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0085",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 450.434,
-        "t_out": 545.062,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/7/blendshapes_top8"
-        },
-        "face_ids": [
-          "B34"
-        ],
-        "at": [
-          0.96165,
-          0.12524
-        ],
-        "row": 3,
-        "label": "eyeSquintLeft 48%"
-      },
-      {
-        "cue_id": "B-box_content-0134",
-        "cue": "box_content",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 450.619,
+        "t_in": 495.9,
         "t_out": 558.0,
         "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/2/blendshapes_top8"
+          "file": "claims",
+          "pointer": "/0/answer_claims/34"
         },
-        "face_ids": [
-          "B09"
-        ],
-        "mode": "bars",
-        "bars": [
-          [
-            "mouthPressRight",
-            41.33
-          ],
-          [
-            "mouthShrugLower",
-            36.3
-          ],
-          [
-            "eyeLookDownLeft",
-            31.12
-          ],
-          [
-            "eyeLookDownRight",
-            29.17
-          ]
-        ],
-        "grow_s": 1.1
-      },
-      {
-        "cue_id": "B-connector_label-0127",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 450.619,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/2/geometry"
-        },
-        "face_ids": [
-          "B09"
-        ],
         "at": [
-          0.23997,
-          0.29699
+          0.547,
+          0.669
         ],
-        "row": 0,
-        "label": "iod 201"
+        "label": "glasses",
+        "unsupportable": false,
+        "alarm": false
       },
       {
-        "cue_id": "B-node_pulse-0135",
-        "cue": "node_pulse",
+        "cue_id": "B-box_emerge-0084",
+        "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 450.619,
+        "t_in": 506.25,
         "t_out": 558.0,
         "source": {
           "file": "detection",
-          "pointer": "/faces/8"
+          "pointer": "/faces/26"
         },
         "face_ids": [
-          "B09"
+          "B27"
         ],
-        "at": [
-          0.23997,
-          0.29699
-        ],
-        "r": 0.019,
-        "rows": 7
+        "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector_label-0102",
-        "cue": "connector_label",
+        "cue_id": "B-connector-0086",
+        "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 450.804,
+        "t_in": 506.65,
         "t_out": 558.0,
         "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/4/symmetry"
+          "file": "detection",
+          "pointer": "/faces/26"
         },
         "face_ids": [
-          "B18"
+          "B27"
         ],
         "at": [
-          0.92815,
-          0.83545
+          0.61547,
+          0.10503
         ],
-        "row": 2,
-        "label": "sym 0.0437"
+        "grow_s": 0.6
       },
       {
-        "cue_id": "B-claim_word-0223",
-        "cue": "claim_word",
+        "cue_id": "B-node-0085",
+        "cue": "node",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 451.33,
-        "t_out": 521.71,
+        "t_in": 506.65,
+        "t_out": 558.0,
         "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/90"
+          "file": "detection",
+          "pointer": "/faces/26"
         },
-        "face_ids": [],
-        "at": [
-          0.273,
-          0.697
+        "face_ids": [
+          "B27"
         ],
-        "label": "glasses",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
+        "at": [
+          0.61547,
+          0.10503
+        ],
+        "r": 0.017
       },
       {
-        "cue_id": "B-connector_label-0119",
+        "cue_id": "B-connector_label-0087",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 453.761,
+        "t_in": 507.25,
         "t_out": 558.0,
         "source": {
           "file": "face_analysis",
@@ -13750,162 +12672,140 @@
           0.61547,
           0.10503
         ],
-        "row": 1,
-        "label": "yaw -10  roll +20"
+        "label": "yaw -10"
       },
       {
-        "cue_id": "B-claim_word-0224",
+        "cue_id": "B-claim_word-0100",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 454.371,
-        "t_out": 524.751,
+        "t_in": 516.6,
+        "t_out": 558.0,
         "source": {
           "file": "claims",
-          "pointer": "/0/answer_claims/92"
+          "pointer": "/0/answer_claims/38"
         },
-        "face_ids": [],
         "at": [
-          0.27,
-          0.508
+          0.316,
+          0.342
         ],
-        "label": "obscured",
-        "evidence": "seen",
+        "label": "cropped",
         "unsupportable": false,
         "alarm": false
       },
       {
-        "cue_id": "B-claim_word-0225",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 457.411,
-        "t_out": 527.791,
+        "cue_id": "B-box_emerge-0102",
+        "cue": "box_emerge",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 531.0,
+        "t_out": 639.0,
         "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/93"
-        },
-        "face_ids": [],
-        "at": [
-          0.727,
-          0.692
-        ],
-        "label": "glasses",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0077",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 459.86,
-        "t_out": 530.831,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/0/blendshapes_top8"
+          "file": "detection",
+          "pointer": "/faces/1"
         },
         "face_ids": [
           "B02"
         ],
-        "at": [
-          0.18431,
-          0.72781
-        ],
-        "row": 4,
-        "label": "eyeLookOutRigh 67%"
+        "grow_s": 0.6
       },
       {
-        "cue_id": "B-claim_word-0226",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 460.451,
-        "t_out": 530.831,
+        "cue_id": "B-box_emerge-0103",
+        "cue": "box_emerge",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 531.0,
+        "t_out": 639.0,
         "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/96"
-        },
-        "face_ids": [],
-        "at": [
-          0.516,
-          0.125
-        ],
-        "label": "candle",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0111",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 460.969,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/3/symmetry"
+          "file": "detection",
+          "pointer": "/faces/4"
         },
         "face_ids": [
-          "B16"
+          "B05"
         ],
-        "at": [
-          0.38198,
-          0.53767
-        ],
-        "row": 2,
-        "label": "sym 0.0371"
+        "grow_s": 0.6
       },
       {
-        "cue_id": "B-claim_word-0227",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 463.492,
-        "t_out": 533.872,
+        "cue_id": "B-relation-0104",
+        "cue": "relation",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 531.4,
+        "t_out": 639.0,
         "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/99"
-        },
-        "face_ids": [],
-        "at": [
-          0.485,
-          0.571
-        ],
-        "label": "candle",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0094",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 464.111,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/5/blendshapes_top8"
+          "file": "structure",
+          "pointer": "/edges/288"
         },
         "face_ids": [
-          "B23"
+          "B02",
+          "B05"
         ],
-        "at": [
-          0.91323,
-          0.57327
-        ],
-        "row": 3,
-        "label": "browInnerUp 74%"
+        "grow_s": 0.9,
+        "style": "dashed",
+        "label": "cos 0.467"
       },
       {
-        "cue_id": "B-connector_label-0128",
+        "cue_id": "B-box_emerge-0088",
+        "cue": "box_emerge",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 532.125,
+        "t_out": 558.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/8"
+        },
+        "face_ids": [
+          "B09"
+        ],
+        "grow_s": 0.8
+      },
+      {
+        "cue_id": "B-connector-0090",
+        "cue": "connector",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 532.525,
+        "t_out": 558.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/8"
+        },
+        "face_ids": [
+          "B09"
+        ],
+        "at": [
+          0.23997,
+          0.29699
+        ],
+        "grow_s": 0.6
+      },
+      {
+        "cue_id": "B-node-0089",
+        "cue": "node",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 532.525,
+        "t_out": 558.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/8"
+        },
+        "face_ids": [
+          "B09"
+        ],
+        "at": [
+          0.23997,
+          0.29699
+        ],
+        "r": 0.017
+      },
+      {
+        "cue_id": "B-connector_label-0091",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 465.959,
+        "t_in": 533.125,
         "t_out": 558.0,
         "source": {
           "file": "face_analysis",
@@ -13918,1432 +12818,66 @@
           0.23997,
           0.29699
         ],
-        "row": 1,
-        "label": "yaw +5  roll -14"
+        "label": "yaw +5"
       },
       {
-        "cue_id": "B-claim_word-0228",
+        "cue_id": "B-claim_word-0101",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 466.532,
-        "t_out": 536.912,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/105"
-        },
-        "face_ids": [],
-        "at": [
-          0.354,
-          0.842
-        ],
-        "label": "cropped",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0069",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 469.286,
-        "t_out": 516.6,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/1/blendshapes_top8"
-        },
-        "face_ids": [
-          "B05"
-        ],
-        "at": [
-          0.08849,
-          0.11048
-        ],
-        "row": 5,
-        "label": "eyeSquintLeft 38%"
-      },
-      {
-        "cue_id": "B-claim_word-0229",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 469.572,
-        "t_out": 539.952,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/110"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": null,
-        "label": "candle",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0120",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 471.134,
+        "t_in": 537.3,
         "t_out": 558.0,
         "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/6/symmetry"
-        },
-        "face_ids": [
-          "B27"
-        ],
-        "at": [
-          0.61547,
-          0.10503
-        ],
-        "row": 2,
-        "label": "sym 0.0366"
-      },
-      {
-        "cue_id": "B-connector_label-0103",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 472.243,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/4/blendshapes_top8"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": [
-          0.92815,
-          0.83545
-        ],
-        "row": 3,
-        "label": "eyeSquintLeft 68%"
-      },
-      {
-        "cue_id": "B-claim_word-0230",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 472.612,
-        "t_out": 542.992,
-        "source": {
           "file": "claims",
-          "pointer": "/0/answer_claims/112"
+          "pointer": "/0/answer_claims/39"
         },
-        "face_ids": [],
         "at": [
-          0.315,
-          0.236
+          0.217,
+          0.797
         ],
-        "label": "candle",
-        "evidence": "seen",
+        "label": "crowded",
         "unsupportable": false,
         "alarm": false
       },
       {
-        "cue_id": "B-connector_label-0086",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 474.091,
-        "t_out": 545.062,
+        "cue_id": "B-box_emerge-0105",
+        "cue": "box_emerge",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 567.0,
+        "t_out": 675.0,
         "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/7/blendshapes_top8"
-        },
-        "face_ids": [
-          "B34"
-        ],
-        "at": [
-          0.96165,
-          0.12524
-        ],
-        "row": 4,
-        "label": "eyeLookInRight 48%"
-      },
-      {
-        "cue_id": "B-claim_word-0231",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 475.653,
-        "t_out": 546.033,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/113"
-        },
-        "face_ids": [],
-        "at": [
-          0.88,
-          0.483
-        ],
-        "label": "glasses",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-claim_word-0232",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 478.693,
-        "t_out": 549.073,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/115"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": null,
-        "label": "shadowed",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0112",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 480.375,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/3/blendshapes_top8"
-        },
-        "face_ids": [
-          "B16"
-        ],
-        "at": [
-          0.38198,
-          0.53767
-        ],
-        "row": 3,
-        "label": "eyeSquintLeft 65%"
-      },
-      {
-        "cue_id": "B-connector_label-0129",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 481.299,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/2/symmetry"
-        },
-        "face_ids": [
-          "B09"
-        ],
-        "at": [
-          0.23997,
-          0.29699
-        ],
-        "row": 2,
-        "label": "sym 0.0320"
-      },
-      {
-        "cue_id": "B-claim_word-0233",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 481.733,
-        "t_out": 552.113,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/116"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": null,
-        "label": "candle",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0078",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 483.517,
-        "t_out": 530.831,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/0/blendshapes_top8"
+          "file": "detection",
+          "pointer": "/faces/1"
         },
         "face_ids": [
           "B02"
         ],
-        "at": [
-          0.18431,
-          0.72781
-        ],
-        "row": 5,
-        "label": "eyeSquintLeft 50%"
+        "grow_s": 0.6
       },
       {
-        "cue_id": "B-claim_word-0234",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 484.774,
-        "t_out": 555.154,
+        "cue_id": "B-box_emerge-0106",
+        "cue": "box_emerge",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 567.0,
+        "t_out": 675.0,
         "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/118"
-        },
-        "face_ids": [],
-        "at": [
-          0.873,
-          0.115
-        ],
-        "label": "candle",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0095",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 487.583,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/5/blendshapes_top8"
-        },
-        "face_ids": [
-          "B23"
-        ],
-        "at": [
-          0.91323,
-          0.57327
-        ],
-        "row": 4,
-        "label": "mouthLowerDown 72%"
-      },
-      {
-        "cue_id": "B-claim_word-0235",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 487.814,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/119"
-        },
-        "face_ids": [],
-        "at": [
-          0.294,
-          0.206
-        ],
-        "label": "cropped",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0121",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 488.507,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/6/blendshapes_top8"
-        },
-        "face_ids": [
-          "B27"
-        ],
-        "at": [
-          0.61547,
-          0.10503
-        ],
-        "row": 3,
-        "label": "eyeSquintLeft 46%"
-      },
-      {
-        "cue_id": "B-claim_word-0236",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 490.854,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/0/answer_claims/121"
-        },
-        "face_ids": [],
-        "at": [
-          0.823,
-          0.164
-        ],
-        "label": "obscured",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0070",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 492.943,
-        "t_out": 516.6,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/1/photometry"
-        },
-        "face_ids": [
-          "B05"
-        ],
-        "at": [
-          0.08849,
-          0.11048
-        ],
-        "row": 6,
-        "label": "luma 111"
-      },
-      {
-        "cue_id": "B-connector_label-0104",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 493.682,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/4/blendshapes_top8"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": [
-          0.92815,
-          0.83545
-        ],
-        "row": 4,
-        "label": "browInnerUp 63%"
-      },
-      {
-        "cue_id": "B-claim_word-0237",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 493.895,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/0"
-        },
-        "face_ids": [],
-        "at": [
-          0.276,
-          0.684
-        ],
-        "label": "intimate",
-        "evidence": "seen",
-        "unsupportable": true,
-        "alarm": true
-      },
-      {
-        "cue_id": "B-connector_label-0130",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 496.639,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/2/blendshapes_top8"
-        },
-        "face_ids": [
-          "B09"
-        ],
-        "at": [
-          0.23997,
-          0.29699
-        ],
-        "row": 3,
-        "label": "mouthPressRigh 41%"
-      },
-      {
-        "cue_id": "B-claim_word-0238",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 496.935,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/2"
-        },
-        "face_ids": [],
-        "at": [
-          0.389,
-          0.592
-        ],
-        "label": "brushstrokes",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0087",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 497.748,
-        "t_out": 545.062,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/7/blendshapes_top8"
-        },
-        "face_ids": [
-          "B34"
-        ],
-        "at": [
-          0.96165,
-          0.12524
-        ],
-        "row": 5,
-        "label": "eyeLookOutLeft 47%"
-      },
-      {
-        "cue_id": "B-connector_label-0113",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 499.781,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/3/blendshapes_top8"
+          "file": "detection",
+          "pointer": "/faces/15"
         },
         "face_ids": [
           "B16"
         ],
-        "at": [
-          0.38198,
-          0.53767
-        ],
-        "row": 4,
-        "label": "eyeSquintRight 43%"
+        "grow_s": 0.6
       },
       {
-        "cue_id": "B-claim_word-0239",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 499.975,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/5"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": null,
-        "label": "glasses",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-claim_word-0240",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 503.016,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/6"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": null,
-        "label": "huddle",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0122",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 505.88,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/6/blendshapes_top8"
-        },
-        "face_ids": [
-          "B27"
-        ],
-        "at": [
-          0.61547,
-          0.10503
-        ],
-        "row": 4,
-        "label": "eyeSquintRight 31%"
-      },
-      {
-        "cue_id": "B-claim_word-0241",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 506.056,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/7"
-        },
-        "face_ids": [],
-        "at": [
-          0.274,
-          0.813
-        ],
-        "label": "neutral",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0079",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 507.174,
-        "t_out": 530.831,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/0/photometry"
-        },
-        "face_ids": [
-          "B02"
-        ],
-        "at": [
-          0.18431,
-          0.72781
-        ],
-        "row": 6,
-        "label": "luma 118"
-      },
-      {
-        "cue_id": "B-claim_word-0242",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 509.096,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/9"
-        },
-        "face_ids": [],
-        "at": [
-          0.427,
-          0.674
-        ],
-        "label": "chiaroscuro",
-        "evidence": "seen",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0096",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 511.055,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/5/blendshapes_top8"
-        },
-        "face_ids": [
-          "B23"
-        ],
-        "at": [
-          0.91323,
-          0.57327
-        ],
-        "row": 5,
-        "label": "mouthUpperUpRi 58%"
-      },
-      {
-        "cue_id": "B-connector_label-0131",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 511.979,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/2/blendshapes_top8"
-        },
-        "face_ids": [
-          "B09"
-        ],
-        "at": [
-          0.23997,
-          0.29699
-        ],
-        "row": 4,
-        "label": "mouthShrugLowe 36%"
-      },
-      {
-        "cue_id": "B-claim_word-0243",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 512.137,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/13"
-        },
-        "face_ids": [],
-        "at": [
-          0.656,
-          0.37
-        ],
-        "label": "warmth",
-        "evidence": "supplied",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0105",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 515.121,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/4/blendshapes_top8"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": [
-          0.92815,
-          0.83545
-        ],
-        "row": 5,
-        "label": "eyeLookInRight 55%"
-      },
-      {
-        "cue_id": "B-claim_word-0244",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 515.177,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/14"
-        },
-        "face_ids": [],
-        "at": [
-          0.409,
-          0.402
-        ],
-        "label": "smiling",
-        "evidence": "supplied",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-claim_word-0245",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 518.217,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/15"
-        },
-        "face_ids": [],
-        "at": [
-          0.382,
-          0.41
-        ],
-        "label": "ceremony",
-        "evidence": "supplied",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0114",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 519.188,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/3/blendshapes_top8"
-        },
-        "face_ids": [
-          "B16"
-        ],
-        "at": [
-          0.38198,
-          0.53767
-        ],
-        "row": 5,
-        "label": "mouthPressLeft 17%"
-      },
-      {
-        "cue_id": "B-claim_word-0246",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 521.257,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/17"
-        },
-        "face_ids": [],
-        "at": [
-          0.551,
-          0.638
-        ],
-        "label": "warmth",
-        "evidence": "supplied",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0088",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 521.405,
-        "t_out": 545.062,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/7/photometry"
-        },
-        "face_ids": [
-          "B34"
-        ],
-        "at": [
-          0.96165,
-          0.12524
-        ],
-        "row": 6,
-        "label": "luma 118"
-      },
-      {
-        "cue_id": "B-connector_label-0123",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 523.254,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/6/blendshapes_top8"
-        },
-        "face_ids": [
-          "B27"
-        ],
-        "at": [
-          0.61547,
-          0.10503
-        ],
-        "row": 5,
-        "label": "eyeLookOutLeft 31%"
-      },
-      {
-        "cue_id": "B-claim_word-0247",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 524.298,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/18"
-        },
-        "face_ids": [],
-        "at": [
-          0.556,
-          0.641
-        ],
-        "label": "solemn",
-        "evidence": "supplied",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0132",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 527.32,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/2/blendshapes_top8"
-        },
-        "face_ids": [
-          "B09"
-        ],
-        "at": [
-          0.23997,
-          0.29699
-        ],
-        "row": 5,
-        "label": "eyeLookDownLef 31%"
-      },
-      {
-        "cue_id": "B-claim_word-0248",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 527.338,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/21"
-        },
-        "face_ids": [],
-        "at": [
-          0.149,
-          0.582
-        ],
-        "label": "reunion",
-        "evidence": "supplied",
-        "unsupportable": true,
-        "alarm": true
-      },
-      {
-        "cue_id": "B-claim_word-0249",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 530.378,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/23"
-        },
-        "face_ids": [],
-        "at": [
-          0.562,
-          0.726
-        ],
-        "label": "does not",
-        "evidence": "supplied",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-relation-0136",
+        "cue_id": "B-relation-0107",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 531.0,
-        "t_out": 664.92,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/88"
-        },
-        "face_ids": [
-          "B02",
-          "B09"
-        ],
-        "grow_s": 0.6,
-        "style": "solid",
-        "label": "0.261"
-      },
-      {
-        "cue_id": "B-claim_word-0250",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 533.419,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/25"
-        },
-        "face_ids": [],
-        "at": [
-          0.699,
-          0.126
-        ],
-        "label": "smiling",
-        "evidence": "supplied",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0097",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 534.528,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/5/photometry"
-        },
-        "face_ids": [
-          "B23"
-        ],
-        "at": [
-          0.91323,
-          0.57327
-        ],
-        "row": 6,
-        "label": "luma 124"
-      },
-      {
-        "cue_id": "B-relation-0137",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 535.752,
-        "t_out": 669.672,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/92"
-        },
-        "face_ids": [
-          "B05",
-          "B09"
-        ],
-        "grow_s": 0.6,
-        "style": "solid",
-        "label": "0.152"
-      },
-      {
-        "cue_id": "B-claim_word-0251",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 536.459,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/26"
-        },
-        "face_ids": [],
-        "at": [
-          0.672,
-          0.275
-        ],
-        "label": "withholds",
-        "evidence": "supplied",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0106",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 536.561,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/4/photometry"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": [
-          0.92815,
-          0.83545
-        ],
-        "row": 6,
-        "label": "luma 125"
-      },
-      {
-        "cue_id": "B-connector_label-0115",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 538.594,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/3/photometry"
-        },
-        "face_ids": [
-          "B16"
-        ],
-        "at": [
-          0.38198,
-          0.53767
-        ],
-        "row": 6,
-        "label": "luma 106"
-      },
-      {
-        "cue_id": "B-claim_word-0252",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 539.499,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/27"
-        },
-        "face_ids": [],
-        "at": [
-          0.601,
-          0.396
-        ],
-        "label": "ambiguous",
-        "evidence": "supplied",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-relation-0138",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 540.504,
-        "t_out": 674.424,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/94"
-        },
-        "face_ids": [
-          "B09",
-          "B16"
-        ],
-        "grow_s": 0.6,
-        "style": "solid",
-        "label": "0.098"
-      },
-      {
-        "cue_id": "B-connector_label-0124",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 540.627,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/6/photometry"
-        },
-        "face_ids": [
-          "B27"
-        ],
-        "at": [
-          0.61547,
-          0.10503
-        ],
-        "row": 6,
-        "label": "luma 119"
-      },
-      {
-        "cue_id": "B-claim_word-0253",
-        "cue": "claim_word",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 542.54,
-        "t_out": 558.0,
-        "source": {
-          "file": "claims",
-          "pointer": "/2/answer_claims/28"
-        },
-        "face_ids": [],
-        "at": [
-          0.87,
-          0.662
-        ],
-        "label": "cannot",
-        "evidence": "supplied",
-        "unsupportable": false,
-        "alarm": false
-      },
-      {
-        "cue_id": "B-connector_label-0133",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 542.66,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/B/2/photometry"
-        },
-        "face_ids": [
-          "B09"
-        ],
-        "at": [
-          0.23997,
-          0.29699
-        ],
-        "row": 6,
-        "label": "luma 62"
-      },
-      {
-        "cue_id": "B-relation-0139",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 545.256,
-        "t_out": 679.176,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/96"
-        },
-        "face_ids": [
-          "B18",
-          "B23"
-        ],
-        "grow_s": 0.6,
-        "style": "solid",
-        "label": "0.237"
-      },
-      {
-        "cue_id": "B-relation-0140",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 550.008,
-        "t_out": 683.928,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/97"
-        },
-        "face_ids": [
-          "B16",
-          "B23"
-        ],
-        "grow_s": 0.6,
-        "style": "solid",
-        "label": "0.195"
-      },
-      {
-        "cue_id": "B-relation-0141",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 554.76,
-        "t_out": 688.68,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/100"
-        },
-        "face_ids": [
-          "B23",
-          "B27"
-        ],
-        "grow_s": 0.6,
-        "style": "solid",
-        "label": "0.181"
-      },
-      {
-        "cue_id": "B-relation-0142",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 559.512,
-        "t_out": 693.432,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/101"
-        },
-        "face_ids": [
-          "B27",
-          "B34"
-        ],
-        "grow_s": 0.6,
-        "style": "solid",
-        "label": "0.196"
-      },
-      {
-        "cue_id": "B-relation-0143",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 564.264,
-        "t_out": 698.184,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/193"
-        },
-        "face_ids": [
-          "A19",
-          "B23"
-        ],
-        "grow_s": 0.9,
-        "style": "dashed",
-        "cross": true,
-        "alarm": true,
-        "label": "cos 0.394",
-        "label2": "cannot separate"
-      },
-      {
-        "cue_id": "B-relation-0144",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 569.016,
-        "t_out": 702.936,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/206"
-        },
-        "face_ids": [
-          "A29",
-          "B16"
-        ],
-        "grow_s": 0.9,
-        "style": "dashed",
-        "cross": true,
-        "alarm": true,
-        "label": "cos 0.432",
-        "label2": "cannot separate"
-      },
-      {
-        "cue_id": "B-relation-0145",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 573.768,
-        "t_out": 707.688,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/209"
-        },
-        "face_ids": [
-          "A29",
-          "B27"
-        ],
-        "grow_s": 0.9,
-        "style": "dashed",
-        "cross": true,
-        "alarm": true,
-        "label": "cos 0.501",
-        "label2": "cannot separate"
-      },
-      {
-        "cue_id": "B-relation-0146",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 578.52,
-        "t_out": 712.44,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/231"
-        },
-        "face_ids": [
-          "A43",
-          "B05"
-        ],
-        "grow_s": 0.9,
-        "style": "dashed",
-        "cross": true,
-        "alarm": true,
-        "label": "cos 0.363",
-        "label2": "cannot separate"
-      },
-      {
-        "cue_id": "B-relation-0147",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 583.272,
-        "t_out": 717.192,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/248"
-        },
-        "face_ids": [
-          "A44",
-          "B27"
-        ],
-        "grow_s": 0.9,
-        "style": "dashed",
-        "cross": true,
-        "alarm": true,
-        "label": "cos 0.417",
-        "label2": "cannot separate"
-      },
-      {
-        "cue_id": "B-relation-0148",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 588.024,
-        "t_out": 721.944,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/254"
-        },
-        "face_ids": [
-          "A48",
-          "B05"
-        ],
-        "grow_s": 0.9,
-        "style": "dashed",
-        "cross": true,
-        "alarm": true,
-        "label": "cos 0.418",
-        "label2": "cannot separate"
-      },
-      {
-        "cue_id": "B-relation-0149",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 592.776,
-        "t_out": 726.696,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/288"
-        },
-        "face_ids": [
-          "B02",
-          "B05"
-        ],
-        "grow_s": 0.9,
-        "style": "dashed",
-        "cross": false,
-        "alarm": false,
-        "label": "cos 0.467",
-        "label2": "cannot separate"
-      },
-      {
-        "cue_id": "B-relation-0150",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 597.528,
-        "t_out": 731.448,
+        "t_in": 567.4,
+        "t_out": 675.0,
         "source": {
           "file": "structure",
           "pointer": "/edges/290"
@@ -15354,18 +12888,47 @@
         ],
         "grow_s": 0.9,
         "style": "dashed",
-        "cross": false,
-        "alarm": false,
-        "label": "cos 0.561",
-        "label2": "cannot separate"
+        "label": "cos 0.561"
       },
       {
-        "cue_id": "B-relation-0151",
+        "cue_id": "B-box_emerge-0108",
+        "cue": "box_emerge",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 603.0,
+        "t_out": 711.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/1"
+        },
+        "face_ids": [
+          "B02"
+        ],
+        "grow_s": 0.6
+      },
+      {
+        "cue_id": "B-box_emerge-0109",
+        "cue": "box_emerge",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 603.0,
+        "t_out": 711.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/17"
+        },
+        "face_ids": [
+          "B18"
+        ],
+        "grow_s": 0.6
+      },
+      {
+        "cue_id": "B-relation-0110",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 602.28,
-        "t_out": 736.2,
+        "t_in": 603.4,
+        "t_out": 711.0,
         "source": {
           "file": "structure",
           "pointer": "/edges/291"
@@ -15376,18 +12939,47 @@
         ],
         "grow_s": 0.9,
         "style": "dashed",
-        "cross": false,
-        "alarm": false,
-        "label": "cos 0.404",
-        "label2": "cannot separate"
+        "label": "cos 0.404"
       },
       {
-        "cue_id": "B-relation-0152",
+        "cue_id": "B-box_emerge-0111",
+        "cue": "box_emerge",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 639.0,
+        "t_out": 747.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/1"
+        },
+        "face_ids": [
+          "B02"
+        ],
+        "grow_s": 0.6
+      },
+      {
+        "cue_id": "B-box_emerge-0112",
+        "cue": "box_emerge",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 639.0,
+        "t_out": 747.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/26"
+        },
+        "face_ids": [
+          "B27"
+        ],
+        "grow_s": 0.6
+      },
+      {
+        "cue_id": "B-relation-0113",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 607.032,
-        "t_out": 740.952,
+        "t_in": 639.4,
+        "t_out": 747.0,
         "source": {
           "file": "structure",
           "pointer": "/edges/293"
@@ -15398,18 +12990,175 @@
         ],
         "grow_s": 0.9,
         "style": "dashed",
-        "cross": false,
-        "alarm": false,
-        "label": "cos 0.385",
-        "label2": "cannot separate"
+        "label": "cos 0.385"
       },
       {
-        "cue_id": "B-relation-0153",
+        "cue_id": "B-gaze_ray-0120",
+        "cue": "gaze_ray",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 649.8,
+        "t_out": 747.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/80"
+        },
+        "face_ids": [
+          "B02"
+        ],
+        "grow_s": 1.4
+      },
+      {
+        "cue_id": "B-gaze_ray-0121",
+        "cue": "gaze_ray",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 649.8,
+        "t_out": 747.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/81"
+        },
+        "face_ids": [
+          "B05"
+        ],
+        "grow_s": 1.4
+      },
+      {
+        "cue_id": "B-gaze_ray-0122",
+        "cue": "gaze_ray",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 649.8,
+        "t_out": 747.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/82"
+        },
+        "face_ids": [
+          "B09"
+        ],
+        "grow_s": 1.4
+      },
+      {
+        "cue_id": "B-gaze_ray-0123",
+        "cue": "gaze_ray",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 649.8,
+        "t_out": 747.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/83"
+        },
+        "face_ids": [
+          "B16"
+        ],
+        "grow_s": 1.4
+      },
+      {
+        "cue_id": "B-gaze_ray-0124",
+        "cue": "gaze_ray",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 649.8,
+        "t_out": 747.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/84"
+        },
+        "face_ids": [
+          "B18"
+        ],
+        "grow_s": 1.4
+      },
+      {
+        "cue_id": "B-gaze_ray-0125",
+        "cue": "gaze_ray",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 649.8,
+        "t_out": 747.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/85"
+        },
+        "face_ids": [
+          "B23"
+        ],
+        "grow_s": 1.4
+      },
+      {
+        "cue_id": "B-gaze_ray-0126",
+        "cue": "gaze_ray",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 649.8,
+        "t_out": 747.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/86"
+        },
+        "face_ids": [
+          "B27"
+        ],
+        "grow_s": 1.4
+      },
+      {
+        "cue_id": "B-gaze_ray-0127",
+        "cue": "gaze_ray",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 649.8,
+        "t_out": 747.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/87"
+        },
+        "face_ids": [
+          "B34"
+        ],
+        "grow_s": 1.4
+      },
+      {
+        "cue_id": "B-box_emerge-0114",
+        "cue": "box_emerge",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 675.0,
+        "t_out": 747.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/4"
+        },
+        "face_ids": [
+          "B05"
+        ],
+        "grow_s": 0.6
+      },
+      {
+        "cue_id": "B-box_emerge-0115",
+        "cue": "box_emerge",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 675.0,
+        "t_out": 747.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/15"
+        },
+        "face_ids": [
+          "B16"
+        ],
+        "grow_s": 0.6
+      },
+      {
+        "cue_id": "B-relation-0116",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 611.784,
-        "t_out": 745.704,
+        "t_in": 675.4,
+        "t_out": 747.0,
         "source": {
           "file": "structure",
           "pointer": "/edges/296"
@@ -15420,17 +13169,63 @@
         ],
         "grow_s": 0.9,
         "style": "dashed",
-        "cross": false,
-        "alarm": false,
-        "label": "cos 0.439",
-        "label2": "cannot separate"
+        "label": "cos 0.439"
       },
       {
-        "cue_id": "B-relation-0154",
+        "cue_id": "B-convergence-0128",
+        "cue": "convergence",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 682.2,
+        "t_out": 747.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/per_panel/B/gaze_convergence"
+        },
+        "at": [
+          0.6542,
+          0.3786
+        ],
+        "label": "res 0.1175"
+      },
+      {
+        "cue_id": "B-box_emerge-0117",
+        "cue": "box_emerge",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 711.0,
+        "t_out": 747.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/4"
+        },
+        "face_ids": [
+          "B05"
+        ],
+        "grow_s": 0.6
+      },
+      {
+        "cue_id": "B-box_emerge-0118",
+        "cue": "box_emerge",
+        "pass": "RELATE",
+        "role": "relate",
+        "t_in": 711.0,
+        "t_out": 747.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/17"
+        },
+        "face_ids": [
+          "B18"
+        ],
+        "grow_s": 0.6
+      },
+      {
+        "cue_id": "B-relation-0119",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 616.536,
+        "t_in": 711.4,
         "t_out": 747.0,
         "source": {
           "file": "structure",
@@ -15442,312 +13237,15 @@
         ],
         "grow_s": 0.9,
         "style": "dashed",
-        "cross": false,
-        "alarm": false,
-        "label": "cos 0.374",
-        "label2": "cannot separate"
+        "label": "cos 0.374"
       },
       {
-        "cue_id": "B-relation-0155",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 621.288,
-        "t_out": 747.0,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/298"
-        },
-        "face_ids": [
-          "B05",
-          "B23"
-        ],
-        "grow_s": 0.9,
-        "style": "dashed",
-        "cross": false,
-        "alarm": false,
-        "label": "cos 0.385",
-        "label2": "cannot separate"
-      },
-      {
-        "cue_id": "B-relation-0156",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 626.04,
-        "t_out": 747.0,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/299"
-        },
-        "face_ids": [
-          "B05",
-          "B27"
-        ],
-        "grow_s": 0.9,
-        "style": "dashed",
-        "cross": false,
-        "alarm": false,
-        "label": "cos 0.453",
-        "label2": "cannot separate"
-      },
-      {
-        "cue_id": "B-gaze_ray-0161",
-        "cue": "gaze_ray",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 628.2,
-        "t_out": 747.0,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/80"
-        },
-        "face_ids": [
-          "B02"
-        ],
-        "grow_s": 1.2
-      },
-      {
-        "cue_id": "B-gaze_ray-0162",
-        "cue": "gaze_ray",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 628.2,
-        "t_out": 747.0,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/81"
-        },
-        "face_ids": [
-          "B05"
-        ],
-        "grow_s": 1.2
-      },
-      {
-        "cue_id": "B-gaze_ray-0163",
-        "cue": "gaze_ray",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 628.2,
-        "t_out": 747.0,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/82"
-        },
-        "face_ids": [
-          "B09"
-        ],
-        "grow_s": 1.2
-      },
-      {
-        "cue_id": "B-gaze_ray-0164",
-        "cue": "gaze_ray",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 628.2,
-        "t_out": 747.0,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/83"
-        },
-        "face_ids": [
-          "B16"
-        ],
-        "grow_s": 1.2
-      },
-      {
-        "cue_id": "B-gaze_ray-0165",
-        "cue": "gaze_ray",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 628.2,
-        "t_out": 747.0,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/84"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "grow_s": 1.2
-      },
-      {
-        "cue_id": "B-gaze_ray-0166",
-        "cue": "gaze_ray",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 628.2,
-        "t_out": 747.0,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/85"
-        },
-        "face_ids": [
-          "B23"
-        ],
-        "grow_s": 1.2
-      },
-      {
-        "cue_id": "B-gaze_ray-0167",
-        "cue": "gaze_ray",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 628.2,
-        "t_out": 747.0,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/86"
-        },
-        "face_ids": [
-          "B27"
-        ],
-        "grow_s": 1.2
-      },
-      {
-        "cue_id": "B-gaze_ray-0168",
-        "cue": "gaze_ray",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 628.2,
-        "t_out": 747.0,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/87"
-        },
-        "face_ids": [
-          "B34"
-        ],
-        "grow_s": 1.2
-      },
-      {
-        "cue_id": "B-relation-0157",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 630.792,
-        "t_out": 747.0,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/306"
-        },
-        "face_ids": [
-          "B16",
-          "B18"
-        ],
-        "grow_s": 0.9,
-        "style": "dashed",
-        "cross": false,
-        "alarm": false,
-        "label": "cos 0.526",
-        "label2": "cannot separate"
-      },
-      {
-        "cue_id": "B-relation-0158",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 635.544,
-        "t_out": 747.0,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/308"
-        },
-        "face_ids": [
-          "B16",
-          "B27"
-        ],
-        "grow_s": 0.9,
-        "style": "dashed",
-        "cross": false,
-        "alarm": false,
-        "label": "cos 0.436",
-        "label2": "cannot separate"
-      },
-      {
-        "cue_id": "B-relation-0159",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 640.296,
-        "t_out": 747.0,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/311"
-        },
-        "face_ids": [
-          "B18",
-          "B27"
-        ],
-        "grow_s": 0.9,
-        "style": "dashed",
-        "cross": false,
-        "alarm": false,
-        "label": "cos 0.455",
-        "label2": "cannot separate"
-      },
-      {
-        "cue_id": "B-relation-0160",
-        "cue": "relation",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 645.048,
-        "t_out": 747.0,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/313"
-        },
-        "face_ids": [
-          "B23",
-          "B27"
-        ],
-        "grow_s": 0.9,
-        "style": "dashed",
-        "cross": false,
-        "alarm": false,
-        "label": "cos 0.387",
-        "label2": "cannot separate"
-      },
-      {
-        "cue_id": "B-convergence-0169",
-        "cue": "convergence",
-        "pass": "RELATE",
-        "role": "relate",
-        "t_in": 660.6,
-        "t_out": 747.0,
-        "source": {
-          "file": "structure",
-          "pointer": "/per_panel/B/gaze_convergence"
-        },
-        "at": [
-          0.6542,
-          0.3786
-        ],
-        "label": "res 0.1175",
-        "label2": "no shared attention"
-      },
-      {
-        "cue_id": "B-disagreement-0183",
-        "cue": "disagreement",
-        "pass": "DOUBT",
-        "role": "doubt",
-        "t_in": 720.0,
-        "t_out": 819.0,
-        "source": {
-          "file": "structure",
-          "pointer": "/edges/119"
-        },
-        "face_ids": [
-          "B09"
-        ],
-        "label": "IoU 0.68"
-      },
-      {
-        "cue_id": "B-ghost-0170",
+        "cue_id": "B-ghost-0129",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
         "t_in": 720.0,
-        "t_out": 900.0,
+        "t_out": 761.538,
         "source": {
           "file": "detection",
           "pointer": "/faces/0"
@@ -15755,7 +13253,6 @@
         "face_ids": [
           "B01"
         ],
-        "hatch": true,
         "state": "lost",
         "flash_from": {
           "file": "stability",
@@ -15764,276 +13261,12 @@
         }
       },
       {
-        "cue_id": "B-ghost-0171",
-        "cue": "ghost",
-        "pass": "DOUBT",
-        "role": "doubt",
-        "t_in": 720.0,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/2"
-        },
-        "face_ids": [
-          "B03"
-        ],
-        "hatch": true,
-        "state": "lost",
-        "flash_from": {
-          "file": "stability",
-          "pointer": "/panels/B/2",
-          "field": "flash_hz"
-        }
-      },
-      {
-        "cue_id": "B-ghost-0172",
-        "cue": "ghost",
-        "pass": "DOUBT",
-        "role": "doubt",
-        "t_in": 720.0,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/3"
-        },
-        "face_ids": [
-          "B04"
-        ],
-        "hatch": true,
-        "state": "lost",
-        "flash_from": {
-          "file": "stability",
-          "pointer": "/panels/B/3",
-          "field": "flash_hz"
-        }
-      },
-      {
-        "cue_id": "B-ghost-0173",
-        "cue": "ghost",
-        "pass": "DOUBT",
-        "role": "doubt",
-        "t_in": 720.0,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/7"
-        },
-        "face_ids": [
-          "B08"
-        ],
-        "hatch": true,
-        "state": "lost",
-        "flash_from": {
-          "file": "stability",
-          "pointer": "/panels/B/7",
-          "field": "flash_hz"
-        }
-      },
-      {
-        "cue_id": "B-ghost-0174",
-        "cue": "ghost",
-        "pass": "DOUBT",
-        "role": "doubt",
-        "t_in": 720.0,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/11"
-        },
-        "face_ids": [
-          "B12"
-        ],
-        "hatch": true,
-        "state": "tentative",
-        "flash_from": {
-          "file": "stability",
-          "pointer": "/panels/B/11",
-          "field": "flash_hz"
-        }
-      },
-      {
-        "cue_id": "B-ghost-0175",
-        "cue": "ghost",
-        "pass": "DOUBT",
-        "role": "doubt",
-        "t_in": 720.0,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/12"
-        },
-        "face_ids": [
-          "B13"
-        ],
-        "hatch": true,
-        "state": "tentative",
-        "flash_from": {
-          "file": "stability",
-          "pointer": "/panels/B/12",
-          "field": "flash_hz"
-        }
-      },
-      {
-        "cue_id": "B-ghost-0176",
-        "cue": "ghost",
-        "pass": "DOUBT",
-        "role": "doubt",
-        "t_in": 720.0,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/16"
-        },
-        "face_ids": [
-          "B17"
-        ],
-        "hatch": true,
-        "state": "tentative",
-        "flash_from": {
-          "file": "stability",
-          "pointer": "/panels/B/16",
-          "field": "flash_hz"
-        }
-      },
-      {
-        "cue_id": "B-ghost-0177",
-        "cue": "ghost",
-        "pass": "DOUBT",
-        "role": "doubt",
-        "t_in": 720.0,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/18"
-        },
-        "face_ids": [
-          "B19"
-        ],
-        "hatch": true,
-        "state": "tentative",
-        "flash_from": {
-          "file": "stability",
-          "pointer": "/panels/B/18",
-          "field": "flash_hz"
-        }
-      },
-      {
-        "cue_id": "B-ghost-0178",
-        "cue": "ghost",
-        "pass": "DOUBT",
-        "role": "doubt",
-        "t_in": 720.0,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/24"
-        },
-        "face_ids": [
-          "B25"
-        ],
-        "hatch": true,
-        "state": "lost",
-        "flash_from": {
-          "file": "stability",
-          "pointer": "/panels/B/24",
-          "field": "flash_hz"
-        }
-      },
-      {
-        "cue_id": "B-ghost-0179",
-        "cue": "ghost",
-        "pass": "DOUBT",
-        "role": "doubt",
-        "t_in": 720.0,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/25"
-        },
-        "face_ids": [
-          "B26"
-        ],
-        "hatch": true,
-        "state": "lost",
-        "flash_from": {
-          "file": "stability",
-          "pointer": "/panels/B/25",
-          "field": "flash_hz"
-        }
-      },
-      {
-        "cue_id": "B-ghost-0180",
-        "cue": "ghost",
-        "pass": "DOUBT",
-        "role": "doubt",
-        "t_in": 720.0,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/27"
-        },
-        "face_ids": [
-          "B28"
-        ],
-        "hatch": true,
-        "state": "lost",
-        "flash_from": {
-          "file": "stability",
-          "pointer": "/panels/B/27",
-          "field": "flash_hz"
-        }
-      },
-      {
-        "cue_id": "B-ghost-0181",
-        "cue": "ghost",
-        "pass": "DOUBT",
-        "role": "doubt",
-        "t_in": 720.0,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/30"
-        },
-        "face_ids": [
-          "B31"
-        ],
-        "hatch": true,
-        "state": "tentative",
-        "flash_from": {
-          "file": "stability",
-          "pointer": "/panels/B/30",
-          "field": "flash_hz"
-        }
-      },
-      {
-        "cue_id": "B-ghost-0182",
-        "cue": "ghost",
-        "pass": "DOUBT",
-        "role": "doubt",
-        "t_in": 720.0,
-        "t_out": 900.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/31"
-        },
-        "face_ids": [
-          "B32"
-        ],
-        "hatch": true,
-        "state": "tentative",
-        "flash_from": {
-          "file": "stability",
-          "pointer": "/panels/B/31",
-          "field": "flash_hz"
-        }
-      },
-      {
-        "cue_id": "B-orphan-0187",
+        "cue_id": "B-orphan-0142",
         "cue": "orphan",
         "pass": "DOUBT",
         "role": "doubt",
         "t_in": 720.0,
-        "t_out": 846.0,
+        "t_out": 900.0,
         "source": {
           "file": "structure",
           "pointer": "/edges/116"
@@ -16045,84 +13278,272 @@
           "BF232"
         ],
         "alarm": true,
-        "label": "no face",
-        "label2": "2.65h"
+        "label": "no face"
       },
       {
-        "cue_id": "B-disagreement-0184",
-        "cue": "disagreement",
+        "cue_id": "B-ghost-0130",
+        "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 744.75,
-        "t_out": 843.75,
+        "t_in": 733.846,
+        "t_out": 775.385,
         "source": {
-          "file": "structure",
-          "pointer": "/edges/121"
+          "file": "detection",
+          "pointer": "/faces/2"
         },
         "face_ids": [
-          "B18"
+          "B03"
         ],
-        "label": "IoU 0.75"
+        "state": "lost",
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/B/2",
+          "field": "flash_hz"
+        }
       },
       {
-        "cue_id": "B-floor-0188",
+        "cue_id": "B-ghost-0131",
+        "cue": "ghost",
+        "pass": "DOUBT",
+        "role": "doubt",
+        "t_in": 747.692,
+        "t_out": 789.231,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/3"
+        },
+        "face_ids": [
+          "B04"
+        ],
+        "state": "lost",
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/B/3",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "B-ghost-0132",
+        "cue": "ghost",
+        "pass": "DOUBT",
+        "role": "doubt",
+        "t_in": 761.538,
+        "t_out": 803.077,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/7"
+        },
+        "face_ids": [
+          "B08"
+        ],
+        "state": "lost",
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/B/7",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "B-ghost-0133",
+        "cue": "ghost",
+        "pass": "DOUBT",
+        "role": "doubt",
+        "t_in": 775.385,
+        "t_out": 816.923,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/11"
+        },
+        "face_ids": [
+          "B12"
+        ],
+        "state": "tentative",
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/B/11",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "B-floor-0143",
         "cue": "floor",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 756.0,
+        "t_in": 783.0,
         "t_out": 900.0,
         "source": {
           "file": "noise_floor",
           "pointer": "/floor"
         },
-        "label": "floor 0.6814 / 0.5604",
-        "label2": "below this is not evidence"
+        "label": "floor 0.6814"
       },
       {
-        "cue_id": "B-disagreement-0185",
-        "cue": "disagreement",
+        "cue_id": "B-ghost-0134",
+        "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 769.5,
-        "t_out": 868.5,
+        "t_in": 789.231,
+        "t_out": 830.769,
         "source": {
-          "file": "structure",
-          "pointer": "/edges/122"
+          "file": "detection",
+          "pointer": "/faces/12"
         },
         "face_ids": [
-          "B23"
+          "B13"
         ],
-        "label": "IoU 0.71"
+        "state": "tentative",
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/B/12",
+          "field": "flash_hz"
+        }
       },
       {
-        "cue_id": "B-disagreement-0186",
-        "cue": "disagreement",
+        "cue_id": "B-ghost-0135",
+        "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 794.25,
-        "t_out": 893.25,
+        "t_in": 803.077,
+        "t_out": 844.615,
         "source": {
-          "file": "structure",
-          "pointer": "/edges/124"
+          "file": "detection",
+          "pointer": "/faces/16"
         },
         "face_ids": [
-          "B34"
+          "B17"
         ],
-        "label": "IoU 0.72"
+        "state": "tentative",
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/B/16",
+          "field": "flash_hz"
+        }
       },
       {
-        "cue_id": "B-tally-0189",
-        "cue": "tally",
+        "cue_id": "B-ghost-0136",
+        "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 801.0,
+        "t_in": 816.923,
+        "t_out": 858.462,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/18"
+        },
+        "face_ids": [
+          "B19"
+        ],
+        "state": "tentative",
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/B/18",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "B-ghost-0137",
+        "cue": "ghost",
+        "pass": "DOUBT",
+        "role": "doubt",
+        "t_in": 830.769,
+        "t_out": 872.308,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/24"
+        },
+        "face_ids": [
+          "B25"
+        ],
+        "state": "lost",
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/B/24",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "B-ghost-0138",
+        "cue": "ghost",
+        "pass": "DOUBT",
+        "role": "doubt",
+        "t_in": 844.615,
+        "t_out": 886.154,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/25"
+        },
+        "face_ids": [
+          "B26"
+        ],
+        "state": "lost",
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/B/25",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "B-ghost-0139",
+        "cue": "ghost",
+        "pass": "DOUBT",
+        "role": "doubt",
+        "t_in": 858.462,
         "t_out": 900.0,
         "source": {
           "file": "detection",
-          "pointer": "/counts"
+          "pointer": "/faces/27"
         },
-        "label": "34 / 8 / 15",
-        "label2": "13 rejected"
+        "face_ids": [
+          "B28"
+        ],
+        "state": "lost",
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/B/27",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "B-ghost-0140",
+        "cue": "ghost",
+        "pass": "DOUBT",
+        "role": "doubt",
+        "t_in": 872.308,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/30"
+        },
+        "face_ids": [
+          "B31"
+        ],
+        "state": "tentative",
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/B/30",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "B-ghost-0141",
+        "cue": "ghost",
+        "pass": "DOUBT",
+        "role": "doubt",
+        "t_in": 886.154,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/31"
+        },
+        "face_ids": [
+          "B32"
+        ],
+        "state": "tentative",
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/B/31",
+          "field": "flash_hz"
+        }
       }
     ]
   }
