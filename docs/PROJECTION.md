@@ -1,6 +1,8 @@
 # Projection geometry — one projector, 40 × 30 cm canvases
 
-Settled: **one large projector**, single raster, single coordinate space. Four
+Settled: **one large projector**, single raster, single coordinate space, span
+around 3–4 m. At that span the projector has to be 4K — see
+`docs/PHYSICAL_SPEC.md`, where the 1080p overlay stroke works out sub-pixel. Four
 zones (Panel A overlay, Panel A text, Panel B overlay, Panel B text) are laid
 out inside that one raster, each still carrying its own `matrix3d` keystone,
 because the paintings are physically hung and will not land on an ideal grid.

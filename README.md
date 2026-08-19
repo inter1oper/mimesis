@@ -34,6 +34,7 @@ stage1/rectify.py        photo of canvas  ->  rectified painting raster + homogr
 stage1/detect_faces.py   rectified raster ->  faces, boxes, confidences, 478-pt meshes
 stage1/detect_flames.py  rectified raster ->  candle flames, and flames with no face
 stage1/plan_overlay.py   detection + projector -> per-face overlay detail tier
+stage1/spec_px.py        projector geometry    -> the rendering spec in pixels
 stage1/parse_transcripts.py   (not written — waiting on transcript files)
 stage1/build_score.py         (not written — waiting on transcripts)
 stage1/reconcile.py           (not written — waiting on transcripts)
@@ -119,6 +120,9 @@ One large projector, single raster, four keystoned zones. See
 `docs/PROJECTION.md` for what the pixel budget buys — the resolution decides
 whether the landmark mesh exists as a layer at all, and `stage1/plan_overlay.py`
 computes each face's detail tier from its measured box rather than by eye.
+`docs/PHYSICAL_SPEC.md` anchors every rendering constraint in millimetres on the
+wall and generates the pixel values, so changing the projector cannot silently
+change the work.
 
 ## Setup
 
