@@ -11,8 +11,8 @@
   src:url(FONT_REGULAR) format("truetype")}
 :root{
   --obs:#efece4;          /* DETECT, RESOLVE — observation */
-  --measure:#4df29a;      /* MEASURE — quantity taken */
-  --relate:#7ff5c4;       /* RELATE — comparison */
+  --measure:#6ef2a8;      /* MEASURE — quantity taken */
+  --relate:#bdeede;       /* RELATE — comparison */
   --doubt:#ff4a4a;        /* DOUBT — the floor, the rejects */
   --paper:#efece4;
   --stroke:1px;
@@ -28,14 +28,26 @@ body.config{cursor:default}
 .zone svg{display:block;overflow:visible}
 .zone .text{position:absolute;inset:0}
 
-svg .s{fill:none;stroke:currentColor;stroke-width:var(--stroke);
+/* structure is white throughout, as in the reference: boxes, connectors and
+   leader lines read as one instrument. Colour is carried by the labels alone,
+   so the pass is legible without the drawing changing hue. */
+svg .s{fill:none;stroke:var(--obs);stroke-width:var(--stroke);
   vector-effect:non-scaling-stroke;stroke-linecap:butt}
+svg .s.alarm{stroke:var(--doubt)}
 svg text{fill:currentColor;font-family:ui-monospace,Menlo,Consolas,monospace;
   font-size:var(--num);letter-spacing:.04em;dominant-baseline:hanging}
 svg .obs{color:var(--obs)} svg .measure{color:var(--measure)}
 svg .relate{color:var(--relate)} svg .doubt{color:var(--doubt)}
-svg .alarm{color:var(--doubt)}
+svg text.alarm,svg .tab.alarm{color:var(--doubt)}
+svg text{fill:currentColor}
 svg image{opacity:.5}
+/* a label tab: small dark plate behind the word, as on a detector readout.
+   the only filled element in the overlay, kept dark so it cannot bloom. */
+svg rect.tab{fill:#0a0a0aE6;stroke:currentColor;stroke-width:var(--stroke);
+  vector-effect:non-scaling-stroke}
+svg text.tab{font-size:10px;letter-spacing:.05em}
+svg text.trace{font-size:9px;letter-spacing:.02em;opacity:.38}
+svg text.status{font-size:10px;letter-spacing:.08em;opacity:.75}
 
 .answer{font-family:"MimesisSerif","Tiempos Text",Georgia,serif;
   font-size:var(--serif);line-height:1.65;color:var(--paper);
@@ -77,7 +89,7 @@ body.config #hud{display:block}
 
 const FILES=["panel_a_detection","panel_b_detection","panel_a_flames","panel_b_flames",
   "panel_a_field","panel_b_field","panel_a_overlay_plan","panel_b_overlay_plan",
-  "face_analysis","structure","stability","noise_floor","score_a","score_b"];
+  "face_analysis","structure","stability","noise_floor","score_a","score_b","claims"];
 const D=(window.MIMESIS_DATA)||{};
 const IMG=(window.MIMESIS_IMAGES)||{};
 
@@ -88,7 +100,7 @@ function sourceDoc(panel,file){ const l=panel.toLowerCase();
   return {detection:D["panel_"+l+"_detection"],flames:D["panel_"+l+"_flames"],
     field:D["panel_"+l+"_field"],overlay_plan:D["panel_"+l+"_overlay_plan"],
     face_analysis:D.face_analysis,structure:D.structure,stability:D.stability,
-    noise_floor:D.noise_floor}[file]; }
+    noise_floor:D.noise_floor,claims:D.claims}[file]; }
 
 /* ---------- homography -> matrix3d ---------- */
 function homography(w,h,c){
@@ -190,8 +202,26 @@ function drawOverlay(z){
     if(rec===undefined) continue;
     n+=drawCue(g,c,rec,face,W,H,t,score);
   }
+  // the reasoning trace, small and fast, on and around the paint
+  const rz=score.tracks.reasoning||[];
+  if(rz.length){
+    const live=rz.filter(r=>t>=r.t_in&&t<r.t_out).slice(-14);
+    live.forEach((r,i)=>{
+      const chars=Math.floor(Math.max(0,(t-r.t_in))*1000/(r.line_interval_ms||34));
+      const txt=r.text.slice(0,Math.min(r.text.length,chars)).slice(0,86);
+      if(txt) g.appendChild(mk("text",{class:"trace measure",x:6,y:14+i*11},txt));
+    });
+  }
   z.ink.replaceChildren(g);
   return n;
+}
+
+function tab(g,x,y,txt,cls,anchor){
+  const w=txt.length*6.0+7, h=12.5;
+  const x0 = anchor==="end" ? x-w : x;
+  g.appendChild(mk("rect",{class:"tab "+cls,x:x0,y:y-h+2.5,width:w,height:h}));
+  g.appendChild(mk("text",{class:"tab "+cls,x:x0+3.5,y:y-h+5},txt));
+  return w;
 }
 
 function drawCue(g,c,rec,face,W,H,t,score){
@@ -260,13 +290,11 @@ function drawCue(g,c,rec,face,W,H,t,score){
     const anchor = flip?"end":"start";
     const x = flip? mx-6 : mx+6;
     const y = my + 8 + (c.row||0)*13;
-    const l1=typed(c.label||"",t,c.t_in,46);
-    push(mk("line",{class:"s "+cls,x1:flip?x+2:x-8,y1:y-4,x2:flip?x+8:x-2,y2:y-4,opacity:.8}));
-    push(mk("text",{class:cls,x,y:y-9,"text-anchor":anchor},l1));
+    const l1=typed(c.label||"",t,c.t_in,26);
+    if(l1) tab(g,x,y,l1,cls,anchor);
     if(c.label2&&l1.length>=(c.label||"").length){
-      const l2=typed(c.label2,t,c.t_in+(c.label||"").length/46,46);
-      (l2.match(/.{1,44}(\s|$)/g)||[]).forEach((seg,i)=>
-        push(mk("text",{class:cls,x,y:y+4+i*12,"text-anchor":anchor,opacity:.6},seg.trim())));
+      const l2=typed(c.label2,t,c.t_in+(c.label||"").length/26,26);
+      if(l2) tab(g,x,y+13,l2,cls,anchor);
     }
     return 1;
   }
@@ -333,6 +361,32 @@ function drawCue(g,c,rec,face,W,H,t,score){
           push(mk("text",{class:cls,x:mx+5,y:my-2+i*13,opacity:.62},seg.trim())));
       }
     }
+    return 1;
+  }
+  case "claim_word": {
+    // one word, verbatim from a model claim, tabbed and tied to what it names
+    const w=(c.label||"").length*6+7;
+    let ax,ay;
+    if(b){ ax=(b[0]+b[2])*W+10; ay=b[1]*H+6; }
+    else { ax=c.at[0]*W; ay=c.at[1]*H; }
+    const kk=grow(t,c.t_in,0.5);
+    // a loose box, offset from what it labels — not a tight fit to a feature
+    const bw=w+16*kk, bh=20+10*kk;
+    push(mk("rect",{class:"s "+cls,x:ax,y:ay-bh+8,width:bw,height:bh,opacity:.55}));
+    if(kk>=1){
+      tab(g,ax+4,ay+4,typed(c.label,t,c.t_in+0.5,18),cls,"start");
+      if(b) push(mk("line",{class:"s "+cls,opacity:.45,
+        x1:ax,y1:ay-bh/2+8,x2:(b[0]+b[2])*W,y2:(b[1]+b[3]/2)*H}));
+      if(c.unsupportable)
+        push(mk("text",{class:"alarm",x:ax+4,y:ay+10,"font-size":8},"UNSUPPORTED"));
+    }
+    return 1;
+  }
+  case "status_block": {
+    const lines=c.lines||[];
+    const n=Math.min(lines.length,Math.floor((t-c.t_in)*2.2));
+    for(let i=0;i<n;i++)
+      push(mk("text",{class:"status "+cls,x:8,y:H-12-(n-1-i)*12},lines[i]));
     return 1;
   }
   case "gaze_ray": {
@@ -417,8 +471,13 @@ function drawText(z){
   const t=loopT(score), el=z.answerEl;
   const cue=score.tracks.answer.find(c=>t>=c.t_in&&t<c.t_out);
   const st=(score.source_state||{}).answer||"";
-  const banner=st.startsWith("type_specimen")
-    ? `<div class="banner">PANEL ${z.panel} · TYPE SPECIMEN — NOT MODEL OUTPUT · AWAITING TRANSCRIPTS</div>`
+  const sess=(score.source_state||{}).sessions||[];
+  const banner = st==="model_output"
+    ? `<div class="banner">PANEL ${z.panel} · ${sess.join(" · ")}` +
+      (cue? ` · ${(cue.evidence||"").toUpperCase()}`+(cue.unsupportable?" · UNSUPPORTED":"") : "") +
+      `</div>`
+    : st.startsWith("type_specimen")
+    ? `<div class="banner">PANEL ${z.panel} · TYPE SPECIMEN — NOT MODEL OUTPUT</div>`
     : `<div class="banner">PANEL ${z.panel} · ANSWER TRACK EMPTY · AWAITING TRANSCRIPTS</div>`;
   if(!cue){ el.innerHTML=banner; return; }
   const ms=(t-cue.t_in)*1000, on=cue.char_onsets_ms,

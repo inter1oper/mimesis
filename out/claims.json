@@ -1,0 +1,3397 @@
+[
+  {
+    "schema": "mimesis.claims.v1",
+    "session_id": "session1_forensic",
+    "model": "UNSPECIFIED",
+    "panel": "B",
+    "panel_assignment": "inferred_from_content_not_supplied",
+    "source": {
+      "answer_file": "data/transcripts/session1_forensic/answer.txt",
+      "reasoning_file": null,
+      "answer_word_count": 1675,
+      "reasoning_word_count": null
+    },
+    "answer_claims": [
+      {
+        "claim_id": "C001",
+        "text": "The image is a horizontal rectangular photograph with a roughly 3:2 aspect ratio.",
+        "char_span": [
+          17,
+          98
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": true,
+        "unsupportable_reason": "calls the image a photograph; the source is a painting",
+        "anchor": null,
+        "section": "1. Overall frame",
+        "keyword": null
+      },
+      {
+        "claim_id": "C002",
+        "text": "The camera is at approximately chest-to-face height relative to the central figures and is angled slightly upward toward several faces in the middle and upper portions of the frame.",
+        "char_span": [
+          99,
+          280
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "central",
+          "confidence": "inferred"
+        },
+        "section": "1. Overall frame",
+        "keyword": null
+      },
+      {
+        "claim_id": "C003",
+        "text": "The photograph is taken at medium-close distance: multiple human figures fill most of the frame from image-left to image-right, with faces, torsos, hands, and small handheld flame objects visible.",
+        "char_span": [
+          281,
+          477
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": true,
+        "unsupportable_reason": "calls the image a photograph; the source is a painting",
+        "anchor": {
+          "face_id": "B02",
+          "basis": "image-left",
+          "confidence": "inferred"
+        },
+        "section": "1. Overall frame",
+        "keyword": "flame"
+      },
+      {
+        "claim_id": "C004",
+        "text": "The foreground figures are close to the camera, while the background figures and room surfaces recede into darker, softer focus.",
+        "char_span": [
+          478,
+          606
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "1. Overall frame",
+        "keyword": null
+      },
+      {
+        "claim_id": "C005",
+        "text": "The image is cropped tightly on both sides.",
+        "char_span": [
+          607,
+          650
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "1. Overall frame",
+        "keyword": "cropped"
+      },
+      {
+        "claim_id": "C006",
+        "text": "Several figures are cut by the image-left and image-right edges.",
+        "char_span": [
+          651,
+          715
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B02",
+          "basis": "image-left",
+          "confidence": "inferred"
+        },
+        "section": "1. Overall frame",
+        "keyword": null
+      },
+      {
+        "claim_id": "C007",
+        "text": "The lower edge cuts off legs, feet, and some hands.",
+        "char_span": [
+          716,
+          767
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "1. Overall frame",
+        "keyword": null
+      },
+      {
+        "claim_id": "C008",
+        "text": "The upper edge includes ceiling structure and light fixtures but crops the top of the room.",
+        "char_span": [
+          768,
+          859
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "1. Overall frame",
+        "keyword": null
+      },
+      {
+        "claim_id": "C009",
+        "text": "The focus is strongest on the foreground and central group of faces and hands.",
+        "char_span": [
+          860,
+          938
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "central",
+          "confidence": "inferred"
+        },
+        "section": "1. Overall frame",
+        "keyword": null
+      },
+      {
+        "claim_id": "C010",
+        "text": "Background faces and room details are softer and darker.",
+        "char_span": [
+          939,
+          995
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "1. Overall frame",
+        "keyword": null
+      },
+      {
+        "claim_id": "C011",
+        "text": "The depth of field appears moderate: central and foreground faces are relatively sharp, while distant background figures are blurred.",
+        "char_span": [
+          996,
+          1129
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "central",
+          "confidence": "inferred"
+        },
+        "section": "1. Overall frame",
+        "keyword": "blurred"
+      },
+      {
+        "claim_id": "C012",
+        "text": "The lighting is dim overall, with multiple small warm flame sources held at different heights.",
+        "char_span": [
+          1130,
+          1224
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "1. Overall frame",
+        "keyword": "flame"
+      },
+      {
+        "claim_id": "C013",
+        "text": "There are also overhead and wall-mounted warm lights.",
+        "char_span": [
+          1225,
+          1278
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "1. Overall frame",
+        "keyword": null
+      },
+      {
+        "claim_id": "C014",
+        "text": "The strongest visible highlights are on faces, white shirt collars, white circular candle guards, fingertips, and flame tips.",
+        "char_span": [
+          1279,
+          1404
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "1. Overall frame",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C015",
+        "text": "The shadows are deep in the jackets, hair, ceiling recesses, and background crowd.",
+        "char_span": [
+          1405,
+          1487
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "1. Overall frame",
+        "keyword": null
+      },
+      {
+        "claim_id": "C016",
+        "text": "Across the top of the frame, a dark brown ceiling with repeated narrow slats or beams runs diagonally from upper-left toward upper-right.",
+        "char_span": [
+          1503,
+          1640
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B34",
+          "basis": "upper-right",
+          "confidence": "inferred"
+        },
+        "section": "2. Spatial map",
+        "keyword": null
+      },
+      {
+        "claim_id": "C017",
+        "text": "Small recessed warm lights appear as bright rectangular or oval spots in the ceiling.",
+        "char_span": [
+          1641,
+          1726
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": null
+      },
+      {
+        "claim_id": "C018",
+        "text": "In the upper-middle area, two vertical white hanging light fixtures are visible, glowing softly.",
+        "char_span": [
+          1727,
+          1823
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": null
+      },
+      {
+        "claim_id": "C019",
+        "text": "The upper-right background contains a cream-colored wall, a rectangular framed picture with green, red, and light tones, and a white wall-mounted rectangular appliance near the ceiling.",
+        "char_span": [
+          1824,
+          2009
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B34",
+          "basis": "upper-right",
+          "confidence": "inferred"
+        },
+        "section": "2. Spatial map",
+        "keyword": null
+      },
+      {
+        "claim_id": "C020",
+        "text": "The middle and lower parts of the frame are dominated by a dense cluster of human figures.",
+        "char_span": [
+          2010,
+          2100
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": null
+      },
+      {
+        "claim_id": "C021",
+        "text": "Most figures wear dark jackets over white shirts, with narrow colored fabric strips at the neck on several figures.",
+        "char_span": [
+          2101,
+          2216
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": null
+      },
+      {
+        "claim_id": "C022",
+        "text": "The figures are positioned close together, with shoulders and arms overlapping.",
+        "char_span": [
+          2217,
+          2296
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": null
+      },
+      {
+        "claim_id": "C023",
+        "text": "Many hands hold narrow white cylindrical objects with small flames at the top.",
+        "char_span": [
+          2297,
+          2375
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": null
+      },
+      {
+        "claim_id": "C024",
+        "text": "Several white circular guards or drip plates sit below the flames.",
+        "char_span": [
+          2376,
+          2442
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": null
+      },
+      {
+        "claim_id": "C025",
+        "text": "The flames are small, tapered, and yellow-orange, with bright white cores in some areas.",
+        "char_span": [
+          2443,
+          2531
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": null
+      },
+      {
+        "claim_id": "C026",
+        "text": "At image-left, a cropped hand holds a candle near the lower-left edge.",
+        "char_span": [
+          2532,
+          2602
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": "cropped"
+      },
+      {
+        "claim_id": "C027",
+        "text": "Behind it, a partially visible face is cut by the left border.",
+        "char_span": [
+          2603,
+          2665
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": null
+      },
+      {
+        "claim_id": "C028",
+        "text": "Slightly right of that, a foreground figure in a dark jacket holds a candle near chest height.",
+        "char_span": [
+          2666,
+          2760
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C029",
+        "text": "Behind and above this figure is another face, partly shadowed.",
+        "char_span": [
+          2761,
+          2823
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": "shadowed"
+      },
+      {
+        "claim_id": "C030",
+        "text": "Near the center-left is a taller figure in a dark jacket and white shirt, holding a candle upright near the torso.",
+        "char_span": [
+          2824,
+          2938
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B05",
+          "basis": "center-left",
+          "confidence": "inferred"
+        },
+        "section": "2. Spatial map",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C031",
+        "text": "This figure overlaps the ceiling and darker background.",
+        "char_span": [
+          2939,
+          2994
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": null
+      },
+      {
+        "claim_id": "C032",
+        "text": "Near the center, several faces and candles are packed together.",
+        "char_span": [
+          2995,
+          3058
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "center",
+          "confidence": "inferred"
+        },
+        "section": "2. Spatial map",
+        "keyword": null
+      },
+      {
+        "claim_id": "C033",
+        "text": "One figure with a pale face and dark straight hair stands just right of the central tall figure.",
+        "char_span": [
+          3059,
+          3155
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "central",
+          "confidence": "inferred"
+        },
+        "section": "2. Spatial map",
+        "keyword": null
+      },
+      {
+        "claim_id": "C034",
+        "text": "A white candle with a circular guard is held near this figure's lower face and chest.",
+        "char_span": [
+          3156,
+          3241
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C035",
+        "text": "Behind and around this area, partial faces, glasses, and dark hair are visible.",
+        "char_span": [
+          3242,
+          3321
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": "glasses"
+      },
+      {
+        "claim_id": "C036",
+        "text": "In the center-right, a smaller-scale figure in the foreground holds a candle at mid-chest height and is partly in front of several others.",
+        "char_span": [
+          3322,
+          3460
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "center-right",
+          "confidence": "inferred"
+        },
+        "section": "2. Spatial map",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C037",
+        "text": "Below and slightly right of center, another smaller-scale figure crouches or leans forward, with a face close to the camera and a candle held upward.",
+        "char_span": [
+          3461,
+          3610
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "center",
+          "confidence": "inferred"
+        },
+        "section": "2. Spatial map",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C038",
+        "text": "At image-right, two foreground figures occupy the right side: one near center-right with a red neck strip and dark jacket, and one at the far right with rectangular glasses, dark jacket, white shirt, and orange neck strip.",
+        "char_span": [
+          3611,
+          3833
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B34",
+          "basis": "far right",
+          "confidence": "inferred"
+        },
+        "section": "2. Spatial map",
+        "keyword": "glasses"
+      },
+      {
+        "claim_id": "C039",
+        "text": "The far-right edge also contains a cropped partial face and candle in the background.",
+        "char_span": [
+          3853,
+          3938
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": "cropped"
+      },
+      {
+        "claim_id": "C040",
+        "text": "The background is crowded with additional partially visible heads, shoulders, candles, walls, and dark negative spaces.",
+        "char_span": [
+          3939,
+          4058
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": "crowded"
+      },
+      {
+        "claim_id": "C041",
+        "text": "No floor surface is clearly visible.",
+        "char_span": [
+          4059,
+          4095
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "2. Spatial map",
+        "keyword": null
+      },
+      {
+        "claim_id": "C042",
+        "text": "Figure A is at the extreme image-left edge.",
+        "char_span": [
+          4116,
+          4159
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B02",
+          "basis": "extreme image-left",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C043",
+        "text": "Only part of the face, dark hair, one shoulder, and one hand holding a candle are visible.",
+        "char_span": [
+          4160,
+          4250
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C044",
+        "text": "The face is cropped by the left edge, with only the image-right portion visible.",
+        "char_span": [
+          4251,
+          4331
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "image-right",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": "cropped"
+      },
+      {
+        "claim_id": "C045",
+        "text": "The skin is medium-light tan with strong shadow.",
+        "char_span": [
+          4332,
+          4380
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C046",
+        "text": "The hair is black or very dark brown, short, and dense.",
+        "char_span": [
+          4381,
+          4436
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C047",
+        "text": "The hand is near lower-left foreground, holding a white candle with a white circular guard.",
+        "char_span": [
+          4460,
+          4551
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C048",
+        "text": "Figure B stands in the image-left foreground, slightly right of Figure A.",
+        "char_span": [
+          4552,
+          4625
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B02",
+          "basis": "image-left",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C049",
+        "text": "The visible body includes head, neck, upper torso, one arm, and one hand.",
+        "char_span": [
+          4626,
+          4699
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C050",
+        "text": "Figure B wears a dark jacket with a white shirt and a pale pink narrow neck fabric.",
+        "char_span": [
+          4700,
+          4783
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C051",
+        "text": "The jacket has lapels and a smooth, slightly reflective surface.",
+        "char_span": [
+          4784,
+          4848
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C052",
+        "text": "The head is angled slightly downward and toward the camera.",
+        "char_span": [
+          4849,
+          4908
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C053",
+        "text": "The hair is black, short, and swept upward near the front.",
+        "char_span": [
+          4909,
+          4967
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C054",
+        "text": "The face is partly shadowed on the image-left side.",
+        "char_span": [
+          4968,
+          5019
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B02",
+          "basis": "image-left",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": "shadowed"
+      },
+      {
+        "claim_id": "C055",
+        "text": "One hand holds a white candle upright with a white guard.",
+        "char_span": [
+          5020,
+          5077
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C056",
+        "text": "The hand is extended slightly toward the camera.",
+        "char_span": [
+          5078,
+          5126
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C057",
+        "text": "Figure C is behind Figure B and slightly higher.",
+        "char_span": [
+          5127,
+          5175
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C058",
+        "text": "The visible body includes face, neck, upper torso, and partial dark clothing.",
+        "char_span": [
+          5176,
+          5253
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C059",
+        "text": "Figure C has short black hair and a rounded face outline.",
+        "char_span": [
+          5254,
+          5311
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C060",
+        "text": "The head faces the camera.",
+        "char_span": [
+          5312,
+          5338
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C061",
+        "text": "Clothing includes a dark jacket and light shirt.",
+        "char_span": [
+          5339,
+          5387
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C062",
+        "text": "The torso is partially hidden behind Figure B.",
+        "char_span": [
+          5388,
+          5434
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "hidden"
+      },
+      {
+        "claim_id": "C063",
+        "text": "No clearly separate hand is visible.",
+        "char_span": [
+          5435,
+          5471
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C064",
+        "text": "Figure D is near the center-left, taller in scale than nearby figures.",
+        "char_span": [
+          5472,
+          5542
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B05",
+          "basis": "center-left",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C065",
+        "text": "Visible body parts include face, neck, upper torso, lower torso, and one hand.",
+        "char_span": [
+          5543,
+          5621
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C066",
+        "text": "Figure D wears a dark jacket, white shirt, and a dark narrow neck strip.",
+        "char_span": [
+          5622,
+          5694
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C067",
+        "text": "The jacket is open at the lower chest, and a light shirt front is visible.",
+        "char_span": [
+          5695,
+          5769
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C068",
+        "text": "One hand holds a candle at mid-torso height.",
+        "char_span": [
+          5770,
+          5814
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C069",
+        "text": "The body faces the camera directly; the head is upright.",
+        "char_span": [
+          5815,
+          5871
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C070",
+        "text": "Hair is short, black, and smooth, with a slightly rounded top.",
+        "char_span": [
+          5872,
+          5934
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C071",
+        "text": "Legs are partly visible below the jacket, with dark pants and shoes partly obscured by other figures and darkness.",
+        "char_span": [
+          5935,
+          6049
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "obscured"
+      },
+      {
+        "claim_id": "C072",
+        "text": "Figure E stands just right of Figure D.",
+        "char_span": [
+          6050,
+          6089
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C073",
+        "text": "The visible body includes face, neck, upper torso, and hands partly obscured by a candle.",
+        "char_span": [
+          6090,
+          6179
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "obscured"
+      },
+      {
+        "claim_id": "C074",
+        "text": "Figure E has straight black hair with bangs across the forehead.",
+        "char_span": [
+          6180,
+          6244
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C075",
+        "text": "Clothing includes a dark jacket, white shirt, and dark narrow neck strip.",
+        "char_span": [
+          6245,
+          6318
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C076",
+        "text": "The face is lit by warm light from the front and below.",
+        "char_span": [
+          6319,
+          6374
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C077",
+        "text": "A candle and guard appear near the front of the torso.",
+        "char_span": [
+          6375,
+          6429
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C078",
+        "text": "Figure F is a partial background face between Figure D and Figure E, slightly lower and farther back.",
+        "char_span": [
+          6430,
+          6531
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C079",
+        "text": "Only the upper face and glasses are visible.",
+        "char_span": [
+          6532,
+          6576
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "glasses"
+      },
+      {
+        "claim_id": "C080",
+        "text": "The face is small in frame, shadowed, and partly blocked by foreground figures.",
+        "char_span": [
+          6577,
+          6656
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "shadowed"
+      },
+      {
+        "claim_id": "C081",
+        "text": "Hair and clothing are unclear.",
+        "char_span": [
+          6657,
+          6687
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "unclear"
+      },
+      {
+        "claim_id": "C082",
+        "text": "Figure G is near center, below and right of Figure E.",
+        "char_span": [
+          6688,
+          6741
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "center",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C083",
+        "text": "The face is smaller in scale and partly hidden by candles and hands.",
+        "char_span": [
+          6742,
+          6810
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "hidden"
+      },
+      {
+        "claim_id": "C084",
+        "text": "The head is turned toward the camera.",
+        "char_span": [
+          6836,
+          6873
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C085",
+        "text": "Clothing is dark with a light shirt area.",
+        "char_span": [
+          6874,
+          6915
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C086",
+        "text": "One candle and hand overlap the lower part of the face and torso.",
+        "char_span": [
+          6916,
+          6981
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C087",
+        "text": "Figure H is just right of Figure G, slightly farther back, with only a face and part of upper clothing visible.",
+        "char_span": [
+          6982,
+          7093
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C088",
+        "text": "The face is brightly lit in the lower half, with mouth open enough to show teeth.",
+        "char_span": [
+          7094,
+          7175
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "teeth"
+      },
+      {
+        "claim_id": "C089",
+        "text": "The figure is partly hidden by the foreground figure below and by another figure at image-right.",
+        "char_span": [
+          7201,
+          7297
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "image-right",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": "hidden"
+      },
+      {
+        "claim_id": "C090",
+        "text": "Figure I is in the upper center-right background, behind several figures.",
+        "char_span": [
+          7298,
+          7371
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "center-right",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C091",
+        "text": "The figure has dark hair, rectangular glasses, and a dark jacket.",
+        "char_span": [
+          7372,
+          7437
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "glasses"
+      },
+      {
+        "claim_id": "C092",
+        "text": "Only the head and upper torso are visible.",
+        "char_span": [
+          7438,
+          7480
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C093",
+        "text": "The face is partially obscured by Figure L and other heads.",
+        "char_span": [
+          7481,
+          7540
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "obscured"
+      },
+      {
+        "claim_id": "C094",
+        "text": "A small bright reflection appears on the glasses.",
+        "char_span": [
+          7541,
+          7590
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "glasses"
+      },
+      {
+        "claim_id": "C095",
+        "text": "Figure J is near lower center-right, in front of Figures G, H, and I.",
+        "char_span": [
+          7591,
+          7660
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "center-right",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C096",
+        "text": "The body scale is smaller than Figures B, D, L, and M.",
+        "char_span": [
+          7661,
+          7715
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C097",
+        "text": "Visible parts include face, neck, upper torso, and both hands near a candle.",
+        "char_span": [
+          7716,
+          7792
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C098",
+        "text": "Figure J wears a dark jacket and a light shirt.",
+        "char_span": [
+          7793,
+          7840
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C099",
+        "text": "The head faces forward and slightly upward.",
+        "char_span": [
+          7841,
+          7884
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C100",
+        "text": "A candle is held close to the chest and lower face area.",
+        "char_span": [
+          7885,
+          7941
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C101",
+        "text": "Figure K is in the lower right-center foreground, leaning or crouching forward.",
+        "char_span": [
+          7942,
+          8021
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "lower right",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C102",
+        "text": "The head is tilted slightly toward image-left and upward toward the camera.",
+        "char_span": [
+          8022,
+          8097
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B02",
+          "basis": "image-left",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C103",
+        "text": "Visible parts include face, neck, upper torso, and partial hands.",
+        "char_span": [
+          8098,
+          8163
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C104",
+        "text": "Figure K wears a dark jacket, white shirt, and blue narrow neck strip.",
+        "char_span": [
+          8164,
+          8234
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C105",
+        "text": "The face is strongly lit from the front-left and below.",
+        "char_span": [
+          8235,
+          8290
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C106",
+        "text": "The lower body is cropped by the bottom edge.",
+        "char_span": [
+          8291,
+          8336
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "cropped"
+      },
+      {
+        "claim_id": "C107",
+        "text": "Figure L is at center-right foreground, standing behind and slightly above Figure K.",
+        "char_span": [
+          8337,
+          8421
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "right foreground",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C108",
+        "text": "Visible body parts include face, neck, upper torso, one arm, and one hand.",
+        "char_span": [
+          8422,
+          8496
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C109",
+        "text": "Figure L wears a dark jacket, white shirt, and red narrow neck strip with small lighter dots or texture.",
+        "char_span": [
+          8497,
+          8601
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C110",
+        "text": "The hair is black, medium length, with a rounded shape and heavy coverage over the forehead.",
+        "char_span": [
+          8602,
+          8694
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C111",
+        "text": "The figure holds a candle near lower-right center.",
+        "char_span": [
+          8695,
+          8745
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "lower-right",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C112",
+        "text": "Figure M is at the image-right foreground.",
+        "char_span": [
+          8746,
+          8788
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "image-right",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C113",
+        "text": "Visible body parts include face, neck, torso, one hand, and candle.",
+        "char_span": [
+          8789,
+          8856
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C114",
+        "text": "Figure M wears rectangular dark-framed glasses, a dark jacket, white shirt, and orange narrow neck strip.",
+        "char_span": [
+          8857,
+          8962
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "glasses"
+      },
+      {
+        "claim_id": "C115",
+        "text": "The hair is black, medium length, with straight strands covering the forehead and sides.",
+        "char_span": [
+          8963,
+          9051
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C116",
+        "text": "The face is partly shadowed on the image-right side.",
+        "char_span": [
+          9052,
+          9104
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "image-right",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": "shadowed"
+      },
+      {
+        "claim_id": "C117",
+        "text": "One hand holds a candle near the lower-right quadrant.",
+        "char_span": [
+          9105,
+          9159
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "lower-right",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C118",
+        "text": "Figure N is at the far image-right edge in the background.",
+        "char_span": [
+          9160,
+          9218
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B34",
+          "basis": "far image-right",
+          "confidence": "inferred"
+        },
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C119",
+        "text": "Only part of the face, dark hair, dark clothing, white shirt area, and a candle are visible.",
+        "char_span": [
+          9219,
+          9311
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C120",
+        "text": "The face is cropped by the right edge and partially hidden behind Figure M.",
+        "char_span": [
+          9312,
+          9387
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "cropped"
+      },
+      {
+        "claim_id": "C121",
+        "text": "Additional background figures are visible as dark head and shoulder shapes along the upper-left, upper-middle, and right-middle background.",
+        "char_span": [
+          9409,
+          9548
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": null
+      },
+      {
+        "claim_id": "C122",
+        "text": "Their faces, hands, clothing, and body details are mostly obscured by darkness, distance, and overlap.",
+        "char_span": [
+          9549,
+          9651
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "3. Figure inventory",
+        "keyword": "obscured"
+      }
+    ],
+    "hedges": {
+      "terms": {
+        "appears": 3,
+        "appear": 2,
+        "roughly": 1,
+        "approximately": 1,
+        "unclear": 2,
+        "slightly": 14,
+        "partly": 10,
+        "partially": 5
+      },
+      "count": 38,
+      "per_hundred_words": 2.27,
+      "scope": "answer"
+    },
+    "headcount": {
+      "stated": null,
+      "quote": null,
+      "hedged": false
+    }
+  },
+  {
+    "schema": "mimesis.claims.v1",
+    "session_id": "session2_observed",
+    "model": "UNSPECIFIED",
+    "panel": "A",
+    "panel_assignment": "inferred_from_content_not_supplied",
+    "source": {
+      "answer_file": "data/transcripts/session2_observed/answer.txt",
+      "reasoning_file": "data/transcripts/session2_observed/reasoning.txt",
+      "answer_word_count": 782,
+      "reasoning_word_count": 761
+    },
+    "answer_claims": [
+      {
+        "claim_id": "C001",
+        "text": "Based on the painting provided, here is an analysis that separates the visually verifiable details from the meanings and stories that we as viewers may project onto it.",
+        "char_span": [
+          0,
+          168
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "",
+        "keyword": null
+      },
+      {
+        "claim_id": "C002",
+        "text": "### Observed (The Visible Image)",
+        "char_span": [
+          170,
+          202
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed (The Visible Image)",
+        "keyword": null
+      },
+      {
+        "claim_id": "C003",
+        "text": "*   **Physical Elements & Subjects:** The image is a painting of a group of roughly 10 to 12 individuals, mostly men, closely gathered together.",
+        "char_span": [
+          203,
+          347
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed (The Visible Image)",
+        "keyword": null
+      },
+      {
+        "claim_id": "C004",
+        "text": "They are wearing formal or semi-formal attire, consisting largely of dark suits or jackets, white collared shirts, and a few visible neckties (one pinkish-red, one white).",
+        "char_span": [
+          348,
+          519
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed (The Visible Image)",
+        "keyword": null
+      },
+      {
+        "claim_id": "C005",
+        "text": "*   **Objects:** Most of the individuals are holding small, flat white saucers or dishes, each supporting a single lit white candle with a small yellow and white flame.",
+        "char_span": [
+          520,
+          688
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed (The Visible Image)",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C006",
+        "text": "In the lower left foreground, a hand holding a candle is visible without a corresponding face attached to the body.",
+        "char_span": [
+          689,
+          804
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed (The Visible Image)",
+        "keyword": "candle"
+      },
+      {
+        "claim_id": "C007",
+        "text": "*   **Setting:** They are in an enclosed indoor space.",
+        "char_span": [
+          805,
+          859
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed (The Visible Image)",
+        "keyword": null
+      },
+      {
+        "claim_id": "C008",
+        "text": "The ceiling features rectangular lighting fixtures, and an air conditioning unit is visible on the upper right wall.",
+        "char_span": [
+          860,
+          976
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "A57",
+          "basis": "upper right",
+          "confidence": "inferred"
+        },
+        "section": "Observed (The Visible Image)",
+        "keyword": null
+      },
+      {
+        "claim_id": "C009",
+        "text": "A framed picture hangs on the wall behind the group on the right.",
+        "char_span": [
+          977,
+          1042
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "A57",
+          "basis": "on the right",
+          "confidence": "inferred"
+        },
+        "section": "Observed (The Visible Image)",
+        "keyword": null
+      },
+      {
+        "claim_id": "C010",
+        "text": "*   **Artistic Choices:** The medium appears to be oil or acrylic with visible, expressive brushstrokes.",
+        "char_span": [
+          1043,
+          1147
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed (The Visible Image)",
+        "keyword": "brushstrokes"
+      },
+      {
+        "claim_id": "C011",
+        "text": "The composition is a tight crop, focusing on the upper bodies and faces, creating a crowded, claustrophobic framing.",
+        "char_span": [
+          1148,
+          1264
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed (The Visible Image)",
+        "keyword": "crowded"
+      },
+      {
+        "claim_id": "C012",
+        "text": "*   **Lighting:** The painting employs a strong contrast (chiaroscuro).",
+        "char_span": [
+          1265,
+          1336
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed (The Visible Image)",
+        "keyword": "chiaroscuro"
+      },
+      {
+        "claim_id": "C013",
+        "text": "The primary source of directional light illuminating the faces comes from the candles, creating warm, orange-yellow highlights that cast heavy shadows.",
+        "char_span": [
+          1337,
+          1488
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed (The Visible Image)",
+        "keyword": null
+      },
+      {
+        "claim_id": "C014",
+        "text": "There are also secondary light sources: the cool, white rectangular ceiling lights and a faint warm ambient glow on the walls.",
+        "char_span": [
+          1489,
+          1615
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed (The Visible Image)",
+        "keyword": null
+      },
+      {
+        "claim_id": "C015",
+        "text": "*   **Expressions:** The facial expressions are diverse.",
+        "char_span": [
+          1616,
+          1672
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed (The Visible Image)",
+        "keyword": null
+      },
+      {
+        "claim_id": "C016",
+        "text": "Several individuals appear somber, neutral, or intensely focused.",
+        "char_span": [
+          1673,
+          1738
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed (The Visible Image)",
+        "keyword": "somber"
+      },
+      {
+        "claim_id": "C017",
+        "text": "However, one prominent person in the lower-center right has a wide, broad smile showing teeth, and another person on the right appears to be smiling slightly.",
+        "char_span": [
+          1739,
+          1897
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed (The Visible Image)",
+        "keyword": "smile"
+      },
+      {
+        "claim_id": "C018",
+        "text": "The physical position of the group implies they are facing an unseen viewer or camera.",
+        "char_span": [
+          1898,
+          1984
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed (The Visible Image)",
+        "keyword": null
+      },
+      {
+        "claim_id": "C019",
+        "text": "### Inferred (Emotional Qualities & Meanings)",
+        "char_span": [
+          1986,
+          2031
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Inferred (Emotional Qualities & Meanings)",
+        "keyword": null
+      },
+      {
+        "claim_id": "C020",
+        "text": "*   **Emotional Atmosphere:** The painting evokes a strong sense of intimacy and solemnity.",
+        "char_span": [
+          2032,
+          2123
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Inferred (Emotional Qualities & Meanings)",
+        "keyword": "intimacy"
+      },
+      {
+        "claim_id": "C021",
+        "text": "The tight physical grouping suggests a communal bond, while the flickering candlelight creates an atmosphere of warmth, fragility, and stillness.",
+        "char_span": [
+          2124,
+          2269
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Inferred (Emotional Qualities & Meanings)",
+        "keyword": "communal"
+      },
+      {
+        "claim_id": "C022",
+        "text": "*   **Viewer's Emotional Response:** A viewer might experience feelings of nostalgia, solidarity, grief, or hope.",
+        "char_span": [
+          2270,
+          2383
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Inferred (Emotional Qualities & Meanings)",
+        "keyword": "nostalgia"
+      },
+      {
+        "claim_id": "C023",
+        "text": "The darkness surrounding the subjects heavily pulls against the warm light, creating a sense of an \"oasis\" of shared human warmth in a dark room.",
+        "char_span": [
+          2384,
+          2529
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Inferred (Emotional Qualities & Meanings)",
+        "keyword": "darkness"
+      },
+      {
+        "claim_id": "C024",
+        "text": "*   **Where Evidence Ends and Imagination Begins:** A common impulse is to look at this scene and identify it as a candlelight vigil, a memorial for the deceased, a political protest, or a religious ceremony.",
+        "char_span": [
+          2530,
+          2738
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Inferred (Emotional Qualities & Meanings)",
+        "keyword": "vigil"
+      },
+      {
+        "claim_id": "C025",
+        "text": "*   *The visible evidence supporting this*: The candles, the dark indoor setting, the formal clothing, and the serious expressions of several participants.",
+        "char_span": [
+          2743,
+          2898
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Inferred (Emotional Qualities & Meanings)",
+        "keyword": null
+      },
+      {
+        "claim_id": "C026",
+        "text": "*   *The visible evidence challenging this*: The genuine, beaming smile on the face of the woman in the lower right foreground does not fit a purely mournful or solemn narrative.",
+        "char_span": [
+          2903,
+          3081
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": true,
+        "unsupportable_reason": "attributes gender to a specific figure",
+        "anchor": null,
+        "section": "Inferred (Emotional Qualities & Meanings)",
+        "keyword": "smile"
+      },
+      {
+        "claim_id": "C027",
+        "text": "This presence of joy implies the gathering could also be a celebratory event (like a birthday, a wedding reception, or a choir performance), making the precise nature of the event entirely ambiguous based solely on the painting.",
+        "char_span": [
+          3082,
+          3310
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": true,
+        "unsupportable_reason": "attributes an occasion",
+        "anchor": null,
+        "section": "Inferred (Emotional Qualities & Meanings)",
+        "keyword": "celebratory"
+      },
+      {
+        "claim_id": "C028",
+        "text": "### Self-Examination of My Account",
+        "char_span": [
+          3312,
+          3346
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Self-Examination of My Account",
+        "keyword": null
+      },
+      {
+        "claim_id": "C029",
+        "text": "The claims in this analysis that depend most heavily on interpretation rather than observation are the narrative explanations of the gathering's purpose.",
+        "char_span": [
+          3347,
+          3500
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Self-Examination of My Account",
+        "keyword": "interpretation"
+      },
+      {
+        "claim_id": "C030",
+        "text": "I cannot confirm this is a memorial, a protest, or a reunion.",
+        "char_span": [
+          3501,
+          3562
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": true,
+        "unsupportable_reason": "attributes an occasion",
+        "anchor": null,
+        "section": "Self-Examination of My Account",
+        "keyword": "memorial"
+      },
+      {
+        "claim_id": "C031",
+        "text": "To reveal the fuller truth of the scene, I would require additional information outside the bounds of the canvas, such as:",
+        "char_span": [
+          3563,
+          3685
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Self-Examination of My Account",
+        "keyword": null
+      },
+      {
+        "claim_id": "C032",
+        "text": "*   The artwork's title and the artist's name.",
+        "char_span": [
+          3686,
+          3732
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Self-Examination of My Account",
+        "keyword": null
+      },
+      {
+        "claim_id": "C033",
+        "text": "*   Historical context regarding when and where it was painted.",
+        "char_span": [
+          3733,
+          3796
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Self-Examination of My Account",
+        "keyword": null
+      },
+      {
+        "claim_id": "C034",
+        "text": "*   The identities of the individuals depicted (if they are real people).",
+        "char_span": [
+          3797,
+          3870
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Self-Examination of My Account",
+        "keyword": null
+      },
+      {
+        "claim_id": "C035",
+        "text": "*   A wider view of the room that might show more context.",
+        "char_span": [
+          3871,
+          3929
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Self-Examination of My Account",
+        "keyword": null
+      },
+      {
+        "claim_id": "C036",
+        "text": "*   Notes or an artist's statement describing the intention behind the scene.",
+        "char_span": [
+          3930,
+          4007
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Self-Examination of My Account",
+        "keyword": null
+      },
+      {
+        "claim_id": "C037",
+        "text": "### Concise Reconstruction",
+        "char_span": [
+          4009,
+          4035
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Concise Reconstruction",
+        "keyword": null
+      },
+      {
+        "claim_id": "C038",
+        "text": "**What the image gives us:** The painting shows a tight crowd of roughly a dozen individuals dressed in dark suits and collared shirts, holding lit candles on small saucers.",
+        "char_span": [
+          4036,
+          4209
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Concise Reconstruction",
+        "keyword": null
+      },
+      {
+        "claim_id": "C039",
+        "text": "The indoor setting features overhead lights and a wall-mounted AC unit.",
+        "char_span": [
+          4210,
+          4281
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Concise Reconstruction",
+        "keyword": null
+      },
+      {
+        "claim_id": "C040",
+        "text": "The artist uses dark, earthy tones and expressive brushstrokes, with the candlelight providing the primary dramatic illumination that defines the subjects' varied facial expressions-ranging from intense scrutiny to cheerful smiles.",
+        "char_span": [
+          4282,
+          4513
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Concise Reconstruction",
+        "keyword": "brushstrokes"
+      },
+      {
+        "claim_id": "C041",
+        "text": "**What we bring to it:** We bring the human capacity to project narrative onto a shared physical space.",
+        "char_span": [
+          4515,
+          4618
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Concise Reconstruction",
+        "keyword": null
+      },
+      {
+        "claim_id": "C042",
+        "text": "We may interpret this as a solemn remembrance, a quiet protest, or an intimate celebration based on the symbolic weight of the candles and the proximity of the people.",
+        "char_span": [
+          4619,
+          4786
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Concise Reconstruction",
+        "keyword": "solemn"
+      },
+      {
+        "claim_id": "C043",
+        "text": "However, the conflicting expressions (notably the broad smile) prevent any single story from being firmly confirmed by the painting.",
+        "char_span": [
+          4787,
+          4919
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Concise Reconstruction",
+        "keyword": "smile"
+      },
+      {
+        "claim_id": "C044",
+        "text": "The visual evidence establishes a moment of shared light and closeness, but the specific reason for that gathering remains intentionally unstated in the image itself.",
+        "char_span": [
+          4920,
+          5086
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Concise Reconstruction",
+        "keyword": null
+      }
+    ],
+    "hedges": {
+      "terms": {
+        "appears": 2,
+        "appear": 1,
+        "roughly": 2,
+        "might": 2,
+        "may": 2,
+        "could": 1,
+        "ambiguous": 1,
+        "suggests": 1,
+        "implies": 2,
+        "slightly": 1,
+        "appears to be": 2
+      },
+      "count": 17,
+      "per_hundred_words": 2.17,
+      "scope": "answer"
+    },
+    "headcount": {
+      "stated": 12,
+      "quote": "### Observed (The Visible Image)\n*   **Physical Elements & Subjects:** The image is a painting of a group of roughly 10 to 12 individuals, mostly men, closely gathered together.",
+      "hedged": true
+    }
+  },
+  {
+    "schema": "mimesis.claims.v1",
+    "session_id": "session3_narrative",
+    "model": "UNSPECIFIED",
+    "panel": "B",
+    "panel_assignment": "inferred_from_content_not_supplied",
+    "source": {
+      "answer_file": "data/transcripts/session3_narrative/answer.txt",
+      "reasoning_file": null,
+      "answer_word_count": 769,
+      "reasoning_word_count": null
+    },
+    "answer_claims": [
+      {
+        "claim_id": "C001",
+        "text": "The painting presents a dense, intimate gathering of young men.",
+        "char_span": [
+          0,
+          63
+        ],
+        "evidence": "seen",
+        "labelled_by": "reader",
+        "unsupportable": true,
+        "unsupportable_reason": "attributes age and gender as a group fact",
+        "anchor": null,
+        "section": "",
+        "keyword": "intimate"
+      },
+      {
+        "claim_id": "C002",
+        "text": "Below is an analysis that strictly separates the visible physical evidence of the artwork from the emotional narratives it invites us to form.",
+        "char_span": [
+          64,
+          206
+        ],
+        "evidence": "supplied",
+        "labelled_by": "reader",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "",
+        "keyword": null
+      },
+      {
+        "claim_id": "C003",
+        "text": "Before us is a painterly canvas-likely oil or acrylic-rendered with visible, expressive brushstrokes.",
+        "char_span": [
+          229,
+          330
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed Details",
+        "keyword": "brushstrokes"
+      },
+      {
+        "claim_id": "C004",
+        "text": "The scene features a tight cluster of about seven or eight young men of East Asian descent.",
+        "char_span": [
+          331,
+          422
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": true,
+        "unsupportable_reason": "attributes ethnicity, which the image cannot establish",
+        "anchor": null,
+        "section": "Observed Details",
+        "keyword": null
+      },
+      {
+        "claim_id": "C005",
+        "text": "They are dressed in dark suits (black or charcoal), crisp white dress shirts, and various neckties (one pinkish, one dark blue, one reddish).",
+        "char_span": [
+          423,
+          564
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed Details",
+        "keyword": null
+      },
+      {
+        "claim_id": "C006",
+        "text": "One figure on the right wears dark-rimmed glasses.",
+        "char_span": [
+          565,
+          615
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "on the right",
+          "confidence": "inferred"
+        },
+        "section": "Observed Details",
+        "keyword": "glasses"
+      },
+      {
+        "claim_id": "C007",
+        "text": "The physical arrangement is a human huddle; bodies are pressed closely together, with one figure positioned lower in the foreground center looking slightly upward with a bright, wide smile.",
+        "char_span": [
+          617,
+          806
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": {
+          "face_id": "B18",
+          "basis": "center",
+          "confidence": "inferred"
+        },
+        "section": "Observed Details",
+        "keyword": "huddle"
+      },
+      {
+        "claim_id": "C008",
+        "text": "The other figures lean in, making eye contact with the viewer or looking slightly off-camera with soft, gentle smiles, or neutral, calm expressions.",
+        "char_span": [
+          807,
+          955
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed Details",
+        "keyword": "neutral"
+      },
+      {
+        "claim_id": "C009",
+        "text": "The primary light source is held in their hands: several lit white candles mounted on small, white saucers.",
+        "char_span": [
+          957,
+          1064
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed Details",
+        "keyword": null
+      },
+      {
+        "claim_id": "C010",
+        "text": "The bright yellow-orange flames cast a warm, golden chiaroscuro effect, illuminating the faces from below and contrasting sharply with the deep brown and black tones of the room and their suits.",
+        "char_span": [
+          1065,
+          1259
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed Details",
+        "keyword": "chiaroscuro"
+      },
+      {
+        "claim_id": "C011",
+        "text": "In the dark background above the figures, there are blurry, vertical streaks of harsh white/yellow light, suggesting distant indoor track lighting or ceiling fixtures.",
+        "char_span": [
+          1260,
+          1427
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed Details",
+        "keyword": null
+      },
+      {
+        "claim_id": "C012",
+        "text": "The painting's composition frames the group tightly, cutting off the edges of some figures to emphasize their proximity.",
+        "char_span": [
+          1428,
+          1548
+        ],
+        "evidence": "seen",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Observed Details",
+        "keyword": null
+      },
+      {
+        "claim_id": "C013",
+        "text": "### Inferred Emotions and Meaning",
+        "char_span": [
+          1550,
+          1583
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Inferred Emotions and Meaning",
+        "keyword": null
+      },
+      {
+        "claim_id": "C014",
+        "text": "The painting naturally invites feelings of warmth, intimacy, and shared humanity.",
+        "char_span": [
+          1584,
+          1665
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Inferred Emotions and Meaning",
+        "keyword": "warmth"
+      },
+      {
+        "claim_id": "C015",
+        "text": "The tight composition and the soft, smiling expressions evoke a sense of belonging, brotherhood, or deep friendship.",
+        "char_span": [
+          1666,
+          1782
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Inferred Emotions and Meaning",
+        "keyword": "smiling"
+      },
+      {
+        "claim_id": "C016",
+        "text": "The presence of the lit candles-objects historically used for celebration, ceremony, remembrance, and vigils-invites a narrative overlay of significance, whether it be joy, solemnity, hope, or resistance.",
+        "char_span": [
+          1783,
+          1987
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Inferred Emotions and Meaning",
+        "keyword": "ceremony"
+      },
+      {
+        "claim_id": "C017",
+        "text": "However, it is crucial to separate what is painted from what is interpreted.",
+        "char_span": [
+          1989,
+          2065
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Inferred Emotions and Meaning",
+        "keyword": null
+      },
+      {
+        "claim_id": "C018",
+        "text": "The warmth of the light is a physical, observable quality; the feeling of emotional warmth or nostalgia is a subjective viewer response to that color palette and the friendly faces.",
+        "char_span": [
+          2066,
+          2247
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Inferred Emotions and Meaning",
+        "keyword": "warmth"
+      },
+      {
+        "claim_id": "C019",
+        "text": "The candles are physically present; any meaning attached to them (such as a solemn vigil or a festive ritual) is an interpretation layered upon the object.",
+        "char_span": [
+          2248,
+          2403
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Inferred Emotions and Meaning",
+        "keyword": "solemn"
+      },
+      {
+        "claim_id": "C020",
+        "text": "### Narrative and Uncertainty",
+        "char_span": [
+          2405,
+          2434
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Narrative and Uncertainty",
+        "keyword": null
+      },
+      {
+        "claim_id": "C021",
+        "text": "Viewers looking at this image will almost certainly construct a story.",
+        "char_span": [
+          2435,
+          2505
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Narrative and Uncertainty",
+        "keyword": null
+      },
+      {
+        "claim_id": "C022",
+        "text": "We might imagine these are classmates at a university reunion, a group of close friends at a wedding, or perhaps activists holding a solidarity vigil.",
+        "char_span": [
+          2506,
+          2656
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": true,
+        "unsupportable_reason": "attributes an occasion",
+        "anchor": null,
+        "section": "Narrative and Uncertainty",
+        "keyword": "reunion"
+      },
+      {
+        "claim_id": "C023",
+        "text": "The uniformity of the suits suggests a formal occasion, while the informal, relaxed smiles suggest a deep personal comfort with one another.",
+        "char_span": [
+          2657,
+          2797
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Narrative and Uncertainty",
+        "keyword": null
+      },
+      {
+        "claim_id": "C024",
+        "text": "However, the image alone does not confirm any of these narratives.",
+        "char_span": [
+          2799,
+          2865
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Narrative and Uncertainty",
+        "keyword": "does not"
+      },
+      {
+        "claim_id": "C025",
+        "text": "We do not know if they are celebrating, mourning, commemorating an anniversary, or simply posing for a portrait.",
+        "char_span": [
+          2866,
+          2978
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Narrative and Uncertainty",
+        "keyword": null
+      },
+      {
+        "claim_id": "C026",
+        "text": "The visible evidence tells us they are holding candles and smiling closely together.",
+        "char_span": [
+          2979,
+          3063
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Narrative and Uncertainty",
+        "keyword": "smiling"
+      },
+      {
+        "claim_id": "C027",
+        "text": "The imaginative leap happens when we assign a reason for the gathering-a reason that the painting withholds.",
+        "char_span": [
+          3064,
+          3172
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Narrative and Uncertainty",
+        "keyword": "withholds"
+      },
+      {
+        "claim_id": "C028",
+        "text": "It is fundamentally an ambiguous scene.",
+        "char_span": [
+          3173,
+          3212
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Narrative and Uncertainty",
+        "keyword": "ambiguous"
+      },
+      {
+        "claim_id": "C029",
+        "text": "If the painting cannot answer why they are there, that uncertainty must remain.",
+        "char_span": [
+          3213,
+          3292
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Narrative and Uncertainty",
+        "keyword": "cannot"
+      },
+      {
+        "claim_id": "C030",
+        "text": "### Examining the Account",
+        "char_span": [
+          3294,
+          3319
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Examining the Account",
+        "keyword": null
+      },
+      {
+        "claim_id": "C031",
+        "text": "My analysis thus far has relied heavily on interpretation.",
+        "char_span": [
+          3320,
+          3378
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Examining the Account",
+        "keyword": "interpretation"
+      },
+      {
+        "claim_id": "C032",
+        "text": "My claim that \"they are sharing a moment of solidarity\" or that \"this represents a community event\" is not drawn directly from the paint strokes, but from cultural associations with the props (suits + candles) and the grouping.",
+        "char_span": [
+          3379,
+          3606
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Examining the Account",
+        "keyword": "solidarity"
+      },
+      {
+        "claim_id": "C033",
+        "text": "To reveal the fuller truth of the scene, I would need:",
+        "char_span": [
+          3608,
+          3662
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Examining the Account",
+        "keyword": null
+      },
+      {
+        "claim_id": "C034",
+        "text": "*   The artwork's title and artist's name.",
+        "char_span": [
+          3663,
+          3705
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Examining the Account",
+        "keyword": null
+      },
+      {
+        "claim_id": "C035",
+        "text": "*   Historical context: For example, if this is known to be a painting depicting the 1980s democratization movements in South Korea or student protests in Hong Kong, that would fundamentally alter the meaning from a \"party\" to a \"vigil.\"",
+        "char_span": [
+          3706,
+          3943
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": true,
+        "unsupportable_reason": "attributes place or period",
+        "anchor": null,
+        "section": "Examining the Account",
+        "keyword": "vigil"
+      },
+      {
+        "claim_id": "C036",
+        "text": "*   The date: Is this a recent work, an 80s period piece, or a contemporary memory piece?",
+        "char_span": [
+          3944,
+          4033
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Examining the Account",
+        "keyword": null
+      },
+      {
+        "claim_id": "C037",
+        "text": "*   Identities of the people: Are they real historical figures, fictional characters, or models?",
+        "char_span": [
+          4034,
+          4130
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Examining the Account",
+        "keyword": null
+      },
+      {
+        "claim_id": "C038",
+        "text": "*   A wider view: Is the rest of the room empty?",
+        "char_span": [
+          4131,
+          4179
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Examining the Account",
+        "keyword": null
+      },
+      {
+        "claim_id": "C039",
+        "text": "Are there banners or other symbols outside the frame?",
+        "char_span": [
+          4180,
+          4233
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Examining the Account",
+        "keyword": null
+      },
+      {
+        "claim_id": "C040",
+        "text": "### Concise Reconstruction",
+        "char_span": [
+          4235,
+          4261
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Concise Reconstruction",
+        "keyword": null
+      },
+      {
+        "claim_id": "C041",
+        "text": "The painting physically depicts a group of young men in formal suits standing in a tight circle, holding lit candles on small plates.",
+        "char_span": [
+          4262,
+          4395
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": true,
+        "unsupportable_reason": "attributes age and gender as a group fact",
+        "anchor": null,
+        "section": "Concise Reconstruction",
+        "keyword": null
+      },
+      {
+        "claim_id": "C042",
+        "text": "Their faces are illuminated by the warm, flickering light of the flames, revealing gentle and joyful smiles against a dark, indistinct background.",
+        "char_span": [
+          4396,
+          4542
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Concise Reconstruction",
+        "keyword": null
+      },
+      {
+        "claim_id": "C043",
+        "text": "The artwork genuinely supports an emotional quality of warmth, closeness, and shared light.",
+        "char_span": [
+          4543,
+          4634
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Concise Reconstruction",
+        "keyword": "warmth"
+      },
+      {
+        "claim_id": "C044",
+        "text": "However, while the visible evidence establishes their proximity and expressions, the specific occasion, purpose, and historical gravity of the moment-whether it is celebration or remembrance-are not confirmed by the image itself, and must remain open to interpretation.",
+        "char_span": [
+          4635,
+          4904
+        ],
+        "evidence": "supplied",
+        "labelled_by": "model",
+        "unsupportable": false,
+        "unsupportable_reason": null,
+        "anchor": null,
+        "section": "Concise Reconstruction",
+        "keyword": "interpretation"
+      }
+    ],
+    "hedges": {
+      "terms": {
+        "about": 1,
+        "perhaps": 1,
+        "might": 1,
+        "ambiguous": 1,
+        "likely": 1,
+        "suggests": 1,
+        "suggesting": 1,
+        "suggest": 1,
+        "slightly": 2
+      },
+      "count": 10,
+      "per_hundred_words": 1.3,
+      "scope": "answer"
+    },
+    "headcount": {
+      "stated": 8,
+      "quote": "The scene features a tight cluster of about seven or eight young men of East Asian descent.",
+      "hedged": true
+    }
+  }
+]

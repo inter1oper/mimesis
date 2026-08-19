@@ -145,6 +145,9 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
     stru = json.loads((out / "structure.json").read_text())
     fa = json.loads((out / "face_analysis.json").read_text())
     nf = json.loads((out / "noise_floor.json").read_text())
+    claims_path = out / "claims.json"
+    sessions = json.loads(claims_path.read_text()) if claims_path.exists() else []
+    mine = [s_ for s_ in sessions if s_.get("panel") == panel]
 
     W, H = det["painting_rect_px"]
     aspect = W / H
@@ -194,9 +197,8 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
             face_ids=[fid], at=nodes[fid], grow_s=0.7)
         add("connector_label", "DETECT", "detection", f"/faces/{i}", a + 1.3, b,
             face_ids=[fid], at=nodes[fid],
-            label=f"{fid}  BLAZEFACE {bf:.3f}  YUNET {yn:.3f}",
-            label2=("CONFIRMED — TWO DETECTORS AGREE" if min(bf, yn) > floor_bf
-                    else "AGREED, BUT UNDER THE FALSE-POSITIVE CEILING"))
+            label=f"{max(bf, yn):.3f}",
+            label2=("confirmed" if min(bf, yn) > floor_bf else "under floor"))
         add("box_content", "DETECT", "detection", f"/faces/{i}", a + 0.9, b,
             face_ids=[fid], mode="confidence", value=max(bf, yn))
 
@@ -210,8 +212,8 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
                 face_ids=[fid], mode="subdivide", cells=3, grow_s=0.8)
             add("connector_label", "RESOLVE", "detection", f"/faces/{i}", a + 0.4, b,
                 face_ids=[fid], at=nodes[fid],
-                label=f"MESH {n_pts}/478 CONVERGED",
-                label2=f"RENDER TIER {t.upper().replace('_', ' ')}")
+                label=f"{n_pts}/478",
+                label2=t.replace("_", " "))
             cue = {"full_mesh": "mesh_full", "contour": "mesh_contour",
                    "landmarks": "mesh_points"}.get(t, "mesh_points")
             add(cue, "RESOLVE", "detection", f"/faces/{i}/landmarks", a + 0.9, loop,
@@ -221,8 +223,7 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
                 face_ids=[fid], mode="fail", grow_s=0.8, alarm=True)
             add("connector_label", "RESOLVE", "detection", f"/faces/{i}", a + 0.4, b,
                 face_ids=[fid], at=nodes[fid], alarm=True,
-                label="MESH DID NOT CONVERGE",
-                label2="FACE-SHAPED REGION WITH NO FACE GEOMETRY")
+                label="no geometry", label2="unresolved")
 
     # ---------- PASS 3 MEASURE ----------
     for f, a, b in stagger(cons, "MEASURE", 0.80):
@@ -232,21 +233,20 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
         k = anal_index[fid]; r = anal[fid]
         rows = []
         if r.get("geometry"):
-            rows.append((f"INTEROCULAR {r['geometry']['interocular_px']:.0f} px",
+            rows.append((f"iod {r['geometry']['interocular_px']:.0f}",
                          "face_analysis", f"/panels/{panel}/{k}/geometry"))
         if r.get("head_pose"):
             hp = r["head_pose"]
-            rows.append((f"YAW {hp['yaw_deg']:+.1f}°  PITCH {hp['pitch_deg']:+.1f}°  "
-                         f"ROLL {hp['roll_deg']:+.1f}°",
+            rows.append((f"yaw {hp['yaw_deg']:+.0f}  roll {hp['roll_deg']:+.0f}",
                          "face_analysis", f"/panels/{panel}/{k}/head_pose"))
         if r.get("symmetry"):
-            rows.append((f"BILATERAL RESIDUAL {r['symmetry']['residual_mean_iod']:.4f} iod",
+            rows.append((f"sym {r['symmetry']['residual_mean_iod']:.4f}",
                          "face_analysis", f"/panels/{panel}/{k}/symmetry"))
         for bs in (r.get("blendshapes_top8") or [])[:3]:
-            rows.append((f"{bs['name']}  {bs['pct']:.1f}%",
+            rows.append((f"{bs['name'][:14]} {bs['pct']:.0f}%",
                          "face_analysis", f"/panels/{panel}/{k}/blendshapes_top8"))
         if r.get("photometry"):
-            rows.append((f"LUMA {r['photometry']['luma_mean']:.0f} ± {r['photometry']['luma_std']:.0f}",
+            rows.append((f"luma {r['photometry']['luma_mean']:.0f}",
                          "face_analysis", f"/panels/{panel}/{k}/photometry"))
         step = (b - a) / max(1, len(rows))
         for j, (text, sf, sp) in enumerate(rows):
@@ -277,15 +277,13 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
         if kind == "mst":
             add("relation", "RELATE", "structure", f"/edges/{n}", a, b,
                 face_ids=[e["from"], e["to"]], grow_s=0.6, style="solid",
-                label=f"ADJACENT {e['distance_canvas']:.3f}")
+                label=f"{e['distance_canvas']:.3f}")
         else:
             thr = stru["same_identity_cosine"]
             add("relation", "RELATE", "structure", f"/edges/{n}", a, b,
                 face_ids=[e["from"], e["to"]], grow_s=0.9, style="dashed",
                 cross=(kind == "cross"), alarm=(kind == "cross"),
-                label=f"COSINE {e['cosine']:.3f} > {thr}",
-                label2=("SAME-IDENTITY THRESHOLD CROSSED — THE DESCRIPTOR "
-                        "CANNOT SEPARATE THESE TWO FACES"))
+                label=f"cos {e['cosine']:.3f}", label2="cannot separate")
     gz = stru["per_panel"][panel]["gaze_convergence"]
     ga, gb = window("RELATE", loop)
     for e_i, e in [(n, e) for n, e in enumerate(E)
@@ -295,9 +293,9 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
     if gz.get("converges"):
         add("convergence", "RELATE", "structure", f"/per_panel/{panel}/gaze_convergence",
             ga + (gb - ga) * 0.6, gb, at=gz["point"],
-            label=f"GAZE CONVERGES  RESIDUAL {gz['residual_mean']:.4f}  n={gz['rays']}",
-            label2=("TIGHT — A SHARED OBJECT OF ATTENTION" if gz["residual_mean"] < 0.09
-                    else "LOOSE — NO SHARED OBJECT OF ATTENTION"))
+            label=f"res {gz['residual_mean']:.4f}",
+            label2=("shared attention" if gz["residual_mean"] < 0.09
+                    else "no shared attention"))
 
     # ---------- PASS 5 DOUBT ----------
     ghosts = [f for f in faces if len(f["detectors"]) < 2
@@ -316,29 +314,90 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
            and e["box_iou"] < 0.75]
     for (n, e), a, b in stagger(dis, "DOUBT", 0.55):
         add("disagreement", "DOUBT", "structure", f"/edges/{n}", a, b,
-            face_ids=[e["from"]], label=f"DETECTORS DISAGREE  IoU {e['box_iou']:.2f}")
+            face_ids=[e["from"]], label=f"IoU {e['box_iou']:.2f}")
     orph = [(n, e) for n, e in enumerate(E)
             if e["type"] == "attribution" and e.get("panel") == panel and e["unattached"]]
     for (n, e), a, b in stagger(orph, "DOUBT", 0.7):
         add("orphan", "DOUBT", "structure", f"/edges/{n}", a, b,
             face_ids=[e["to"]], blob_ids=[e["from"]], alarm=True,
-            label=f"CANDLE, NO FACE  {e['distance_face_heights']:.2f} FACE-HEIGHTS",
-            label2="A HAND HOLDING A LIGHT WITH NOBODY ATTACHED")
+            label="no face", label2=f"{e['distance_face_heights']:.2f}h")
     add("floor", "DOUBT", "noise_floor", "/floor", da + (db - da) * 0.2, db,
-        label=f"FALSE-POSITIVE CEILING  BLAZEFACE "
-              f"{nf['floor']['blazeface']['false_positive_ceiling']}  "
-              f"YUNET {nf['floor']['yunet']['false_positive_ceiling']}",
-        label2="SCORES BELOW THIS LINE ARE NOT EVIDENCE OF A FACE")
+        label=f"floor {nf['floor']['blazeface']['false_positive_ceiling']} / "
+              f"{nf['floor']['yunet']['false_positive_ceiling']}",
+        label2="below this is not evidence")
     add("tally", "DOUBT", "detection", "/counts", da + (db - da) * 0.45, db,
-        label=f"{det['counts']['merged']} DETECTIONS  "
-              f"{det['counts']['both_detectors_agree']} CONFIRMED  "
-              f"{det['counts']['mesh_converged']} WITH GEOMETRY",
-        label2=f"{len(ghosts)} REJECTED HYPOTHESES STILL FLICKERING")
+        label=f"{det['counts']['merged']} / "
+              f"{det['counts']['both_detectors_agree']} / "
+              f"{det['counts']['mesh_converged']}",
+        label2=f"{len(ghosts)} rejected")
+
+    # ---------- the model's own words, on the paint ----------
+    # One or two words lifted verbatim from a claim, placed at the face the
+    # claim refers to when it names a position, and scattered on the canvas
+    # when it does not. The reference look prints single words; these are the
+    # model's, not ours.
+    words = []
+    for sess in mine:
+        si = sessions.index(sess)
+        for ci, cl in enumerate(sess["answer_claims"]):
+            if cl.get("keyword"):
+                words.append((si, ci, cl))
+    seed = 0
+    for (si, ci, cl), a, b in stagger(words[:64], "MEASURE", 0.34, lead_frac=0.94):
+        fid = (cl.get("anchor") or {}).get("face_id")
+        pos = None
+        if not fid:
+            seed = (seed * 1103515245 + 12345) & 0x7fffffff
+            pos = [round(0.08 + (seed % 840) / 1000.0, 4),
+                   round(0.10 + ((seed >> 10) % 800) / 1000.0, 4)]
+        add("claim_word", "MEASURE", "claims", f"/{si}/answer_claims/{ci}", a, b, face_ids=[fid] if fid else [], at=pos,
+            label=cl["keyword"],
+            evidence=cl["evidence"], unsupportable=cl["unsupportable"],
+            alarm=cl["unsupportable"])
+
+    # a status block, as on an instrument that is telling you it is struggling
+    sa, sb = window("DETECT", loop)
+    if mine:
+        s0 = mine[0]
+        add("status_block", "DETECT", "claims", f"/{sessions.index(s0)}", sa, loop,
+            lines=[f"PANEL      {panel}",
+                   f"SESSIONS   {len(mine)}",
+                   f"CLAIMS     {sum(len(x['answer_claims']) for x in mine)}",
+                   f"SEEN       {sum(1 for x in mine for c2 in x['answer_claims'] if c2['evidence']=='seen')}",
+                   f"SUPPLIED   {sum(1 for x in mine for c2 in x['answer_claims'] if c2['evidence']=='supplied')}",
+                   f"UNSUPPORT  {sum(1 for x in mine for c2 in x['answer_claims'] if c2['unsupportable'])}",
+                   f"HEDGE/100W {s0['hedges']['per_hundred_words']}",
+                   f"HEADCOUNT  {s0['headcount']['stated']}  DETECTOR {det['counts']['both_detectors_agree']}"])
 
     cues.sort(key=lambda c: (c["t_in"], c["cue_id"]))
 
-    answer = []
-    if specimen:
+    answer, reasoning = [], []
+    if mine:
+        sess = mine[0]
+        cl = [c2 for c2 in sess["answer_claims"] if len(c2["text"]) > 40]
+        span = loop / max(1, len(cl))
+        for i, c2 in enumerate(cl):
+            answer.append({"cue_id": f"{panel}-ans-{i:03d}",
+                           "t_in": round(i * span, 3),
+                           "t_out": round((i + 1) * span, 3),
+                           "text": c2["text"], "char_onsets_ms": char_onsets(c2["text"]),
+                           "claim_ids": [c2["claim_id"]], "section": c2["section"],
+                           "evidence": c2["evidence"],
+                           "unsupportable": c2["unsupportable"]})
+        rf = sess["source"].get("reasoning_file")
+        if rf and pathlib.Path(rf).exists():
+            raw = pathlib.Path(rf).read_text()
+            lines = [ln.strip() for ln in raw.splitlines() if len(ln.strip()) > 3]
+            # the trace leads the answer by lead_offset_s so deliberation is seen first
+            rspan = loop / max(1, len(lines))
+            for i, ln in enumerate(lines):
+                t0 = max(0.0, i * rspan + lead)
+                reasoning.append({"cue_id": f"{panel}-rsn-{i:03d}",
+                                  "t_in": round(t0, 3),
+                                  "t_out": round(min(loop, t0 + rspan * 2.4), 3),
+                                  "text": ln, "line_interval_ms": 34,
+                                  "section": "trace"})
+    if specimen and not answer:
         span = loop / len(SPECIMEN)
         for i, text in enumerate(SPECIMEN):
             answer.append({"cue_id": f"{panel}-specimen-{i:02d}",
@@ -361,9 +420,11 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
         "reveal": {"char_ms": CHAR_MS, "sentence_pause_ms": SENTENCE_PAUSE_MS,
                    "comma_pause_ms": COMMA_PAUSE_MS, "blur_resolve_ms": BLUR_RESOLVE_MS},
         "source_state": {
-            "answer": ("type_specimen_not_model_output" if specimen
-                       else "awaiting_transcripts"),
-            "reasoning": "awaiting_transcripts",
+            "answer": ("model_output" if mine else
+                       ("type_specimen_not_model_output" if specimen
+                        else "awaiting_transcripts")),
+            "reasoning": ("model_output" if reasoning else "not_supplied"),
+            "sessions": [x["session_id"] for x in mine],
             "overlay": "complete",
             "note": ("Connector labels are the pipeline's own reasoning, generated "
                      "from measured values. They are not model transcripts and must "
@@ -371,7 +432,7 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
                      "reasoning track carries the model's words and these remain the "
                      "instrument layer beneath."),
         },
-        "tracks": {"answer": answer, "reasoning": [], "overlay": cues},
+        "tracks": {"answer": answer, "reasoning": reasoning, "overlay": cues},
     }
 
 
