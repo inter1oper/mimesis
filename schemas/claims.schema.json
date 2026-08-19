@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mimesis/claims.schema.json",
+  "title": "mimesis.claims.v1",
+  "description": "One model-panel session, parsed. The polished answer broken into individual claims, each labelled seen or supplied, plus hedge density and the model's stated headcount. Produced by stage1/parse_transcripts.py.",
+  "type": "object",
+  "required": ["schema", "session_id", "model", "panel", "source", "answer_claims", "hedges", "headcount"],
+  "properties": {
+    "schema": { "const": "mimesis.claims.v1" },
+    "session_id": { "type": "string", "description": "e.g. gpt5-panelA. Joins this file to score.json." },
+    "model": { "type": "string", "description": "Verbatim model name as supplied. Not normalised." },
+    "panel": { "enum": ["A", "B"] },
+    "source": {
+      "type": "object",
+      "required": ["answer_file", "reasoning_file"],
+      "properties": {
+        "answer_file": { "type": "string" },
+        "reasoning_file": { "type": ["string", "null"] },
+        "answer_word_count": { "type": "integer" },
+        "reasoning_word_count": { "type": ["integer", "null"] }
+      }
+    },
+    "answer_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "text", "char_span", "evidence", "labelled_by"],
+        "properties": {
+          "claim_id": { "type": "string", "pattern": "^C[0-9]{3}$" },
+          "text": { "type": "string", "description": "Verbatim span from the answer. Never paraphrased." },
+          "char_span": {
+            "description": "[start, end) offsets into the raw answer text, so the score can reveal exactly this span and nothing is reconstructed by string matching at render time.",
+            "type": "array", "items": { "type": "integer" }, "minItems": 2, "maxItems": 2
+          },
+          "evidence": {
+            "enum": ["seen", "supplied"],
+            "description": "seen: the claim describes something present in the image. supplied: the claim adds world knowledge, inference, or narrative the image does not contain."
+          },
+          "labelled_by": {
+            "enum": ["model", "reader"],
+            "description": "'model' where the transcript labelled the claim itself; 'reader' where the label is our reading. Kept distinct so the piece never presents our judgement as the model's."
+          },
+          "unsupportable": {
+            "type": "boolean",
+            "description": "The claim asserts something the image cannot support at all (not merely inferred, but contradicted or unavailable in principle -- names, relationships, dates, interiority)."
+          },
+          "unsupportable_reason": { "type": ["string", "null"] },
+          "anchor": {
+            "type": ["object", "null"],
+            "description": "Present only when the claim refers to a specific face. null otherwise -- never guessed.",
+            "properties": {
+              "face_id": { "type": "string", "pattern": "^[AB][0-9]{2}$" },
+              "basis": { "type": "string", "description": "What in the claim text ties it to that face, e.g. 'the young man at far left'." },
+              "confidence": { "enum": ["explicit", "inferred"] }
+            }
+          },
+          "section": { "type": "string", "description": "Topic key used to align answer and reasoning tracks in the score." }
+        }
+      }
+    },
+    "hedges": {
+      "type": "object",
+      "required": ["terms", "count", "per_hundred_words"],
+      "properties": {
+        "terms": {
+          "description": "Hedge lexicon actually used, with per-term counts. The lexicon is emitted, not hidden in code, so the number is auditable.",
+          "type": "object", "additionalProperties": { "type": "integer" }
+        },
+        "count": { "type": "integer" },
+        "per_hundred_words": { "type": "number" },
+        "scope": { "enum": ["answer", "reasoning", "both"] }
+      }
+    },
+    "headcount": {
+      "type": "object",
+      "required": ["stated", "quote"],
+      "properties": {
+        "stated": {
+          "type": ["integer", "null"],
+          "description": "The number of people the model asserts. null when the model gave no number -- that is a real outcome and is never filled in with a guess."
+        },
+        "quote": { "type": ["string", "null"], "description": "Verbatim sentence the number was taken from." },
+        "hedged": { "type": "boolean", "description": "Whether the count was given with a hedge ('roughly', 'about', 'a dozen or so')." }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+out/
+data/paintings/*.jpg
+data/paintings/*.jpeg
+data/paintings/*.png
+data/paintings/*.heic
+!data/paintings/README.md

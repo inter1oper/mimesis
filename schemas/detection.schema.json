@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mimesis/detection.schema.json",
+  "title": "mimesis.detection.v1",
+  "description": "Face detection output for one panel. All coordinates are normalised 0-1 against the RECTIFIED PAINTING RECTANGLE (origin top-left, x right, y down), never against the source photograph. Produced by stage1/detect_faces.py.",
+  "type": "object",
+  "required": ["schema", "panel", "painting_rect_px", "detectors", "merge", "counts", "faces"],
+  "properties": {
+    "schema": { "const": "mimesis.detection.v1" },
+    "panel": { "enum": ["A", "B"] },
+    "painting_rect_px": {
+      "description": "Pixel size of the rectified raster. Present so the renderer can reason about the resolution the coordinates were measured at; it is NOT a projection target.",
+      "type": "array", "items": { "type": "integer" }, "minItems": 2, "maxItems": 2
+    },
+    "canvas_cm": {
+      "description": "Physical canvas size, [width_cm, height_cm]. Lets the renderer convert a normalised size into millimetres on the wall and drop overlay detail that cannot resolve.",
+      "type": ["array", "null"], "items": { "type": "number" }, "minItems": 2, "maxItems": 2
+    },
+    "source_photo_sha256": { "type": ["string", "null"], "description": "First 16 hex chars, so a re-run against a different photograph is detectable." },
+    "corner_method": { "enum": ["auto_quad", "manual", null], "description": "How the canvas rectangle was established. 'manual' means a human placed the corners." },
+    "detectors": {
+      "description": "Per-detector model file, threshold and search strategy, recorded so any count in this file can be reproduced or challenged.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "model": { "type": "string" },
+          "min_confidence": { "type": "number" },
+          "strategy": { "type": "string" },
+          "points": { "type": "integer" }
+        }
+      }
+    },
+    "merge": {
+      "type": "object",
+      "required": ["method", "iou"],
+      "properties": {
+        "method": { "type": "string" },
+        "iou": { "type": "number" },
+        "box": { "type": "string" }
+      }
+    },
+    "counts": {
+      "description": "Detector-side counts only. The three-way count table (detector / model claim / true) lives in reconcile.json, not here.",
+      "type": "object",
+      "required": ["merged", "both_detectors_agree", "mesh_converged"],
+      "properties": {
+        "raw_blazeface": { "type": "integer" },
+        "raw_yunet": { "type": "integer" },
+        "merged": { "type": "integer" },
+        "both_detectors_agree": { "type": "integer" },
+        "blazeface_only": { "type": "integer" },
+        "yunet_only": { "type": "integer" },
+        "mesh_converged": { "type": "integer" }
+      }
+    },
+    "faces": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["face_id", "box", "detectors", "consensus", "mesh_ok"],
+        "properties": {
+          "face_id": {
+            "type": "string",
+            "pattern": "^[AB][0-9]{2}$",
+            "description": "Stable id, e.g. A01. Ordered left-to-right by box x. Referenced by claims.json and score.json."
+          },
+          "box": {
+            "description": "[x, y, w, h] normalised 0-1 to the painting rectangle.",
+            "type": "array", "items": { "type": "number", "minimum": -0.5, "maximum": 1.5 },
+            "minItems": 4, "maxItems": 4
+          },
+          "detectors": {
+            "description": "Per-detector evidence for this face. Scores from different detectors are NOT comparable and are never averaged; a face detected by one detector only is a real and reportable state.",
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": ["score", "box"],
+              "properties": {
+                "score": { "type": "number", "minimum": 0, "maximum": 1 },
+                "box": { "type": "array", "items": { "type": "number" }, "minItems": 4, "maxItems": 4 },
+                "scale_hint": { "type": "string", "description": "Which tile or scale produced the detection." }
+              }
+            }
+          },
+          "consensus": {
+            "description": "Sorted list of detector names that fired on this face. Length 1 means the detectors disagree about whether a face is here.",
+            "type": "array", "items": { "type": "string" }
+          },
+          "mesh_ok": { "type": "boolean" },
+          "mesh_note": {
+            "type": ["string", "null"],
+            "enum": ["crop_too_small", "mesh_did_not_converge", null],
+            "description": "Why the landmark mesh is absent. A confident box with no converged mesh is a face-shaped region with no resolvable face geometry -- content, not an error."
+          },
+          "landmarks": {
+            "description": "478 MediaPipe FaceLandmarker points as [x, y, z], x/y normalised to the painting rectangle, z in the model's own relative depth units. null when mesh_ok is false. NEVER interpolated or filled in.",
+            "type": ["array", "null"],
+            "items": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 }
+          }
+        }
+      }
+    }
+  }
+}
