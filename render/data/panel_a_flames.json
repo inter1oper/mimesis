@@ -1,0 +1,3391 @@
+{
+  "schema": "mimesis.flames.v1",
+  "panel": "A",
+  "painting_rect_px": [
+    4800,
+    3600
+  ],
+  "parameters": {
+    "v_percentile": 99.2,
+    "value_threshold": 245.0,
+    "min_area_frac": 2e-06,
+    "max_area_frac": 0.003,
+    "warm_hue_range": [
+      0,
+      45
+    ],
+    "orphan_threshold_face_heights": 2.5,
+    "faces_counted": "consensus",
+    "faces_available": 58,
+    "faces_used": 12,
+    "kind_rule": "ceiling_fixture: centroid above y=0.2 and aspect<1.2; flame: aspect>=1.0 and (warm hue or sat<40) and high local contrast; bright_other: everything else"
+  },
+  "counts": {
+    "blobs": 155,
+    "flames": 26,
+    "ceiling_fixtures": 25,
+    "bright_other": 104,
+    "flames_unattached": 1
+  },
+  "blobs": [
+    {
+      "blob_id": "AF01",
+      "kind": "bright_other",
+      "centroid": [
+        0.960924,
+        0.006537
+      ],
+      "box": [
+        0.960208,
+        0.005278,
+        0.001875,
+        0.003056
+      ],
+      "area_frac": 3.47e-06,
+      "aspect_h_over_w": 1.222,
+      "median_hue": 24.0,
+      "median_sat": 15.0,
+      "mean_value": 251.6,
+      "surround_mean_value": 181.5,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF02",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.953181,
+        0.009759
+      ],
+      "box": [
+        0.949792,
+        0.006389,
+        0.008542,
+        0.007778
+      ],
+      "area_frac": 2.448e-05,
+      "aspect_h_over_w": 0.683,
+      "median_hue": 27.0,
+      "median_sat": 21.0,
+      "mean_value": 252.3,
+      "surround_mean_value": 115.1,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF03",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.962558,
+        0.007902
+      ],
+      "box": [
+        0.961667,
+        0.006944,
+        0.002083,
+        0.002222
+      ],
+      "area_frac": 2.72e-06,
+      "aspect_h_over_w": 0.8,
+      "median_hue": 22.0,
+      "median_sat": 40.0,
+      "mean_value": 251.5,
+      "surround_mean_value": 199.9,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF04",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.875727,
+        0.029044
+      ],
+      "box": [
+        0.874792,
+        0.028333,
+        0.002083,
+        0.001667
+      ],
+      "area_frac": 2.49e-06,
+      "aspect_h_over_w": 0.6,
+      "median_hue": 26.0,
+      "median_sat": 8.0,
+      "mean_value": 252.4,
+      "surround_mean_value": 232.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF05",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.871602,
+        0.031423
+      ],
+      "box": [
+        0.868125,
+        0.03,
+        0.007083,
+        0.003056
+      ],
+      "area_frac": 1.944e-05,
+      "aspect_h_over_w": 0.324,
+      "median_hue": 30.0,
+      "median_sat": 12.0,
+      "mean_value": 253.8,
+      "surround_mean_value": 137.6,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF06",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.37992,
+        0.031511
+      ],
+      "box": [
+        0.375208,
+        0.030556,
+        0.009792,
+        0.0025
+      ],
+      "area_frac": 1.591e-05,
+      "aspect_h_over_w": 0.191,
+      "median_hue": 30.0,
+      "median_sat": 9.0,
+      "mean_value": 252.9,
+      "surround_mean_value": 66.8,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF07",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.87857,
+        0.032456
+      ],
+      "box": [
+        0.877292,
+        0.031111,
+        0.002708,
+        0.003333
+      ],
+      "area_frac": 5.15e-06,
+      "aspect_h_over_w": 0.923,
+      "median_hue": 26.0,
+      "median_sat": 26.0,
+      "mean_value": 252.8,
+      "surround_mean_value": 191.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF08",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.44239,
+        0.044414
+      ],
+      "box": [
+        0.435625,
+        0.0425,
+        0.013333,
+        0.004722
+      ],
+      "area_frac": 3.501e-05,
+      "aspect_h_over_w": 0.266,
+      "median_hue": 30.0,
+      "median_sat": 9.0,
+      "mean_value": 252.7,
+      "surround_mean_value": 71.1,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF09",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.805445,
+        0.046973
+      ],
+      "box": [
+        0.800417,
+        0.044722,
+        0.010417,
+        0.004722
+      ],
+      "area_frac": 2.558e-05,
+      "aspect_h_over_w": 0.34,
+      "median_hue": 27.0,
+      "median_sat": 52.0,
+      "mean_value": 252.5,
+      "surround_mean_value": 107.9,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF10",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.808839,
+        0.050746
+      ],
+      "box": [
+        0.807917,
+        0.049722,
+        0.002083,
+        0.002222
+      ],
+      "area_frac": 3.12e-06,
+      "aspect_h_over_w": 0.8,
+      "median_hue": 18.0,
+      "median_sat": 89.5,
+      "mean_value": 250.8,
+      "surround_mean_value": 196.9,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF11",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.747596,
+        0.060312
+      ],
+      "box": [
+        0.744792,
+        0.0575,
+        0.00625,
+        0.006389
+      ],
+      "area_frac": 1.904e-05,
+      "aspect_h_over_w": 0.767,
+      "median_hue": 27.0,
+      "median_sat": 16.0,
+      "mean_value": 252.2,
+      "surround_mean_value": 114.4,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF12",
+      "kind": "bright_other",
+      "centroid": [
+        0.061142,
+        0.062987
+      ],
+      "box": [
+        0.060417,
+        0.060556,
+        0.001458,
+        0.005278
+      ],
+      "area_frac": 5.38e-06,
+      "aspect_h_over_w": 2.714,
+      "median_hue": 26.0,
+      "median_sat": 19.0,
+      "mean_value": 252.8,
+      "surround_mean_value": 182.9,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF13",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.742326,
+        0.062076
+      ],
+      "box": [
+        0.741042,
+        0.060833,
+        0.002708,
+        0.002778
+      ],
+      "area_frac": 4.63e-06,
+      "aspect_h_over_w": 0.769,
+      "median_hue": 25.0,
+      "median_sat": 34.0,
+      "mean_value": 254.1,
+      "surround_mean_value": 148.1,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF14",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.750413,
+        0.063007
+      ],
+      "box": [
+        0.74875,
+        0.061389,
+        0.003125,
+        0.003333
+      ],
+      "area_frac": 6.31e-06,
+      "aspect_h_over_w": 0.8,
+      "median_hue": 24.0,
+      "median_sat": 20.0,
+      "mean_value": 252.3,
+      "surround_mean_value": 177.2,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF15",
+      "kind": "flame",
+      "centroid": [
+        0.654008,
+        0.073073
+      ],
+      "box": [
+        0.651875,
+        0.067222,
+        0.004583,
+        0.014444
+      ],
+      "area_frac": 2.94e-05,
+      "aspect_h_over_w": 2.364,
+      "median_hue": 60.0,
+      "median_sat": 11.0,
+      "mean_value": 249.7,
+      "surround_mean_value": 162.1,
+      "nearest_face": {
+        "face_id": "A49",
+        "distance_in_face_heights": 1.52,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF16",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.695356,
+        0.07187
+      ],
+      "box": [
+        0.687292,
+        0.068333,
+        0.019167,
+        0.010833
+      ],
+      "area_frac": 5.37e-05,
+      "aspect_h_over_w": 0.424,
+      "median_hue": 73.0,
+      "median_sat": 11.0,
+      "mean_value": 251.4,
+      "surround_mean_value": 123.8,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF17",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.698903,
+        0.077269
+      ],
+      "box": [
+        0.696042,
+        0.074444,
+        0.006042,
+        0.006667
+      ],
+      "area_frac": 1.609e-05,
+      "aspect_h_over_w": 0.828,
+      "median_hue": 67.0,
+      "median_sat": 13.0,
+      "mean_value": 247.8,
+      "surround_mean_value": 237.1,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF18",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.704733,
+        0.078285
+      ],
+      "box": [
+        0.703958,
+        0.077222,
+        0.001667,
+        0.002222
+      ],
+      "area_frac": 2.66e-06,
+      "aspect_h_over_w": 1.0,
+      "median_hue": 80.0,
+      "median_sat": 15.0,
+      "mean_value": 249.8,
+      "surround_mean_value": 236.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF19",
+      "kind": "flame",
+      "centroid": [
+        0.696329,
+        0.107644
+      ],
+      "box": [
+        0.690208,
+        0.078056,
+        0.012708,
+        0.055556
+      ],
+      "area_frac": 0.00035723,
+      "aspect_h_over_w": 3.279,
+      "median_hue": 68.0,
+      "median_sat": 11.0,
+      "mean_value": 251.2,
+      "surround_mean_value": 108.1,
+      "nearest_face": {
+        "face_id": "A49",
+        "distance_in_face_heights": 1.092,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF20",
+      "kind": "flame",
+      "centroid": [
+        0.640192,
+        0.104988
+      ],
+      "box": [
+        0.632083,
+        0.078611,
+        0.021875,
+        0.055278
+      ],
+      "area_frac": 0.00052865,
+      "aspect_h_over_w": 1.895,
+      "median_hue": 52.0,
+      "median_sat": 12.0,
+      "mean_value": 250.2,
+      "surround_mean_value": 126.7,
+      "nearest_face": {
+        "face_id": "A49",
+        "distance_in_face_heights": 1.32,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF21",
+      "kind": "bright_other",
+      "centroid": [
+        0.690331,
+        0.08317
+      ],
+      "box": [
+        0.688958,
+        0.081111,
+        0.003333,
+        0.005556
+      ],
+      "area_frac": 9.37e-06,
+      "aspect_h_over_w": 1.25,
+      "median_hue": 68.0,
+      "median_sat": 11.0,
+      "mean_value": 248.6,
+      "surround_mean_value": 233.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF22",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.693626,
+        0.082313
+      ],
+      "box": [
+        0.692708,
+        0.081389,
+        0.001875,
+        0.002222
+      ],
+      "area_frac": 3.01e-06,
+      "aspect_h_over_w": 0.889,
+      "median_hue": 68.0,
+      "median_sat": 11.0,
+      "mean_value": 247.3,
+      "surround_mean_value": 244.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF23",
+      "kind": "bright_other",
+      "centroid": [
+        0.64506,
+        0.085205
+      ],
+      "box": [
+        0.644583,
+        0.084167,
+        0.00125,
+        0.0025
+      ],
+      "area_frac": 2.2e-06,
+      "aspect_h_over_w": 1.5,
+      "median_hue": 34.0,
+      "median_sat": 28.0,
+      "mean_value": 247.4,
+      "surround_mean_value": 242.2,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF24",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.694297,
+        0.085
+      ],
+      "box": [
+        0.693333,
+        0.083889,
+        0.002292,
+        0.002778
+      ],
+      "area_frac": 3.88e-06,
+      "aspect_h_over_w": 0.909,
+      "median_hue": 68.0,
+      "median_sat": 11.0,
+      "mean_value": 248.8,
+      "surround_mean_value": 243.4,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF25",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.598493,
+        0.090251
+      ],
+      "box": [
+        0.595833,
+        0.086389,
+        0.005833,
+        0.007222
+      ],
+      "area_frac": 1.667e-05,
+      "aspect_h_over_w": 0.929,
+      "median_hue": 52.0,
+      "median_sat": 11.0,
+      "mean_value": 248.1,
+      "surround_mean_value": 232.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF26",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.69078,
+        0.089401
+      ],
+      "box": [
+        0.688542,
+        0.086667,
+        0.005833,
+        0.006944
+      ],
+      "area_frac": 1.927e-05,
+      "aspect_h_over_w": 0.893,
+      "median_hue": 68.0,
+      "median_sat": 11.0,
+      "mean_value": 249.3,
+      "surround_mean_value": 220.9,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF27",
+      "kind": "bright_other",
+      "centroid": [
+        0.600367,
+        0.099027
+      ],
+      "box": [
+        0.597708,
+        0.093333,
+        0.004792,
+        0.011944
+      ],
+      "area_frac": 2.517e-05,
+      "aspect_h_over_w": 1.87,
+      "median_hue": 46.0,
+      "median_sat": 15.0,
+      "mean_value": 246.9,
+      "surround_mean_value": 234.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF28",
+      "kind": "bright_other",
+      "centroid": [
+        0.689813,
+        0.09909
+      ],
+      "box": [
+        0.688958,
+        0.094444,
+        0.002292,
+        0.009167
+      ],
+      "area_frac": 1.325e-05,
+      "aspect_h_over_w": 3.0,
+      "median_hue": 68.0,
+      "median_sat": 11.0,
+      "mean_value": 247.8,
+      "surround_mean_value": 214.7,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF29",
+      "kind": "flame",
+      "centroid": [
+        0.599951,
+        0.12419
+      ],
+      "box": [
+        0.593125,
+        0.104444,
+        0.016875,
+        0.034722
+      ],
+      "area_frac": 0.00035237,
+      "aspect_h_over_w": 1.543,
+      "median_hue": 57.0,
+      "median_sat": 11.0,
+      "mean_value": 251.0,
+      "surround_mean_value": 159.3,
+      "nearest_face": {
+        "face_id": "A29",
+        "distance_in_face_heights": 1.368,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF30",
+      "kind": "bright_other",
+      "centroid": [
+        0.70284,
+        0.113848
+      ],
+      "box": [
+        0.702292,
+        0.112778,
+        0.001458,
+        0.0025
+      ],
+      "area_frac": 2.37e-06,
+      "aspect_h_over_w": 1.286,
+      "median_hue": 70.0,
+      "median_sat": 11.0,
+      "mean_value": 250.0,
+      "surround_mean_value": 237.8,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF31",
+      "kind": "bright_other",
+      "centroid": [
+        0.645372,
+        0.124583
+      ],
+      "box": [
+        0.642083,
+        0.119167,
+        0.006042,
+        0.012778
+      ],
+      "area_frac": 2.465e-05,
+      "aspect_h_over_w": 1.586,
+      "median_hue": 67.0,
+      "median_sat": 12.0,
+      "mean_value": 248.0,
+      "surround_mean_value": 228.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF32",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.691017,
+        0.120114
+      ],
+      "box": [
+        0.690208,
+        0.119167,
+        0.001875,
+        0.002222
+      ],
+      "area_frac": 2.95e-06,
+      "aspect_h_over_w": 0.889,
+      "median_hue": 69.0,
+      "median_sat": 13.0,
+      "mean_value": 247.0,
+      "surround_mean_value": 244.9,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF33",
+      "kind": "bright_other",
+      "centroid": [
+        0.633076,
+        0.123816
+      ],
+      "box": [
+        0.631875,
+        0.119722,
+        0.0025,
+        0.008889
+      ],
+      "area_frac": 1.221e-05,
+      "aspect_h_over_w": 2.667,
+      "median_hue": 41.0,
+      "median_sat": 22.0,
+      "mean_value": 250.0,
+      "surround_mean_value": 220.1,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF34",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.639239,
+        0.124414
+      ],
+      "box": [
+        0.638333,
+        0.123611,
+        0.002083,
+        0.001944
+      ],
+      "area_frac": 2.66e-06,
+      "aspect_h_over_w": 0.7,
+      "median_hue": 65.0,
+      "median_sat": 12.0,
+      "mean_value": 249.2,
+      "surround_mean_value": 243.6,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF35",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.641735,
+        0.126756
+      ],
+      "box": [
+        0.640417,
+        0.125,
+        0.002917,
+        0.003611
+      ],
+      "area_frac": 6.48e-06,
+      "aspect_h_over_w": 0.929,
+      "median_hue": 58.0,
+      "median_sat": 15.0,
+      "mean_value": 248.1,
+      "surround_mean_value": 242.4,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF36",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.703823,
+        0.128089
+      ],
+      "box": [
+        0.702708,
+        0.126667,
+        0.0025,
+        0.003056
+      ],
+      "area_frac": 4.8e-06,
+      "aspect_h_over_w": 0.917,
+      "median_hue": 78.0,
+      "median_sat": 17.0,
+      "mean_value": 250.9,
+      "surround_mean_value": 192.9,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF37",
+      "kind": "bright_other",
+      "centroid": [
+        0.644493,
+        0.130732
+      ],
+      "box": [
+        0.64375,
+        0.129167,
+        0.001667,
+        0.003333
+      ],
+      "area_frac": 4.28e-06,
+      "aspect_h_over_w": 1.5,
+      "median_hue": 60.0,
+      "median_sat": 12.0,
+      "mean_value": 248.1,
+      "surround_mean_value": 239.2,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF38",
+      "kind": "bright_other",
+      "centroid": [
+        0.652746,
+        0.13129
+      ],
+      "box": [
+        0.652083,
+        0.13,
+        0.001458,
+        0.002778
+      ],
+      "area_frac": 3.24e-06,
+      "aspect_h_over_w": 1.429,
+      "median_hue": 72.0,
+      "median_sat": 6.0,
+      "mean_value": 251.6,
+      "surround_mean_value": 226.9,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF39",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.642138,
+        0.135129
+      ],
+      "box": [
+        0.640417,
+        0.133889,
+        0.00375,
+        0.0025
+      ],
+      "area_frac": 6.37e-06,
+      "aspect_h_over_w": 0.5,
+      "median_hue": 74.0,
+      "median_sat": 11.0,
+      "mean_value": 251.6,
+      "surround_mean_value": 227.6,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF40",
+      "kind": "ceiling_fixture",
+      "centroid": [
+        0.648754,
+        0.135263
+      ],
+      "box": [
+        0.647917,
+        0.134167,
+        0.001875,
+        0.0025
+      ],
+      "area_frac": 3.24e-06,
+      "aspect_h_over_w": 1.0,
+      "median_hue": 74.0,
+      "median_sat": 11.0,
+      "mean_value": 249.2,
+      "surround_mean_value": 232.2,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF41",
+      "kind": "bright_other",
+      "centroid": [
+        0.525389,
+        0.222853
+      ],
+      "box": [
+        0.524792,
+        0.221667,
+        0.001458,
+        0.002778
+      ],
+      "area_frac": 3.01e-06,
+      "aspect_h_over_w": 1.429,
+      "median_hue": 19.0,
+      "median_sat": 76.5,
+      "mean_value": 248.1,
+      "surround_mean_value": 210.4,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF42",
+      "kind": "bright_other",
+      "centroid": [
+        0.528294,
+        0.226508
+      ],
+      "box": [
+        0.527292,
+        0.224167,
+        0.002292,
+        0.004167
+      ],
+      "area_frac": 5.27e-06,
+      "aspect_h_over_w": 1.364,
+      "median_hue": 20.0,
+      "median_sat": 82.0,
+      "mean_value": 249.0,
+      "surround_mean_value": 218.7,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF43",
+      "kind": "bright_other",
+      "centroid": [
+        0.525938,
+        0.227778
+      ],
+      "box": [
+        0.525208,
+        0.226944,
+        0.001667,
+        0.001944
+      ],
+      "area_frac": 2.31e-06,
+      "aspect_h_over_w": 0.875,
+      "median_hue": 19.0,
+      "median_sat": 75.5,
+      "mean_value": 249.7,
+      "surround_mean_value": 220.9,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF44",
+      "kind": "bright_other",
+      "centroid": [
+        0.439742,
+        0.25703
+      ],
+      "box": [
+        0.438958,
+        0.256389,
+        0.001875,
+        0.001667
+      ],
+      "area_frac": 2.43e-06,
+      "aspect_h_over_w": 0.667,
+      "median_hue": 22.0,
+      "median_sat": 19.0,
+      "mean_value": 253.1,
+      "surround_mean_value": 151.4,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF45",
+      "kind": "flame",
+      "centroid": [
+        0.529723,
+        0.290041
+      ],
+      "box": [
+        0.526667,
+        0.281944,
+        0.006667,
+        0.014444
+      ],
+      "area_frac": 5.799e-05,
+      "aspect_h_over_w": 1.625,
+      "median_hue": 27.0,
+      "median_sat": 72.0,
+      "mean_value": 249.9,
+      "surround_mean_value": 170.4,
+      "nearest_face": {
+        "face_id": "A29",
+        "distance_in_face_heights": 0.75,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF46",
+      "kind": "flame",
+      "centroid": [
+        0.438907,
+        0.307494
+      ],
+      "box": [
+        0.4325,
+        0.288333,
+        0.011458,
+        0.038889
+      ],
+      "area_frac": 0.00022922,
+      "aspect_h_over_w": 2.545,
+      "median_hue": 27.0,
+      "median_sat": 43.0,
+      "mean_value": 252.4,
+      "surround_mean_value": 113.9,
+      "nearest_face": {
+        "face_id": "A17",
+        "distance_in_face_heights": 1.124,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF47",
+      "kind": "bright_other",
+      "centroid": [
+        0.532788,
+        0.295057
+      ],
+      "box": [
+        0.532083,
+        0.293889,
+        0.001667,
+        0.002778
+      ],
+      "area_frac": 3.65e-06,
+      "aspect_h_over_w": 1.25,
+      "median_hue": 19.0,
+      "median_sat": 73.0,
+      "mean_value": 250.2,
+      "surround_mean_value": 240.7,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF48",
+      "kind": "flame",
+      "centroid": [
+        0.529167,
+        0.314551
+      ],
+      "box": [
+        0.522917,
+        0.2975,
+        0.013333,
+        0.034444
+      ],
+      "area_frac": 0.00021997,
+      "aspect_h_over_w": 1.938,
+      "median_hue": 25.0,
+      "median_sat": 47.0,
+      "mean_value": 251.6,
+      "surround_mean_value": 131.5,
+      "nearest_face": {
+        "face_id": "A29",
+        "distance_in_face_heights": 1.021,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF49",
+      "kind": "bright_other",
+      "centroid": [
+        0.422658,
+        0.303702
+      ],
+      "box": [
+        0.421875,
+        0.301111,
+        0.002083,
+        0.005
+      ],
+      "area_frac": 6.19e-06,
+      "aspect_h_over_w": 1.8,
+      "median_hue": 19.0,
+      "median_sat": 48.0,
+      "mean_value": 247.1,
+      "surround_mean_value": 172.8,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF50",
+      "kind": "flame",
+      "centroid": [
+        0.423681,
+        0.308839
+      ],
+      "box": [
+        0.422708,
+        0.306111,
+        0.002083,
+        0.005556
+      ],
+      "area_frac": 7.7e-06,
+      "aspect_h_over_w": 2.0,
+      "median_hue": 19.0,
+      "median_sat": 49.0,
+      "mean_value": 248.4,
+      "surround_mean_value": 166.9,
+      "nearest_face": {
+        "face_id": "A17",
+        "distance_in_face_heights": 0.963,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF51",
+      "kind": "flame",
+      "centroid": [
+        0.339893,
+        0.318175
+      ],
+      "box": [
+        0.338542,
+        0.316111,
+        0.003125,
+        0.004722
+      ],
+      "area_frac": 9.03e-06,
+      "aspect_h_over_w": 1.133,
+      "median_hue": 51.0,
+      "median_sat": 7.5,
+      "mean_value": 249.7,
+      "surround_mean_value": 146.9,
+      "nearest_face": {
+        "face_id": "A17",
+        "distance_in_face_heights": 0.329,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF52",
+      "kind": "bright_other",
+      "centroid": [
+        0.419089,
+        0.321455
+      ],
+      "box": [
+        0.415,
+        0.319167,
+        0.007708,
+        0.004722
+      ],
+      "area_frac": 2.106e-05,
+      "aspect_h_over_w": 0.459,
+      "median_hue": 28.0,
+      "median_sat": 49.0,
+      "mean_value": 249.6,
+      "surround_mean_value": 175.4,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF53",
+      "kind": "bright_other",
+      "centroid": [
+        0.561106,
+        0.322
+      ],
+      "box": [
+        0.560417,
+        0.320556,
+        0.001667,
+        0.003056
+      ],
+      "area_frac": 3.18e-06,
+      "aspect_h_over_w": 1.375,
+      "median_hue": 15.0,
+      "median_sat": 38.0,
+      "mean_value": 248.2,
+      "surround_mean_value": 195.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF54",
+      "kind": "bright_other",
+      "centroid": [
+        0.423716,
+        0.322147
+      ],
+      "box": [
+        0.423125,
+        0.321389,
+        0.001458,
+        0.001944
+      ],
+      "area_frac": 2.14e-06,
+      "aspect_h_over_w": 1.0,
+      "median_hue": 28.0,
+      "median_sat": 53.0,
+      "mean_value": 246.7,
+      "surround_mean_value": 243.8,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF55",
+      "kind": "flame",
+      "centroid": [
+        0.335679,
+        0.329251
+      ],
+      "box": [
+        0.333542,
+        0.323333,
+        0.005208,
+        0.013056
+      ],
+      "area_frac": 4.103e-05,
+      "aspect_h_over_w": 1.88,
+      "median_hue": 26.0,
+      "median_sat": 24.0,
+      "mean_value": 251.1,
+      "surround_mean_value": 114.7,
+      "nearest_face": {
+        "face_id": "A17",
+        "distance_in_face_heights": 0.231,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF56",
+      "kind": "bright_other",
+      "centroid": [
+        0.422723,
+        0.326914
+      ],
+      "box": [
+        0.421667,
+        0.325278,
+        0.002083,
+        0.003333
+      ],
+      "area_frac": 4.8e-06,
+      "aspect_h_over_w": 1.2,
+      "median_hue": 28.0,
+      "median_sat": 51.0,
+      "mean_value": 245.7,
+      "surround_mean_value": 242.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF57",
+      "kind": "bright_other",
+      "centroid": [
+        0.517396,
+        0.327113
+      ],
+      "box": [
+        0.512917,
+        0.325278,
+        0.009375,
+        0.004167
+      ],
+      "area_frac": 1.95e-05,
+      "aspect_h_over_w": 0.333,
+      "median_hue": 32.0,
+      "median_sat": 34.0,
+      "mean_value": 249.0,
+      "surround_mean_value": 144.4,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF58",
+      "kind": "bright_other",
+      "centroid": [
+        0.562032,
+        0.327354
+      ],
+      "box": [
+        0.56125,
+        0.326389,
+        0.001875,
+        0.002222
+      ],
+      "area_frac": 3.3e-06,
+      "aspect_h_over_w": 0.889,
+      "median_hue": 15.0,
+      "median_sat": 44.0,
+      "mean_value": 248.1,
+      "surround_mean_value": 215.7,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF59",
+      "kind": "bright_other",
+      "centroid": [
+        0.426317,
+        0.329102
+      ],
+      "box": [
+        0.425625,
+        0.328056,
+        0.001667,
+        0.0025
+      ],
+      "area_frac": 3.24e-06,
+      "aspect_h_over_w": 1.125,
+      "median_hue": 29.0,
+      "median_sat": 43.0,
+      "mean_value": 247.4,
+      "surround_mean_value": 235.7,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF60",
+      "kind": "flame",
+      "centroid": [
+        0.511575,
+        0.32935
+      ],
+      "box": [
+        0.511042,
+        0.328056,
+        0.00125,
+        0.002778
+      ],
+      "area_frac": 2.89e-06,
+      "aspect_h_over_w": 1.667,
+      "median_hue": 25.0,
+      "median_sat": 29.5,
+      "mean_value": 252.1,
+      "surround_mean_value": 151.2,
+      "nearest_face": {
+        "face_id": "A29",
+        "distance_in_face_heights": 1.193,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF61",
+      "kind": "bright_other",
+      "centroid": [
+        0.42205,
+        0.329583
+      ],
+      "box": [
+        0.421458,
+        0.328611,
+        0.001458,
+        0.002222
+      ],
+      "area_frac": 2.2e-06,
+      "aspect_h_over_w": 1.143,
+      "median_hue": 28.0,
+      "median_sat": 51.0,
+      "mean_value": 245.9,
+      "surround_mean_value": 241.8,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF62",
+      "kind": "bright_other",
+      "centroid": [
+        0.425823,
+        0.332764
+      ],
+      "box": [
+        0.425208,
+        0.331667,
+        0.001458,
+        0.0025
+      ],
+      "area_frac": 2.31e-06,
+      "aspect_h_over_w": 1.286,
+      "median_hue": 28.0,
+      "median_sat": 46.0,
+      "mean_value": 246.7,
+      "surround_mean_value": 237.5,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF63",
+      "kind": "bright_other",
+      "centroid": [
+        0.43416,
+        0.33616
+      ],
+      "box": [
+        0.431875,
+        0.3325,
+        0.005208,
+        0.006944
+      ],
+      "area_frac": 1.759e-05,
+      "aspect_h_over_w": 1.0,
+      "median_hue": 27.0,
+      "median_sat": 22.0,
+      "mean_value": 252.7,
+      "surround_mean_value": 233.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF64",
+      "kind": "bright_other",
+      "centroid": [
+        0.44922,
+        0.337668
+      ],
+      "box": [
+        0.445833,
+        0.333333,
+        0.005625,
+        0.007778
+      ],
+      "area_frac": 2.147e-05,
+      "aspect_h_over_w": 1.037,
+      "median_hue": 27.0,
+      "median_sat": 45.0,
+      "mean_value": 248.8,
+      "surround_mean_value": 174.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF65",
+      "kind": "bright_other",
+      "centroid": [
+        0.340957,
+        0.336322
+      ],
+      "box": [
+        0.339583,
+        0.334722,
+        0.003125,
+        0.003056
+      ],
+      "area_frac": 5.56e-06,
+      "aspect_h_over_w": 0.733,
+      "median_hue": 25.0,
+      "median_sat": 28.0,
+      "mean_value": 252.3,
+      "surround_mean_value": 185.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF66",
+      "kind": "bright_other",
+      "centroid": [
+        0.422663,
+        0.337272
+      ],
+      "box": [
+        0.418958,
+        0.335,
+        0.006875,
+        0.005833
+      ],
+      "area_frac": 2.309e-05,
+      "aspect_h_over_w": 0.636,
+      "median_hue": 24.0,
+      "median_sat": 49.0,
+      "mean_value": 250.2,
+      "surround_mean_value": 169.6,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF67",
+      "kind": "flame",
+      "centroid": [
+        0.54854,
+        0.354338
+      ],
+      "box": [
+        0.544792,
+        0.338333,
+        0.007292,
+        0.031389
+      ],
+      "area_frac": 0.0001294,
+      "aspect_h_over_w": 3.229,
+      "median_hue": 26.0,
+      "median_sat": 41.0,
+      "mean_value": 251.6,
+      "surround_mean_value": 159.9,
+      "nearest_face": {
+        "face_id": "A44",
+        "distance_in_face_heights": 1.292,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF68",
+      "kind": "bright_other",
+      "centroid": [
+        0.437058,
+        0.342589
+      ],
+      "box": [
+        0.430417,
+        0.340278,
+        0.013333,
+        0.004167
+      ],
+      "area_frac": 2.303e-05,
+      "aspect_h_over_w": 0.234,
+      "median_hue": 24.0,
+      "median_sat": 50.0,
+      "mean_value": 248.0,
+      "surround_mean_value": 166.6,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF69",
+      "kind": "flame",
+      "centroid": [
+        0.531668,
+        0.346985
+      ],
+      "box": [
+        0.530208,
+        0.344167,
+        0.0025,
+        0.006667
+      ],
+      "area_frac": 1.059e-05,
+      "aspect_h_over_w": 2.0,
+      "median_hue": 14.0,
+      "median_sat": 83.0,
+      "mean_value": 252.6,
+      "surround_mean_value": 165.7,
+      "nearest_face": {
+        "face_id": "A29",
+        "distance_in_face_heights": 1.381,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF70",
+      "kind": "bright_other",
+      "centroid": [
+        0.349124,
+        0.360459
+      ],
+      "box": [
+        0.347917,
+        0.359167,
+        0.002708,
+        0.002778
+      ],
+      "area_frac": 5.67e-06,
+      "aspect_h_over_w": 0.769,
+      "median_hue": 20.0,
+      "median_sat": 53.0,
+      "mean_value": 252.3,
+      "surround_mean_value": 190.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF71",
+      "kind": "bright_other",
+      "centroid": [
+        0.352383,
+        0.364958
+      ],
+      "box": [
+        0.3475,
+        0.359444,
+        0.011042,
+        0.012222
+      ],
+      "area_frac": 7.315e-05,
+      "aspect_h_over_w": 0.83,
+      "median_hue": 23.0,
+      "median_sat": 72.0,
+      "mean_value": 249.2,
+      "surround_mean_value": 145.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF72",
+      "kind": "flame",
+      "centroid": [
+        0.360257,
+        0.362606
+      ],
+      "box": [
+        0.358333,
+        0.36,
+        0.003958,
+        0.006111
+      ],
+      "area_frac": 1.302e-05,
+      "aspect_h_over_w": 1.158,
+      "median_hue": 21.0,
+      "median_sat": 61.0,
+      "mean_value": 251.3,
+      "surround_mean_value": 145.2,
+      "nearest_face": {
+        "face_id": "A17",
+        "distance_in_face_heights": 0.235,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF73",
+      "kind": "bright_other",
+      "centroid": [
+        0.330894,
+        0.369346
+      ],
+      "box": [
+        0.322708,
+        0.361667,
+        0.015,
+        0.015556
+      ],
+      "area_frac": 8.657e-05,
+      "aspect_h_over_w": 0.778,
+      "median_hue": 23.0,
+      "median_sat": 59.0,
+      "mean_value": 250.6,
+      "surround_mean_value": 127.9,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF74",
+      "kind": "bright_other",
+      "centroid": [
+        0.559992,
+        0.365629
+      ],
+      "box": [
+        0.556667,
+        0.363611,
+        0.0075,
+        0.004444
+      ],
+      "area_frac": 1.811e-05,
+      "aspect_h_over_w": 0.444,
+      "median_hue": 26.0,
+      "median_sat": 48.0,
+      "mean_value": 249.8,
+      "surround_mean_value": 188.4,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF75",
+      "kind": "bright_other",
+      "centroid": [
+        0.530444,
+        0.36625
+      ],
+      "box": [
+        0.529583,
+        0.365278,
+        0.001875,
+        0.002222
+      ],
+      "area_frac": 2.66e-06,
+      "aspect_h_over_w": 0.889,
+      "median_hue": 10.0,
+      "median_sat": 92.0,
+      "mean_value": 251.9,
+      "surround_mean_value": 176.7,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF76",
+      "kind": "bright_other",
+      "centroid": [
+        0.55366,
+        0.36742
+      ],
+      "box": [
+        0.55125,
+        0.365556,
+        0.004583,
+        0.004167
+      ],
+      "area_frac": 9.66e-06,
+      "aspect_h_over_w": 0.682,
+      "median_hue": 27.0,
+      "median_sat": 49.0,
+      "mean_value": 248.2,
+      "surround_mean_value": 212.6,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF77",
+      "kind": "bright_other",
+      "centroid": [
+        0.528679,
+        0.371358
+      ],
+      "box": [
+        0.527083,
+        0.369167,
+        0.003333,
+        0.005
+      ],
+      "area_frac": 1.308e-05,
+      "aspect_h_over_w": 1.125,
+      "median_hue": 18.0,
+      "median_sat": 93.0,
+      "mean_value": 253.4,
+      "surround_mean_value": 181.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF78",
+      "kind": "bright_other",
+      "centroid": [
+        0.353601,
+        0.377
+      ],
+      "box": [
+        0.352917,
+        0.376389,
+        0.001667,
+        0.001667
+      ],
+      "area_frac": 2.03e-06,
+      "aspect_h_over_w": 0.75,
+      "median_hue": 20.0,
+      "median_sat": 63.0,
+      "mean_value": 251.5,
+      "surround_mean_value": 205.7,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF79",
+      "kind": "flame",
+      "centroid": [
+        0.594054,
+        0.381627
+      ],
+      "box": [
+        0.591458,
+        0.376111,
+        0.005625,
+        0.012222
+      ],
+      "area_frac": 4.242e-05,
+      "aspect_h_over_w": 1.63,
+      "median_hue": 21.0,
+      "median_sat": 77.0,
+      "mean_value": 250.4,
+      "surround_mean_value": 124.4,
+      "nearest_face": {
+        "face_id": "A44",
+        "distance_in_face_heights": 0.839,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF80",
+      "kind": "bright_other",
+      "centroid": [
+        0.751771,
+        0.39
+      ],
+      "box": [
+        0.751042,
+        0.389167,
+        0.001667,
+        0.001944
+      ],
+      "area_frac": 2.2e-06,
+      "aspect_h_over_w": 0.875,
+      "median_hue": 16.0,
+      "median_sat": 36.0,
+      "mean_value": 250.9,
+      "surround_mean_value": 175.6,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF81",
+      "kind": "flame",
+      "centroid": [
+        0.588767,
+        0.428125
+      ],
+      "box": [
+        0.568125,
+        0.390833,
+        0.038542,
+        0.062222
+      ],
+      "area_frac": 0.00108837,
+      "aspect_h_over_w": 1.211,
+      "median_hue": 28.0,
+      "median_sat": 45.0,
+      "mean_value": 252.7,
+      "surround_mean_value": 118.9,
+      "nearest_face": {
+        "face_id": "A44",
+        "distance_in_face_heights": 0.93,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF82",
+      "kind": "flame",
+      "centroid": [
+        0.619932,
+        0.436668
+      ],
+      "box": [
+        0.612292,
+        0.395833,
+        0.013333,
+        0.0775
+      ],
+      "area_frac": 0.00035451,
+      "aspect_h_over_w": 4.359,
+      "median_hue": 26.0,
+      "median_sat": 45.0,
+      "mean_value": 251.4,
+      "surround_mean_value": 118.3,
+      "nearest_face": {
+        "face_id": "A44",
+        "distance_in_face_heights": 0.71,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF83",
+      "kind": "bright_other",
+      "centroid": [
+        0.511406,
+        0.397137
+      ],
+      "box": [
+        0.510833,
+        0.396389,
+        0.001458,
+        0.001944
+      ],
+      "area_frac": 2.08e-06,
+      "aspect_h_over_w": 1.0,
+      "median_hue": 12.0,
+      "median_sat": 98.0,
+      "mean_value": 252.6,
+      "surround_mean_value": 211.4,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF84",
+      "kind": "bright_other",
+      "centroid": [
+        0.619016,
+        0.40591
+      ],
+      "box": [
+        0.618542,
+        0.405,
+        0.00125,
+        0.002222
+      ],
+      "area_frac": 2.08e-06,
+      "aspect_h_over_w": 1.333,
+      "median_hue": 28.0,
+      "median_sat": 29.0,
+      "mean_value": 250.4,
+      "surround_mean_value": 199.7,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF85",
+      "kind": "bright_other",
+      "centroid": [
+        0.532022,
+        0.409736
+      ],
+      "box": [
+        0.531458,
+        0.408611,
+        0.00125,
+        0.0025
+      ],
+      "area_frac": 2.37e-06,
+      "aspect_h_over_w": 1.5,
+      "median_hue": 18.0,
+      "median_sat": 50.0,
+      "mean_value": 251.0,
+      "surround_mean_value": 234.5,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF86",
+      "kind": "bright_other",
+      "centroid": [
+        0.531206,
+        0.417438
+      ],
+      "box": [
+        0.53,
+        0.413611,
+        0.0025,
+        0.0075
+      ],
+      "area_frac": 9.37e-06,
+      "aspect_h_over_w": 2.25,
+      "median_hue": 20.0,
+      "median_sat": 45.0,
+      "mean_value": 250.4,
+      "surround_mean_value": 221.1,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF87",
+      "kind": "bright_other",
+      "centroid": [
+        0.576959,
+        0.42109
+      ],
+      "box": [
+        0.576042,
+        0.42,
+        0.002083,
+        0.002222
+      ],
+      "area_frac": 3.01e-06,
+      "aspect_h_over_w": 0.8,
+      "median_hue": 31.0,
+      "median_sat": 25.0,
+      "mean_value": 248.2,
+      "surround_mean_value": 194.8,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF88",
+      "kind": "bright_other",
+      "centroid": [
+        0.519162,
+        0.42526
+      ],
+      "box": [
+        0.518125,
+        0.424444,
+        0.002292,
+        0.001667
+      ],
+      "area_frac": 2.78e-06,
+      "aspect_h_over_w": 0.545,
+      "median_hue": 16.0,
+      "median_sat": 56.5,
+      "mean_value": 250.3,
+      "surround_mean_value": 227.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF89",
+      "kind": "bright_other",
+      "centroid": [
+        0.612371,
+        0.484922
+      ],
+      "box": [
+        0.588958,
+        0.463889,
+        0.0475,
+        0.036389
+      ],
+      "area_frac": 0.00087512,
+      "aspect_h_over_w": 0.575,
+      "median_hue": 29.0,
+      "median_sat": 37.0,
+      "mean_value": 252.3,
+      "surround_mean_value": 115.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF90",
+      "kind": "flame",
+      "centroid": [
+        0.111477,
+        0.517992
+      ],
+      "box": [
+        0.105625,
+        0.506667,
+        0.01125,
+        0.021944
+      ],
+      "area_frac": 0.00014225,
+      "aspect_h_over_w": 1.463,
+      "median_hue": 35.0,
+      "median_sat": 7.0,
+      "mean_value": 251.7,
+      "surround_mean_value": 97.9,
+      "nearest_face": {
+        "face_id": "A05",
+        "distance_in_face_heights": 1.901,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF91",
+      "kind": "bright_other",
+      "centroid": [
+        0.891898,
+        0.519852
+      ],
+      "box": [
+        0.889583,
+        0.5175,
+        0.005208,
+        0.004722
+      ],
+      "area_frac": 1.204e-05,
+      "aspect_h_over_w": 0.68,
+      "median_hue": 26.0,
+      "median_sat": 41.0,
+      "mean_value": 250.7,
+      "surround_mean_value": 167.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF92",
+      "kind": "bright_other",
+      "centroid": [
+        0.896162,
+        0.525797
+      ],
+      "box": [
+        0.895417,
+        0.523889,
+        0.001667,
+        0.004167
+      ],
+      "area_frac": 4.4e-06,
+      "aspect_h_over_w": 1.875,
+      "median_hue": 26.0,
+      "median_sat": 42.0,
+      "mean_value": 250.6,
+      "surround_mean_value": 194.2,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF93",
+      "kind": "bright_other",
+      "centroid": [
+        0.890955,
+        0.525626
+      ],
+      "box": [
+        0.890208,
+        0.524444,
+        0.001875,
+        0.0025
+      ],
+      "area_frac": 3.18e-06,
+      "aspect_h_over_w": 1.0,
+      "median_hue": 29.0,
+      "median_sat": 81.0,
+      "mean_value": 248.1,
+      "surround_mean_value": 235.5,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF94",
+      "kind": "flame",
+      "centroid": [
+        0.314317,
+        0.540682
+      ],
+      "box": [
+        0.310625,
+        0.528056,
+        0.007292,
+        0.025
+      ],
+      "area_frac": 0.00012355,
+      "aspect_h_over_w": 2.571,
+      "median_hue": 22.0,
+      "median_sat": 56.0,
+      "mean_value": 250.7,
+      "surround_mean_value": 84.8,
+      "nearest_face": {
+        "face_id": "A05",
+        "distance_in_face_heights": 2.141,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF95",
+      "kind": "bright_other",
+      "centroid": [
+        0.566075,
+        0.529357
+      ],
+      "box": [
+        0.564792,
+        0.527778,
+        0.0025,
+        0.003611
+      ],
+      "area_frac": 6.42e-06,
+      "aspect_h_over_w": 1.083,
+      "median_hue": 25.0,
+      "median_sat": 64.0,
+      "mean_value": 247.5,
+      "surround_mean_value": 233.9,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF96",
+      "kind": "bright_other",
+      "centroid": [
+        0.563546,
+        0.529489
+      ],
+      "box": [
+        0.562917,
+        0.528333,
+        0.001458,
+        0.0025
+      ],
+      "area_frac": 2.55e-06,
+      "aspect_h_over_w": 1.286,
+      "median_hue": 26.5,
+      "median_sat": 73.5,
+      "mean_value": 249.2,
+      "surround_mean_value": 238.4,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF97",
+      "kind": "bright_other",
+      "centroid": [
+        0.892362,
+        0.532208
+      ],
+      "box": [
+        0.890208,
+        0.528889,
+        0.005625,
+        0.006389
+      ],
+      "area_frac": 1.562e-05,
+      "aspect_h_over_w": 0.852,
+      "median_hue": 28.0,
+      "median_sat": 72.0,
+      "mean_value": 249.5,
+      "surround_mean_value": 188.1,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF98",
+      "kind": "bright_other",
+      "centroid": [
+        0.112948,
+        0.530826
+      ],
+      "box": [
+        0.111667,
+        0.53,
+        0.002917,
+        0.002222
+      ],
+      "area_frac": 4.63e-06,
+      "aspect_h_over_w": 0.571,
+      "median_hue": 31.0,
+      "median_sat": 40.0,
+      "mean_value": 251.8,
+      "surround_mean_value": 238.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF99",
+      "kind": "bright_other",
+      "centroid": [
+        0.564831,
+        0.532368
+      ],
+      "box": [
+        0.564167,
+        0.530833,
+        0.001458,
+        0.003333
+      ],
+      "area_frac": 3.41e-06,
+      "aspect_h_over_w": 1.714,
+      "median_hue": 27.0,
+      "median_sat": 57.0,
+      "mean_value": 246.9,
+      "surround_mean_value": 239.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF100",
+      "kind": "bright_other",
+      "centroid": [
+        0.114366,
+        0.533944
+      ],
+      "box": [
+        0.112292,
+        0.531667,
+        0.00375,
+        0.004722
+      ],
+      "area_frac": 9.26e-06,
+      "aspect_h_over_w": 0.944,
+      "median_hue": 24.0,
+      "median_sat": 22.5,
+      "mean_value": 251.7,
+      "surround_mean_value": 234.9,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF101",
+      "kind": "bright_other",
+      "centroid": [
+        0.1077,
+        0.535838
+      ],
+      "box": [
+        0.10375,
+        0.5325,
+        0.0075,
+        0.006667
+      ],
+      "area_frac": 1.8e-05,
+      "aspect_h_over_w": 0.667,
+      "median_hue": 29.0,
+      "median_sat": 32.0,
+      "mean_value": 252.4,
+      "surround_mean_value": 184.2,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF102",
+      "kind": "bright_other",
+      "centroid": [
+        0.564098,
+        0.536809
+      ],
+      "box": [
+        0.563333,
+        0.535,
+        0.001875,
+        0.003889
+      ],
+      "area_frac": 5.09e-06,
+      "aspect_h_over_w": 1.556,
+      "median_hue": 25.0,
+      "median_sat": 61.0,
+      "mean_value": 247.9,
+      "surround_mean_value": 231.8,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF103",
+      "kind": "bright_other",
+      "centroid": [
+        0.11609,
+        0.537904
+      ],
+      "box": [
+        0.115,
+        0.536667,
+        0.002292,
+        0.002778
+      ],
+      "area_frac": 3.7e-06,
+      "aspect_h_over_w": 0.909,
+      "median_hue": 20.0,
+      "median_sat": 62.5,
+      "mean_value": 252.2,
+      "surround_mean_value": 224.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF104",
+      "kind": "bright_other",
+      "centroid": [
+        0.107354,
+        0.539054
+      ],
+      "box": [
+        0.106458,
+        0.537778,
+        0.001875,
+        0.002778
+      ],
+      "area_frac": 3.7e-06,
+      "aspect_h_over_w": 1.111,
+      "median_hue": 27.0,
+      "median_sat": 43.0,
+      "mean_value": 253.0,
+      "surround_mean_value": 234.2,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF105",
+      "kind": "bright_other",
+      "centroid": [
+        0.564846,
+        0.540214
+      ],
+      "box": [
+        0.563542,
+        0.538889,
+        0.002917,
+        0.002778
+      ],
+      "area_frac": 5.79e-06,
+      "aspect_h_over_w": 0.714,
+      "median_hue": 28.0,
+      "median_sat": 51.0,
+      "mean_value": 249.2,
+      "surround_mean_value": 220.4,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF106",
+      "kind": "bright_other",
+      "centroid": [
+        0.562008,
+        0.541671
+      ],
+      "box": [
+        0.561042,
+        0.539444,
+        0.002292,
+        0.004722
+      ],
+      "area_frac": 6.89e-06,
+      "aspect_h_over_w": 1.545,
+      "median_hue": 30.0,
+      "median_sat": 43.0,
+      "mean_value": 249.1,
+      "surround_mean_value": 177.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF107",
+      "kind": "bright_other",
+      "centroid": [
+        0.89968,
+        0.541677
+      ],
+      "box": [
+        0.89875,
+        0.54,
+        0.001875,
+        0.003611
+      ],
+      "area_frac": 4.86e-06,
+      "aspect_h_over_w": 1.444,
+      "median_hue": 27.0,
+      "median_sat": 41.0,
+      "mean_value": 248.7,
+      "surround_mean_value": 184.7,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF108",
+      "kind": "bright_other",
+      "centroid": [
+        0.124059,
+        0.555939
+      ],
+      "box": [
+        0.1225,
+        0.554722,
+        0.003125,
+        0.002778
+      ],
+      "area_frac": 6.37e-06,
+      "aspect_h_over_w": 0.667,
+      "median_hue": 20.0,
+      "median_sat": 40.0,
+      "mean_value": 251.1,
+      "surround_mean_value": 200.5,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF109",
+      "kind": "bright_other",
+      "centroid": [
+        0.316541,
+        0.556126
+      ],
+      "box": [
+        0.315833,
+        0.555278,
+        0.001667,
+        0.001944
+      ],
+      "area_frac": 2.2e-06,
+      "aspect_h_over_w": 0.875,
+      "median_hue": 23.5,
+      "median_sat": 24.0,
+      "mean_value": 251.9,
+      "surround_mean_value": 219.7,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF110",
+      "kind": "flame",
+      "centroid": [
+        0.318707,
+        0.559707
+      ],
+      "box": [
+        0.316875,
+        0.555278,
+        0.00375,
+        0.009167
+      ],
+      "area_frac": 2.072e-05,
+      "aspect_h_over_w": 1.833,
+      "median_hue": 26.0,
+      "median_sat": 26.5,
+      "mean_value": 252.7,
+      "surround_mean_value": 141.2,
+      "nearest_face": {
+        "face_id": "A05",
+        "distance_in_face_heights": 2.26,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF111",
+      "kind": "bright_other",
+      "centroid": [
+        0.147895,
+        0.558728
+      ],
+      "box": [
+        0.143125,
+        0.556667,
+        0.01,
+        0.004722
+      ],
+      "area_frac": 1.904e-05,
+      "aspect_h_over_w": 0.354,
+      "median_hue": 23.0,
+      "median_sat": 37.0,
+      "mean_value": 250.2,
+      "surround_mean_value": 136.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF112",
+      "kind": "bright_other",
+      "centroid": [
+        0.315577,
+        0.559573
+      ],
+      "box": [
+        0.315,
+        0.558611,
+        0.001458,
+        0.002222
+      ],
+      "area_frac": 2.26e-06,
+      "aspect_h_over_w": 1.143,
+      "median_hue": 22.0,
+      "median_sat": 68.0,
+      "mean_value": 249.0,
+      "surround_mean_value": 233.6,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF113",
+      "kind": "flame",
+      "centroid": [
+        0.576657,
+        0.572398
+      ],
+      "box": [
+        0.569583,
+        0.560278,
+        0.017708,
+        0.025
+      ],
+      "area_frac": 0.00027986,
+      "aspect_h_over_w": 1.059,
+      "median_hue": 28.0,
+      "median_sat": 42.0,
+      "mean_value": 252.2,
+      "surround_mean_value": 133.1,
+      "nearest_face": {
+        "face_id": "A48",
+        "distance_in_face_heights": 1.138,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF114",
+      "kind": "bright_other",
+      "centroid": [
+        0.155258,
+        0.562693
+      ],
+      "box": [
+        0.153542,
+        0.560556,
+        0.00375,
+        0.004722
+      ],
+      "area_frac": 6.83e-06,
+      "aspect_h_over_w": 0.944,
+      "median_hue": 22.0,
+      "median_sat": 28.0,
+      "mean_value": 249.3,
+      "surround_mean_value": 153.4,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF115",
+      "kind": "bright_other",
+      "centroid": [
+        0.556856,
+        0.571563
+      ],
+      "box": [
+        0.547083,
+        0.561667,
+        0.017708,
+        0.018333
+      ],
+      "area_frac": 0.00020301,
+      "aspect_h_over_w": 0.776,
+      "median_hue": 27.0,
+      "median_sat": 43.0,
+      "mean_value": 250.9,
+      "surround_mean_value": 109.2,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF116",
+      "kind": "bright_other",
+      "centroid": [
+        0.553249,
+        0.563563
+      ],
+      "box": [
+        0.552083,
+        0.5625,
+        0.0025,
+        0.002222
+      ],
+      "area_frac": 3.01e-06,
+      "aspect_h_over_w": 0.667,
+      "median_hue": 29.0,
+      "median_sat": 21.0,
+      "mean_value": 249.3,
+      "surround_mean_value": 165.9,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF117",
+      "kind": "bright_other",
+      "centroid": [
+        0.646564,
+        0.564463
+      ],
+      "box": [
+        0.645625,
+        0.563056,
+        0.002292,
+        0.002778
+      ],
+      "area_frac": 4.22e-06,
+      "aspect_h_over_w": 0.909,
+      "median_hue": 24.0,
+      "median_sat": 42.0,
+      "mean_value": 249.5,
+      "surround_mean_value": 226.5,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF118",
+      "kind": "bright_other",
+      "centroid": [
+        0.124052,
+        0.566083
+      ],
+      "box": [
+        0.122292,
+        0.563611,
+        0.003542,
+        0.005278
+      ],
+      "area_frac": 1.331e-05,
+      "aspect_h_over_w": 1.118,
+      "median_hue": 24.0,
+      "median_sat": 24.0,
+      "mean_value": 252.9,
+      "surround_mean_value": 214.5,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF119",
+      "kind": "bright_other",
+      "centroid": [
+        0.100443,
+        0.575444
+      ],
+      "box": [
+        0.098333,
+        0.569444,
+        0.003958,
+        0.011667
+      ],
+      "area_frac": 2.876e-05,
+      "aspect_h_over_w": 2.211,
+      "median_hue": 22.0,
+      "median_sat": 22.0,
+      "mean_value": 248.8,
+      "surround_mean_value": 213.2,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF120",
+      "kind": "bright_other",
+      "centroid": [
+        0.122965,
+        0.571493
+      ],
+      "box": [
+        0.121875,
+        0.569722,
+        0.002708,
+        0.004444
+      ],
+      "area_frac": 6.19e-06,
+      "aspect_h_over_w": 1.231,
+      "median_hue": 22.0,
+      "median_sat": 28.0,
+      "mean_value": 248.0,
+      "surround_mean_value": 224.6,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF121",
+      "kind": "bright_other",
+      "centroid": [
+        0.152717,
+        0.573576
+      ],
+      "box": [
+        0.151875,
+        0.571389,
+        0.002083,
+        0.004722
+      ],
+      "area_frac": 4.11e-06,
+      "aspect_h_over_w": 1.7,
+      "median_hue": 95.0,
+      "median_sat": 18.0,
+      "mean_value": 251.8,
+      "surround_mean_value": 206.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF122",
+      "kind": "flame",
+      "centroid": [
+        0.307379,
+        0.585404
+      ],
+      "box": [
+        0.301875,
+        0.574167,
+        0.01,
+        0.021111
+      ],
+      "area_frac": 9.549e-05,
+      "aspect_h_over_w": 1.583,
+      "median_hue": 24.0,
+      "median_sat": 36.0,
+      "mean_value": 249.8,
+      "surround_mean_value": 143.3,
+      "nearest_face": {
+        "face_id": "A05",
+        "distance_in_face_heights": 2.386,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF123",
+      "kind": "bright_other",
+      "centroid": [
+        0.321185,
+        0.58624
+      ],
+      "box": [
+        0.311667,
+        0.575833,
+        0.019167,
+        0.022222
+      ],
+      "area_frac": 0.00014045,
+      "aspect_h_over_w": 0.87,
+      "median_hue": 26.0,
+      "median_sat": 21.0,
+      "mean_value": 248.6,
+      "surround_mean_value": 111.6,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF124",
+      "kind": "flame",
+      "centroid": [
+        0.29517,
+        0.579293
+      ],
+      "box": [
+        0.293333,
+        0.576667,
+        0.003125,
+        0.005556
+      ],
+      "area_frac": 1.019e-05,
+      "aspect_h_over_w": 1.333,
+      "median_hue": 24.0,
+      "median_sat": 21.0,
+      "mean_value": 251.5,
+      "surround_mean_value": 132.1,
+      "nearest_face": {
+        "face_id": "A05",
+        "distance_in_face_heights": 2.327,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF125",
+      "kind": "bright_other",
+      "centroid": [
+        0.300756,
+        0.57979
+      ],
+      "box": [
+        0.299792,
+        0.578333,
+        0.002083,
+        0.003333
+      ],
+      "area_frac": 4.05e-06,
+      "aspect_h_over_w": 1.2,
+      "median_hue": 24.0,
+      "median_sat": 31.0,
+      "mean_value": 250.1,
+      "surround_mean_value": 235.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF126",
+      "kind": "bright_other",
+      "centroid": [
+        0.30349,
+        0.579413
+      ],
+      "box": [
+        0.302708,
+        0.578333,
+        0.001875,
+        0.002222
+      ],
+      "area_frac": 2.55e-06,
+      "aspect_h_over_w": 0.889,
+      "median_hue": 24.0,
+      "median_sat": 28.0,
+      "mean_value": 246.0,
+      "surround_mean_value": 242.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF127",
+      "kind": "bright_other",
+      "centroid": [
+        0.567667,
+        0.580105
+      ],
+      "box": [
+        0.56625,
+        0.578611,
+        0.002917,
+        0.003056
+      ],
+      "area_frac": 4.92e-06,
+      "aspect_h_over_w": 0.786,
+      "median_hue": 24.0,
+      "median_sat": 60.0,
+      "mean_value": 249.4,
+      "surround_mean_value": 238.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF128",
+      "kind": "bright_other",
+      "centroid": [
+        0.084906,
+        0.584254
+      ],
+      "box": [
+        0.083958,
+        0.583333,
+        0.002083,
+        0.001944
+      ],
+      "area_frac": 2.95e-06,
+      "aspect_h_over_w": 0.7,
+      "median_hue": 21.0,
+      "median_sat": 36.0,
+      "mean_value": 246.5,
+      "surround_mean_value": 236.5,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF129",
+      "kind": "bright_other",
+      "centroid": [
+        0.331866,
+        0.585397
+      ],
+      "box": [
+        0.330625,
+        0.583889,
+        0.002708,
+        0.003056
+      ],
+      "area_frac": 4.05e-06,
+      "aspect_h_over_w": 0.846,
+      "median_hue": 24.0,
+      "median_sat": 29.5,
+      "mean_value": 247.9,
+      "surround_mean_value": 220.7,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF130",
+      "kind": "bright_other",
+      "centroid": [
+        0.335642,
+        0.586372
+      ],
+      "box": [
+        0.334792,
+        0.585278,
+        0.001875,
+        0.0025
+      ],
+      "area_frac": 2.84e-06,
+      "aspect_h_over_w": 1.0,
+      "median_hue": 24.0,
+      "median_sat": 47.0,
+      "mean_value": 251.6,
+      "surround_mean_value": 194.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF131",
+      "kind": "bright_other",
+      "centroid": [
+        0.298535,
+        0.587831
+      ],
+      "box": [
+        0.296875,
+        0.586944,
+        0.003333,
+        0.002222
+      ],
+      "area_frac": 5.15e-06,
+      "aspect_h_over_w": 0.5,
+      "median_hue": 23.0,
+      "median_sat": 46.0,
+      "mean_value": 252.2,
+      "surround_mean_value": 196.9,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF132",
+      "kind": "bright_other",
+      "centroid": [
+        0.313935,
+        0.589353
+      ],
+      "box": [
+        0.313125,
+        0.586944,
+        0.001875,
+        0.005
+      ],
+      "area_frac": 5.61e-06,
+      "aspect_h_over_w": 2.0,
+      "median_hue": 20.0,
+      "median_sat": 45.0,
+      "mean_value": 251.8,
+      "surround_mean_value": 239.2,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF133",
+      "kind": "bright_other",
+      "centroid": [
+        0.569583,
+        0.587832
+      ],
+      "box": [
+        0.56875,
+        0.586944,
+        0.001875,
+        0.001944
+      ],
+      "area_frac": 2.37e-06,
+      "aspect_h_over_w": 0.778,
+      "median_hue": 13.0,
+      "median_sat": 78.0,
+      "mean_value": 251.0,
+      "surround_mean_value": 216.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF134",
+      "kind": "bright_other",
+      "centroid": [
+        0.333999,
+        0.589403
+      ],
+      "box": [
+        0.332708,
+        0.587778,
+        0.002708,
+        0.003611
+      ],
+      "area_frac": 5.38e-06,
+      "aspect_h_over_w": 1.0,
+      "median_hue": 22.0,
+      "median_sat": 51.0,
+      "mean_value": 251.8,
+      "surround_mean_value": 233.5,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF135",
+      "kind": "bright_other",
+      "centroid": [
+        0.336354,
+        0.589306
+      ],
+      "box": [
+        0.335625,
+        0.588611,
+        0.001667,
+        0.001667
+      ],
+      "area_frac": 2.08e-06,
+      "aspect_h_over_w": 0.75,
+      "median_hue": 22.0,
+      "median_sat": 50.5,
+      "mean_value": 251.4,
+      "surround_mean_value": 212.5,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF136",
+      "kind": "bright_other",
+      "centroid": [
+        0.329204,
+        0.590579
+      ],
+      "box": [
+        0.327708,
+        0.588889,
+        0.002708,
+        0.004167
+      ],
+      "area_frac": 7.41e-06,
+      "aspect_h_over_w": 1.154,
+      "median_hue": 17.5,
+      "median_sat": 30.0,
+      "mean_value": 248.3,
+      "surround_mean_value": 238.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF137",
+      "kind": "bright_other",
+      "centroid": [
+        0.329849,
+        0.596554
+      ],
+      "box": [
+        0.320625,
+        0.590833,
+        0.016875,
+        0.010278
+      ],
+      "area_frac": 3.333e-05,
+      "aspect_h_over_w": 0.457,
+      "median_hue": 21.0,
+      "median_sat": 76.0,
+      "mean_value": 251.0,
+      "surround_mean_value": 113.2,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF138",
+      "kind": "bright_other",
+      "centroid": [
+        0.906495,
+        0.608622
+      ],
+      "box": [
+        0.905625,
+        0.603889,
+        0.002708,
+        0.008333
+      ],
+      "area_frac": 1.013e-05,
+      "aspect_h_over_w": 2.308,
+      "median_hue": 29.0,
+      "median_sat": 32.0,
+      "mean_value": 251.4,
+      "surround_mean_value": 177.6,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF139",
+      "kind": "flame",
+      "centroid": [
+        0.595464,
+        0.633816
+      ],
+      "box": [
+        0.593958,
+        0.629167,
+        0.003542,
+        0.009167
+      ],
+      "area_frac": 1.186e-05,
+      "aspect_h_over_w": 1.941,
+      "median_hue": 28.0,
+      "median_sat": 66.0,
+      "mean_value": 250.8,
+      "surround_mean_value": 169.8,
+      "nearest_face": {
+        "face_id": "A48",
+        "distance_in_face_heights": 1.223,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF140",
+      "kind": "bright_other",
+      "centroid": [
+        0.612894,
+        0.639233
+      ],
+      "box": [
+        0.61125,
+        0.638056,
+        0.003542,
+        0.0025
+      ],
+      "area_frac": 5.32e-06,
+      "aspect_h_over_w": 0.529,
+      "median_hue": 25.0,
+      "median_sat": 15.0,
+      "mean_value": 251.6,
+      "surround_mean_value": 172.8,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF141",
+      "kind": "bright_other",
+      "centroid": [
+        0.604986,
+        0.642111
+      ],
+      "box": [
+        0.60125,
+        0.638889,
+        0.007292,
+        0.006111
+      ],
+      "area_frac": 2.807e-05,
+      "aspect_h_over_w": 0.629,
+      "median_hue": 23.0,
+      "median_sat": 47.0,
+      "mean_value": 251.2,
+      "surround_mean_value": 199.5,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF142",
+      "kind": "bright_other",
+      "centroid": [
+        0.615546,
+        0.64285
+      ],
+      "box": [
+        0.611667,
+        0.638889,
+        0.007292,
+        0.008889
+      ],
+      "area_frac": 1.904e-05,
+      "aspect_h_over_w": 0.914,
+      "median_hue": 20.0,
+      "median_sat": 30.0,
+      "mean_value": 249.0,
+      "surround_mean_value": 127.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF143",
+      "kind": "bright_other",
+      "centroid": [
+        0.612917,
+        0.643056
+      ],
+      "box": [
+        0.612083,
+        0.642222,
+        0.001875,
+        0.001944
+      ],
+      "area_frac": 2.72e-06,
+      "aspect_h_over_w": 0.778,
+      "median_hue": 23.0,
+      "median_sat": 25.0,
+      "mean_value": 250.4,
+      "surround_mean_value": 243.6,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF144",
+      "kind": "bright_other",
+      "centroid": [
+        0.593017,
+        0.646075
+      ],
+      "box": [
+        0.589375,
+        0.643056,
+        0.007708,
+        0.006389
+      ],
+      "area_frac": 2.245e-05,
+      "aspect_h_over_w": 0.622,
+      "median_hue": 23.0,
+      "median_sat": 33.0,
+      "mean_value": 250.9,
+      "surround_mean_value": 169.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF145",
+      "kind": "bright_other",
+      "centroid": [
+        0.598869,
+        0.643601
+      ],
+      "box": [
+        0.597292,
+        0.642778,
+        0.003125,
+        0.001944
+      ],
+      "area_frac": 4.98e-06,
+      "aspect_h_over_w": 0.467,
+      "median_hue": 21.0,
+      "median_sat": 32.0,
+      "mean_value": 252.2,
+      "surround_mean_value": 225.7,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF146",
+      "kind": "bright_other",
+      "centroid": [
+        0.604099,
+        0.647962
+      ],
+      "box": [
+        0.602917,
+        0.645278,
+        0.003125,
+        0.005278
+      ],
+      "area_frac": 8.22e-06,
+      "aspect_h_over_w": 1.267,
+      "median_hue": 21.0,
+      "median_sat": 57.5,
+      "mean_value": 252.3,
+      "surround_mean_value": 233.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF147",
+      "kind": "bright_other",
+      "centroid": [
+        0.600053,
+        0.648965
+      ],
+      "box": [
+        0.597917,
+        0.647778,
+        0.004375,
+        0.002778
+      ],
+      "area_frac": 5.27e-06,
+      "aspect_h_over_w": 0.476,
+      "median_hue": 23.0,
+      "median_sat": 31.0,
+      "mean_value": 251.5,
+      "surround_mean_value": 236.0,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF148",
+      "kind": "bright_other",
+      "centroid": [
+        0.584818,
+        0.652851
+      ],
+      "box": [
+        0.582708,
+        0.65,
+        0.005,
+        0.006389
+      ],
+      "area_frac": 1.186e-05,
+      "aspect_h_over_w": 0.958,
+      "median_hue": 20.0,
+      "median_sat": 31.0,
+      "mean_value": 251.7,
+      "surround_mean_value": 115.4,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF149",
+      "kind": "bright_other",
+      "centroid": [
+        0.596082,
+        0.652215
+      ],
+      "box": [
+        0.593125,
+        0.651111,
+        0.006458,
+        0.003056
+      ],
+      "area_frac": 1.105e-05,
+      "aspect_h_over_w": 0.355,
+      "median_hue": 22.0,
+      "median_sat": 26.0,
+      "mean_value": 251.4,
+      "surround_mean_value": 207.4,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF150",
+      "kind": "bright_other",
+      "centroid": [
+        0.612913,
+        0.661003
+      ],
+      "box": [
+        0.611667,
+        0.66,
+        0.0025,
+        0.0025
+      ],
+      "area_frac": 3.7e-06,
+      "aspect_h_over_w": 0.75,
+      "median_hue": 14.0,
+      "median_sat": 86.0,
+      "mean_value": 249.0,
+      "surround_mean_value": 188.9,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF151",
+      "kind": "flame",
+      "centroid": [
+        0.777993,
+        0.704806
+      ],
+      "box": [
+        0.776667,
+        0.701389,
+        0.002917,
+        0.007778
+      ],
+      "area_frac": 1.308e-05,
+      "aspect_h_over_w": 2.0,
+      "median_hue": 28.0,
+      "median_sat": 66.0,
+      "mean_value": 247.3,
+      "surround_mean_value": 136.5,
+      "nearest_face": {
+        "face_id": "A48",
+        "distance_in_face_heights": 1.305,
+        "unattached": false
+      }
+    },
+    {
+      "blob_id": "AF152",
+      "kind": "bright_other",
+      "centroid": [
+        0.781097,
+        0.706503
+      ],
+      "box": [
+        0.780417,
+        0.704444,
+        0.001667,
+        0.004167
+      ],
+      "area_frac": 4.8e-06,
+      "aspect_h_over_w": 1.875,
+      "median_hue": 28.0,
+      "median_sat": 34.0,
+      "mean_value": 251.1,
+      "surround_mean_value": 188.7,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF153",
+      "kind": "bright_other",
+      "centroid": [
+        0.781397,
+        0.712771
+      ],
+      "box": [
+        0.780625,
+        0.711667,
+        0.001667,
+        0.0025
+      ],
+      "area_frac": 2.37e-06,
+      "aspect_h_over_w": 1.125,
+      "median_hue": 29.0,
+      "median_sat": 30.0,
+      "mean_value": 247.5,
+      "surround_mean_value": 192.3,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF154",
+      "kind": "bright_other",
+      "centroid": [
+        0.775417,
+        0.715802
+      ],
+      "box": [
+        0.774583,
+        0.714444,
+        0.001875,
+        0.002778
+      ],
+      "area_frac": 3.65e-06,
+      "aspect_h_over_w": 1.111,
+      "median_hue": 28.0,
+      "median_sat": 52.0,
+      "mean_value": 247.1,
+      "surround_mean_value": 193.2,
+      "nearest_face": null
+    },
+    {
+      "blob_id": "AF155",
+      "kind": "flame",
+      "centroid": [
+        0.006573,
+        0.752351
+      ],
+      "box": [
+        0.005625,
+        0.750278,
+        0.002083,
+        0.004444
+      ],
+      "area_frac": 4.75e-06,
+      "aspect_h_over_w": 1.6,
+      "median_hue": 25.0,
+      "median_sat": 10.0,
+      "mean_value": 252.7,
+      "surround_mean_value": 138.1,
+      "nearest_face": {
+        "face_id": "A05",
+        "distance_in_face_heights": 3.476,
+        "unattached": true
+      }
+    }
+  ]
+}

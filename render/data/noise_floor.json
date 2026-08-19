@@ -1,0 +1,147 @@
+{
+  "schema": "mimesis.noisefloor.v1",
+  "thresholds": {
+    "blazeface": 0.2,
+    "yunet": 0.3
+  },
+  "floor": {
+    "blazeface": {
+      "false_positive_ceiling": 0.6814,
+      "controls_with_any_detection": 8,
+      "controls_total": 8,
+      "interpretation": "Highest score this detector produced on input containing no faces, at the same thresholds used on the paintings. A painting detection at or below this score is not evidence of a face."
+    },
+    "yunet": {
+      "false_positive_ceiling": 0.5604,
+      "controls_with_any_detection": 8,
+      "controls_total": 8,
+      "interpretation": "Highest score this detector produced on input containing no faces, at the same thresholds used on the paintings. A painting detection at or below this score is not evidence of a face."
+    }
+  },
+  "controls": [
+    {
+      "control": "synthetic",
+      "seed": 0,
+      "blazeface": {
+        "n": 28,
+        "max": 0.6147,
+        "p95": 0.5665
+      },
+      "yunet": {
+        "n": 6,
+        "max": 0.5604,
+        "p95": 0.5602
+      }
+    },
+    {
+      "control": "synthetic",
+      "seed": 1,
+      "blazeface": {
+        "n": 49,
+        "max": 0.6111,
+        "p95": 0.5314
+      },
+      "yunet": {
+        "n": 6,
+        "max": 0.4982,
+        "p95": 0.4972
+      }
+    },
+    {
+      "control": "synthetic",
+      "seed": 2,
+      "blazeface": {
+        "n": 42,
+        "max": 0.5851,
+        "p95": 0.5045
+      },
+      "yunet": {
+        "n": 4,
+        "max": 0.4261,
+        "p95": 0.426
+      }
+    },
+    {
+      "control": "synthetic",
+      "seed": 3,
+      "blazeface": {
+        "n": 58,
+        "max": 0.6814,
+        "p95": 0.5741
+      },
+      "yunet": {
+        "n": 6,
+        "max": 0.4063,
+        "p95": 0.4057
+      }
+    },
+    {
+      "control": "synthetic",
+      "seed": 4,
+      "blazeface": {
+        "n": 27,
+        "max": 0.5982,
+        "p95": 0.5085
+      },
+      "yunet": {
+        "n": 6,
+        "max": 0.3848,
+        "p95": 0.3844
+      }
+    },
+    {
+      "control": "synthetic",
+      "seed": 5,
+      "blazeface": {
+        "n": 20,
+        "max": 0.5987,
+        "p95": 0.5137
+      },
+      "yunet": {
+        "n": 4,
+        "max": 0.4806,
+        "p95": 0.4805
+      }
+    },
+    {
+      "control": "crop",
+      "region": [
+        0.25,
+        0.8,
+        0.16,
+        0.18
+      ],
+      "source": "../out/panel_a_rectified.png",
+      "blazeface": {
+        "n": 61,
+        "max": 0.5554,
+        "p95": 0.4206
+      },
+      "yunet": {
+        "n": 1,
+        "max": 0.315,
+        "p95": 0.315
+      }
+    },
+    {
+      "control": "crop",
+      "region": [
+        0.75,
+        0.8,
+        0.16,
+        0.18
+      ],
+      "source": "../out/panel_a_rectified.png",
+      "blazeface": {
+        "n": 28,
+        "max": 0.5004,
+        "p95": 0.4046
+      },
+      "yunet": {
+        "n": 1,
+        "max": 0.3335,
+        "p95": 0.3335
+      }
+    }
+  ]
+}

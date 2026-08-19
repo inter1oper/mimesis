@@ -1,0 +1,956 @@
+{
+  "schema": "mimesis.overlayplan.v1",
+  "panel": "A",
+  "projector": {
+    "raster_px": [
+      3840,
+      2160
+    ],
+    "span_mm": 3500.0,
+    "mm_per_px": 0.9115
+  },
+  "painting_zone_px_wide": 438.9,
+  "tier_thresholds_px": {
+    "full_mesh": 88,
+    "contour": 48,
+    "landmarks": 24,
+    "box_only": 0
+  },
+  "rationale": "A stroke needs roughly 4 projector px between adjacent mesh points to read as a stroke. Below that the mesh fills, and fills bloom on gloss. Tier is computed from measured box size, never chosen by eye.",
+  "summary": {
+    "full_mesh": 0,
+    "contour": 1,
+    "landmarks": 16,
+    "box_only": 41
+  },
+  "faces": [
+    {
+      "face_id": "A01",
+      "box_px": [
+        59.2,
+        59.2
+      ],
+      "governing_px": 59.2,
+      "box_mm": [
+        53.9,
+        53.9
+      ],
+      "tier": "contour",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A02",
+      "box_px": [
+        37.1,
+        37.1
+      ],
+      "governing_px": 37.1,
+      "box_mm": [
+        33.8,
+        33.8
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A03",
+      "box_px": [
+        57.0,
+        57.0
+      ],
+      "governing_px": 57.0,
+      "box_mm": [
+        51.9,
+        51.9
+      ],
+      "tier": "contour",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A04",
+      "box_px": [
+        20.8,
+        20.8
+      ],
+      "governing_px": 20.8,
+      "box_mm": [
+        19.0,
+        19.0
+      ],
+      "tier": "box_only",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A05",
+      "box_px": [
+        47.2,
+        53.2
+      ],
+      "governing_px": 47.2,
+      "box_mm": [
+        43.0,
+        48.5
+      ],
+      "tier": "landmarks",
+      "mesh_available": true,
+      "effective_tier": "landmarks",
+      "note": null
+    },
+    {
+      "face_id": "A06",
+      "box_px": [
+        39.4,
+        39.4
+      ],
+      "governing_px": 39.4,
+      "box_mm": [
+        35.9,
+        35.9
+      ],
+      "tier": "landmarks",
+      "mesh_available": true,
+      "effective_tier": "landmarks",
+      "note": null
+    },
+    {
+      "face_id": "A07",
+      "box_px": [
+        28.9,
+        28.9
+      ],
+      "governing_px": 28.9,
+      "box_mm": [
+        26.3,
+        26.3
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A08",
+      "box_px": [
+        29.2,
+        33.4
+      ],
+      "governing_px": 29.2,
+      "box_mm": [
+        26.6,
+        30.4
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A09",
+      "box_px": [
+        53.3,
+        53.3
+      ],
+      "governing_px": 53.3,
+      "box_mm": [
+        48.6,
+        48.6
+      ],
+      "tier": "contour",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A10",
+      "box_px": [
+        44.8,
+        44.8
+      ],
+      "governing_px": 44.8,
+      "box_mm": [
+        40.8,
+        40.8
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A11",
+      "box_px": [
+        25.9,
+        25.9
+      ],
+      "governing_px": 25.9,
+      "box_mm": [
+        23.6,
+        23.6
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A12",
+      "box_px": [
+        25.2,
+        25.2
+      ],
+      "governing_px": 25.2,
+      "box_mm": [
+        23.0,
+        23.0
+      ],
+      "tier": "landmarks",
+      "mesh_available": true,
+      "effective_tier": "landmarks",
+      "note": null
+    },
+    {
+      "face_id": "A13",
+      "box_px": [
+        57.6,
+        57.6
+      ],
+      "governing_px": 57.6,
+      "box_mm": [
+        52.5,
+        52.5
+      ],
+      "tier": "contour",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A14",
+      "box_px": [
+        72.1,
+        72.1
+      ],
+      "governing_px": 72.1,
+      "box_mm": [
+        65.8,
+        65.8
+      ],
+      "tier": "contour",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A15",
+      "box_px": [
+        32.9,
+        32.9
+      ],
+      "governing_px": 32.9,
+      "box_mm": [
+        30.0,
+        30.0
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A16",
+      "box_px": [
+        30.7,
+        30.7
+      ],
+      "governing_px": 30.7,
+      "box_mm": [
+        28.0,
+        28.0
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A17",
+      "box_px": [
+        23.0,
+        29.3
+      ],
+      "governing_px": 23.0,
+      "box_mm": [
+        21.0,
+        26.7
+      ],
+      "tier": "box_only",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A18",
+      "box_px": [
+        22.2,
+        22.2
+      ],
+      "governing_px": 22.2,
+      "box_mm": [
+        20.2,
+        20.2
+      ],
+      "tier": "box_only",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A19",
+      "box_px": [
+        34.2,
+        40.5
+      ],
+      "governing_px": 34.2,
+      "box_mm": [
+        31.2,
+        36.9
+      ],
+      "tier": "landmarks",
+      "mesh_available": true,
+      "effective_tier": "landmarks",
+      "note": null
+    },
+    {
+      "face_id": "A20",
+      "box_px": [
+        27.9,
+        27.9
+      ],
+      "governing_px": 27.9,
+      "box_mm": [
+        25.4,
+        25.4
+      ],
+      "tier": "landmarks",
+      "mesh_available": true,
+      "effective_tier": "landmarks",
+      "note": null
+    },
+    {
+      "face_id": "A21",
+      "box_px": [
+        23.8,
+        23.8
+      ],
+      "governing_px": 23.8,
+      "box_mm": [
+        21.7,
+        21.7
+      ],
+      "tier": "box_only",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A22",
+      "box_px": [
+        25.6,
+        25.6
+      ],
+      "governing_px": 25.6,
+      "box_mm": [
+        23.3,
+        23.3
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A23",
+      "box_px": [
+        23.1,
+        23.1
+      ],
+      "governing_px": 23.1,
+      "box_mm": [
+        21.1,
+        21.1
+      ],
+      "tier": "box_only",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A24",
+      "box_px": [
+        67.7,
+        67.7
+      ],
+      "governing_px": 67.7,
+      "box_mm": [
+        61.7,
+        61.7
+      ],
+      "tier": "contour",
+      "mesh_available": true,
+      "effective_tier": "contour",
+      "note": null
+    },
+    {
+      "face_id": "A25",
+      "box_px": [
+        28.3,
+        28.3
+      ],
+      "governing_px": 28.3,
+      "box_mm": [
+        25.8,
+        25.8
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A26",
+      "box_px": [
+        46.6,
+        46.5
+      ],
+      "governing_px": 46.5,
+      "box_mm": [
+        42.5,
+        42.4
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A27",
+      "box_px": [
+        38.9,
+        38.9
+      ],
+      "governing_px": 38.9,
+      "box_mm": [
+        35.4,
+        35.4
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A28",
+      "box_px": [
+        21.3,
+        21.3
+      ],
+      "governing_px": 21.3,
+      "box_mm": [
+        19.4,
+        19.4
+      ],
+      "tier": "box_only",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A29",
+      "box_px": [
+        26.2,
+        29.7
+      ],
+      "governing_px": 26.2,
+      "box_mm": [
+        23.9,
+        27.1
+      ],
+      "tier": "landmarks",
+      "mesh_available": true,
+      "effective_tier": "landmarks",
+      "note": null
+    },
+    {
+      "face_id": "A30",
+      "box_px": [
+        25.1,
+        25.1
+      ],
+      "governing_px": 25.1,
+      "box_mm": [
+        22.9,
+        22.9
+      ],
+      "tier": "landmarks",
+      "mesh_available": true,
+      "effective_tier": "landmarks",
+      "note": null
+    },
+    {
+      "face_id": "A31",
+      "box_px": [
+        30.0,
+        30.0
+      ],
+      "governing_px": 30.0,
+      "box_mm": [
+        27.3,
+        27.3
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A32",
+      "box_px": [
+        31.7,
+        31.7
+      ],
+      "governing_px": 31.7,
+      "box_mm": [
+        28.9,
+        28.9
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A33",
+      "box_px": [
+        18.9,
+        18.9
+      ],
+      "governing_px": 18.9,
+      "box_mm": [
+        17.2,
+        17.2
+      ],
+      "tier": "box_only",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A34",
+      "box_px": [
+        31.1,
+        31.1
+      ],
+      "governing_px": 31.1,
+      "box_mm": [
+        28.3,
+        28.3
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A35",
+      "box_px": [
+        28.4,
+        28.4
+      ],
+      "governing_px": 28.4,
+      "box_mm": [
+        25.9,
+        25.9
+      ],
+      "tier": "landmarks",
+      "mesh_available": true,
+      "effective_tier": "landmarks",
+      "note": null
+    },
+    {
+      "face_id": "A36",
+      "box_px": [
+        25.1,
+        25.1
+      ],
+      "governing_px": 25.1,
+      "box_mm": [
+        22.9,
+        22.9
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A37",
+      "box_px": [
+        27.2,
+        27.2
+      ],
+      "governing_px": 27.2,
+      "box_mm": [
+        24.8,
+        24.8
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A38",
+      "box_px": [
+        16.8,
+        16.8
+      ],
+      "governing_px": 16.8,
+      "box_mm": [
+        15.3,
+        15.3
+      ],
+      "tier": "box_only",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A39",
+      "box_px": [
+        19.4,
+        19.4
+      ],
+      "governing_px": 19.4,
+      "box_mm": [
+        17.7,
+        17.7
+      ],
+      "tier": "box_only",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A40",
+      "box_px": [
+        22.8,
+        25.6
+      ],
+      "governing_px": 22.8,
+      "box_mm": [
+        20.8,
+        23.3
+      ],
+      "tier": "box_only",
+      "mesh_available": true,
+      "effective_tier": "box_only",
+      "note": null
+    },
+    {
+      "face_id": "A41",
+      "box_px": [
+        21.9,
+        21.9
+      ],
+      "governing_px": 21.9,
+      "box_mm": [
+        20.0,
+        20.0
+      ],
+      "tier": "box_only",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A42",
+      "box_px": [
+        18.9,
+        18.9
+      ],
+      "governing_px": 18.9,
+      "box_mm": [
+        17.2,
+        17.2
+      ],
+      "tier": "box_only",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A43",
+      "box_px": [
+        26.8,
+        29.8
+      ],
+      "governing_px": 26.8,
+      "box_mm": [
+        24.4,
+        27.2
+      ],
+      "tier": "landmarks",
+      "mesh_available": true,
+      "effective_tier": "landmarks",
+      "note": null
+    },
+    {
+      "face_id": "A44",
+      "box_px": [
+        33.5,
+        36.6
+      ],
+      "governing_px": 33.5,
+      "box_mm": [
+        30.5,
+        33.4
+      ],
+      "tier": "landmarks",
+      "mesh_available": true,
+      "effective_tier": "landmarks",
+      "note": null
+    },
+    {
+      "face_id": "A45",
+      "box_px": [
+        24.8,
+        24.8
+      ],
+      "governing_px": 24.8,
+      "box_mm": [
+        22.6,
+        22.6
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A46",
+      "box_px": [
+        28.3,
+        28.3
+      ],
+      "governing_px": 28.3,
+      "box_mm": [
+        25.8,
+        25.7
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A47",
+      "box_px": [
+        27.5,
+        27.5
+      ],
+      "governing_px": 27.5,
+      "box_mm": [
+        25.1,
+        25.1
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A48",
+      "box_px": [
+        41.8,
+        46.6
+      ],
+      "governing_px": 41.8,
+      "box_mm": [
+        38.1,
+        42.5
+      ],
+      "tier": "landmarks",
+      "mesh_available": true,
+      "effective_tier": "landmarks",
+      "note": null
+    },
+    {
+      "face_id": "A49",
+      "box_px": [
+        30.8,
+        35.3
+      ],
+      "governing_px": 30.8,
+      "box_mm": [
+        28.0,
+        32.2
+      ],
+      "tier": "landmarks",
+      "mesh_available": true,
+      "effective_tier": "landmarks",
+      "note": null
+    },
+    {
+      "face_id": "A50",
+      "box_px": [
+        27.8,
+        27.8
+      ],
+      "governing_px": 27.8,
+      "box_mm": [
+        25.3,
+        25.3
+      ],
+      "tier": "landmarks",
+      "mesh_available": true,
+      "effective_tier": "landmarks",
+      "note": null
+    },
+    {
+      "face_id": "A51",
+      "box_px": [
+        21.0,
+        21.0
+      ],
+      "governing_px": 21.0,
+      "box_mm": [
+        19.2,
+        19.2
+      ],
+      "tier": "box_only",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A52",
+      "box_px": [
+        26.8,
+        26.8
+      ],
+      "governing_px": 26.8,
+      "box_mm": [
+        24.4,
+        24.4
+      ],
+      "tier": "landmarks",
+      "mesh_available": true,
+      "effective_tier": "landmarks",
+      "note": null
+    },
+    {
+      "face_id": "A53",
+      "box_px": [
+        41.4,
+        45.6
+      ],
+      "governing_px": 41.4,
+      "box_mm": [
+        37.8,
+        41.6
+      ],
+      "tier": "landmarks",
+      "mesh_available": true,
+      "effective_tier": "landmarks",
+      "note": null
+    },
+    {
+      "face_id": "A54",
+      "box_px": [
+        57.1,
+        57.1
+      ],
+      "governing_px": 57.1,
+      "box_mm": [
+        52.0,
+        52.0
+      ],
+      "tier": "contour",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A55",
+      "box_px": [
+        32.2,
+        32.2
+      ],
+      "governing_px": 32.2,
+      "box_mm": [
+        29.3,
+        29.3
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A56",
+      "box_px": [
+        24.0,
+        24.0
+      ],
+      "governing_px": 24.0,
+      "box_mm": [
+        21.9,
+        21.9
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    },
+    {
+      "face_id": "A57",
+      "box_px": [
+        45.6,
+        56.6
+      ],
+      "governing_px": 45.6,
+      "box_mm": [
+        41.6,
+        51.6
+      ],
+      "tier": "landmarks",
+      "mesh_available": true,
+      "effective_tier": "landmarks",
+      "note": null
+    },
+    {
+      "face_id": "A58",
+      "box_px": [
+        28.3,
+        28.3
+      ],
+      "governing_px": 28.3,
+      "box_mm": [
+        25.8,
+        25.8
+      ],
+      "tier": "landmarks",
+      "mesh_available": false,
+      "effective_tier": "box_only",
+      "note": "no converged mesh; nothing to draw above box_only regardless of size"
+    }
+  ]
+}

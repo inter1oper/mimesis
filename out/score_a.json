@@ -1,0 +1,6733 @@
+{
+  "schema": "mimesis.score.v1",
+  "panel": "A",
+  "session_id": null,
+  "loop_duration_s": 900.0,
+  "clock": {
+    "source": "performance.now",
+    "audio_file": null,
+    "fallback": "performance.now"
+  },
+  "lead_offset_s": -4.0,
+  "reveal": {
+    "char_ms": 21.0,
+    "sentence_pause_ms": 420.0,
+    "comma_pause_ms": 130.0,
+    "blur_resolve_ms": 120.0
+  },
+  "source_state": {
+    "answer": "type_specimen_not_model_output",
+    "reasoning": "awaiting_transcripts",
+    "overlay": "complete",
+    "note": "Answer and reasoning are empty because no transcripts have been supplied. They are not filled with placeholder prose. When transcripts arrive these tracks populate and the overlay cues gain trigger bindings to reasoning spans; nothing in the renderer changes."
+  },
+  "tracks": {
+    "answer": [
+      {
+        "cue_id": "A-specimen-00",
+        "t_in": 0.0,
+        "t_out": 225.0,
+        "text": "Fourteen people stood in a room and someone photographed them.",
+        "char_onsets_ms": [
+          0.0,
+          17.5,
+          40.33,
+          61.48,
+          80.96,
+          98.77,
+          121.9,
+          143.37,
+          163.16,
+          181.27,
+          204.71,
+          226.48,
+          246.58,
+          265.01,
+          288.76,
+          310.83,
+          331.24,
+          349.97,
+          374.03,
+          396.42,
+          417.13,
+          436.17,
+          460.54,
+          483.23,
+          504.25,
+          523.6,
+          541.27,
+          564.28,
+          585.61,
+          605.26,
+          623.24,
+          646.55,
+          668.19,
+          688.16,
+          706.45,
+          730.06,
+          752.01,
+          772.28,
+          790.88,
+          814.81,
+          837.06,
+          857.64,
+          876.55,
+          900.78,
+          923.34,
+          944.23,
+          963.45,
+          980.99,
+          1003.86,
+          1025.05,
+          1044.58,
+          1062.43,
+          1085.6,
+          1107.11,
+          1126.94,
+          1145.09,
+          1168.58,
+          1190.39,
+          1210.53,
+          1229.0,
+          1252.79,
+          1274.91
+        ],
+        "claim_ids": [],
+        "section": "specimen"
+      },
+      {
+        "cue_id": "A-specimen-01",
+        "t_in": 225.0,
+        "t_out": 450.0,
+        "text": "A description of that photograph was given to a machine, and the machine produced a room that had never held anyone.",
+        "char_onsets_ms": [
+          0.0,
+          17.5,
+          40.33,
+          61.48,
+          80.96,
+          98.77,
+          121.9,
+          143.37,
+          163.16,
+          181.27,
+          204.71,
+          226.48,
+          246.58,
+          265.01,
+          288.76,
+          310.83,
+          331.24,
+          349.97,
+          374.03,
+          396.42,
+          417.13,
+          436.17,
+          460.54,
+          483.23,
+          504.25,
+          523.6,
+          541.27,
+          564.28,
+          585.61,
+          605.26,
+          623.24,
+          646.55,
+          668.19,
+          688.16,
+          706.45,
+          730.06,
+          752.01,
+          772.28,
+          790.88,
+          814.81,
+          837.06,
+          857.64,
+          876.55,
+          900.78,
+          923.34,
+          944.23,
+          963.45,
+          980.99,
+          1003.86,
+          1025.05,
+          1044.58,
+          1062.43,
+          1085.6,
+          1107.11,
+          1126.94,
+          1145.09,
+          1298.58,
+          1320.39,
+          1340.53,
+          1359.0,
+          1382.79,
+          1404.91,
+          1425.36,
+          1444.13,
+          1468.23,
+          1490.66,
+          1511.41,
+          1530.5,
+          1554.91,
+          1577.64,
+          1598.7,
+          1618.09,
+          1635.81,
+          1658.86,
+          1680.23,
+          1699.93,
+          1717.95,
+          1741.3,
+          1762.98,
+          1782.99,
+          1801.32,
+          1824.98,
+          1846.97,
+          1867.28,
+          1885.92,
+          1909.89,
+          1932.19,
+          1952.81,
+          1971.76,
+          1996.03,
+          2018.64,
+          2039.57,
+          2058.82,
+          2076.41,
+          2099.32,
+          2120.56,
+          2140.12,
+          2158.01,
+          2181.23,
+          2202.78,
+          2222.65,
+          2240.85,
+          2264.38,
+          2286.23,
+          2306.41,
+          2324.92,
+          2348.76,
+          2370.92,
+          2391.41,
+          2410.22,
+          2434.37,
+          2456.84,
+          2477.63,
+          2496.76,
+          2521.21,
+          2543.98
+        ],
+        "claim_ids": [],
+        "section": "specimen"
+      },
+      {
+        "cue_id": "A-specimen-02",
+        "t_in": 450.0,
+        "t_out": 675.0,
+        "text": "Both rooms were then painted, by the same hand, in the same hours.",
+        "char_onsets_ms": [
+          0.0,
+          17.5,
+          40.33,
+          61.48,
+          80.96,
+          98.77,
+          121.9,
+          143.37,
+          163.16,
+          181.27,
+          204.71,
+          226.48,
+          246.58,
+          265.01,
+          288.76,
+          310.83,
+          331.24,
+          349.97,
+          374.03,
+          396.42,
+          417.13,
+          436.17,
+          460.54,
+          483.23,
+          504.25,
+          523.6,
+          541.27,
+          564.28,
+          585.61,
+          735.26,
+          753.24,
+          776.55,
+          798.19,
+          818.16,
+          836.45,
+          860.06,
+          882.01,
+          902.28,
+          920.88,
+          944.81,
+          967.06,
+          987.64,
+          1006.55,
+          1030.78,
+          1053.34,
+          1074.23,
+          1093.44,
+          1240.99,
+          1263.86,
+          1285.05,
+          1304.57,
+          1322.42,
+          1345.6,
+          1367.11,
+          1386.94,
+          1405.09,
+          1428.58,
+          1450.39,
+          1470.53,
+          1489.0,
+          1512.79,
+          1534.91,
+          1555.36,
+          1574.13,
+          1598.23,
+          1620.66
+        ],
+        "claim_ids": [],
+        "section": "specimen"
+      },
+      {
+        "cue_id": "A-specimen-03",
+        "t_in": 675.0,
+        "t_out": 900.0,
+        "text": "The detector finds faces in both.",
+        "char_onsets_ms": [
+          0.0,
+          17.5,
+          40.33,
+          61.48,
+          80.96,
+          98.77,
+          121.9,
+          143.37,
+          163.16,
+          181.27,
+          204.71,
+          226.48,
+          246.58,
+          265.01,
+          288.76,
+          310.83,
+          331.24,
+          349.97,
+          374.03,
+          396.42,
+          417.13,
+          436.17,
+          460.54,
+          483.23,
+          504.25,
+          523.6,
+          541.27,
+          564.28,
+          585.61,
+          605.26,
+          623.24,
+          646.55,
+          668.19
+        ],
+        "claim_ids": [],
+        "section": "specimen"
+      }
+    ],
+    "reasoning": [],
+    "overlay": [
+      {
+        "cue_id": "A-lost_track-0181",
+        "cue": "lost_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/3"
+        },
+        "face_ids": [
+          "A04"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/3",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-lost_track-0182",
+        "cue": "lost_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/6"
+        },
+        "face_ids": [
+          "A07"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/6",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-lost_track-0188",
+        "cue": "lost_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/19"
+        },
+        "face_ids": [
+          "A20"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/19",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-lost_track-0189",
+        "cue": "lost_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/21"
+        },
+        "face_ids": [
+          "A22"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/21",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-lost_track-0192",
+        "cue": "lost_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/25"
+        },
+        "face_ids": [
+          "A26"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/25",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-lost_track-0193",
+        "cue": "lost_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/26"
+        },
+        "face_ids": [
+          "A27"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/26",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-lost_track-0194",
+        "cue": "lost_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/29"
+        },
+        "face_ids": [
+          "A30"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/29",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-lost_track-0195",
+        "cue": "lost_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/30"
+        },
+        "face_ids": [
+          "A31"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/30",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-lost_track-0196",
+        "cue": "lost_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/31"
+        },
+        "face_ids": [
+          "A32"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/31",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-lost_track-0199",
+        "cue": "lost_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/34"
+        },
+        "face_ids": [
+          "A35"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/34",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-lost_track-0200",
+        "cue": "lost_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/35"
+        },
+        "face_ids": [
+          "A36"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/35",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-lost_track-0203",
+        "cue": "lost_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/40"
+        },
+        "face_ids": [
+          "A41"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/40",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-lost_track-0204",
+        "cue": "lost_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/41"
+        },
+        "face_ids": [
+          "A42"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/41",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-lost_track-0205",
+        "cue": "lost_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/45"
+        },
+        "face_ids": [
+          "A46"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/45",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-lost_track-0206",
+        "cue": "lost_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/46"
+        },
+        "face_ids": [
+          "A47"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/46",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-lost_track-0210",
+        "cue": "lost_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/55"
+        },
+        "face_ids": [
+          "A56"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/55",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-response_field_cell-0001",
+        "cue": "response_field_cell",
+        "t_in": 0.0,
+        "t_out": 45.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/16/27"
+        },
+        "cell": [
+          27,
+          16
+        ],
+        "value": 0.9859
+      },
+      {
+        "cue_id": "A-response_field_sweep-0000",
+        "cue": "response_field_sweep",
+        "t_in": 0.0,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field"
+        },
+        "axis": "x",
+        "duration_s": 126.0,
+        "fields": [
+          "/response_field/values",
+          "/response_field/stats/p90_nonzero"
+        ]
+      },
+      {
+        "cue_id": "A-tentative_track-0180",
+        "cue": "tentative_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/0"
+        },
+        "face_ids": [
+          "A01"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/0",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-tentative_track-0183",
+        "cue": "tentative_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/9"
+        },
+        "face_ids": [
+          "A10"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/9",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-tentative_track-0184",
+        "cue": "tentative_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/12"
+        },
+        "face_ids": [
+          "A13"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/12",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-tentative_track-0185",
+        "cue": "tentative_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/13"
+        },
+        "face_ids": [
+          "A14"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/13",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-tentative_track-0186",
+        "cue": "tentative_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/14"
+        },
+        "face_ids": [
+          "A15"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/14",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-tentative_track-0187",
+        "cue": "tentative_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/15"
+        },
+        "face_ids": [
+          "A16"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/15",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-tentative_track-0190",
+        "cue": "tentative_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/22"
+        },
+        "face_ids": [
+          "A23"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/22",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-tentative_track-0191",
+        "cue": "tentative_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/24"
+        },
+        "face_ids": [
+          "A25"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/24",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-tentative_track-0197",
+        "cue": "tentative_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/32"
+        },
+        "face_ids": [
+          "A33"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/32",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-tentative_track-0198",
+        "cue": "tentative_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/33"
+        },
+        "face_ids": [
+          "A34"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/33",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-tentative_track-0201",
+        "cue": "tentative_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/36"
+        },
+        "face_ids": [
+          "A37"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/36",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-tentative_track-0202",
+        "cue": "tentative_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/37"
+        },
+        "face_ids": [
+          "A38"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/37",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-tentative_track-0207",
+        "cue": "tentative_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/49"
+        },
+        "face_ids": [
+          "A50"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/49",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-tentative_track-0208",
+        "cue": "tentative_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/50"
+        },
+        "face_ids": [
+          "A51"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/50",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-tentative_track-0209",
+        "cue": "tentative_track",
+        "t_in": 0.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/54"
+        },
+        "face_ids": [
+          "A55"
+        ],
+        "flash_from": {
+          "file": "stability",
+          "pointer": "/panels/A/54",
+          "field": "flash_hz"
+        }
+      },
+      {
+        "cue_id": "A-response_field_cell-0002",
+        "cue": "response_field_cell",
+        "t_in": 1.05,
+        "t_out": 46.05,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/15/27"
+        },
+        "cell": [
+          27,
+          15
+        ],
+        "value": 0.9827
+      },
+      {
+        "cue_id": "A-response_field_cell-0003",
+        "cue": "response_field_cell",
+        "t_in": 2.1,
+        "t_out": 47.1,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/15/28"
+        },
+        "cell": [
+          28,
+          15
+        ],
+        "value": 0.9749
+      },
+      {
+        "cue_id": "A-response_field_cell-0004",
+        "cue": "response_field_cell",
+        "t_in": 3.15,
+        "t_out": 48.15,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/16/28"
+        },
+        "cell": [
+          28,
+          16
+        ],
+        "value": 0.9743
+      },
+      {
+        "cue_id": "A-response_field_cell-0005",
+        "cue": "response_field_cell",
+        "t_in": 4.2,
+        "t_out": 49.2,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/13/31"
+        },
+        "cell": [
+          31,
+          13
+        ],
+        "value": 0.9713
+      },
+      {
+        "cue_id": "A-response_field_cell-0006",
+        "cue": "response_field_cell",
+        "t_in": 5.25,
+        "t_out": 50.25,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/13/27"
+        },
+        "cell": [
+          27,
+          13
+        ],
+        "value": 0.969
+      },
+      {
+        "cue_id": "A-response_field_cell-0007",
+        "cue": "response_field_cell",
+        "t_in": 6.3,
+        "t_out": 51.3,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/19/28"
+        },
+        "cell": [
+          28,
+          19
+        ],
+        "value": 0.9679
+      },
+      {
+        "cue_id": "A-response_field_cell-0008",
+        "cue": "response_field_cell",
+        "t_in": 7.35,
+        "t_out": 52.35,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/13/28"
+        },
+        "cell": [
+          28,
+          13
+        ],
+        "value": 0.9649
+      },
+      {
+        "cue_id": "A-response_field_cell-0009",
+        "cue": "response_field_cell",
+        "t_in": 8.4,
+        "t_out": 53.4,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/16/31"
+        },
+        "cell": [
+          31,
+          16
+        ],
+        "value": 0.9635
+      },
+      {
+        "cue_id": "A-response_field_cell-0010",
+        "cue": "response_field_cell",
+        "t_in": 9.45,
+        "t_out": 54.45,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/18/28"
+        },
+        "cell": [
+          28,
+          18
+        ],
+        "value": 0.9611
+      },
+      {
+        "cue_id": "A-response_field_cell-0011",
+        "cue": "response_field_cell",
+        "t_in": 10.5,
+        "t_out": 55.5,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/15/31"
+        },
+        "cell": [
+          31,
+          15
+        ],
+        "value": 0.9609
+      },
+      {
+        "cue_id": "A-response_field_cell-0012",
+        "cue": "response_field_cell",
+        "t_in": 11.55,
+        "t_out": 56.55,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/16/29"
+        },
+        "cell": [
+          29,
+          16
+        ],
+        "value": 0.9572
+      },
+      {
+        "cue_id": "A-response_field_cell-0013",
+        "cue": "response_field_cell",
+        "t_in": 12.6,
+        "t_out": 57.6,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/5/19"
+        },
+        "cell": [
+          19,
+          5
+        ],
+        "value": 0.9571
+      },
+      {
+        "cue_id": "A-response_field_cell-0014",
+        "cue": "response_field_cell",
+        "t_in": 13.65,
+        "t_out": 58.65,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/18/27"
+        },
+        "cell": [
+          27,
+          18
+        ],
+        "value": 0.9562
+      },
+      {
+        "cue_id": "A-response_field_cell-0015",
+        "cue": "response_field_cell",
+        "t_in": 14.7,
+        "t_out": 59.7,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/5/20"
+        },
+        "cell": [
+          20,
+          5
+        ],
+        "value": 0.9562
+      },
+      {
+        "cue_id": "A-response_field_cell-0016",
+        "cue": "response_field_cell",
+        "t_in": 15.75,
+        "t_out": 60.75,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/18/31"
+        },
+        "cell": [
+          31,
+          18
+        ],
+        "value": 0.956
+      },
+      {
+        "cue_id": "A-response_field_cell-0017",
+        "cue": "response_field_cell",
+        "t_in": 16.8,
+        "t_out": 61.8,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/19/31"
+        },
+        "cell": [
+          31,
+          19
+        ],
+        "value": 0.9559
+      },
+      {
+        "cue_id": "A-response_field_cell-0018",
+        "cue": "response_field_cell",
+        "t_in": 17.85,
+        "t_out": 62.85,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/5/22"
+        },
+        "cell": [
+          22,
+          5
+        ],
+        "value": 0.9558
+      },
+      {
+        "cue_id": "A-response_field_cell-0019",
+        "cue": "response_field_cell",
+        "t_in": 18.9,
+        "t_out": 63.9,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/4/22"
+        },
+        "cell": [
+          22,
+          4
+        ],
+        "value": 0.9558
+      },
+      {
+        "cue_id": "A-response_field_cell-0020",
+        "cue": "response_field_cell",
+        "t_in": 19.95,
+        "t_out": 64.95,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/3/22"
+        },
+        "cell": [
+          22,
+          3
+        ],
+        "value": 0.9558
+      },
+      {
+        "cue_id": "A-response_field_cell-0021",
+        "cue": "response_field_cell",
+        "t_in": 21.0,
+        "t_out": 66.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/2/22"
+        },
+        "cell": [
+          22,
+          2
+        ],
+        "value": 0.9558
+      },
+      {
+        "cue_id": "A-response_field_cell-0022",
+        "cue": "response_field_cell",
+        "t_in": 22.05,
+        "t_out": 67.05,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/1/22"
+        },
+        "cell": [
+          22,
+          1
+        ],
+        "value": 0.9558
+      },
+      {
+        "cue_id": "A-response_field_cell-0023",
+        "cue": "response_field_cell",
+        "t_in": 23.1,
+        "t_out": 68.1,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/0/22"
+        },
+        "cell": [
+          22,
+          0
+        ],
+        "value": 0.9558
+      },
+      {
+        "cue_id": "A-response_field_cell-0024",
+        "cue": "response_field_cell",
+        "t_in": 24.15,
+        "t_out": 69.15,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/16/30"
+        },
+        "cell": [
+          30,
+          16
+        ],
+        "value": 0.955
+      },
+      {
+        "cue_id": "A-response_field_cell-0025",
+        "cue": "response_field_cell",
+        "t_in": 25.2,
+        "t_out": 70.2,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/18/30"
+        },
+        "cell": [
+          30,
+          18
+        ],
+        "value": 0.9542
+      },
+      {
+        "cue_id": "A-response_field_cell-0026",
+        "cue": "response_field_cell",
+        "t_in": 26.25,
+        "t_out": 71.25,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/5/24"
+        },
+        "cell": [
+          24,
+          5
+        ],
+        "value": 0.953
+      },
+      {
+        "cue_id": "A-response_field_cell-0027",
+        "cue": "response_field_cell",
+        "t_in": 27.3,
+        "t_out": 72.3,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/4/24"
+        },
+        "cell": [
+          24,
+          4
+        ],
+        "value": 0.953
+      },
+      {
+        "cue_id": "A-response_field_cell-0028",
+        "cue": "response_field_cell",
+        "t_in": 28.35,
+        "t_out": 73.35,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/3/24"
+        },
+        "cell": [
+          24,
+          3
+        ],
+        "value": 0.953
+      },
+      {
+        "cue_id": "A-response_field_cell-0029",
+        "cue": "response_field_cell",
+        "t_in": 29.4,
+        "t_out": 74.4,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/2/24"
+        },
+        "cell": [
+          24,
+          2
+        ],
+        "value": 0.953
+      },
+      {
+        "cue_id": "A-response_field_cell-0030",
+        "cue": "response_field_cell",
+        "t_in": 30.45,
+        "t_out": 75.45,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/1/24"
+        },
+        "cell": [
+          24,
+          1
+        ],
+        "value": 0.953
+      },
+      {
+        "cue_id": "A-response_field_cell-0031",
+        "cue": "response_field_cell",
+        "t_in": 31.5,
+        "t_out": 76.5,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/0/24"
+        },
+        "cell": [
+          24,
+          0
+        ],
+        "value": 0.953
+      },
+      {
+        "cue_id": "A-response_field_cell-0032",
+        "cue": "response_field_cell",
+        "t_in": 32.55,
+        "t_out": 77.55,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/18/25"
+        },
+        "cell": [
+          25,
+          18
+        ],
+        "value": 0.9526
+      },
+      {
+        "cue_id": "A-response_field_cell-0033",
+        "cue": "response_field_cell",
+        "t_in": 33.6,
+        "t_out": 78.6,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/17/28"
+        },
+        "cell": [
+          28,
+          17
+        ],
+        "value": 0.9519
+      },
+      {
+        "cue_id": "A-response_field_cell-0034",
+        "cue": "response_field_cell",
+        "t_in": 34.65,
+        "t_out": 79.65,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/14/25"
+        },
+        "cell": [
+          25,
+          14
+        ],
+        "value": 0.9516
+      },
+      {
+        "cue_id": "A-response_field_cell-0035",
+        "cue": "response_field_cell",
+        "t_in": 35.7,
+        "t_out": 80.7,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/4/20"
+        },
+        "cell": [
+          20,
+          4
+        ],
+        "value": 0.9507
+      },
+      {
+        "cue_id": "A-response_field_cell-0036",
+        "cue": "response_field_cell",
+        "t_in": 36.75,
+        "t_out": 81.75,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/3/20"
+        },
+        "cell": [
+          20,
+          3
+        ],
+        "value": 0.9507
+      },
+      {
+        "cue_id": "A-response_field_cell-0037",
+        "cue": "response_field_cell",
+        "t_in": 37.8,
+        "t_out": 82.8,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/2/20"
+        },
+        "cell": [
+          20,
+          2
+        ],
+        "value": 0.9507
+      },
+      {
+        "cue_id": "A-response_field_cell-0038",
+        "cue": "response_field_cell",
+        "t_in": 38.85,
+        "t_out": 83.85,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/1/20"
+        },
+        "cell": [
+          20,
+          1
+        ],
+        "value": 0.9507
+      },
+      {
+        "cue_id": "A-response_field_cell-0039",
+        "cue": "response_field_cell",
+        "t_in": 39.9,
+        "t_out": 84.9,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/0/20"
+        },
+        "cell": [
+          20,
+          0
+        ],
+        "value": 0.9507
+      },
+      {
+        "cue_id": "A-response_field_cell-0040",
+        "cue": "response_field_cell",
+        "t_in": 40.95,
+        "t_out": 85.95,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/5/18"
+        },
+        "cell": [
+          18,
+          5
+        ],
+        "value": 0.9501
+      },
+      {
+        "cue_id": "A-response_field_cell-0041",
+        "cue": "response_field_cell",
+        "t_in": 42.0,
+        "t_out": 87.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/4/18"
+        },
+        "cell": [
+          18,
+          4
+        ],
+        "value": 0.9501
+      },
+      {
+        "cue_id": "A-response_field_cell-0042",
+        "cue": "response_field_cell",
+        "t_in": 43.05,
+        "t_out": 88.05,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/3/18"
+        },
+        "cell": [
+          18,
+          3
+        ],
+        "value": 0.9501
+      },
+      {
+        "cue_id": "A-response_field_cell-0043",
+        "cue": "response_field_cell",
+        "t_in": 44.1,
+        "t_out": 89.1,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/2/18"
+        },
+        "cell": [
+          18,
+          2
+        ],
+        "value": 0.9501
+      },
+      {
+        "cue_id": "A-response_field_cell-0044",
+        "cue": "response_field_cell",
+        "t_in": 45.15,
+        "t_out": 90.15,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/1/18"
+        },
+        "cell": [
+          18,
+          1
+        ],
+        "value": 0.9501
+      },
+      {
+        "cue_id": "A-response_field_cell-0045",
+        "cue": "response_field_cell",
+        "t_in": 46.2,
+        "t_out": 91.2,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/0/18"
+        },
+        "cell": [
+          18,
+          0
+        ],
+        "value": 0.9501
+      },
+      {
+        "cue_id": "A-response_field_cell-0046",
+        "cue": "response_field_cell",
+        "t_in": 47.25,
+        "t_out": 92.25,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/18/32"
+        },
+        "cell": [
+          32,
+          18
+        ],
+        "value": 0.9495
+      },
+      {
+        "cue_id": "A-response_field_cell-0047",
+        "cue": "response_field_cell",
+        "t_in": 48.3,
+        "t_out": 93.3,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/5/17"
+        },
+        "cell": [
+          17,
+          5
+        ],
+        "value": 0.9495
+      },
+      {
+        "cue_id": "A-response_field_cell-0048",
+        "cue": "response_field_cell",
+        "t_in": 49.35,
+        "t_out": 94.35,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/4/17"
+        },
+        "cell": [
+          17,
+          4
+        ],
+        "value": 0.9495
+      },
+      {
+        "cue_id": "A-response_field_cell-0049",
+        "cue": "response_field_cell",
+        "t_in": 50.4,
+        "t_out": 95.4,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/3/17"
+        },
+        "cell": [
+          17,
+          3
+        ],
+        "value": 0.9495
+      },
+      {
+        "cue_id": "A-response_field_cell-0050",
+        "cue": "response_field_cell",
+        "t_in": 51.45,
+        "t_out": 96.45,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/2/17"
+        },
+        "cell": [
+          17,
+          2
+        ],
+        "value": 0.9495
+      },
+      {
+        "cue_id": "A-response_field_cell-0051",
+        "cue": "response_field_cell",
+        "t_in": 52.5,
+        "t_out": 97.5,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/1/17"
+        },
+        "cell": [
+          17,
+          1
+        ],
+        "value": 0.9495
+      },
+      {
+        "cue_id": "A-response_field_cell-0052",
+        "cue": "response_field_cell",
+        "t_in": 53.55,
+        "t_out": 98.55,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/0/17"
+        },
+        "cell": [
+          17,
+          0
+        ],
+        "value": 0.9495
+      },
+      {
+        "cue_id": "A-response_field_cell-0053",
+        "cue": "response_field_cell",
+        "t_in": 54.6,
+        "t_out": 99.6,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/7/22"
+        },
+        "cell": [
+          22,
+          7
+        ],
+        "value": 0.9494
+      },
+      {
+        "cue_id": "A-response_field_cell-0054",
+        "cue": "response_field_cell",
+        "t_in": 55.65,
+        "t_out": 100.65,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/12/31"
+        },
+        "cell": [
+          31,
+          12
+        ],
+        "value": 0.9491
+      },
+      {
+        "cue_id": "A-response_field_cell-0055",
+        "cue": "response_field_cell",
+        "t_in": 56.7,
+        "t_out": 101.7,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/19/30"
+        },
+        "cell": [
+          30,
+          19
+        ],
+        "value": 0.9482
+      },
+      {
+        "cue_id": "A-response_field_cell-0056",
+        "cue": "response_field_cell",
+        "t_in": 57.75,
+        "t_out": 102.75,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/16/32"
+        },
+        "cell": [
+          32,
+          16
+        ],
+        "value": 0.948
+      },
+      {
+        "cue_id": "A-response_field_cell-0057",
+        "cue": "response_field_cell",
+        "t_in": 58.8,
+        "t_out": 103.8,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/14/28"
+        },
+        "cell": [
+          28,
+          14
+        ],
+        "value": 0.9479
+      },
+      {
+        "cue_id": "A-response_field_cell-0058",
+        "cue": "response_field_cell",
+        "t_in": 59.85,
+        "t_out": 104.85,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/17/31"
+        },
+        "cell": [
+          31,
+          17
+        ],
+        "value": 0.9456
+      },
+      {
+        "cue_id": "A-response_field_cell-0059",
+        "cue": "response_field_cell",
+        "t_in": 60.9,
+        "t_out": 105.9,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/7/23"
+        },
+        "cell": [
+          23,
+          7
+        ],
+        "value": 0.9453
+      },
+      {
+        "cue_id": "A-response_field_cell-0060",
+        "cue": "response_field_cell",
+        "t_in": 61.95,
+        "t_out": 106.95,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/12/28"
+        },
+        "cell": [
+          28,
+          12
+        ],
+        "value": 0.9436
+      },
+      {
+        "cue_id": "A-response_field_cell-0061",
+        "cue": "response_field_cell",
+        "t_in": 63.0,
+        "t_out": 108.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/17/27"
+        },
+        "cell": [
+          27,
+          17
+        ],
+        "value": 0.9436
+      },
+      {
+        "cue_id": "A-response_field_cell-0062",
+        "cue": "response_field_cell",
+        "t_in": 64.05,
+        "t_out": 109.05,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/19/25"
+        },
+        "cell": [
+          25,
+          19
+        ],
+        "value": 0.9434
+      },
+      {
+        "cue_id": "A-response_field_cell-0063",
+        "cue": "response_field_cell",
+        "t_in": 65.1,
+        "t_out": 110.1,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/7/18"
+        },
+        "cell": [
+          18,
+          7
+        ],
+        "value": 0.9434
+      },
+      {
+        "cue_id": "A-response_field_cell-0064",
+        "cue": "response_field_cell",
+        "t_in": 66.15,
+        "t_out": 111.15,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/18/29"
+        },
+        "cell": [
+          29,
+          18
+        ],
+        "value": 0.9432
+      },
+      {
+        "cue_id": "A-response_field_cell-0065",
+        "cue": "response_field_cell",
+        "t_in": 67.2,
+        "t_out": 112.2,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/14/31"
+        },
+        "cell": [
+          31,
+          14
+        ],
+        "value": 0.9427
+      },
+      {
+        "cue_id": "A-response_field_cell-0066",
+        "cue": "response_field_cell",
+        "t_in": 68.25,
+        "t_out": 113.25,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/15/32"
+        },
+        "cell": [
+          32,
+          15
+        ],
+        "value": 0.9418
+      },
+      {
+        "cue_id": "A-response_field_cell-0067",
+        "cue": "response_field_cell",
+        "t_in": 69.3,
+        "t_out": 114.3,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/17/29"
+        },
+        "cell": [
+          29,
+          17
+        ],
+        "value": 0.9414
+      },
+      {
+        "cue_id": "A-response_field_cell-0068",
+        "cue": "response_field_cell",
+        "t_in": 70.35,
+        "t_out": 115.35,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/5/21"
+        },
+        "cell": [
+          21,
+          5
+        ],
+        "value": 0.9411
+      },
+      {
+        "cue_id": "A-response_field_cell-0069",
+        "cue": "response_field_cell",
+        "t_in": 71.4,
+        "t_out": 116.4,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/4/21"
+        },
+        "cell": [
+          21,
+          4
+        ],
+        "value": 0.9411
+      },
+      {
+        "cue_id": "A-response_field_cell-0070",
+        "cue": "response_field_cell",
+        "t_in": 72.45,
+        "t_out": 117.45,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/3/21"
+        },
+        "cell": [
+          21,
+          3
+        ],
+        "value": 0.9411
+      },
+      {
+        "cue_id": "A-response_field_cell-0071",
+        "cue": "response_field_cell",
+        "t_in": 73.5,
+        "t_out": 118.5,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/2/21"
+        },
+        "cell": [
+          21,
+          2
+        ],
+        "value": 0.9411
+      },
+      {
+        "cue_id": "A-response_field_cell-0072",
+        "cue": "response_field_cell",
+        "t_in": 74.55,
+        "t_out": 119.55,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/1/21"
+        },
+        "cell": [
+          21,
+          1
+        ],
+        "value": 0.9411
+      },
+      {
+        "cue_id": "A-response_field_cell-0073",
+        "cue": "response_field_cell",
+        "t_in": 75.6,
+        "t_out": 120.6,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/0/21"
+        },
+        "cell": [
+          21,
+          0
+        ],
+        "value": 0.9411
+      },
+      {
+        "cue_id": "A-response_field_cell-0074",
+        "cue": "response_field_cell",
+        "t_in": 76.65,
+        "t_out": 121.65,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/15/29"
+        },
+        "cell": [
+          29,
+          15
+        ],
+        "value": 0.9397
+      },
+      {
+        "cue_id": "A-response_field_cell-0075",
+        "cue": "response_field_cell",
+        "t_in": 77.7,
+        "t_out": 122.7,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/19/27"
+        },
+        "cell": [
+          27,
+          19
+        ],
+        "value": 0.9388
+      },
+      {
+        "cue_id": "A-response_field_cell-0076",
+        "cue": "response_field_cell",
+        "t_in": 78.75,
+        "t_out": 123.75,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/17/30"
+        },
+        "cell": [
+          30,
+          17
+        ],
+        "value": 0.9387
+      },
+      {
+        "cue_id": "A-response_field_cell-0077",
+        "cue": "response_field_cell",
+        "t_in": 79.8,
+        "t_out": 124.8,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/14/27"
+        },
+        "cell": [
+          27,
+          14
+        ],
+        "value": 0.9385
+      },
+      {
+        "cue_id": "A-response_field_cell-0078",
+        "cue": "response_field_cell",
+        "t_in": 80.85,
+        "t_out": 125.85,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/10/24"
+        },
+        "cell": [
+          24,
+          10
+        ],
+        "value": 0.9376
+      },
+      {
+        "cue_id": "A-response_field_cell-0079",
+        "cue": "response_field_cell",
+        "t_in": 81.9,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/15/30"
+        },
+        "cell": [
+          30,
+          15
+        ],
+        "value": 0.9375
+      },
+      {
+        "cue_id": "A-response_field_cell-0080",
+        "cue": "response_field_cell",
+        "t_in": 82.95,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/9/23"
+        },
+        "cell": [
+          23,
+          9
+        ],
+        "value": 0.9364
+      },
+      {
+        "cue_id": "A-response_field_cell-0081",
+        "cue": "response_field_cell",
+        "t_in": 84.0,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/5/23"
+        },
+        "cell": [
+          23,
+          5
+        ],
+        "value": 0.9364
+      },
+      {
+        "cue_id": "A-response_field_cell-0082",
+        "cue": "response_field_cell",
+        "t_in": 85.05,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/4/23"
+        },
+        "cell": [
+          23,
+          4
+        ],
+        "value": 0.9364
+      },
+      {
+        "cue_id": "A-response_field_cell-0083",
+        "cue": "response_field_cell",
+        "t_in": 86.1,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/3/23"
+        },
+        "cell": [
+          23,
+          3
+        ],
+        "value": 0.9364
+      },
+      {
+        "cue_id": "A-response_field_cell-0084",
+        "cue": "response_field_cell",
+        "t_in": 87.15,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/2/23"
+        },
+        "cell": [
+          23,
+          2
+        ],
+        "value": 0.9364
+      },
+      {
+        "cue_id": "A-response_field_cell-0085",
+        "cue": "response_field_cell",
+        "t_in": 88.2,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/1/23"
+        },
+        "cell": [
+          23,
+          1
+        ],
+        "value": 0.9364
+      },
+      {
+        "cue_id": "A-response_field_cell-0086",
+        "cue": "response_field_cell",
+        "t_in": 89.25,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/0/23"
+        },
+        "cell": [
+          23,
+          0
+        ],
+        "value": 0.9364
+      },
+      {
+        "cue_id": "A-corner_brackets-0121",
+        "cue": "corner_brackets",
+        "t_in": 90.0,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/47"
+        },
+        "face_ids": [
+          "A48"
+        ]
+      },
+      {
+        "cue_id": "A-face_box-0122",
+        "cue": "face_box",
+        "t_in": 90.15,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/47"
+        },
+        "face_ids": [
+          "A48"
+        ]
+      },
+      {
+        "cue_id": "A-response_field_cell-0087",
+        "cue": "response_field_cell",
+        "t_in": 90.3,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/14/32"
+        },
+        "cell": [
+          32,
+          14
+        ],
+        "value": 0.9363
+      },
+      {
+        "cue_id": "A-consensus_flag-0124",
+        "cue": "consensus_flag",
+        "t_in": 90.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/47"
+        },
+        "face_ids": [
+          "A48"
+        ]
+      },
+      {
+        "cue_id": "A-face_numerals-0123",
+        "cue": "face_numerals",
+        "t_in": 90.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/47"
+        },
+        "face_ids": [
+          "A48"
+        ],
+        "fields": [
+          "/detectors/blazeface/score",
+          "/detectors/yunet/score"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-face_landmarks_6-0125",
+        "cue": "face_landmarks_6",
+        "t_in": 90.5,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/47/landmarks"
+        },
+        "face_ids": [
+          "A48"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-response_field_cell-0088",
+        "cue": "response_field_cell",
+        "t_in": 91.35,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/10/22"
+        },
+        "cell": [
+          22,
+          10
+        ],
+        "value": 0.9363
+      },
+      {
+        "cue_id": "A-response_field_cell-0089",
+        "cue": "response_field_cell",
+        "t_in": 92.4,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/8/20"
+        },
+        "cell": [
+          20,
+          8
+        ],
+        "value": 0.9361
+      },
+      {
+        "cue_id": "A-response_field_cell-0090",
+        "cue": "response_field_cell",
+        "t_in": 93.45,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/8/18"
+        },
+        "cell": [
+          18,
+          8
+        ],
+        "value": 0.936
+      },
+      {
+        "cue_id": "A-response_field_cell-0091",
+        "cue": "response_field_cell",
+        "t_in": 94.5,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/6/18"
+        },
+        "cell": [
+          18,
+          6
+        ],
+        "value": 0.9357
+      },
+      {
+        "cue_id": "A-response_field_cell-0092",
+        "cue": "response_field_cell",
+        "t_in": 95.55,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/9/18"
+        },
+        "cell": [
+          18,
+          9
+        ],
+        "value": 0.9347
+      },
+      {
+        "cue_id": "A-response_field_cell-0093",
+        "cue": "response_field_cell",
+        "t_in": 96.6,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/10/20"
+        },
+        "cell": [
+          20,
+          10
+        ],
+        "value": 0.9342
+      },
+      {
+        "cue_id": "A-response_field_cell-0094",
+        "cue": "response_field_cell",
+        "t_in": 97.65,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/19/29"
+        },
+        "cell": [
+          29,
+          19
+        ],
+        "value": 0.9331
+      },
+      {
+        "cue_id": "A-response_field_cell-0095",
+        "cue": "response_field_cell",
+        "t_in": 98.7,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/14/30"
+        },
+        "cell": [
+          30,
+          14
+        ],
+        "value": 0.9326
+      },
+      {
+        "cue_id": "A-response_field_cell-0096",
+        "cue": "response_field_cell",
+        "t_in": 99.75,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/10/17"
+        },
+        "cell": [
+          17,
+          10
+        ],
+        "value": 0.9324
+      },
+      {
+        "cue_id": "A-response_field_cell-0097",
+        "cue": "response_field_cell",
+        "t_in": 100.8,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/10/18"
+        },
+        "cell": [
+          18,
+          10
+        ],
+        "value": 0.9313
+      },
+      {
+        "cue_id": "A-response_field_cell-0098",
+        "cue": "response_field_cell",
+        "t_in": 101.85,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/4/19"
+        },
+        "cell": [
+          19,
+          4
+        ],
+        "value": 0.9309
+      },
+      {
+        "cue_id": "A-response_field_cell-0099",
+        "cue": "response_field_cell",
+        "t_in": 102.9,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/3/19"
+        },
+        "cell": [
+          19,
+          3
+        ],
+        "value": 0.9309
+      },
+      {
+        "cue_id": "A-response_field_cell-0100",
+        "cue": "response_field_cell",
+        "t_in": 103.95,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/2/19"
+        },
+        "cell": [
+          19,
+          2
+        ],
+        "value": 0.9309
+      },
+      {
+        "cue_id": "A-response_field_cell-0101",
+        "cue": "response_field_cell",
+        "t_in": 105.0,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/1/19"
+        },
+        "cell": [
+          19,
+          1
+        ],
+        "value": 0.9309
+      },
+      {
+        "cue_id": "A-response_field_cell-0102",
+        "cue": "response_field_cell",
+        "t_in": 106.05,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/0/19"
+        },
+        "cell": [
+          19,
+          0
+        ],
+        "value": 0.9309
+      },
+      {
+        "cue_id": "A-response_field_cell-0103",
+        "cue": "response_field_cell",
+        "t_in": 107.1,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/9/24"
+        },
+        "cell": [
+          24,
+          9
+        ],
+        "value": 0.9306
+      },
+      {
+        "cue_id": "A-response_field_cell-0104",
+        "cue": "response_field_cell",
+        "t_in": 108.15,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/9/20"
+        },
+        "cell": [
+          20,
+          9
+        ],
+        "value": 0.9306
+      },
+      {
+        "cue_id": "A-response_field_cell-0105",
+        "cue": "response_field_cell",
+        "t_in": 109.2,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/7/25"
+        },
+        "cell": [
+          25,
+          7
+        ],
+        "value": 0.9299
+      },
+      {
+        "cue_id": "A-response_field_cell-0106",
+        "cue": "response_field_cell",
+        "t_in": 110.25,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/6/20"
+        },
+        "cell": [
+          20,
+          6
+        ],
+        "value": 0.9295
+      },
+      {
+        "cue_id": "A-corner_brackets-0126",
+        "cue": "corner_brackets",
+        "t_in": 111.0,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/28"
+        },
+        "face_ids": [
+          "A29"
+        ]
+      },
+      {
+        "cue_id": "A-face_box-0127",
+        "cue": "face_box",
+        "t_in": 111.15,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/28"
+        },
+        "face_ids": [
+          "A29"
+        ]
+      },
+      {
+        "cue_id": "A-response_field_cell-0107",
+        "cue": "response_field_cell",
+        "t_in": 111.3,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/14/29"
+        },
+        "cell": [
+          29,
+          14
+        ],
+        "value": 0.9293
+      },
+      {
+        "cue_id": "A-consensus_flag-0129",
+        "cue": "consensus_flag",
+        "t_in": 111.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/28"
+        },
+        "face_ids": [
+          "A29"
+        ]
+      },
+      {
+        "cue_id": "A-face_numerals-0128",
+        "cue": "face_numerals",
+        "t_in": 111.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/28"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "fields": [
+          "/detectors/blazeface/score",
+          "/detectors/yunet/score"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-face_landmarks_6-0130",
+        "cue": "face_landmarks_6",
+        "t_in": 111.5,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/28/landmarks"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-response_field_cell-0108",
+        "cue": "response_field_cell",
+        "t_in": 112.35,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/8/24"
+        },
+        "cell": [
+          24,
+          8
+        ],
+        "value": 0.9293
+      },
+      {
+        "cue_id": "A-response_field_cell-0109",
+        "cue": "response_field_cell",
+        "t_in": 113.4,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/12/27"
+        },
+        "cell": [
+          27,
+          12
+        ],
+        "value": 0.9291
+      },
+      {
+        "cue_id": "A-response_field_cell-0110",
+        "cue": "response_field_cell",
+        "t_in": 114.45,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/19/32"
+        },
+        "cell": [
+          32,
+          19
+        ],
+        "value": 0.9282
+      },
+      {
+        "cue_id": "A-response_field_cell-0111",
+        "cue": "response_field_cell",
+        "t_in": 115.5,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/9/27"
+        },
+        "cell": [
+          27,
+          9
+        ],
+        "value": 0.9274
+      },
+      {
+        "cue_id": "A-response_field_cell-0112",
+        "cue": "response_field_cell",
+        "t_in": 116.55,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/16/25"
+        },
+        "cell": [
+          25,
+          16
+        ],
+        "value": 0.9252
+      },
+      {
+        "cue_id": "A-response_field_cell-0113",
+        "cue": "response_field_cell",
+        "t_in": 117.6,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/11/23"
+        },
+        "cell": [
+          23,
+          11
+        ],
+        "value": 0.925
+      },
+      {
+        "cue_id": "A-response_field_cell-0114",
+        "cue": "response_field_cell",
+        "t_in": 118.65,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/7/20"
+        },
+        "cell": [
+          20,
+          7
+        ],
+        "value": 0.925
+      },
+      {
+        "cue_id": "A-response_field_cell-0115",
+        "cue": "response_field_cell",
+        "t_in": 119.7,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/17/32"
+        },
+        "cell": [
+          32,
+          17
+        ],
+        "value": 0.9248
+      },
+      {
+        "cue_id": "A-response_field_cell-0116",
+        "cue": "response_field_cell",
+        "t_in": 120.75,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/8/21"
+        },
+        "cell": [
+          21,
+          8
+        ],
+        "value": 0.9239
+      },
+      {
+        "cue_id": "A-response_field_cell-0117",
+        "cue": "response_field_cell",
+        "t_in": 121.8,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/7/27"
+        },
+        "cell": [
+          27,
+          7
+        ],
+        "value": 0.9238
+      },
+      {
+        "cue_id": "A-response_field_cell-0118",
+        "cue": "response_field_cell",
+        "t_in": 122.85,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/7/21"
+        },
+        "cell": [
+          21,
+          7
+        ],
+        "value": 0.9223
+      },
+      {
+        "cue_id": "A-response_field_cell-0119",
+        "cue": "response_field_cell",
+        "t_in": 123.9,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/15/26"
+        },
+        "cell": [
+          26,
+          15
+        ],
+        "value": 0.9214
+      },
+      {
+        "cue_id": "A-response_field_cell-0120",
+        "cue": "response_field_cell",
+        "t_in": 124.95,
+        "t_out": 126.0,
+        "source": {
+          "file": "field",
+          "pointer": "/response_field/values/11/24"
+        },
+        "cell": [
+          24,
+          11
+        ],
+        "value": 0.921
+      },
+      {
+        "cue_id": "A-corner_brackets-0131",
+        "cue": "corner_brackets",
+        "t_in": 132.0,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/56"
+        },
+        "face_ids": [
+          "A57"
+        ]
+      },
+      {
+        "cue_id": "A-face_box-0132",
+        "cue": "face_box",
+        "t_in": 132.15,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/56"
+        },
+        "face_ids": [
+          "A57"
+        ]
+      },
+      {
+        "cue_id": "A-consensus_flag-0134",
+        "cue": "consensus_flag",
+        "t_in": 132.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/56"
+        },
+        "face_ids": [
+          "A57"
+        ]
+      },
+      {
+        "cue_id": "A-face_numerals-0133",
+        "cue": "face_numerals",
+        "t_in": 132.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/56"
+        },
+        "face_ids": [
+          "A57"
+        ],
+        "fields": [
+          "/detectors/blazeface/score",
+          "/detectors/yunet/score"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-face_landmarks_6-0135",
+        "cue": "face_landmarks_6",
+        "t_in": 132.5,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/56/landmarks"
+        },
+        "face_ids": [
+          "A57"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-corner_brackets-0136",
+        "cue": "corner_brackets",
+        "t_in": 153.0,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/52"
+        },
+        "face_ids": [
+          "A53"
+        ]
+      },
+      {
+        "cue_id": "A-face_box-0137",
+        "cue": "face_box",
+        "t_in": 153.15,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/52"
+        },
+        "face_ids": [
+          "A53"
+        ]
+      },
+      {
+        "cue_id": "A-consensus_flag-0139",
+        "cue": "consensus_flag",
+        "t_in": 153.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/52"
+        },
+        "face_ids": [
+          "A53"
+        ]
+      },
+      {
+        "cue_id": "A-face_numerals-0138",
+        "cue": "face_numerals",
+        "t_in": 153.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/52"
+        },
+        "face_ids": [
+          "A53"
+        ],
+        "fields": [
+          "/detectors/blazeface/score",
+          "/detectors/yunet/score"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-face_landmarks_6-0140",
+        "cue": "face_landmarks_6",
+        "t_in": 153.5,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/52/landmarks"
+        },
+        "face_ids": [
+          "A53"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-corner_brackets-0141",
+        "cue": "corner_brackets",
+        "t_in": 174.0,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/18"
+        },
+        "face_ids": [
+          "A19"
+        ]
+      },
+      {
+        "cue_id": "A-face_box-0142",
+        "cue": "face_box",
+        "t_in": 174.15,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/18"
+        },
+        "face_ids": [
+          "A19"
+        ]
+      },
+      {
+        "cue_id": "A-consensus_flag-0144",
+        "cue": "consensus_flag",
+        "t_in": 174.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/18"
+        },
+        "face_ids": [
+          "A19"
+        ]
+      },
+      {
+        "cue_id": "A-face_numerals-0143",
+        "cue": "face_numerals",
+        "t_in": 174.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/18"
+        },
+        "face_ids": [
+          "A19"
+        ],
+        "fields": [
+          "/detectors/blazeface/score",
+          "/detectors/yunet/score"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-face_landmarks_6-0145",
+        "cue": "face_landmarks_6",
+        "t_in": 174.5,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/18/landmarks"
+        },
+        "face_ids": [
+          "A19"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-corner_brackets-0146",
+        "cue": "corner_brackets",
+        "t_in": 195.0,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/39"
+        },
+        "face_ids": [
+          "A40"
+        ]
+      },
+      {
+        "cue_id": "A-face_box-0147",
+        "cue": "face_box",
+        "t_in": 195.15,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/39"
+        },
+        "face_ids": [
+          "A40"
+        ]
+      },
+      {
+        "cue_id": "A-consensus_flag-0149",
+        "cue": "consensus_flag",
+        "t_in": 195.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/39"
+        },
+        "face_ids": [
+          "A40"
+        ]
+      },
+      {
+        "cue_id": "A-face_numerals-0148",
+        "cue": "face_numerals",
+        "t_in": 195.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/39"
+        },
+        "face_ids": [
+          "A40"
+        ],
+        "fields": [
+          "/detectors/blazeface/score",
+          "/detectors/yunet/score"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-corner_brackets-0150",
+        "cue": "corner_brackets",
+        "t_in": 216.0,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/43"
+        },
+        "face_ids": [
+          "A44"
+        ]
+      },
+      {
+        "cue_id": "A-face_box-0151",
+        "cue": "face_box",
+        "t_in": 216.15,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/43"
+        },
+        "face_ids": [
+          "A44"
+        ]
+      },
+      {
+        "cue_id": "A-consensus_flag-0153",
+        "cue": "consensus_flag",
+        "t_in": 216.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/43"
+        },
+        "face_ids": [
+          "A44"
+        ]
+      },
+      {
+        "cue_id": "A-face_numerals-0152",
+        "cue": "face_numerals",
+        "t_in": 216.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/43"
+        },
+        "face_ids": [
+          "A44"
+        ],
+        "fields": [
+          "/detectors/blazeface/score",
+          "/detectors/yunet/score"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-face_landmarks_6-0154",
+        "cue": "face_landmarks_6",
+        "t_in": 216.5,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/43/landmarks"
+        },
+        "face_ids": [
+          "A44"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-corner_brackets-0155",
+        "cue": "corner_brackets",
+        "t_in": 237.0,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/42"
+        },
+        "face_ids": [
+          "A43"
+        ]
+      },
+      {
+        "cue_id": "A-face_box-0156",
+        "cue": "face_box",
+        "t_in": 237.15,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/42"
+        },
+        "face_ids": [
+          "A43"
+        ]
+      },
+      {
+        "cue_id": "A-consensus_flag-0158",
+        "cue": "consensus_flag",
+        "t_in": 237.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/42"
+        },
+        "face_ids": [
+          "A43"
+        ]
+      },
+      {
+        "cue_id": "A-face_numerals-0157",
+        "cue": "face_numerals",
+        "t_in": 237.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/42"
+        },
+        "face_ids": [
+          "A43"
+        ],
+        "fields": [
+          "/detectors/blazeface/score",
+          "/detectors/yunet/score"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-face_landmarks_6-0159",
+        "cue": "face_landmarks_6",
+        "t_in": 237.5,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/42/landmarks"
+        },
+        "face_ids": [
+          "A43"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-corner_brackets-0160",
+        "cue": "corner_brackets",
+        "t_in": 258.0,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/7"
+        },
+        "face_ids": [
+          "A08"
+        ]
+      },
+      {
+        "cue_id": "A-face_box-0161",
+        "cue": "face_box",
+        "t_in": 258.15,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/7"
+        },
+        "face_ids": [
+          "A08"
+        ]
+      },
+      {
+        "cue_id": "A-consensus_flag-0163",
+        "cue": "consensus_flag",
+        "t_in": 258.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/7"
+        },
+        "face_ids": [
+          "A08"
+        ]
+      },
+      {
+        "cue_id": "A-face_numerals-0162",
+        "cue": "face_numerals",
+        "t_in": 258.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/7"
+        },
+        "face_ids": [
+          "A08"
+        ],
+        "fields": [
+          "/detectors/blazeface/score",
+          "/detectors/yunet/score"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-no_mesh_marker-0164",
+        "cue": "no_mesh_marker",
+        "t_in": 258.5,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/7"
+        },
+        "face_ids": [
+          "A08"
+        ]
+      },
+      {
+        "cue_id": "A-corner_brackets-0165",
+        "cue": "corner_brackets",
+        "t_in": 279.0,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/4"
+        },
+        "face_ids": [
+          "A05"
+        ]
+      },
+      {
+        "cue_id": "A-face_box-0166",
+        "cue": "face_box",
+        "t_in": 279.15,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/4"
+        },
+        "face_ids": [
+          "A05"
+        ]
+      },
+      {
+        "cue_id": "A-consensus_flag-0168",
+        "cue": "consensus_flag",
+        "t_in": 279.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/4"
+        },
+        "face_ids": [
+          "A05"
+        ]
+      },
+      {
+        "cue_id": "A-face_numerals-0167",
+        "cue": "face_numerals",
+        "t_in": 279.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/4"
+        },
+        "face_ids": [
+          "A05"
+        ],
+        "fields": [
+          "/detectors/blazeface/score",
+          "/detectors/yunet/score"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-face_landmarks_6-0169",
+        "cue": "face_landmarks_6",
+        "t_in": 279.5,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/4/landmarks"
+        },
+        "face_ids": [
+          "A05"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-corner_brackets-0170",
+        "cue": "corner_brackets",
+        "t_in": 300.0,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/48"
+        },
+        "face_ids": [
+          "A49"
+        ]
+      },
+      {
+        "cue_id": "A-face_box-0171",
+        "cue": "face_box",
+        "t_in": 300.15,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/48"
+        },
+        "face_ids": [
+          "A49"
+        ]
+      },
+      {
+        "cue_id": "A-consensus_flag-0173",
+        "cue": "consensus_flag",
+        "t_in": 300.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/48"
+        },
+        "face_ids": [
+          "A49"
+        ]
+      },
+      {
+        "cue_id": "A-face_numerals-0172",
+        "cue": "face_numerals",
+        "t_in": 300.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/48"
+        },
+        "face_ids": [
+          "A49"
+        ],
+        "fields": [
+          "/detectors/blazeface/score",
+          "/detectors/yunet/score"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-face_landmarks_6-0174",
+        "cue": "face_landmarks_6",
+        "t_in": 300.5,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/48/landmarks"
+        },
+        "face_ids": [
+          "A49"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-blendshape_stack-0211",
+        "cue": "blendshape_stack",
+        "t_in": 306.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/8/blendshapes_top8"
+        },
+        "face_ids": [
+          "A48"
+        ],
+        "fields": [
+          "/0/pct",
+          "/1/pct",
+          "/2/pct",
+          "/3/pct"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-head_pose_readout-0212",
+        "cue": "head_pose_readout",
+        "t_in": 306.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/8/head_pose"
+        },
+        "face_ids": [
+          "A48"
+        ],
+        "fields": [
+          "/yaw_deg",
+          "/pitch_deg",
+          "/roll_deg"
+        ]
+      },
+      {
+        "cue_id": "A-interocular_rule-0215",
+        "cue": "interocular_rule",
+        "t_in": 306.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/8/geometry"
+        },
+        "face_ids": [
+          "A48"
+        ],
+        "fields": [
+          "/interocular_px"
+        ]
+      },
+      {
+        "cue_id": "A-photometry_readout-0214",
+        "cue": "photometry_readout",
+        "t_in": 306.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/8/photometry"
+        },
+        "face_ids": [
+          "A48"
+        ],
+        "fields": [
+          "/luma_mean",
+          "/luma_std"
+        ]
+      },
+      {
+        "cue_id": "A-symmetry_readout-0213",
+        "cue": "symmetry_readout",
+        "t_in": 306.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/8/symmetry"
+        },
+        "face_ids": [
+          "A48"
+        ],
+        "fields": [
+          "/residual_mean_iod"
+        ]
+      },
+      {
+        "cue_id": "A-corner_brackets-0175",
+        "cue": "corner_brackets",
+        "t_in": 321.0,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/16"
+        },
+        "face_ids": [
+          "A17"
+        ]
+      },
+      {
+        "cue_id": "A-face_box-0176",
+        "cue": "face_box",
+        "t_in": 321.15,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/16"
+        },
+        "face_ids": [
+          "A17"
+        ]
+      },
+      {
+        "cue_id": "A-consensus_flag-0178",
+        "cue": "consensus_flag",
+        "t_in": 321.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/16"
+        },
+        "face_ids": [
+          "A17"
+        ]
+      },
+      {
+        "cue_id": "A-face_numerals-0177",
+        "cue": "face_numerals",
+        "t_in": 321.35,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/16"
+        },
+        "face_ids": [
+          "A17"
+        ],
+        "fields": [
+          "/detectors/blazeface/score",
+          "/detectors/yunet/score"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-no_mesh_marker-0179",
+        "cue": "no_mesh_marker",
+        "t_in": 321.5,
+        "t_out": 342.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/16"
+        },
+        "face_ids": [
+          "A17"
+        ]
+      },
+      {
+        "cue_id": "A-blendshape_stack-0216",
+        "cue": "blendshape_stack",
+        "t_in": 327.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/4/blendshapes_top8"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "fields": [
+          "/0/pct",
+          "/1/pct",
+          "/2/pct",
+          "/3/pct"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-head_pose_readout-0217",
+        "cue": "head_pose_readout",
+        "t_in": 327.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/4/head_pose"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "fields": [
+          "/yaw_deg",
+          "/pitch_deg",
+          "/roll_deg"
+        ]
+      },
+      {
+        "cue_id": "A-interocular_rule-0220",
+        "cue": "interocular_rule",
+        "t_in": 327.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/4/geometry"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "fields": [
+          "/interocular_px"
+        ]
+      },
+      {
+        "cue_id": "A-photometry_readout-0219",
+        "cue": "photometry_readout",
+        "t_in": 327.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/4/photometry"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "fields": [
+          "/luma_mean",
+          "/luma_std"
+        ]
+      },
+      {
+        "cue_id": "A-symmetry_readout-0218",
+        "cue": "symmetry_readout",
+        "t_in": 327.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/4/symmetry"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "fields": [
+          "/residual_mean_iod"
+        ]
+      },
+      {
+        "cue_id": "A-blendshape_stack-0221",
+        "cue": "blendshape_stack",
+        "t_in": 348.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/11/blendshapes_top8"
+        },
+        "face_ids": [
+          "A57"
+        ],
+        "fields": [
+          "/0/pct",
+          "/1/pct",
+          "/2/pct",
+          "/3/pct"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-head_pose_readout-0222",
+        "cue": "head_pose_readout",
+        "t_in": 348.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/11/head_pose"
+        },
+        "face_ids": [
+          "A57"
+        ],
+        "fields": [
+          "/yaw_deg",
+          "/pitch_deg",
+          "/roll_deg"
+        ]
+      },
+      {
+        "cue_id": "A-interocular_rule-0225",
+        "cue": "interocular_rule",
+        "t_in": 348.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/11/geometry"
+        },
+        "face_ids": [
+          "A57"
+        ],
+        "fields": [
+          "/interocular_px"
+        ]
+      },
+      {
+        "cue_id": "A-photometry_readout-0224",
+        "cue": "photometry_readout",
+        "t_in": 348.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/11/photometry"
+        },
+        "face_ids": [
+          "A57"
+        ],
+        "fields": [
+          "/luma_mean",
+          "/luma_std"
+        ]
+      },
+      {
+        "cue_id": "A-symmetry_readout-0223",
+        "cue": "symmetry_readout",
+        "t_in": 348.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/11/symmetry"
+        },
+        "face_ids": [
+          "A57"
+        ],
+        "fields": [
+          "/residual_mean_iod"
+        ]
+      },
+      {
+        "cue_id": "A-blendshape_stack-0226",
+        "cue": "blendshape_stack",
+        "t_in": 369.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/10/blendshapes_top8"
+        },
+        "face_ids": [
+          "A53"
+        ],
+        "fields": [
+          "/0/pct",
+          "/1/pct",
+          "/2/pct",
+          "/3/pct"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-head_pose_readout-0227",
+        "cue": "head_pose_readout",
+        "t_in": 369.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/10/head_pose"
+        },
+        "face_ids": [
+          "A53"
+        ],
+        "fields": [
+          "/yaw_deg",
+          "/pitch_deg",
+          "/roll_deg"
+        ]
+      },
+      {
+        "cue_id": "A-interocular_rule-0230",
+        "cue": "interocular_rule",
+        "t_in": 369.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/10/geometry"
+        },
+        "face_ids": [
+          "A53"
+        ],
+        "fields": [
+          "/interocular_px"
+        ]
+      },
+      {
+        "cue_id": "A-photometry_readout-0229",
+        "cue": "photometry_readout",
+        "t_in": 369.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/10/photometry"
+        },
+        "face_ids": [
+          "A53"
+        ],
+        "fields": [
+          "/luma_mean",
+          "/luma_std"
+        ]
+      },
+      {
+        "cue_id": "A-symmetry_readout-0228",
+        "cue": "symmetry_readout",
+        "t_in": 369.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/10/symmetry"
+        },
+        "face_ids": [
+          "A53"
+        ],
+        "fields": [
+          "/residual_mean_iod"
+        ]
+      },
+      {
+        "cue_id": "A-blendshape_stack-0231",
+        "cue": "blendshape_stack",
+        "t_in": 390.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/3/blendshapes_top8"
+        },
+        "face_ids": [
+          "A19"
+        ],
+        "fields": [
+          "/0/pct",
+          "/1/pct",
+          "/2/pct",
+          "/3/pct"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-head_pose_readout-0232",
+        "cue": "head_pose_readout",
+        "t_in": 390.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/3/head_pose"
+        },
+        "face_ids": [
+          "A19"
+        ],
+        "fields": [
+          "/yaw_deg",
+          "/pitch_deg",
+          "/roll_deg"
+        ]
+      },
+      {
+        "cue_id": "A-interocular_rule-0235",
+        "cue": "interocular_rule",
+        "t_in": 390.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/3/geometry"
+        },
+        "face_ids": [
+          "A19"
+        ],
+        "fields": [
+          "/interocular_px"
+        ]
+      },
+      {
+        "cue_id": "A-photometry_readout-0234",
+        "cue": "photometry_readout",
+        "t_in": 390.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/3/photometry"
+        },
+        "face_ids": [
+          "A19"
+        ],
+        "fields": [
+          "/luma_mean",
+          "/luma_std"
+        ]
+      },
+      {
+        "cue_id": "A-symmetry_readout-0233",
+        "cue": "symmetry_readout",
+        "t_in": 390.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/3/symmetry"
+        },
+        "face_ids": [
+          "A19"
+        ],
+        "fields": [
+          "/residual_mean_iod"
+        ]
+      },
+      {
+        "cue_id": "A-blendshape_stack-0236",
+        "cue": "blendshape_stack",
+        "t_in": 411.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/5/blendshapes_top8"
+        },
+        "face_ids": [
+          "A40"
+        ],
+        "fields": [
+          "/0/pct",
+          "/1/pct",
+          "/2/pct",
+          "/3/pct"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-head_pose_readout-0237",
+        "cue": "head_pose_readout",
+        "t_in": 411.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/5/head_pose"
+        },
+        "face_ids": [
+          "A40"
+        ],
+        "fields": [
+          "/yaw_deg",
+          "/pitch_deg",
+          "/roll_deg"
+        ]
+      },
+      {
+        "cue_id": "A-interocular_rule-0240",
+        "cue": "interocular_rule",
+        "t_in": 411.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/5/geometry"
+        },
+        "face_ids": [
+          "A40"
+        ],
+        "fields": [
+          "/interocular_px"
+        ]
+      },
+      {
+        "cue_id": "A-photometry_readout-0239",
+        "cue": "photometry_readout",
+        "t_in": 411.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/5/photometry"
+        },
+        "face_ids": [
+          "A40"
+        ],
+        "fields": [
+          "/luma_mean",
+          "/luma_std"
+        ]
+      },
+      {
+        "cue_id": "A-symmetry_readout-0238",
+        "cue": "symmetry_readout",
+        "t_in": 411.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/5/symmetry"
+        },
+        "face_ids": [
+          "A40"
+        ],
+        "fields": [
+          "/residual_mean_iod"
+        ]
+      },
+      {
+        "cue_id": "A-blendshape_stack-0241",
+        "cue": "blendshape_stack",
+        "t_in": 432.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/7/blendshapes_top8"
+        },
+        "face_ids": [
+          "A44"
+        ],
+        "fields": [
+          "/0/pct",
+          "/1/pct",
+          "/2/pct",
+          "/3/pct"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-head_pose_readout-0242",
+        "cue": "head_pose_readout",
+        "t_in": 432.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/7/head_pose"
+        },
+        "face_ids": [
+          "A44"
+        ],
+        "fields": [
+          "/yaw_deg",
+          "/pitch_deg",
+          "/roll_deg"
+        ]
+      },
+      {
+        "cue_id": "A-interocular_rule-0245",
+        "cue": "interocular_rule",
+        "t_in": 432.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/7/geometry"
+        },
+        "face_ids": [
+          "A44"
+        ],
+        "fields": [
+          "/interocular_px"
+        ]
+      },
+      {
+        "cue_id": "A-photometry_readout-0244",
+        "cue": "photometry_readout",
+        "t_in": 432.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/7/photometry"
+        },
+        "face_ids": [
+          "A44"
+        ],
+        "fields": [
+          "/luma_mean",
+          "/luma_std"
+        ]
+      },
+      {
+        "cue_id": "A-symmetry_readout-0243",
+        "cue": "symmetry_readout",
+        "t_in": 432.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/7/symmetry"
+        },
+        "face_ids": [
+          "A44"
+        ],
+        "fields": [
+          "/residual_mean_iod"
+        ]
+      },
+      {
+        "cue_id": "A-blendshape_stack-0246",
+        "cue": "blendshape_stack",
+        "t_in": 453.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/6/blendshapes_top8"
+        },
+        "face_ids": [
+          "A43"
+        ],
+        "fields": [
+          "/0/pct",
+          "/1/pct",
+          "/2/pct",
+          "/3/pct"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-head_pose_readout-0247",
+        "cue": "head_pose_readout",
+        "t_in": 453.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/6/head_pose"
+        },
+        "face_ids": [
+          "A43"
+        ],
+        "fields": [
+          "/yaw_deg",
+          "/pitch_deg",
+          "/roll_deg"
+        ]
+      },
+      {
+        "cue_id": "A-interocular_rule-0250",
+        "cue": "interocular_rule",
+        "t_in": 453.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/6/geometry"
+        },
+        "face_ids": [
+          "A43"
+        ],
+        "fields": [
+          "/interocular_px"
+        ]
+      },
+      {
+        "cue_id": "A-photometry_readout-0249",
+        "cue": "photometry_readout",
+        "t_in": 453.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/6/photometry"
+        },
+        "face_ids": [
+          "A43"
+        ],
+        "fields": [
+          "/luma_mean",
+          "/luma_std"
+        ]
+      },
+      {
+        "cue_id": "A-symmetry_readout-0248",
+        "cue": "symmetry_readout",
+        "t_in": 453.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/6/symmetry"
+        },
+        "face_ids": [
+          "A43"
+        ],
+        "fields": [
+          "/residual_mean_iod"
+        ]
+      },
+      {
+        "cue_id": "A-photometry_readout-0251",
+        "cue": "photometry_readout",
+        "t_in": 474.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/1/photometry"
+        },
+        "face_ids": [
+          "A08"
+        ],
+        "fields": [
+          "/luma_mean",
+          "/luma_std"
+        ]
+      },
+      {
+        "cue_id": "A-blendshape_stack-0252",
+        "cue": "blendshape_stack",
+        "t_in": 495.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/0/blendshapes_top8"
+        },
+        "face_ids": [
+          "A05"
+        ],
+        "fields": [
+          "/0/pct",
+          "/1/pct",
+          "/2/pct",
+          "/3/pct"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-head_pose_readout-0253",
+        "cue": "head_pose_readout",
+        "t_in": 495.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/0/head_pose"
+        },
+        "face_ids": [
+          "A05"
+        ],
+        "fields": [
+          "/yaw_deg",
+          "/pitch_deg",
+          "/roll_deg"
+        ]
+      },
+      {
+        "cue_id": "A-interocular_rule-0256",
+        "cue": "interocular_rule",
+        "t_in": 495.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/0/geometry"
+        },
+        "face_ids": [
+          "A05"
+        ],
+        "fields": [
+          "/interocular_px"
+        ]
+      },
+      {
+        "cue_id": "A-photometry_readout-0255",
+        "cue": "photometry_readout",
+        "t_in": 495.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/0/photometry"
+        },
+        "face_ids": [
+          "A05"
+        ],
+        "fields": [
+          "/luma_mean",
+          "/luma_std"
+        ]
+      },
+      {
+        "cue_id": "A-symmetry_readout-0254",
+        "cue": "symmetry_readout",
+        "t_in": 495.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/0/symmetry"
+        },
+        "face_ids": [
+          "A05"
+        ],
+        "fields": [
+          "/residual_mean_iod"
+        ]
+      },
+      {
+        "cue_id": "A-blendshape_stack-0257",
+        "cue": "blendshape_stack",
+        "t_in": 516.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/9/blendshapes_top8"
+        },
+        "face_ids": [
+          "A49"
+        ],
+        "fields": [
+          "/0/pct",
+          "/1/pct",
+          "/2/pct",
+          "/3/pct"
+        ],
+        "min_box_px": 24
+      },
+      {
+        "cue_id": "A-head_pose_readout-0258",
+        "cue": "head_pose_readout",
+        "t_in": 516.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/9/head_pose"
+        },
+        "face_ids": [
+          "A49"
+        ],
+        "fields": [
+          "/yaw_deg",
+          "/pitch_deg",
+          "/roll_deg"
+        ]
+      },
+      {
+        "cue_id": "A-interocular_rule-0261",
+        "cue": "interocular_rule",
+        "t_in": 516.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/9/geometry"
+        },
+        "face_ids": [
+          "A49"
+        ],
+        "fields": [
+          "/interocular_px"
+        ]
+      },
+      {
+        "cue_id": "A-photometry_readout-0260",
+        "cue": "photometry_readout",
+        "t_in": 516.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/9/photometry"
+        },
+        "face_ids": [
+          "A49"
+        ],
+        "fields": [
+          "/luma_mean",
+          "/luma_std"
+        ]
+      },
+      {
+        "cue_id": "A-symmetry_readout-0259",
+        "cue": "symmetry_readout",
+        "t_in": 516.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/9/symmetry"
+        },
+        "face_ids": [
+          "A49"
+        ],
+        "fields": [
+          "/residual_mean_iod"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0313",
+        "cue": "attribution_link",
+        "t_in": 522.0,
+        "t_out": 666.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/36"
+        },
+        "face_ids": [
+          "A49"
+        ],
+        "blob_ids": [
+          "AF15"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-disagreement_vector-0339",
+        "cue": "disagreement_vector",
+        "t_in": 522.0,
+        "t_out": 648.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/62"
+        },
+        "face_ids": [
+          "A05"
+        ],
+        "fields": [
+          "/centre_offset_canvas",
+          "/box_iou"
+        ]
+      },
+      {
+        "cue_id": "A-gaze_ray-0263",
+        "cue": "gaze_ray",
+        "t_in": 522.0,
+        "t_out": 738.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/0"
+        },
+        "face_ids": [
+          "A05"
+        ],
+        "fields": [
+          "/direction",
+          "/yaw_deg"
+        ]
+      },
+      {
+        "cue_id": "A-proximity_edge-0274",
+        "cue": "proximity_edge",
+        "t_in": 522.0,
+        "t_out": 702.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/10"
+        },
+        "face_ids": [
+          "A05",
+          "A17"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-similarity_edge-0300",
+        "cue": "similarity_edge",
+        "t_in": 522.0,
+        "t_out": 684.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/152"
+        },
+        "face_ids": [
+          "A08",
+          "A49"
+        ],
+        "fields": [
+          "/cosine"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0314",
+        "cue": "attribution_link",
+        "t_in": 531.0,
+        "t_out": 675.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/37"
+        },
+        "face_ids": [
+          "A49"
+        ],
+        "blob_ids": [
+          "AF19"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-mst_edge-0275",
+        "cue": "mst_edge",
+        "t_in": 531.0,
+        "t_out": 711.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/11"
+        },
+        "face_ids": [
+          "A05",
+          "A08"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-photometry_readout-0262",
+        "cue": "photometry_readout",
+        "t_in": 537.0,
+        "t_out": 558.0,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/2/photometry"
+        },
+        "face_ids": [
+          "A17"
+        ],
+        "fields": [
+          "/luma_mean",
+          "/luma_std"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0315",
+        "cue": "attribution_link",
+        "t_in": 540.0,
+        "t_out": 684.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/38"
+        },
+        "face_ids": [
+          "A49"
+        ],
+        "blob_ids": [
+          "AF20"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-mst_edge-0276",
+        "cue": "mst_edge",
+        "t_in": 540.0,
+        "t_out": 720.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/12"
+        },
+        "face_ids": [
+          "A08",
+          "A17"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-similarity_edge-0301",
+        "cue": "similarity_edge",
+        "t_in": 540.0,
+        "t_out": 702.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/170"
+        },
+        "face_ids": [
+          "A17",
+          "A53"
+        ],
+        "fields": [
+          "/cosine"
+        ]
+      },
+      {
+        "cue_id": "A-disagreement_vector-0340",
+        "cue": "disagreement_vector",
+        "t_in": 541.5,
+        "t_out": 667.5,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/63"
+        },
+        "face_ids": [
+          "A08"
+        ],
+        "fields": [
+          "/centre_offset_canvas",
+          "/box_iou"
+        ]
+      },
+      {
+        "cue_id": "A-gaze_ray-0264",
+        "cue": "gaze_ray",
+        "t_in": 545.4,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/1"
+        },
+        "face_ids": [
+          "A19"
+        ],
+        "fields": [
+          "/direction",
+          "/yaw_deg"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0316",
+        "cue": "attribution_link",
+        "t_in": 549.0,
+        "t_out": 693.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/39"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "blob_ids": [
+          "AF29"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-proximity_edge-0277",
+        "cue": "proximity_edge",
+        "t_in": 549.0,
+        "t_out": 729.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/13"
+        },
+        "face_ids": [
+          "A17",
+          "A19"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0317",
+        "cue": "attribution_link",
+        "t_in": 558.0,
+        "t_out": 702.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/40"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "blob_ids": [
+          "AF45"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-mst_edge-0278",
+        "cue": "mst_edge",
+        "t_in": 558.0,
+        "t_out": 738.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/14"
+        },
+        "face_ids": [
+          "A19",
+          "A29"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-similarity_edge-0302",
+        "cue": "similarity_edge",
+        "t_in": 558.0,
+        "t_out": 720.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/182"
+        },
+        "face_ids": [
+          "A19",
+          "A43"
+        ],
+        "fields": [
+          "/cosine"
+        ]
+      },
+      {
+        "cue_id": "A-disagreement_vector-0341",
+        "cue": "disagreement_vector",
+        "t_in": 561.0,
+        "t_out": 687.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/64"
+        },
+        "face_ids": [
+          "A17"
+        ],
+        "fields": [
+          "/centre_offset_canvas",
+          "/box_iou"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0318",
+        "cue": "attribution_link",
+        "t_in": 567.0,
+        "t_out": 711.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/41"
+        },
+        "face_ids": [
+          "A17"
+        ],
+        "blob_ids": [
+          "AF46"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-proximity_edge-0279",
+        "cue": "proximity_edge",
+        "t_in": 567.0,
+        "t_out": 747.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/15"
+        },
+        "face_ids": [
+          "A17",
+          "A29"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-gaze_ray-0265",
+        "cue": "gaze_ray",
+        "t_in": 568.8,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/2"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "fields": [
+          "/direction",
+          "/yaw_deg"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0319",
+        "cue": "attribution_link",
+        "t_in": 576.0,
+        "t_out": 720.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/42"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "blob_ids": [
+          "AF48"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-mst_edge-0280",
+        "cue": "mst_edge",
+        "t_in": 576.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/16"
+        },
+        "face_ids": [
+          "A08",
+          "A19"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-similarity_edge-0303",
+        "cue": "similarity_edge",
+        "t_in": 576.0,
+        "t_out": 738.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/184"
+        },
+        "face_ids": [
+          "A19",
+          "A48"
+        ],
+        "fields": [
+          "/cosine"
+        ]
+      },
+      {
+        "cue_id": "A-disagreement_vector-0342",
+        "cue": "disagreement_vector",
+        "t_in": 580.5,
+        "t_out": 706.5,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/65"
+        },
+        "face_ids": [
+          "A19"
+        ],
+        "fields": [
+          "/centre_offset_canvas",
+          "/box_iou"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0320",
+        "cue": "attribution_link",
+        "t_in": 585.0,
+        "t_out": 729.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/43"
+        },
+        "face_ids": [
+          "A17"
+        ],
+        "blob_ids": [
+          "AF50"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-proximity_edge-0281",
+        "cue": "proximity_edge",
+        "t_in": 585.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/17"
+        },
+        "face_ids": [
+          "A17",
+          "A40"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-gaze_ray-0266",
+        "cue": "gaze_ray",
+        "t_in": 592.2,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/3"
+        },
+        "face_ids": [
+          "A40"
+        ],
+        "fields": [
+          "/direction",
+          "/yaw_deg"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0321",
+        "cue": "attribution_link",
+        "t_in": 594.0,
+        "t_out": 738.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/44"
+        },
+        "face_ids": [
+          "A17"
+        ],
+        "blob_ids": [
+          "AF51"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-cross_panel_link-0304",
+        "cue": "cross_panel_link",
+        "t_in": 594.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/193"
+        },
+        "face_ids": [
+          "A19",
+          "B23"
+        ],
+        "fields": [
+          "/cosine"
+        ]
+      },
+      {
+        "cue_id": "A-proximity_edge-0282",
+        "cue": "proximity_edge",
+        "t_in": 594.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/18"
+        },
+        "face_ids": [
+          "A40",
+          "A44"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-disagreement_vector-0343",
+        "cue": "disagreement_vector",
+        "t_in": 600.0,
+        "t_out": 726.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/66"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "fields": [
+          "/centre_offset_canvas",
+          "/box_iou"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0322",
+        "cue": "attribution_link",
+        "t_in": 603.0,
+        "t_out": 747.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/45"
+        },
+        "face_ids": [
+          "A17"
+        ],
+        "blob_ids": [
+          "AF55"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-proximity_edge-0283",
+        "cue": "proximity_edge",
+        "t_in": 603.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/19"
+        },
+        "face_ids": [
+          "A17",
+          "A44"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0323",
+        "cue": "attribution_link",
+        "t_in": 612.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/46"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "blob_ids": [
+          "AF60"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-cross_panel_link-0305",
+        "cue": "cross_panel_link",
+        "t_in": 612.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/206"
+        },
+        "face_ids": [
+          "A29",
+          "B16"
+        ],
+        "fields": [
+          "/cosine"
+        ]
+      },
+      {
+        "cue_id": "A-mst_edge-0284",
+        "cue": "mst_edge",
+        "t_in": 612.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/20"
+        },
+        "face_ids": [
+          "A29",
+          "A40"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-gaze_ray-0267",
+        "cue": "gaze_ray",
+        "t_in": 615.6,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/4"
+        },
+        "face_ids": [
+          "A43"
+        ],
+        "fields": [
+          "/direction",
+          "/yaw_deg"
+        ]
+      },
+      {
+        "cue_id": "A-disagreement_vector-0344",
+        "cue": "disagreement_vector",
+        "t_in": 619.5,
+        "t_out": 745.5,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/67"
+        },
+        "face_ids": [
+          "A40"
+        ],
+        "fields": [
+          "/centre_offset_canvas",
+          "/box_iou"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0324",
+        "cue": "attribution_link",
+        "t_in": 621.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/47"
+        },
+        "face_ids": [
+          "A44"
+        ],
+        "blob_ids": [
+          "AF67"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-proximity_edge-0285",
+        "cue": "proximity_edge",
+        "t_in": 621.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/21"
+        },
+        "face_ids": [
+          "A19",
+          "A49"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-gaze_convergence-0273",
+        "cue": "gaze_convergence",
+        "t_in": 627.3,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/per_panel/A/gaze_convergence"
+        },
+        "fields": [
+          "/point",
+          "/residual_mean",
+          "/rays"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0325",
+        "cue": "attribution_link",
+        "t_in": 630.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/48"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "blob_ids": [
+          "AF69"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-cross_panel_link-0306",
+        "cue": "cross_panel_link",
+        "t_in": 630.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/209"
+        },
+        "face_ids": [
+          "A29",
+          "B27"
+        ],
+        "fields": [
+          "/cosine"
+        ]
+      },
+      {
+        "cue_id": "A-proximity_edge-0286",
+        "cue": "proximity_edge",
+        "t_in": 630.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/22"
+        },
+        "face_ids": [
+          "A29",
+          "A49"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0326",
+        "cue": "attribution_link",
+        "t_in": 639.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/49"
+        },
+        "face_ids": [
+          "A17"
+        ],
+        "blob_ids": [
+          "AF72"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-disagreement_vector-0345",
+        "cue": "disagreement_vector",
+        "t_in": 639.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/68"
+        },
+        "face_ids": [
+          "A43"
+        ],
+        "fields": [
+          "/centre_offset_canvas",
+          "/box_iou"
+        ]
+      },
+      {
+        "cue_id": "A-gaze_ray-0268",
+        "cue": "gaze_ray",
+        "t_in": 639.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/5"
+        },
+        "face_ids": [
+          "A44"
+        ],
+        "fields": [
+          "/direction",
+          "/yaw_deg"
+        ]
+      },
+      {
+        "cue_id": "A-proximity_edge-0287",
+        "cue": "proximity_edge",
+        "t_in": 639.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/23"
+        },
+        "face_ids": [
+          "A40",
+          "A49"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0327",
+        "cue": "attribution_link",
+        "t_in": 648.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/50"
+        },
+        "face_ids": [
+          "A44"
+        ],
+        "blob_ids": [
+          "AF79"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-mst_edge-0288",
+        "cue": "mst_edge",
+        "t_in": 648.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/24"
+        },
+        "face_ids": [
+          "A43",
+          "A49"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-similarity_edge-0307",
+        "cue": "similarity_edge",
+        "t_in": 648.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/213"
+        },
+        "face_ids": [
+          "A40",
+          "A48"
+        ],
+        "fields": [
+          "/cosine"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0328",
+        "cue": "attribution_link",
+        "t_in": 657.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/51"
+        },
+        "face_ids": [
+          "A44"
+        ],
+        "blob_ids": [
+          "AF81"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-mst_edge-0289",
+        "cue": "mst_edge",
+        "t_in": 657.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/25"
+        },
+        "face_ids": [
+          "A40",
+          "A43"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-disagreement_vector-0346",
+        "cue": "disagreement_vector",
+        "t_in": 658.5,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/69"
+        },
+        "face_ids": [
+          "A44"
+        ],
+        "fields": [
+          "/centre_offset_canvas",
+          "/box_iou"
+        ]
+      },
+      {
+        "cue_id": "A-gaze_ray-0269",
+        "cue": "gaze_ray",
+        "t_in": 662.4,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/6"
+        },
+        "face_ids": [
+          "A48"
+        ],
+        "fields": [
+          "/direction",
+          "/yaw_deg"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0329",
+        "cue": "attribution_link",
+        "t_in": 666.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/52"
+        },
+        "face_ids": [
+          "A44"
+        ],
+        "blob_ids": [
+          "AF82"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-mst_edge-0290",
+        "cue": "mst_edge",
+        "t_in": 666.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/26"
+        },
+        "face_ids": [
+          "A43",
+          "A44"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-similarity_edge-0308",
+        "cue": "similarity_edge",
+        "t_in": 666.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/226"
+        },
+        "face_ids": [
+          "A43",
+          "A48"
+        ],
+        "fields": [
+          "/cosine"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0330",
+        "cue": "attribution_link",
+        "t_in": 675.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/53"
+        },
+        "face_ids": [
+          "A05"
+        ],
+        "blob_ids": [
+          "AF90"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-mst_edge-0291",
+        "cue": "mst_edge",
+        "t_in": 675.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/27"
+        },
+        "face_ids": [
+          "A44",
+          "A48"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-disagreement_vector-0347",
+        "cue": "disagreement_vector",
+        "t_in": 678.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/70"
+        },
+        "face_ids": [
+          "A48"
+        ],
+        "fields": [
+          "/centre_offset_canvas",
+          "/box_iou"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0331",
+        "cue": "attribution_link",
+        "t_in": 684.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/54"
+        },
+        "face_ids": [
+          "A05"
+        ],
+        "blob_ids": [
+          "AF94"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-cross_panel_link-0309",
+        "cue": "cross_panel_link",
+        "t_in": 684.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/231"
+        },
+        "face_ids": [
+          "A43",
+          "B05"
+        ],
+        "fields": [
+          "/cosine"
+        ]
+      },
+      {
+        "cue_id": "A-proximity_edge-0292",
+        "cue": "proximity_edge",
+        "t_in": 684.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/28"
+        },
+        "face_ids": [
+          "A17",
+          "A48"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-gaze_ray-0270",
+        "cue": "gaze_ray",
+        "t_in": 685.8,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/7"
+        },
+        "face_ids": [
+          "A49"
+        ],
+        "fields": [
+          "/direction",
+          "/yaw_deg"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0332",
+        "cue": "attribution_link",
+        "t_in": 693.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/55"
+        },
+        "face_ids": [
+          "A05"
+        ],
+        "blob_ids": [
+          "AF110"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-proximity_edge-0293",
+        "cue": "proximity_edge",
+        "t_in": 693.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/29"
+        },
+        "face_ids": [
+          "A44",
+          "A53"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-disagreement_vector-0348",
+        "cue": "disagreement_vector",
+        "t_in": 697.5,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/71"
+        },
+        "face_ids": [
+          "A49"
+        ],
+        "fields": [
+          "/centre_offset_canvas",
+          "/box_iou"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0333",
+        "cue": "attribution_link",
+        "t_in": 702.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/56"
+        },
+        "face_ids": [
+          "A48"
+        ],
+        "blob_ids": [
+          "AF113"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-proximity_edge-0294",
+        "cue": "proximity_edge",
+        "t_in": 702.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/30"
+        },
+        "face_ids": [
+          "A48",
+          "A53"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-similarity_edge-0310",
+        "cue": "similarity_edge",
+        "t_in": 702.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/239"
+        },
+        "face_ids": [
+          "A44",
+          "A49"
+        ],
+        "fields": [
+          "/cosine"
+        ]
+      },
+      {
+        "cue_id": "A-gaze_ray-0271",
+        "cue": "gaze_ray",
+        "t_in": 709.2,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/8"
+        },
+        "face_ids": [
+          "A53"
+        ],
+        "fields": [
+          "/direction",
+          "/yaw_deg"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0334",
+        "cue": "attribution_link",
+        "t_in": 711.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/57"
+        },
+        "face_ids": [
+          "A05"
+        ],
+        "blob_ids": [
+          "AF122"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-proximity_edge-0295",
+        "cue": "proximity_edge",
+        "t_in": 711.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/31"
+        },
+        "face_ids": [
+          "A43",
+          "A53"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-disagreement_vector-0349",
+        "cue": "disagreement_vector",
+        "t_in": 717.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/72"
+        },
+        "face_ids": [
+          "A53"
+        ],
+        "fields": [
+          "/centre_offset_canvas",
+          "/box_iou"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0335",
+        "cue": "attribution_link",
+        "t_in": 720.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/58"
+        },
+        "face_ids": [
+          "A05"
+        ],
+        "blob_ids": [
+          "AF124"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0353",
+        "cue": "blob_circle",
+        "t_in": 720.0,
+        "t_out": 828.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/48"
+        },
+        "blob_ids": [
+          "LI049"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0354",
+        "cue": "blob_readout",
+        "t_in": 720.0,
+        "t_out": 828.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/48"
+        },
+        "blob_ids": [
+          "LI049"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-count_readout-0351",
+        "cue": "count_readout",
+        "t_in": 720.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/counts"
+        },
+        "fields": [
+          "/merged",
+          "/both_detectors_agree",
+          "/mesh_converged"
+        ]
+      },
+      {
+        "cue_id": "A-cross_panel_link-0311",
+        "cue": "cross_panel_link",
+        "t_in": 720.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/248"
+        },
+        "face_ids": [
+          "A44",
+          "B27"
+        ],
+        "fields": [
+          "/cosine"
+        ]
+      },
+      {
+        "cue_id": "A-mst_edge-0296",
+        "cue": "mst_edge",
+        "t_in": 720.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/32"
+        },
+        "face_ids": [
+          "A49",
+          "A53"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0355",
+        "cue": "blob_circle",
+        "t_in": 727.5,
+        "t_out": 835.5,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/26"
+        },
+        "blob_ids": [
+          "LI027"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0356",
+        "cue": "blob_readout",
+        "t_in": 727.5,
+        "t_out": 835.5,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/26"
+        },
+        "blob_ids": [
+          "LI027"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0336",
+        "cue": "attribution_link",
+        "t_in": 729.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/59"
+        },
+        "face_ids": [
+          "A48"
+        ],
+        "blob_ids": [
+          "AF139"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-mst_edge-0297",
+        "cue": "mst_edge",
+        "t_in": 729.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/33"
+        },
+        "face_ids": [
+          "A53",
+          "A57"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-gaze_ray-0272",
+        "cue": "gaze_ray",
+        "t_in": 732.6,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/9"
+        },
+        "face_ids": [
+          "A57"
+        ],
+        "fields": [
+          "/direction",
+          "/yaw_deg"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0357",
+        "cue": "blob_circle",
+        "t_in": 735.0,
+        "t_out": 843.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/99"
+        },
+        "blob_ids": [
+          "LI100"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0358",
+        "cue": "blob_readout",
+        "t_in": 735.0,
+        "t_out": 843.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/99"
+        },
+        "blob_ids": [
+          "LI100"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-disagreement_vector-0350",
+        "cue": "disagreement_vector",
+        "t_in": 736.5,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/73"
+        },
+        "face_ids": [
+          "A57"
+        ],
+        "fields": [
+          "/centre_offset_canvas",
+          "/box_iou"
+        ]
+      },
+      {
+        "cue_id": "A-attribution_link-0337",
+        "cue": "attribution_link",
+        "t_in": 738.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/60"
+        },
+        "face_ids": [
+          "A48"
+        ],
+        "blob_ids": [
+          "AF151"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-cross_panel_link-0312",
+        "cue": "cross_panel_link",
+        "t_in": 738.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/254"
+        },
+        "face_ids": [
+          "A48",
+          "B05"
+        ],
+        "fields": [
+          "/cosine"
+        ]
+      },
+      {
+        "cue_id": "A-proximity_edge-0298",
+        "cue": "proximity_edge",
+        "t_in": 738.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/34"
+        },
+        "face_ids": [
+          "A48",
+          "A57"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0359",
+        "cue": "blob_circle",
+        "t_in": 742.5,
+        "t_out": 850.5,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/29"
+        },
+        "blob_ids": [
+          "LI030"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0360",
+        "cue": "blob_readout",
+        "t_in": 742.5,
+        "t_out": 850.5,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/29"
+        },
+        "blob_ids": [
+          "LI030"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-proximity_edge-0299",
+        "cue": "proximity_edge",
+        "t_in": 747.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/35"
+        },
+        "face_ids": [
+          "A49",
+          "A57"
+        ],
+        "fields": [
+          "/distance_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-unattached_flame_marker-0338",
+        "cue": "unattached_flame_marker",
+        "t_in": 747.0,
+        "t_out": 756.0,
+        "source": {
+          "file": "structure",
+          "pointer": "/edges/61"
+        },
+        "face_ids": [
+          "A05"
+        ],
+        "blob_ids": [
+          "AF155"
+        ],
+        "fields": [
+          "/distance_face_heights"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0361",
+        "cue": "blob_circle",
+        "t_in": 750.0,
+        "t_out": 858.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/62"
+        },
+        "blob_ids": [
+          "LI063"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0362",
+        "cue": "blob_readout",
+        "t_in": 750.0,
+        "t_out": 858.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/62"
+        },
+        "blob_ids": [
+          "LI063"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0363",
+        "cue": "blob_circle",
+        "t_in": 757.5,
+        "t_out": 865.5,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/84"
+        },
+        "blob_ids": [
+          "LI085"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0364",
+        "cue": "blob_readout",
+        "t_in": 757.5,
+        "t_out": 865.5,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/84"
+        },
+        "blob_ids": [
+          "LI085"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0365",
+        "cue": "blob_circle",
+        "t_in": 765.0,
+        "t_out": 873.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/80"
+        },
+        "blob_ids": [
+          "LI081"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0366",
+        "cue": "blob_readout",
+        "t_in": 765.0,
+        "t_out": 873.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/80"
+        },
+        "blob_ids": [
+          "LI081"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-noise_floor_rule-0352",
+        "cue": "noise_floor_rule",
+        "t_in": 765.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "noise_floor",
+          "pointer": "/floor"
+        },
+        "fields": [
+          "/blazeface/false_positive_ceiling",
+          "/yunet/false_positive_ceiling"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0367",
+        "cue": "blob_circle",
+        "t_in": 772.5,
+        "t_out": 880.5,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/95"
+        },
+        "blob_ids": [
+          "LI096"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0368",
+        "cue": "blob_readout",
+        "t_in": 772.5,
+        "t_out": 880.5,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/95"
+        },
+        "blob_ids": [
+          "LI096"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0369",
+        "cue": "blob_circle",
+        "t_in": 780.0,
+        "t_out": 888.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/93"
+        },
+        "blob_ids": [
+          "LI094"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0370",
+        "cue": "blob_readout",
+        "t_in": 780.0,
+        "t_out": 888.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/93"
+        },
+        "blob_ids": [
+          "LI094"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0371",
+        "cue": "blob_circle",
+        "t_in": 787.5,
+        "t_out": 895.5,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/51"
+        },
+        "blob_ids": [
+          "LI052"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0372",
+        "cue": "blob_readout",
+        "t_in": 787.5,
+        "t_out": 895.5,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/51"
+        },
+        "blob_ids": [
+          "LI052"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0373",
+        "cue": "blob_circle",
+        "t_in": 795.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/89"
+        },
+        "blob_ids": [
+          "LI090"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0374",
+        "cue": "blob_readout",
+        "t_in": 795.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/89"
+        },
+        "blob_ids": [
+          "LI090"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0375",
+        "cue": "blob_circle",
+        "t_in": 802.5,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/81"
+        },
+        "blob_ids": [
+          "LI082"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0376",
+        "cue": "blob_readout",
+        "t_in": 802.5,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/81"
+        },
+        "blob_ids": [
+          "LI082"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0377",
+        "cue": "blob_circle",
+        "t_in": 810.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/0"
+        },
+        "blob_ids": [
+          "LI001"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0378",
+        "cue": "blob_readout",
+        "t_in": 810.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/0"
+        },
+        "blob_ids": [
+          "LI001"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0379",
+        "cue": "blob_circle",
+        "t_in": 817.5,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/45"
+        },
+        "blob_ids": [
+          "LI046"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0380",
+        "cue": "blob_readout",
+        "t_in": 817.5,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/45"
+        },
+        "blob_ids": [
+          "LI046"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0381",
+        "cue": "blob_circle",
+        "t_in": 825.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/130"
+        },
+        "blob_ids": [
+          "LI131"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0382",
+        "cue": "blob_readout",
+        "t_in": 825.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/130"
+        },
+        "blob_ids": [
+          "LI131"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0383",
+        "cue": "blob_circle",
+        "t_in": 832.5,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/86"
+        },
+        "blob_ids": [
+          "LI087"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0384",
+        "cue": "blob_readout",
+        "t_in": 832.5,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/86"
+        },
+        "blob_ids": [
+          "LI087"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0385",
+        "cue": "blob_circle",
+        "t_in": 840.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/101"
+        },
+        "blob_ids": [
+          "LI102"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0386",
+        "cue": "blob_readout",
+        "t_in": 840.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/101"
+        },
+        "blob_ids": [
+          "LI102"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0387",
+        "cue": "blob_circle",
+        "t_in": 847.5,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/33"
+        },
+        "blob_ids": [
+          "LI034"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0388",
+        "cue": "blob_readout",
+        "t_in": 847.5,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/33"
+        },
+        "blob_ids": [
+          "LI034"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0389",
+        "cue": "blob_circle",
+        "t_in": 855.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/36"
+        },
+        "blob_ids": [
+          "LI037"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0390",
+        "cue": "blob_readout",
+        "t_in": 855.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/36"
+        },
+        "blob_ids": [
+          "LI037"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0391",
+        "cue": "blob_circle",
+        "t_in": 862.5,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/161"
+        },
+        "blob_ids": [
+          "LI162"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0392",
+        "cue": "blob_readout",
+        "t_in": 862.5,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/161"
+        },
+        "blob_ids": [
+          "LI162"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0393",
+        "cue": "blob_circle",
+        "t_in": 870.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/39"
+        },
+        "blob_ids": [
+          "LI040"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0394",
+        "cue": "blob_readout",
+        "t_in": 870.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/39"
+        },
+        "blob_ids": [
+          "LI040"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0395",
+        "cue": "blob_circle",
+        "t_in": 877.5,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/69"
+        },
+        "blob_ids": [
+          "LI070"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0396",
+        "cue": "blob_readout",
+        "t_in": 877.5,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/69"
+        },
+        "blob_ids": [
+          "LI070"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0397",
+        "cue": "blob_circle",
+        "t_in": 885.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/118"
+        },
+        "blob_ids": [
+          "LI119"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0398",
+        "cue": "blob_readout",
+        "t_in": 885.0,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/118"
+        },
+        "blob_ids": [
+          "LI119"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      },
+      {
+        "cue_id": "A-blob_circle-0399",
+        "cue": "blob_circle",
+        "t_in": 892.5,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/56"
+        },
+        "blob_ids": [
+          "LI057"
+        ]
+      },
+      {
+        "cue_id": "A-blob_readout-0400",
+        "cue": "blob_readout",
+        "t_in": 892.5,
+        "t_out": 900.0,
+        "source": {
+          "file": "field",
+          "pointer": "/blobs/56"
+        },
+        "blob_ids": [
+          "LI057"
+        ],
+        "fields": [
+          "/area_pct_of_canvas"
+        ]
+      }
+    ]
+  }
+}

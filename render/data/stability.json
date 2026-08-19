@@ -1,0 +1,2174 @@
+{
+  "schema": "mimesis.stability.v1",
+  "faces_scope": "all",
+  "passes": {
+    "scales": [
+      0.85,
+      1.0,
+      1.15
+    ],
+    "rotations_deg": [
+      -3.0,
+      0.0,
+      3.0
+    ],
+    "gammas": [
+      0.85,
+      1.0,
+      1.15
+    ],
+    "jpeg_qualities": [
+      55,
+      92
+    ],
+    "total": 29
+  },
+  "state_machine": {
+    "confirmed_at_hit_rate": 0.8,
+    "tentative_at_hit_rate": 0.35,
+    "reference": "Track states follow the DeepSORT scheme: tentative tracks are not reported until they survive n_init detections, confirmed tracks hold, tracks are deleted after max_age misses. Here the consecutive-frame criterion is replaced by fraction of perturbation passes survived, since a painting has no next frame.",
+    "flash_rule": "flash_hz is derived: a confirmed face does not flash, a tentative face flashes at a rate proportional to how often it drops out, a lost face appears once and dies. The renderer must not invent a rate of its own."
+  },
+  "panels": {
+    "A": [
+      {
+        "face_id": "A01",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.6207,
+          "score_mean_when_seen": 0.3214,
+          "score_std_when_seen": 0.0747,
+          "score_min_when_seen": 0.2078
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.6207,
+        "hit_rate_both": 0.0,
+        "track_state": "tentative",
+        "flash_hz": 2.28
+      },
+      {
+        "face_id": "A02",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.4422,
+          "score_std_when_seen": 0.0718,
+          "score_min_when_seen": 0.2305
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 0.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A03",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.472,
+          "score_std_when_seen": 0.0687,
+          "score_min_when_seen": 0.3383
+        },
+        "yunet": {
+          "hit_rate": 0.069,
+          "score_mean_when_seen": 0.3378,
+          "score_std_when_seen": 0.0283,
+          "score_min_when_seen": 0.3094
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 0.069,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A04",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.2414,
+          "score_mean_when_seen": 0.2771,
+          "score_std_when_seen": 0.0429,
+          "score_min_when_seen": 0.2249
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.2414,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 4.55
+      },
+      {
+        "face_id": "A05",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.7795,
+          "score_std_when_seen": 0.033,
+          "score_min_when_seen": 0.7255
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.4688,
+          "score_std_when_seen": 0.0705,
+          "score_min_when_seen": 0.3696
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A06",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8243,
+          "score_std_when_seen": 0.0528,
+          "score_min_when_seen": 0.692
+        },
+        "yunet": {
+          "hit_rate": 0.7241,
+          "score_mean_when_seen": 0.4951,
+          "score_std_when_seen": 0.0871,
+          "score_min_when_seen": 0.3031
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 0.7241,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A07",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.2414,
+          "score_mean_when_seen": 0.2204,
+          "score_std_when_seen": 0.0117,
+          "score_min_when_seen": 0.209
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.2414,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 4.55
+      },
+      {
+        "face_id": "A08",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.76,
+          "score_std_when_seen": 0.0353,
+          "score_min_when_seen": 0.6858
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.6455,
+          "score_std_when_seen": 0.081,
+          "score_min_when_seen": 0.5022
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A09",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.9655,
+          "score_mean_when_seen": 0.3322,
+          "score_std_when_seen": 0.0837,
+          "score_min_when_seen": 0.2033
+        },
+        "yunet": {
+          "hit_rate": 0.1724,
+          "score_mean_when_seen": 0.3517,
+          "score_std_when_seen": 0.0336,
+          "score_min_when_seen": 0.3036
+        },
+        "hit_rate_either": 0.9655,
+        "hit_rate_both": 0.1724,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A10",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.6552,
+          "score_mean_when_seen": 0.2771,
+          "score_std_when_seen": 0.0386,
+          "score_min_when_seen": 0.2121
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.6552,
+        "hit_rate_both": 0.0,
+        "track_state": "tentative",
+        "flash_hz": 2.07
+      },
+      {
+        "face_id": "A11",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.931,
+          "score_mean_when_seen": 0.3068,
+          "score_std_when_seen": 0.079,
+          "score_min_when_seen": 0.2051
+        },
+        "yunet": {
+          "hit_rate": 0.1379,
+          "score_mean_when_seen": 0.3268,
+          "score_std_when_seen": 0.0141,
+          "score_min_when_seen": 0.3144
+        },
+        "hit_rate_either": 0.931,
+        "hit_rate_both": 0.1379,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A12",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.7231,
+          "score_std_when_seen": 0.0946,
+          "score_min_when_seen": 0.4126
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.6689,
+          "score_std_when_seen": 0.1063,
+          "score_min_when_seen": 0.4856
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A13",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.7931,
+          "score_mean_when_seen": 0.3377,
+          "score_std_when_seen": 0.088,
+          "score_min_when_seen": 0.2067
+        },
+        "yunet": {
+          "hit_rate": 0.2414,
+          "score_mean_when_seen": 0.3204,
+          "score_std_when_seen": 0.015,
+          "score_min_when_seen": 0.3009
+        },
+        "hit_rate_either": 0.7931,
+        "hit_rate_both": 0.2414,
+        "track_state": "tentative",
+        "flash_hz": 1.24
+      },
+      {
+        "face_id": "A14",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.5172,
+          "score_mean_when_seen": 0.279,
+          "score_std_when_seen": 0.0505,
+          "score_min_when_seen": 0.2131
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.5172,
+        "hit_rate_both": 0.0,
+        "track_state": "tentative",
+        "flash_hz": 2.9
+      },
+      {
+        "face_id": "A15",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.4138,
+          "score_mean_when_seen": 0.2511,
+          "score_std_when_seen": 0.0436,
+          "score_min_when_seen": 0.2086
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.4138,
+        "hit_rate_both": 0.0,
+        "track_state": "tentative",
+        "flash_hz": 3.52
+      },
+      {
+        "face_id": "A16",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.4483,
+          "score_mean_when_seen": 0.2398,
+          "score_std_when_seen": 0.0349,
+          "score_min_when_seen": 0.2016
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.4483,
+        "hit_rate_both": 0.0,
+        "track_state": "tentative",
+        "flash_hz": 3.31
+      },
+      {
+        "face_id": "A17",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 0.9655,
+          "score_mean_when_seen": 0.3806,
+          "score_std_when_seen": 0.085,
+          "score_min_when_seen": 0.2154
+        },
+        "yunet": {
+          "hit_rate": 0.8966,
+          "score_mean_when_seen": 0.4088,
+          "score_std_when_seen": 0.0818,
+          "score_min_when_seen": 0.302
+        },
+        "hit_rate_either": 0.9655,
+        "hit_rate_both": 0.8966,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A18",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.4285,
+          "score_std_when_seen": 0.1031,
+          "score_min_when_seen": 0.2015
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 0.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A19",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.834,
+          "score_std_when_seen": 0.0266,
+          "score_min_when_seen": 0.7642
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8869,
+          "score_std_when_seen": 0.029,
+          "score_min_when_seen": 0.8201
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A20",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.2759,
+          "score_mean_when_seen": 0.8708,
+          "score_std_when_seen": 0.0084,
+          "score_min_when_seen": 0.8553
+        },
+        "yunet": {
+          "hit_rate": 0.1034,
+          "score_mean_when_seen": 0.3224,
+          "score_std_when_seen": 0.01,
+          "score_min_when_seen": 0.3084
+        },
+        "hit_rate_either": 0.2759,
+        "hit_rate_both": 0.1034,
+        "track_state": "lost",
+        "flash_hz": 4.34
+      },
+      {
+        "face_id": "A21",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.8276,
+          "score_mean_when_seen": 0.2867,
+          "score_std_when_seen": 0.0586,
+          "score_min_when_seen": 0.2053
+        },
+        "yunet": {
+          "hit_rate": 0.069,
+          "score_mean_when_seen": 0.3073,
+          "score_std_when_seen": 0.0006,
+          "score_min_when_seen": 0.3066
+        },
+        "hit_rate_either": 0.8276,
+        "hit_rate_both": 0.069,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A22",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.1034,
+          "score_mean_when_seen": 0.2483,
+          "score_std_when_seen": 0.0342,
+          "score_min_when_seen": 0.2023
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.1034,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 5.38
+      },
+      {
+        "face_id": "A23",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.6207,
+          "score_mean_when_seen": 0.2966,
+          "score_std_when_seen": 0.052,
+          "score_min_when_seen": 0.2168
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.6207,
+        "hit_rate_both": 0.0,
+        "track_state": "tentative",
+        "flash_hz": 2.28
+      },
+      {
+        "face_id": "A24",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8924,
+          "score_std_when_seen": 0.017,
+          "score_min_when_seen": 0.8386
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.905,
+          "score_std_when_seen": 0.0103,
+          "score_min_when_seen": 0.8778
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A25",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.3793,
+          "score_mean_when_seen": 0.2314,
+          "score_std_when_seen": 0.03,
+          "score_min_when_seen": 0.2006
+        },
+        "yunet": {
+          "hit_rate": 0.1034,
+          "score_mean_when_seen": 0.3283,
+          "score_std_when_seen": 0.0078,
+          "score_min_when_seen": 0.3226
+        },
+        "hit_rate_either": 0.3793,
+        "hit_rate_both": 0.1034,
+        "track_state": "tentative",
+        "flash_hz": 3.72
+      },
+      {
+        "face_id": "A26",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.0,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 6.0
+      },
+      {
+        "face_id": "A27",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.2759,
+          "score_mean_when_seen": 0.2608,
+          "score_std_when_seen": 0.0131,
+          "score_min_when_seen": 0.2385
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.2759,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 4.34
+      },
+      {
+        "face_id": "A28",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.4787,
+          "score_std_when_seen": 0.0496,
+          "score_min_when_seen": 0.3967
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.5129,
+          "score_std_when_seen": 0.1331,
+          "score_min_when_seen": 0.31
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A29",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8757,
+          "score_std_when_seen": 0.0294,
+          "score_min_when_seen": 0.8337
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8948,
+          "score_std_when_seen": 0.0162,
+          "score_min_when_seen": 0.86
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A30",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.0,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 6.0
+      },
+      {
+        "face_id": "A31",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.069,
+          "score_mean_when_seen": 0.2108,
+          "score_std_when_seen": 0.0068,
+          "score_min_when_seen": 0.2039
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.069,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 5.59
+      },
+      {
+        "face_id": "A32",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.1379,
+          "score_mean_when_seen": 0.2359,
+          "score_std_when_seen": 0.0193,
+          "score_min_when_seen": 0.2139
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.1379,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 5.17
+      },
+      {
+        "face_id": "A33",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.5517,
+          "score_mean_when_seen": 0.3002,
+          "score_std_when_seen": 0.0519,
+          "score_min_when_seen": 0.2228
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.5517,
+        "hit_rate_both": 0.0,
+        "track_state": "tentative",
+        "flash_hz": 2.69
+      },
+      {
+        "face_id": "A34",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.3793,
+          "score_mean_when_seen": 0.274,
+          "score_std_when_seen": 0.0363,
+          "score_min_when_seen": 0.2225
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.3793,
+        "hit_rate_both": 0.0,
+        "track_state": "tentative",
+        "flash_hz": 3.72
+      },
+      {
+        "face_id": "A35",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.0,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 6.0
+      },
+      {
+        "face_id": "A36",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.0345,
+          "score_mean_when_seen": 0.2258,
+          "score_std_when_seen": 0.0,
+          "score_min_when_seen": 0.2258
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.0345,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 5.79
+      },
+      {
+        "face_id": "A37",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.1379,
+          "score_mean_when_seen": 0.232,
+          "score_std_when_seen": 0.0212,
+          "score_min_when_seen": 0.2107
+        },
+        "yunet": {
+          "hit_rate": 0.5517,
+          "score_mean_when_seen": 0.3875,
+          "score_std_when_seen": 0.078,
+          "score_min_when_seen": 0.3034
+        },
+        "hit_rate_either": 0.5517,
+        "hit_rate_both": 0.1379,
+        "track_state": "tentative",
+        "flash_hz": 2.69
+      },
+      {
+        "face_id": "A38",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.5862,
+          "score_mean_when_seen": 0.2406,
+          "score_std_when_seen": 0.0296,
+          "score_min_when_seen": 0.205
+        },
+        "yunet": {
+          "hit_rate": 0.1724,
+          "score_mean_when_seen": 0.3724,
+          "score_std_when_seen": 0.0436,
+          "score_min_when_seen": 0.3181
+        },
+        "hit_rate_either": 0.5862,
+        "hit_rate_both": 0.1724,
+        "track_state": "tentative",
+        "flash_hz": 2.48
+      },
+      {
+        "face_id": "A39",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.9655,
+          "score_mean_when_seen": 0.5109,
+          "score_std_when_seen": 0.1826,
+          "score_min_when_seen": 0.2
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.9655,
+        "hit_rate_both": 0.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A40",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8806,
+          "score_std_when_seen": 0.0339,
+          "score_min_when_seen": 0.8284
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.9011,
+          "score_std_when_seen": 0.0076,
+          "score_min_when_seen": 0.8853
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A41",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.069,
+          "score_mean_when_seen": 0.2181,
+          "score_std_when_seen": 0.0076,
+          "score_min_when_seen": 0.2105
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.069,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 5.59
+      },
+      {
+        "face_id": "A42",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.0,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 6.0
+      },
+      {
+        "face_id": "A43",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8286,
+          "score_std_when_seen": 0.0319,
+          "score_min_when_seen": 0.7747
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8633,
+          "score_std_when_seen": 0.031,
+          "score_min_when_seen": 0.7997
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A44",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8284,
+          "score_std_when_seen": 0.0254,
+          "score_min_when_seen": 0.7758
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.6642,
+          "score_std_when_seen": 0.0887,
+          "score_min_when_seen": 0.5011
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A45",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.931,
+          "score_mean_when_seen": 0.5535,
+          "score_std_when_seen": 0.0891,
+          "score_min_when_seen": 0.2128
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.931,
+        "hit_rate_both": 0.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A46",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.3103,
+          "score_mean_when_seen": 0.6766,
+          "score_std_when_seen": 0.0134,
+          "score_min_when_seen": 0.6567
+        },
+        "yunet": {
+          "hit_rate": 0.069,
+          "score_mean_when_seen": 0.333,
+          "score_std_when_seen": 0.0024,
+          "score_min_when_seen": 0.3306
+        },
+        "hit_rate_either": 0.3103,
+        "hit_rate_both": 0.069,
+        "track_state": "lost",
+        "flash_hz": 4.14
+      },
+      {
+        "face_id": "A47",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.1724,
+          "score_mean_when_seen": 0.3036,
+          "score_std_when_seen": 0.1282,
+          "score_min_when_seen": 0.2097
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.1724,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 4.97
+      },
+      {
+        "face_id": "A48",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.9279,
+          "score_std_when_seen": 0.0095,
+          "score_min_when_seen": 0.9111
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8489,
+          "score_std_when_seen": 0.0571,
+          "score_min_when_seen": 0.7189
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A49",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.7751,
+          "score_std_when_seen": 0.0437,
+          "score_min_when_seen": 0.6818
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.4226,
+          "score_std_when_seen": 0.0561,
+          "score_min_when_seen": 0.3189
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A50",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.5862,
+          "score_mean_when_seen": 0.7166,
+          "score_std_when_seen": 0.1452,
+          "score_min_when_seen": 0.4851
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.5862,
+        "hit_rate_both": 0.0,
+        "track_state": "tentative",
+        "flash_hz": 2.48
+      },
+      {
+        "face_id": "A51",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.7586,
+          "score_mean_when_seen": 0.343,
+          "score_std_when_seen": 0.0945,
+          "score_min_when_seen": 0.2136
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.7586,
+        "hit_rate_both": 0.0,
+        "track_state": "tentative",
+        "flash_hz": 1.45
+      },
+      {
+        "face_id": "A52",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.6438,
+          "score_std_when_seen": 0.0441,
+          "score_min_when_seen": 0.5636
+        },
+        "yunet": {
+          "hit_rate": 0.8966,
+          "score_mean_when_seen": 0.6469,
+          "score_std_when_seen": 0.1224,
+          "score_min_when_seen": 0.3931
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 0.8966,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A53",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.754,
+          "score_std_when_seen": 0.0395,
+          "score_min_when_seen": 0.6688
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.6707,
+          "score_std_when_seen": 0.0662,
+          "score_min_when_seen": 0.5301
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A54",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.3549,
+          "score_std_when_seen": 0.0906,
+          "score_min_when_seen": 0.2622
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 0.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A55",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.7931,
+          "score_mean_when_seen": 0.3357,
+          "score_std_when_seen": 0.072,
+          "score_min_when_seen": 0.2238
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.7931,
+        "hit_rate_both": 0.0,
+        "track_state": "tentative",
+        "flash_hz": 1.24
+      },
+      {
+        "face_id": "A56",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.0,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 6.0
+      },
+      {
+        "face_id": "A57",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8202,
+          "score_std_when_seen": 0.0223,
+          "score_min_when_seen": 0.7643
+        },
+        "yunet": {
+          "hit_rate": 0.1379,
+          "score_mean_when_seen": 0.4392,
+          "score_std_when_seen": 0.0422,
+          "score_min_when_seen": 0.3748
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 0.1379,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "A58",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.3497,
+          "score_std_when_seen": 0.0465,
+          "score_min_when_seen": 0.2397
+        },
+        "yunet": {
+          "hit_rate": 0.0345,
+          "score_mean_when_seen": 0.307,
+          "score_std_when_seen": 0.0,
+          "score_min_when_seen": 0.307
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 0.0345,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      }
+    ],
+    "B": [
+      {
+        "face_id": "B01",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "yunet": {
+          "hit_rate": 0.1034,
+          "score_mean_when_seen": 0.374,
+          "score_std_when_seen": 0.0022,
+          "score_min_when_seen": 0.3724
+        },
+        "hit_rate_either": 0.1034,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 5.38
+      },
+      {
+        "face_id": "B02",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8792,
+          "score_std_when_seen": 0.0265,
+          "score_min_when_seen": 0.8378
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8182,
+          "score_std_when_seen": 0.0273,
+          "score_min_when_seen": 0.7752
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B03",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.0,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 6.0
+      },
+      {
+        "face_id": "B04",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.2414,
+          "score_mean_when_seen": 0.2502,
+          "score_std_when_seen": 0.0341,
+          "score_min_when_seen": 0.2026
+        },
+        "yunet": {
+          "hit_rate": 0.1379,
+          "score_mean_when_seen": 0.3296,
+          "score_std_when_seen": 0.0285,
+          "score_min_when_seen": 0.3029
+        },
+        "hit_rate_either": 0.2414,
+        "hit_rate_both": 0.1379,
+        "track_state": "lost",
+        "flash_hz": 4.55
+      },
+      {
+        "face_id": "B05",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.876,
+          "score_std_when_seen": 0.0207,
+          "score_min_when_seen": 0.8117
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8052,
+          "score_std_when_seen": 0.0342,
+          "score_min_when_seen": 0.7565
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B06",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.347,
+          "score_std_when_seen": 0.0784,
+          "score_min_when_seen": 0.2417
+        },
+        "yunet": {
+          "hit_rate": 0.3793,
+          "score_mean_when_seen": 0.3681,
+          "score_std_when_seen": 0.0308,
+          "score_min_when_seen": 0.3113
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 0.3793,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B07",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.5934,
+          "score_std_when_seen": 0.0471,
+          "score_min_when_seen": 0.5076
+        },
+        "yunet": {
+          "hit_rate": 0.1724,
+          "score_mean_when_seen": 0.3707,
+          "score_std_when_seen": 0.0481,
+          "score_min_when_seen": 0.3031
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 0.1724,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B08",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.1034,
+          "score_mean_when_seen": 0.2485,
+          "score_std_when_seen": 0.0094,
+          "score_min_when_seen": 0.2355
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.1034,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 5.38
+      },
+      {
+        "face_id": "B09",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.6052,
+          "score_std_when_seen": 0.0981,
+          "score_min_when_seen": 0.4052
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.4036,
+          "score_std_when_seen": 0.0393,
+          "score_min_when_seen": 0.3317
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B10",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.8621,
+          "score_mean_when_seen": 0.3339,
+          "score_std_when_seen": 0.0911,
+          "score_min_when_seen": 0.21
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.8621,
+        "hit_rate_both": 0.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B11",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8963,
+          "score_std_when_seen": 0.0161,
+          "score_min_when_seen": 0.8639
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8326,
+          "score_std_when_seen": 0.0843,
+          "score_min_when_seen": 0.6756
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B12",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.7586,
+          "score_mean_when_seen": 0.2885,
+          "score_std_when_seen": 0.0747,
+          "score_min_when_seen": 0.2027
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.7586,
+        "hit_rate_both": 0.0,
+        "track_state": "tentative",
+        "flash_hz": 1.45
+      },
+      {
+        "face_id": "B13",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.6552,
+          "score_mean_when_seen": 0.8734,
+          "score_std_when_seen": 0.0272,
+          "score_min_when_seen": 0.8483
+        },
+        "yunet": {
+          "hit_rate": 0.5172,
+          "score_mean_when_seen": 0.8137,
+          "score_std_when_seen": 0.1359,
+          "score_min_when_seen": 0.4202
+        },
+        "hit_rate_either": 0.6552,
+        "hit_rate_both": 0.5172,
+        "track_state": "tentative",
+        "flash_hz": 2.07
+      },
+      {
+        "face_id": "B14",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.3677,
+          "score_std_when_seen": 0.1114,
+          "score_min_when_seen": 0.2059
+        },
+        "yunet": {
+          "hit_rate": 0.1034,
+          "score_mean_when_seen": 0.3546,
+          "score_std_when_seen": 0.0078,
+          "score_min_when_seen": 0.3487
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 0.1034,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B15",
+        "consensus": false,
+        "detectors_at_source": [
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.4613,
+          "score_std_when_seen": 0.0841,
+          "score_min_when_seen": 0.2335
+        },
+        "yunet": {
+          "hit_rate": 0.3103,
+          "score_mean_when_seen": 0.3529,
+          "score_std_when_seen": 0.0309,
+          "score_min_when_seen": 0.309
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 0.3103,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B16",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8346,
+          "score_std_when_seen": 0.0509,
+          "score_min_when_seen": 0.7347
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8434,
+          "score_std_when_seen": 0.0724,
+          "score_min_when_seen": 0.6851
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B17",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.3793,
+          "score_mean_when_seen": 0.3117,
+          "score_std_when_seen": 0.0587,
+          "score_min_when_seen": 0.2234
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.3793,
+        "hit_rate_both": 0.0,
+        "track_state": "tentative",
+        "flash_hz": 3.72
+      },
+      {
+        "face_id": "B18",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8547,
+          "score_std_when_seen": 0.0345,
+          "score_min_when_seen": 0.7832
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.5369,
+          "score_std_when_seen": 0.0567,
+          "score_min_when_seen": 0.4472
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B19",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.7931,
+          "score_mean_when_seen": 0.2939,
+          "score_std_when_seen": 0.0657,
+          "score_min_when_seen": 0.203
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.7931,
+        "hit_rate_both": 0.0,
+        "track_state": "tentative",
+        "flash_hz": 1.24
+      },
+      {
+        "face_id": "B20",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.5642,
+          "score_std_when_seen": 0.0815,
+          "score_min_when_seen": 0.3243
+        },
+        "yunet": {
+          "hit_rate": 0.6897,
+          "score_mean_when_seen": 0.3655,
+          "score_std_when_seen": 0.0556,
+          "score_min_when_seen": 0.3
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 0.6897,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B21",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.6853,
+          "score_std_when_seen": 0.1143,
+          "score_min_when_seen": 0.4267
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.6822,
+          "score_std_when_seen": 0.1603,
+          "score_min_when_seen": 0.4302
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B22",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8447,
+          "score_std_when_seen": 0.0357,
+          "score_min_when_seen": 0.7827
+        },
+        "yunet": {
+          "hit_rate": 0.8966,
+          "score_mean_when_seen": 0.6538,
+          "score_std_when_seen": 0.1705,
+          "score_min_when_seen": 0.3674
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 0.8966,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B23",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8505,
+          "score_std_when_seen": 0.047,
+          "score_min_when_seen": 0.7576
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.6329,
+          "score_std_when_seen": 0.1665,
+          "score_min_when_seen": 0.4315
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B24",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.6694,
+          "score_std_when_seen": 0.0568,
+          "score_min_when_seen": 0.5463
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 0.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B25",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.069,
+          "score_mean_when_seen": 0.2142,
+          "score_std_when_seen": 0.0047,
+          "score_min_when_seen": 0.2095
+        },
+        "yunet": {
+          "hit_rate": 0.1379,
+          "score_mean_when_seen": 0.3414,
+          "score_std_when_seen": 0.0274,
+          "score_min_when_seen": 0.3074
+        },
+        "hit_rate_either": 0.1379,
+        "hit_rate_both": 0.069,
+        "track_state": "lost",
+        "flash_hz": 5.17
+      },
+      {
+        "face_id": "B26",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.2069,
+          "score_mean_when_seen": 0.3378,
+          "score_std_when_seen": 0.0761,
+          "score_min_when_seen": 0.2523
+        },
+        "yunet": {
+          "hit_rate": 0.069,
+          "score_mean_when_seen": 0.3323,
+          "score_std_when_seen": 0.021,
+          "score_min_when_seen": 0.3114
+        },
+        "hit_rate_either": 0.2069,
+        "hit_rate_both": 0.069,
+        "track_state": "lost",
+        "flash_hz": 4.76
+      },
+      {
+        "face_id": "B27",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.8397,
+          "score_std_when_seen": 0.0572,
+          "score_min_when_seen": 0.7311
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.5348,
+          "score_std_when_seen": 0.1037,
+          "score_min_when_seen": 0.3934
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B28",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "yunet": {
+          "hit_rate": 0.069,
+          "score_mean_when_seen": 0.5666,
+          "score_std_when_seen": 0.0173,
+          "score_min_when_seen": 0.5493
+        },
+        "hit_rate_either": 0.069,
+        "hit_rate_both": 0.0,
+        "track_state": "lost",
+        "flash_hz": 5.59
+      },
+      {
+        "face_id": "B29",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.8276,
+          "score_mean_when_seen": 0.3535,
+          "score_std_when_seen": 0.0915,
+          "score_min_when_seen": 0.2013
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.8276,
+        "hit_rate_both": 0.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B30",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.9655,
+          "score_mean_when_seen": 0.3424,
+          "score_std_when_seen": 0.0639,
+          "score_min_when_seen": 0.2434
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.9655,
+        "hit_rate_both": 0.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B31",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.5862,
+          "score_mean_when_seen": 0.3,
+          "score_std_when_seen": 0.0409,
+          "score_min_when_seen": 0.2174
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.5862,
+        "hit_rate_both": 0.0,
+        "track_state": "tentative",
+        "flash_hz": 2.48
+      },
+      {
+        "face_id": "B32",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 0.5517,
+          "score_mean_when_seen": 0.3017,
+          "score_std_when_seen": 0.0975,
+          "score_min_when_seen": 0.2054
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 0.5517,
+        "hit_rate_both": 0.0,
+        "track_state": "tentative",
+        "flash_hz": 2.69
+      },
+      {
+        "face_id": "B33",
+        "consensus": false,
+        "detectors_at_source": [
+          "blazeface"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.4779,
+          "score_std_when_seen": 0.0895,
+          "score_min_when_seen": 0.2726
+        },
+        "yunet": {
+          "hit_rate": 0.0,
+          "score_mean_when_seen": null,
+          "score_std_when_seen": null,
+          "score_min_when_seen": null
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 0.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      },
+      {
+        "face_id": "B34",
+        "consensus": true,
+        "detectors_at_source": [
+          "blazeface",
+          "yunet"
+        ],
+        "blazeface": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.7703,
+          "score_std_when_seen": 0.0366,
+          "score_min_when_seen": 0.6883
+        },
+        "yunet": {
+          "hit_rate": 1.0,
+          "score_mean_when_seen": 0.5733,
+          "score_std_when_seen": 0.104,
+          "score_min_when_seen": 0.3173
+        },
+        "hit_rate_either": 1.0,
+        "hit_rate_both": 1.0,
+        "track_state": "confirmed",
+        "flash_hz": 0.0
+      }
+    ]
+  }
+}
