@@ -240,7 +240,11 @@
                   "depth_rank",
                   "attribution_link",
                   "disagreement_vector",
-                  "containment_link"
+                  "containment_link",
+                  "tentative_track",
+                  "lost_track",
+                  "track_state_readout",
+                  "isotherm_band"
                 ],
                 "description": "Closed set. Every entry corresponds to a quantity Stage 1 measures; adding a cue type means adding a measurement, not a decoration. See docs/OVERLAY_VOCABULARY.md for the element-to-source table."
               },
@@ -262,7 +266,8 @@
                       "field",
                       "overlay_plan",
                       "noise_floor",
-                      "structure"
+                      "structure",
+                      "stability"
                     ]
                   },
                   "pointer": {
@@ -345,6 +350,26 @@
                         "type": "integer"
                       }
                     }
+                  }
+                }
+              },
+              "flash_from": {
+                "type": "object",
+                "description": "Flash rate for this cue, taken from a measurement rather than chosen. When present the renderer reads flash_hz from the named record and must not substitute a rate of its own. A confirmed track has flash_hz 0 and does not flash: stillness is the signal.",
+                "required": [
+                  "file",
+                  "pointer",
+                  "field"
+                ],
+                "properties": {
+                  "file": {
+                    "const": "stability"
+                  },
+                  "pointer": {
+                    "type": "string"
+                  },
+                  "field": {
+                    "const": "flash_hz"
                   }
                 }
               }

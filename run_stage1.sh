@@ -75,3 +75,6 @@ for panel in A B; do
   "$PY" stage1/preview_overlay.py --panel "$panel" --out "$OUT"
   "$PY" stage1/preview_structure.py --panel "$panel" --out "$OUT"
 done
+
+echo "== detection stability and track states (drives flash rates)"
+"$PY" stage1/stability.py --out "$OUT" --faces all
