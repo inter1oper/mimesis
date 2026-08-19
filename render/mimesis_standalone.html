@@ -121,20 +121,49 @@ function homography(w,h,c){
 }
 
 /* ---------- zones ---------- */
+// Overlay nominal size is the painting's own aspect, so a normalised box is
+// square on screen when it is square on the canvas. 40 x 30 cm -> 4:3.
 const NOMINAL={overlay:[1000,750],text:[1121,1400]};
+function nominalFor(z){
+  if(z.kind!=="overlay") return NOMINAL.text;
+  const d=D["panel_"+z.panel.toLowerCase()+"_detection"];
+  const cm=d&&d.canvas_cm;
+  if(cm&&cm[0]&&cm[1]) return [1000, Math.round(1000*cm[1]/cm[0])];
+  return NOMINAL.overlay;
+}
 const ZONES=[{id:"A-overlay",kind:"overlay",panel:"A"},{id:"A-text",kind:"text",panel:"A"},
   {id:"B-overlay",kind:"overlay",panel:"B"},{id:"B-text",kind:"text",panel:"B"}];
 const LS_KEY="mimesis.zones.v2";
 function defaultCorners(z){
-  // Physically accurate: 4K across 3.5 m, two 40 cm paintings at 22% of raster.
-  const W=innerWidth,H=innerHeight;
+  // Physically accurate layout: 4K across 3.5 m, two 40 cm paintings at 22% of
+  // the raster, text columns at a 65-character measure, the rest black.
+  //
+  // The layout is defined in the TARGET raster (3840 x 2160) and then letter-
+  // boxed into whatever window this is actually running in. Deriving it from
+  // innerWidth/innerHeight directly was the alignment bug: on any window that
+  // is not 16:9 the overlay zone stopped being 4:3, and the painting -- and
+  // every box drawn on it -- was stretched to fit.
+  const TW=3840, TH=2160;
+  const s=Math.min(innerWidth/TW, innerHeight/TH);
+  const ox=(innerWidth-TW*s)/2, oy=(innerHeight-TH*s)/2;
   const X={"A-text":[0.0938,0.3857],"A-overlay":[0.3857,0.5000],
            "B-overlay":[0.5000,0.6143],"B-text":[0.6143,0.9063]}[z.id];
-  const Y=z.kind==="overlay"?[0.4236,0.5759]:[0.1759,0.8241];
-  return [[X[0]*W,Y[0]*H],[X[1]*W,Y[0]*H],[X[1]*W,Y[1]*H],[X[0]*W,Y[1]*H]];
+  const x0=ox+X[0]*TW*s, x1=ox+X[1]*TW*s;
+  let y0,y1;
+  if(z.kind==="overlay"){
+    // height follows from width and the canvas ratio, so the default is exactly
+    // the painting's aspect rather than a rounded fraction of the raster
+    const [nw,nh]=nominalFor(z);
+    const hgt=(x1-x0)*nh/nw;
+    const cy=oy+0.4998*TH*s;
+    y0=cy-hgt/2; y1=cy+hgt/2;
+  } else {
+    y0=oy+0.1759*TH*s; y1=oy+0.8241*TH*s;
+  }
+  return [[x0,y0],[x1,y0],[x1,y1],[x0,y1]];
 }
 function loadZones(){ let s=null; try{s=JSON.parse(localStorage.getItem(LS_KEY)||"null");}catch(e){}
-  ZONES.forEach(z=>{ const [w,h]=NOMINAL[z.kind]; z.w=w; z.h=h;
+  ZONES.forEach(z=>{ const [w,h]=nominalFor(z); z.w=w; z.h=h;
     z.corners=(s&&s[z.id])||defaultCorners(z); }); }
 function saveZones(){ const o={}; ZONES.forEach(z=>o[z.id]=z.corners);
   localStorage.setItem(LS_KEY,JSON.stringify(o)); }
@@ -168,7 +197,7 @@ function buildZones(){
 }
 
 /* ---------- clock ---------- */
-let audio=null, showBackdrop=true;
+let audio=null, showBackdrop=true, showGrid=false;
 function clockSeconds(){ return (audio&&!audio.paused)?audio.currentTime:performance.now()/1000; }
 function loopT(s){ const L=s.loop_duration_s||900; return ((clockSeconds()%L)+L)%L; }
 /* growth: linear, hard-edged. no easing anywhere in this file. */
@@ -192,6 +221,24 @@ function drawOverlay(z){
   const face=id=>det.faces.find(f=>f.face_id===id);
   const g=document.createDocumentFragment(); let n=0;
   if(z.backdrop) z.backdrop.style.display=showBackdrop?"":"none";
+  if(showGrid){
+    const gg=document.createDocumentFragment();
+    gg.appendChild(mk("rect",{class:"s obs",x:0.5,y:0.5,width:W-1,height:H-1}));
+    [[0,0],[W,0],[W,H],[0,H]].forEach(([px,py])=>{
+      gg.appendChild(mk("path",{class:"s obs",
+        d:`M${px-26} ${py}h52M${px} ${py-26}v52`}));
+    });
+    gg.appendChild(mk("path",{class:"s obs",
+      d:`M${W/2-30} ${H/2}h60M${W/2} ${H/2-30}v60`}));
+    for(let i=1;i<10;i++){
+      gg.appendChild(mk("line",{class:"s obs",opacity:.25,x1:W*i/10,y1:0,x2:W*i/10,y2:H}));
+      gg.appendChild(mk("line",{class:"s obs",opacity:.25,x1:0,y1:H*i/10,x2:W,y2:H*i/10}));
+    }
+    gg.appendChild(mk("text",{class:"obs",x:6,y:6},
+      `PANEL ${z.panel}  ${W}x${H}  aspect ${(W/H).toFixed(4)}`));
+    z.ink.replaceChildren(gg);
+    return 1;
+  }
 
   for(const c of score.tracks.overlay){
     if(t<c.t_in||t>=c.t_out) continue;
@@ -217,9 +264,12 @@ function drawOverlay(z){
   return n;
 }
 
-function tab(g,x,y,txt,cls,anchor){
+function tab(g,x,y,txt,cls,anchor,W,H){
   const w=txt.length*6.0+7, h=12.5;
-  const x0 = anchor==="end" ? x-w : x;
+  let x0 = anchor==="end" ? x-w : x;
+  // keep the plate inside the zone: a tab half off the canvas reads as damage
+  if(W){ x0=Math.max(2,Math.min(x0,W-w-2)); }
+  if(H){ y=Math.max(h+1,Math.min(y,H-2)); }
   g.appendChild(mk("rect",{class:"tab "+cls,x:x0,y:y-h+2.5,width:w,height:h}));
   g.appendChild(mk("text",{class:"tab "+cls,x:x0+3.5,y:y-h+5},txt));
   return w;
@@ -266,8 +316,10 @@ function drawCue(g,c,rec,face,W,H,t,score){
     if(!node) break;
     const r=(c.r||0.019)*W*k;
     push(mk("circle",{class:"s "+cls,cx:node[0],cy:node[1],r}));
-    if(c.value&&k>=1)
-      push(mk("text",{class:cls,x:node[0]-r*0.72,y:node[1]-4},c.value));
+    // the circle carries the face id; the number lives on the connector, once
+    if(k>=1&&c.face_ids&&c.face_ids[0])
+      push(mk("text",{class:cls,x:node[0]-r*0.62,y:node[1]-4.5,
+        "font-size":9},c.face_ids[0]));
     if(c.cue==="node_pulse"&&k>=1)
       push(mk("circle",{class:"s "+cls,cx:node[0],cy:node[1],r:r*1.5,
         "stroke-dasharray":"2 6"}));
@@ -278,7 +330,12 @@ function drawCue(g,c,rec,face,W,H,t,score){
     // leaves the box at its nearest edge, arrives at the circle's rim
     const dx=node[0]-cx, dy=node[1]-cy, L=Math.hypot(dx,dy)||1;
     const ux=dx/L, uy=dy/L, r=0.019*W;
-    const sx=cx+ux*Math.min(b[2]*W,b[3]*H)*0.55, sy=cy+uy*Math.min(b[2]*W,b[3]*H)*0.55;
+    // exact exit point on the box outline, so the line touches the edge
+    const hw=b[2]*W/2, hh=b[3]*H/2;
+    const tx=Math.abs(ux)>1e-6?hw/Math.abs(ux):Infinity;
+    const ty=Math.abs(uy)>1e-6?hh/Math.abs(uy):Infinity;
+    const tEdge=Math.min(tx,ty);
+    const sx=cx+ux*tEdge, sy=cy+uy*tEdge;
     const ex=node[0]-ux*r, ey=node[1]-uy*r;
     push(mk("line",{class:"s "+cls,x1:sx,y1:sy,x2:sx+(ex-sx)*k,y2:sy+(ey-sy)*k}));
     return 1;
@@ -292,10 +349,10 @@ function drawCue(g,c,rec,face,W,H,t,score){
     const x = flip? mx-6 : mx+6;
     const y = my + 8 + (c.row||0)*13;
     const l1=typed(c.label||"",t,c.t_in,26);
-    if(l1) tab(g,x,y,l1,cls,anchor);
+    if(l1) tab(g,x,y,l1,cls,anchor,W,H);
     if(c.label2&&l1.length>=(c.label||"").length){
       const l2=typed(c.label2,t,c.t_in+(c.label||"").length/26,26);
-      if(l2) tab(g,x,y+13,l2,cls,anchor);
+      if(l2) tab(g,x,y+13,l2,cls,anchor,W,H);
     }
     return 1;
   }
@@ -303,9 +360,9 @@ function drawCue(g,c,rec,face,W,H,t,score){
     if(!b) break;
     const x0=b[0]*W,y0=b[1]*H,w=b[2]*W,h=b[3]*H;
     if(c.mode==="confidence"){
-      // a bar inside the box, length = the score that admitted it
-      push(mk("line",{class:"s "+cls,x1:x0+2,y1:y0+h-3,
-        x2:x0+2+(w-4)*c.value*k,y2:y0+h-3}));
+      // a bar along the box's inner top edge, length = the score that admitted it
+      push(mk("line",{class:"s "+cls,x1:x0+1.5,y1:y0+3,
+        x2:x0+1.5+(w-3)*c.value*k,y2:y0+3,opacity:.85}));
     } else if(c.mode==="subdivide"){
       const m=c.cells||3;
       for(let i=1;i<m;i++){
@@ -375,7 +432,7 @@ function drawCue(g,c,rec,face,W,H,t,score){
     const bw=w+16*kk, bh=20+10*kk;
     push(mk("rect",{class:"s "+cls,x:ax,y:ay-bh+8,width:bw,height:bh,opacity:.55}));
     if(kk>=1){
-      tab(g,ax+4,ay+4,typed(c.label,t,c.t_in+0.5,18),cls,"start");
+      tab(g,ax+4,ay+4,typed(c.label,t,c.t_in+0.5,18),cls,"start",W,H);
       if(b) push(mk("line",{class:"s "+cls,opacity:.45,
         x1:ax,y1:ay-bh/2+8,x2:(b[0]+b[2])*W,y2:(b[1]+b[3]/2)*H}));
       if(c.unsupportable)
@@ -507,7 +564,8 @@ function frame(){
   if(sa){ const t=loopT(sa);
     document.getElementById("status").textContent=
       `${currentPass(sa,t)}   t ${t.toFixed(1)} / ${sa.loop_duration_s}s   marks ${marks}   `+
-      `${showBackdrop?"backdrop on":"backdrop off"}   [c] config  [p] backdrop`; }
+      `${showBackdrop?"backdrop":"no backdrop"}${showGrid?"  GRID":""}   `+
+      `[c] config  [p] backdrop  [g] target`; }
   requestAnimationFrame(frame);
 }
 
@@ -516,11 +574,13 @@ function hud(){ document.getElementById("hud").textContent=
 `CONFIG MODE
   drag the four handles per zone to keystone onto the painting
   c  leave config     p  painting backdrop (preview only — off in the gallery)
+  g  alignment target — border, corner crosshairs, centre cross, tenths grid
   e  export alignment    i  import alignment    r  reset zones`; }
 addEventListener("keydown",e=>{
   const k=e.key.toLowerCase();
   if(k==="c"){ document.body.classList.toggle("config"); hud(); }
   else if(k==="p"){ showBackdrop=!showBackdrop; }
+  else if(k==="g"){ showGrid=!showGrid; }
   else if(!document.body.classList.contains("config")) return;
   else if(k==="e"){ const o={}; ZONES.forEach(z=>o[z.id]=z.corners);
     const a=document.createElement("a");
