@@ -124,6 +124,18 @@ computes each face's detail tier from its measured box rather than by eye.
 wall and generates the pixel values, so changing the projector cannot silently
 change the work.
 
+## Running Stage 1
+
+```
+./run_stage1.sh                              # 4K across 3.5 m, the current plan
+PROJECTOR=1920x1080 SPAN_MM=3000 ./run_stage1.sh
+```
+
+Needs the painting photographs at `data/paintings/panel_a_photo.*` and
+`panel_b_photo.*`. Check `out/panel_*_rectify_qa.jpg` before trusting anything
+downstream — if the drawn quad is not on the canvas edges, re-run `rectify.py`
+for that panel with `--corners` and run the script again.
+
 ## Setup
 
 ```
