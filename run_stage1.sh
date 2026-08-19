@@ -58,3 +58,13 @@ echo "Review these before Stage 2:"
 echo "  $OUT/panel_*_rectify_qa.jpg      is the quad on the canvas edges?"
 echo "  $OUT/panel_*_detection_qa.jpg    boxes, meshes, NOMESH flags"
 echo "  $OUT/noise_floor.json            what counts as a confident detection"
+
+# Steps 5 and 6 run once both panels have detections.
+echo "== per-face biometric readout and cross-panel matching"
+"$PY" stage1/analyze_faces.py --out "$OUT"
+for panel in A B; do
+  lower=$(echo "$panel" | tr 'A-Z' 'a-z')
+  echo "== panel $panel: response field and blob tracking"
+  "$PY" stage1/field_scan.py --panel "$panel" \
+      --rectified "$OUT/panel_${lower}_rectified.png" --out "$OUT"
+done

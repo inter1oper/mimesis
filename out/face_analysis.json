@@ -1,0 +1,2960 @@
+{
+  "schema": "mimesis.faceanalysis.v1",
+  "faces_scope": "consensus",
+  "models": {
+    "landmarker": "face_landmarker.task",
+    "recognizer": "face_recognition_sface_2021dec.onnx"
+  },
+  "measures": {
+    "blendshapes": "52 named expression coefficients, percent",
+    "head_pose": "degrees, from the landmarker's 4x4 transformation matrix",
+    "symmetry": "mesh reflected across its own fitted axis, nearest-neighbour residual in interocular units; lower is more symmetric",
+    "cross_panel": "SFace cosine similarity. NOT identity: these are painted faces, and a high score means the descriptor cannot separate them, not that they are the same person."
+  },
+  "sface_same_identity_threshold": {
+    "cosine": 0.363,
+    "note": "The threshold OpenCV documents for SFace calling two photographs the same person. Applied here to PAINTED faces, which is out of the model's domain: shared palette, brushwork and lighting inflate similarity between any two faces from the same hand. A score above this says the descriptor cannot separate them. It does not say they are the same person, and the piece must not claim otherwise."
+  },
+  "hubness_control": {
+    "A05": {
+      "mean_similarity_to_all": 0.19,
+      "times_best_match": 1
+    },
+    "A08": {
+      "mean_similarity_to_all": 0.1125,
+      "times_best_match": 0
+    },
+    "A17": {
+      "mean_similarity_to_all": 0.0789,
+      "times_best_match": 0
+    },
+    "A19": {
+      "mean_similarity_to_all": 0.2369,
+      "times_best_match": 1
+    },
+    "A29": {
+      "mean_similarity_to_all": 0.2438,
+      "times_best_match": 5
+    },
+    "A40": {
+      "mean_similarity_to_all": 0.1885,
+      "times_best_match": 0
+    },
+    "A43": {
+      "mean_similarity_to_all": 0.2502,
+      "times_best_match": 0
+    },
+    "A44": {
+      "mean_similarity_to_all": 0.2253,
+      "times_best_match": 0
+    },
+    "A48": {
+      "mean_similarity_to_all": 0.2152,
+      "times_best_match": 1
+    },
+    "A49": {
+      "mean_similarity_to_all": 0.1881,
+      "times_best_match": 0
+    },
+    "A53": {
+      "mean_similarity_to_all": 0.1551,
+      "times_best_match": 0
+    },
+    "A57": {
+      "mean_similarity_to_all": 0.1601,
+      "times_best_match": 0
+    },
+    "B02": {
+      "mean_similarity_to_all": 0.2372,
+      "times_best_match": 0
+    },
+    "B05": {
+      "mean_similarity_to_all": 0.2483,
+      "times_best_match": 0
+    },
+    "B09": {
+      "mean_similarity_to_all": 0.0904,
+      "times_best_match": 0
+    },
+    "B16": {
+      "mean_similarity_to_all": 0.2548,
+      "times_best_match": 0
+    },
+    "B18": {
+      "mean_similarity_to_all": 0.2713,
+      "times_best_match": 0
+    },
+    "B23": {
+      "mean_similarity_to_all": 0.2125,
+      "times_best_match": 0
+    },
+    "B27": {
+      "mean_similarity_to_all": 0.3104,
+      "times_best_match": 0
+    },
+    "B34": {
+      "mean_similarity_to_all": 0.1203,
+      "times_best_match": 0
+    }
+  },
+  "panels": {
+    "A": [
+      {
+        "face_id": "A05",
+        "box": [
+          0.131358,
+          0.138995,
+          0.107449,
+          0.161598
+        ],
+        "detectors": {
+          "yunet": 0.8281,
+          "blazeface": 0.8227
+        },
+        "geometry": {
+          "interocular_px": 252.8,
+          "interocular_frac_of_canvas_w": 0.05267,
+          "box_area_frac_of_canvas": 0.017364,
+          "box_aspect_h_over_w": 1.504,
+          "mesh_extent_px": [
+            432.8,
+            495.4
+          ],
+          "mesh_wider_than_box": false
+        },
+        "head_pose": {
+          "pitch_deg": -3.68,
+          "yaw_deg": 24.95,
+          "roll_deg": -4.46
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.058,
+          "residual_p95_iod": 0.2909,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 0.12,
+          "browDownRight": 0.76,
+          "browInnerUp": 37.42,
+          "browOuterUpLeft": 29.75,
+          "browOuterUpRight": 12.69,
+          "cheekPuff": 0.0,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 7.34,
+          "eyeBlinkRight": 2.44,
+          "eyeLookDownLeft": 66.97,
+          "eyeLookDownRight": 65.52,
+          "eyeLookInLeft": 66.56,
+          "eyeLookInRight": 0.17,
+          "eyeLookOutLeft": 0.67,
+          "eyeLookOutRight": 68.6,
+          "eyeLookUpLeft": 0.91,
+          "eyeLookUpRight": 0.3,
+          "eyeSquintLeft": 47.52,
+          "eyeSquintRight": 6.19,
+          "eyeWideLeft": 2.87,
+          "eyeWideRight": 1.16,
+          "jawForward": 0.01,
+          "jawLeft": 0.37,
+          "jawOpen": 0.06,
+          "jawRight": 0.0,
+          "mouthClose": 0.0,
+          "mouthDimpleLeft": 0.37,
+          "mouthDimpleRight": 0.07,
+          "mouthFrownLeft": 1.1,
+          "mouthFrownRight": 1.09,
+          "mouthFunnel": 0.08,
+          "mouthLeft": 0.83,
+          "mouthLowerDownLeft": 0.05,
+          "mouthLowerDownRight": 0.04,
+          "mouthPressLeft": 1.78,
+          "mouthPressRight": 1.78,
+          "mouthPucker": 4.11,
+          "mouthRight": 0.01,
+          "mouthRollLower": 0.48,
+          "mouthRollUpper": 0.02,
+          "mouthShrugLower": 25.91,
+          "mouthShrugUpper": 23.51,
+          "mouthSmileLeft": 0.09,
+          "mouthSmileRight": 0.05,
+          "mouthStretchLeft": 0.73,
+          "mouthStretchRight": 0.22,
+          "mouthUpperUpLeft": 0.64,
+          "mouthUpperUpRight": 0.81,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "eyeLookOutRight",
+            "pct": 68.6
+          },
+          {
+            "name": "eyeLookDownLeft",
+            "pct": 66.97
+          },
+          {
+            "name": "eyeLookInLeft",
+            "pct": 66.56
+          },
+          {
+            "name": "eyeLookDownRight",
+            "pct": 65.52
+          },
+          {
+            "name": "eyeSquintLeft",
+            "pct": 47.52
+          },
+          {
+            "name": "browInnerUp",
+            "pct": 37.42
+          },
+          {
+            "name": "browOuterUpLeft",
+            "pct": 29.75
+          },
+          {
+            "name": "mouthShrugLower",
+            "pct": 25.91
+          }
+        ],
+        "photometry": {
+          "luma_mean": 69.1,
+          "luma_std": 28.0,
+          "luma_min": 0,
+          "luma_max": 225
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "A08",
+        "box": [
+          0.256458,
+          0.128962,
+          0.06653,
+          0.101377
+        ],
+        "detectors": {
+          "yunet": 0.8632,
+          "blazeface": 0.8468
+        },
+        "geometry": null,
+        "head_pose": null,
+        "symmetry": null,
+        "blendshapes": null,
+        "mesh_note": "mesh_did_not_converge",
+        "photometry": {
+          "luma_mean": 80.5,
+          "luma_std": 25.2,
+          "luma_min": 19,
+          "luma_max": 173
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "A17",
+        "box": [
+          0.320528,
+          0.302113,
+          0.05244,
+          0.089052
+        ],
+        "detectors": {
+          "yunet": 0.3922,
+          "blazeface": 0.2697
+        },
+        "geometry": null,
+        "head_pose": null,
+        "symmetry": null,
+        "blendshapes": null,
+        "mesh_note": "mesh_did_not_converge",
+        "photometry": {
+          "luma_mean": 93.9,
+          "luma_std": 73.9,
+          "luma_min": 20,
+          "luma_max": 254
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "A19",
+        "box": [
+          0.383925,
+          0.094816,
+          0.077981,
+          0.123061
+        ],
+        "detectors": {
+          "yunet": 0.9131,
+          "blazeface": 0.9036
+        },
+        "geometry": {
+          "interocular_px": 212.8,
+          "interocular_frac_of_canvas_w": 0.04433,
+          "box_area_frac_of_canvas": 0.009596,
+          "box_aspect_h_over_w": 1.578,
+          "mesh_extent_px": [
+            350.4,
+            444.7
+          ],
+          "mesh_wider_than_box": false
+        },
+        "head_pose": {
+          "pitch_deg": -4.59,
+          "yaw_deg": 7.16,
+          "roll_deg": -2.75
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.0404,
+          "residual_p95_iod": 0.0984,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 1.13,
+          "browDownRight": 0.03,
+          "browInnerUp": 56.53,
+          "browOuterUpLeft": 1.84,
+          "browOuterUpRight": 14.19,
+          "cheekPuff": 0.0,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 31.98,
+          "eyeBlinkRight": 9.48,
+          "eyeLookDownLeft": 34.87,
+          "eyeLookDownRight": 17.17,
+          "eyeLookInLeft": 32.65,
+          "eyeLookInRight": 9.51,
+          "eyeLookOutLeft": 0.76,
+          "eyeLookOutRight": 6.37,
+          "eyeLookUpLeft": 1.76,
+          "eyeLookUpRight": 6.57,
+          "eyeSquintLeft": 22.92,
+          "eyeSquintRight": 50.66,
+          "eyeWideLeft": 0.18,
+          "eyeWideRight": 0.46,
+          "jawForward": 0.0,
+          "jawLeft": 0.35,
+          "jawOpen": 1.75,
+          "jawRight": 0.0,
+          "mouthClose": 0.48,
+          "mouthDimpleLeft": 0.91,
+          "mouthDimpleRight": 0.1,
+          "mouthFrownLeft": 0.15,
+          "mouthFrownRight": 0.32,
+          "mouthFunnel": 0.06,
+          "mouthLeft": 0.35,
+          "mouthLowerDownLeft": 0.03,
+          "mouthLowerDownRight": 0.03,
+          "mouthPressLeft": 0.66,
+          "mouthPressRight": 0.82,
+          "mouthPucker": 16.47,
+          "mouthRight": 0.03,
+          "mouthRollLower": 17.03,
+          "mouthRollUpper": 2.58,
+          "mouthShrugLower": 17.31,
+          "mouthShrugUpper": 1.2,
+          "mouthSmileLeft": 0.0,
+          "mouthSmileRight": 0.0,
+          "mouthStretchLeft": 0.01,
+          "mouthStretchRight": 0.12,
+          "mouthUpperUpLeft": 0.01,
+          "mouthUpperUpRight": 0.01,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "browInnerUp",
+            "pct": 56.53
+          },
+          {
+            "name": "eyeSquintRight",
+            "pct": 50.66
+          },
+          {
+            "name": "eyeLookDownLeft",
+            "pct": 34.87
+          },
+          {
+            "name": "eyeLookInLeft",
+            "pct": 32.65
+          },
+          {
+            "name": "eyeBlinkLeft",
+            "pct": 31.98
+          },
+          {
+            "name": "eyeSquintLeft",
+            "pct": 22.92
+          },
+          {
+            "name": "mouthShrugLower",
+            "pct": 17.31
+          },
+          {
+            "name": "eyeLookDownRight",
+            "pct": 17.17
+          }
+        ],
+        "photometry": {
+          "luma_mean": 87.5,
+          "luma_std": 25.3,
+          "luma_min": 18,
+          "luma_max": 198
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "A29",
+        "box": [
+          0.495114,
+          0.177277,
+          0.059769,
+          0.09031
+        ],
+        "detectors": {
+          "blazeface": 0.9349,
+          "yunet": 0.9037
+        },
+        "geometry": {
+          "interocular_px": 189.7,
+          "interocular_frac_of_canvas_w": 0.03953,
+          "box_area_frac_of_canvas": 0.005398,
+          "box_aspect_h_over_w": 1.511,
+          "mesh_extent_px": [
+            297.6,
+            329.7
+          ],
+          "mesh_wider_than_box": true
+        },
+        "head_pose": {
+          "pitch_deg": 11.91,
+          "yaw_deg": 3.42,
+          "roll_deg": 12.07
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.019,
+          "residual_p95_iod": 0.0515,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 2.21,
+          "browDownRight": 2.84,
+          "browInnerUp": 6.3,
+          "browOuterUpLeft": 7.41,
+          "browOuterUpRight": 8.95,
+          "cheekPuff": 0.0,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 7.4,
+          "eyeBlinkRight": 7.3,
+          "eyeLookDownLeft": 6.74,
+          "eyeLookDownRight": 6.15,
+          "eyeLookInLeft": 12.2,
+          "eyeLookInRight": 1.47,
+          "eyeLookOutLeft": 3.47,
+          "eyeLookOutRight": 17.61,
+          "eyeLookUpLeft": 12.41,
+          "eyeLookUpRight": 12.65,
+          "eyeSquintLeft": 48.02,
+          "eyeSquintRight": 61.56,
+          "eyeWideLeft": 0.51,
+          "eyeWideRight": 0.53,
+          "jawForward": 0.01,
+          "jawLeft": 0.74,
+          "jawOpen": 4.53,
+          "jawRight": 0.0,
+          "mouthClose": 0.14,
+          "mouthDimpleLeft": 0.44,
+          "mouthDimpleRight": 0.55,
+          "mouthFrownLeft": 0.06,
+          "mouthFrownRight": 0.05,
+          "mouthFunnel": 0.58,
+          "mouthLeft": 0.07,
+          "mouthLowerDownLeft": 0.92,
+          "mouthLowerDownRight": 1.13,
+          "mouthPressLeft": 2.48,
+          "mouthPressRight": 3.58,
+          "mouthPucker": 0.71,
+          "mouthRight": 0.1,
+          "mouthRollLower": 1.38,
+          "mouthRollUpper": 0.91,
+          "mouthShrugLower": 1.73,
+          "mouthShrugUpper": 11.7,
+          "mouthSmileLeft": 0.06,
+          "mouthSmileRight": 0.05,
+          "mouthStretchLeft": 0.08,
+          "mouthStretchRight": 0.11,
+          "mouthUpperUpLeft": 1.13,
+          "mouthUpperUpRight": 1.71,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "eyeSquintRight",
+            "pct": 61.56
+          },
+          {
+            "name": "eyeSquintLeft",
+            "pct": 48.02
+          },
+          {
+            "name": "eyeLookOutRight",
+            "pct": 17.61
+          },
+          {
+            "name": "eyeLookUpRight",
+            "pct": 12.65
+          },
+          {
+            "name": "eyeLookUpLeft",
+            "pct": 12.41
+          },
+          {
+            "name": "eyeLookInLeft",
+            "pct": 12.2
+          },
+          {
+            "name": "mouthShrugUpper",
+            "pct": 11.7
+          },
+          {
+            "name": "browOuterUpRight",
+            "pct": 8.95
+          }
+        ],
+        "photometry": {
+          "luma_mean": 111.2,
+          "luma_std": 39.9,
+          "luma_min": 20,
+          "luma_max": 231
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "A40",
+        "box": [
+          0.574844,
+          0.216637,
+          0.051979,
+          0.077765
+        ],
+        "detectors": {
+          "yunet": 0.9086,
+          "blazeface": 0.8695
+        },
+        "geometry": {
+          "interocular_px": 164.7,
+          "interocular_frac_of_canvas_w": 0.0343,
+          "box_area_frac_of_canvas": 0.004042,
+          "box_aspect_h_over_w": 1.496,
+          "mesh_extent_px": [
+            269.8,
+            297.7
+          ],
+          "mesh_wider_than_box": true
+        },
+        "head_pose": {
+          "pitch_deg": 3.64,
+          "yaw_deg": -3.02,
+          "roll_deg": 15.17
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.0404,
+          "residual_p95_iod": 0.0881,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 76.37,
+          "browDownRight": 80.0,
+          "browInnerUp": 0.0,
+          "browOuterUpLeft": 0.17,
+          "browOuterUpRight": 0.14,
+          "cheekPuff": 0.0,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 19.1,
+          "eyeBlinkRight": 10.88,
+          "eyeLookDownLeft": 13.27,
+          "eyeLookDownRight": 11.59,
+          "eyeLookInLeft": 0.9,
+          "eyeLookInRight": 21.66,
+          "eyeLookOutLeft": 23.83,
+          "eyeLookOutRight": 2.47,
+          "eyeLookUpLeft": 7.51,
+          "eyeLookUpRight": 9.29,
+          "eyeSquintLeft": 63.99,
+          "eyeSquintRight": 56.5,
+          "eyeWideLeft": 0.35,
+          "eyeWideRight": 0.5,
+          "jawForward": 0.0,
+          "jawLeft": 0.04,
+          "jawOpen": 0.26,
+          "jawRight": 0.05,
+          "mouthClose": 0.02,
+          "mouthDimpleLeft": 0.52,
+          "mouthDimpleRight": 0.04,
+          "mouthFrownLeft": 0.1,
+          "mouthFrownRight": 0.2,
+          "mouthFunnel": 0.28,
+          "mouthLeft": 0.48,
+          "mouthLowerDownLeft": 0.04,
+          "mouthLowerDownRight": 0.07,
+          "mouthPressLeft": 0.47,
+          "mouthPressRight": 0.3,
+          "mouthPucker": 40.49,
+          "mouthRight": 0.02,
+          "mouthRollLower": 1.72,
+          "mouthRollUpper": 0.57,
+          "mouthShrugLower": 4.68,
+          "mouthShrugUpper": 3.11,
+          "mouthSmileLeft": 0.0,
+          "mouthSmileRight": 0.0,
+          "mouthStretchLeft": 0.01,
+          "mouthStretchRight": 0.18,
+          "mouthUpperUpLeft": 0.01,
+          "mouthUpperUpRight": 0.01,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "browDownRight",
+            "pct": 80.0
+          },
+          {
+            "name": "browDownLeft",
+            "pct": 76.37
+          },
+          {
+            "name": "eyeSquintLeft",
+            "pct": 63.99
+          },
+          {
+            "name": "eyeSquintRight",
+            "pct": 56.5
+          },
+          {
+            "name": "mouthPucker",
+            "pct": 40.49
+          },
+          {
+            "name": "eyeLookOutLeft",
+            "pct": 23.83
+          },
+          {
+            "name": "eyeLookInRight",
+            "pct": 21.66
+          },
+          {
+            "name": "eyeBlinkLeft",
+            "pct": 19.1
+          }
+        ],
+        "photometry": {
+          "luma_mean": 124.9,
+          "luma_std": 33.4,
+          "luma_min": 24,
+          "luma_max": 212
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "A43",
+        "box": [
+          0.628826,
+          0.219751,
+          0.060979,
+          0.09056
+        ],
+        "detectors": {
+          "yunet": 0.8778,
+          "blazeface": 0.8596
+        },
+        "geometry": {
+          "interocular_px": 178.5,
+          "interocular_frac_of_canvas_w": 0.0372,
+          "box_area_frac_of_canvas": 0.005522,
+          "box_aspect_h_over_w": 1.485,
+          "mesh_extent_px": [
+            279.9,
+            339.5
+          ],
+          "mesh_wider_than_box": false
+        },
+        "head_pose": {
+          "pitch_deg": -16.22,
+          "yaw_deg": -5.55,
+          "roll_deg": 6.95
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.0422,
+          "residual_p95_iod": 0.0913,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 0.05,
+          "browDownRight": 0.02,
+          "browInnerUp": 72.71,
+          "browOuterUpLeft": 68.46,
+          "browOuterUpRight": 45.58,
+          "cheekPuff": 0.0,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 4.78,
+          "eyeBlinkRight": 12.49,
+          "eyeLookDownLeft": 48.43,
+          "eyeLookDownRight": 50.28,
+          "eyeLookInLeft": 0.98,
+          "eyeLookInRight": 36.21,
+          "eyeLookOutLeft": 35.71,
+          "eyeLookOutRight": 0.75,
+          "eyeLookUpLeft": 1.33,
+          "eyeLookUpRight": 0.87,
+          "eyeSquintLeft": 11.02,
+          "eyeSquintRight": 7.08,
+          "eyeWideLeft": 1.89,
+          "eyeWideRight": 0.76,
+          "jawForward": 0.02,
+          "jawLeft": 0.0,
+          "jawOpen": 0.13,
+          "jawRight": 2.25,
+          "mouthClose": 0.0,
+          "mouthDimpleLeft": 0.34,
+          "mouthDimpleRight": 0.02,
+          "mouthFrownLeft": 14.55,
+          "mouthFrownRight": 17.11,
+          "mouthFunnel": 0.74,
+          "mouthLeft": 0.02,
+          "mouthLowerDownLeft": 0.22,
+          "mouthLowerDownRight": 0.8,
+          "mouthPressLeft": 1.65,
+          "mouthPressRight": 0.25,
+          "mouthPucker": 5.14,
+          "mouthRight": 0.22,
+          "mouthRollLower": 0.38,
+          "mouthRollUpper": 0.03,
+          "mouthShrugLower": 7.08,
+          "mouthShrugUpper": 30.59,
+          "mouthSmileLeft": 0.15,
+          "mouthSmileRight": 0.09,
+          "mouthStretchLeft": 0.92,
+          "mouthStretchRight": 1.43,
+          "mouthUpperUpLeft": 9.35,
+          "mouthUpperUpRight": 4.73,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "browInnerUp",
+            "pct": 72.71
+          },
+          {
+            "name": "browOuterUpLeft",
+            "pct": 68.46
+          },
+          {
+            "name": "eyeLookDownRight",
+            "pct": 50.28
+          },
+          {
+            "name": "eyeLookDownLeft",
+            "pct": 48.43
+          },
+          {
+            "name": "browOuterUpRight",
+            "pct": 45.58
+          },
+          {
+            "name": "eyeLookInRight",
+            "pct": 36.21
+          },
+          {
+            "name": "eyeLookOutLeft",
+            "pct": 35.71
+          },
+          {
+            "name": "mouthShrugUpper",
+            "pct": 30.59
+          }
+        ],
+        "photometry": {
+          "luma_mean": 98.8,
+          "luma_std": 33.2,
+          "luma_min": 20,
+          "luma_max": 244
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "A44",
+        "box": [
+          0.648374,
+          0.338756,
+          0.076264,
+          0.111172
+        ],
+        "detectors": {
+          "yunet": 0.8806,
+          "blazeface": 0.8192
+        },
+        "geometry": {
+          "interocular_px": 229.1,
+          "interocular_frac_of_canvas_w": 0.04773,
+          "box_area_frac_of_canvas": 0.008478,
+          "box_aspect_h_over_w": 1.458,
+          "mesh_extent_px": [
+            357.8,
+            416.7
+          ],
+          "mesh_wider_than_box": false
+        },
+        "head_pose": {
+          "pitch_deg": 9.82,
+          "yaw_deg": -7.48,
+          "roll_deg": 0.23
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.0454,
+          "residual_p95_iod": 0.106,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 0.11,
+          "browDownRight": 1.58,
+          "browInnerUp": 44.5,
+          "browOuterUpLeft": 50.85,
+          "browOuterUpRight": 5.07,
+          "cheekPuff": 0.0,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 33.85,
+          "eyeBlinkRight": 37.37,
+          "eyeLookDownLeft": 33.55,
+          "eyeLookDownRight": 36.06,
+          "eyeLookInLeft": 0.39,
+          "eyeLookInRight": 48.5,
+          "eyeLookOutLeft": 51.97,
+          "eyeLookOutRight": 0.69,
+          "eyeLookUpLeft": 3.79,
+          "eyeLookUpRight": 2.1,
+          "eyeSquintLeft": 72.03,
+          "eyeSquintRight": 19.42,
+          "eyeWideLeft": 0.25,
+          "eyeWideRight": 0.14,
+          "jawForward": 0.01,
+          "jawLeft": 0.0,
+          "jawOpen": 0.54,
+          "jawRight": 1.23,
+          "mouthClose": 0.05,
+          "mouthDimpleLeft": 5.32,
+          "mouthDimpleRight": 1.69,
+          "mouthFrownLeft": 0.0,
+          "mouthFrownRight": 0.0,
+          "mouthFunnel": 0.42,
+          "mouthLeft": 0.01,
+          "mouthLowerDownLeft": 0.17,
+          "mouthLowerDownRight": 0.3,
+          "mouthPressLeft": 2.15,
+          "mouthPressRight": 1.18,
+          "mouthPucker": 71.08,
+          "mouthRight": 11.95,
+          "mouthRollLower": 8.62,
+          "mouthRollUpper": 1.89,
+          "mouthShrugLower": 1.92,
+          "mouthShrugUpper": 0.78,
+          "mouthSmileLeft": 0.0,
+          "mouthSmileRight": 0.0,
+          "mouthStretchLeft": 0.0,
+          "mouthStretchRight": 0.09,
+          "mouthUpperUpLeft": 0.0,
+          "mouthUpperUpRight": 0.0,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "eyeSquintLeft",
+            "pct": 72.03
+          },
+          {
+            "name": "mouthPucker",
+            "pct": 71.08
+          },
+          {
+            "name": "eyeLookOutLeft",
+            "pct": 51.97
+          },
+          {
+            "name": "browOuterUpLeft",
+            "pct": 50.85
+          },
+          {
+            "name": "eyeLookInRight",
+            "pct": 48.5
+          },
+          {
+            "name": "browInnerUp",
+            "pct": 44.5
+          },
+          {
+            "name": "eyeBlinkRight",
+            "pct": 37.37
+          },
+          {
+            "name": "eyeLookDownRight",
+            "pct": 36.06
+          }
+        ],
+        "photometry": {
+          "luma_mean": 107.3,
+          "luma_std": 34.2,
+          "luma_min": 21,
+          "luma_max": 214
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "A48",
+        "box": [
+          0.683312,
+          0.45516,
+          0.095276,
+          0.141643
+        ],
+        "detectors": {
+          "blazeface": 0.9716,
+          "yunet": 0.9389
+        },
+        "geometry": {
+          "interocular_px": 285.9,
+          "interocular_frac_of_canvas_w": 0.05956,
+          "box_area_frac_of_canvas": 0.013495,
+          "box_aspect_h_over_w": 1.487,
+          "mesh_extent_px": [
+            453.6,
+            496.2
+          ],
+          "mesh_wider_than_box": false
+        },
+        "head_pose": {
+          "pitch_deg": -7.16,
+          "yaw_deg": -3.3,
+          "roll_deg": 11.0
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.0377,
+          "residual_p95_iod": 0.0809,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 0.52,
+          "browDownRight": 0.23,
+          "browInnerUp": 44.76,
+          "browOuterUpLeft": 16.8,
+          "browOuterUpRight": 23.25,
+          "cheekPuff": 0.03,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 13.61,
+          "eyeBlinkRight": 9.62,
+          "eyeLookDownLeft": 27.57,
+          "eyeLookDownRight": 27.09,
+          "eyeLookInLeft": 1.39,
+          "eyeLookInRight": 21.35,
+          "eyeLookOutLeft": 19.7,
+          "eyeLookOutRight": 2.28,
+          "eyeLookUpLeft": 3.84,
+          "eyeLookUpRight": 3.39,
+          "eyeSquintLeft": 53.33,
+          "eyeSquintRight": 43.7,
+          "eyeWideLeft": 0.54,
+          "eyeWideRight": 0.85,
+          "jawForward": 0.42,
+          "jawLeft": 0.02,
+          "jawOpen": 0.41,
+          "jawRight": 0.03,
+          "mouthClose": 0.01,
+          "mouthDimpleLeft": 0.41,
+          "mouthDimpleRight": 0.65,
+          "mouthFrownLeft": 3.39,
+          "mouthFrownRight": 2.67,
+          "mouthFunnel": 0.33,
+          "mouthLeft": 0.02,
+          "mouthLowerDownLeft": 23.6,
+          "mouthLowerDownRight": 34.58,
+          "mouthPressLeft": 2.83,
+          "mouthPressRight": 3.25,
+          "mouthPucker": 0.31,
+          "mouthRight": 0.03,
+          "mouthRollLower": 0.94,
+          "mouthRollUpper": 0.42,
+          "mouthShrugLower": 0.77,
+          "mouthShrugUpper": 3.44,
+          "mouthSmileLeft": 14.4,
+          "mouthSmileRight": 14.22,
+          "mouthStretchLeft": 50.89,
+          "mouthStretchRight": 35.23,
+          "mouthUpperUpLeft": 47.19,
+          "mouthUpperUpRight": 62.43,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "mouthUpperUpRight",
+            "pct": 62.43
+          },
+          {
+            "name": "eyeSquintLeft",
+            "pct": 53.33
+          },
+          {
+            "name": "mouthStretchLeft",
+            "pct": 50.89
+          },
+          {
+            "name": "mouthUpperUpLeft",
+            "pct": 47.19
+          },
+          {
+            "name": "browInnerUp",
+            "pct": 44.76
+          },
+          {
+            "name": "eyeSquintRight",
+            "pct": 43.7
+          },
+          {
+            "name": "mouthStretchRight",
+            "pct": 35.23
+          },
+          {
+            "name": "mouthLowerDownRight",
+            "pct": 34.58
+          }
+        ],
+        "photometry": {
+          "luma_mean": 100.2,
+          "luma_std": 36.2,
+          "luma_min": 12,
+          "luma_max": 244
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "A49",
+        "box": [
+          0.684068,
+          0.169029,
+          0.070075,
+          0.107391
+        ],
+        "detectors": {
+          "blazeface": 0.7965,
+          "yunet": 0.7872
+        },
+        "geometry": {
+          "interocular_px": 206.0,
+          "interocular_frac_of_canvas_w": 0.04293,
+          "box_area_frac_of_canvas": 0.007525,
+          "box_aspect_h_over_w": 1.533,
+          "mesh_extent_px": [
+            322.3,
+            338.9
+          ],
+          "mesh_wider_than_box": false
+        },
+        "head_pose": {
+          "pitch_deg": -8.78,
+          "yaw_deg": -6.47,
+          "roll_deg": 18.92
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.0331,
+          "residual_p95_iod": 0.0695,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 8.43,
+          "browDownRight": 32.1,
+          "browInnerUp": 0.74,
+          "browOuterUpLeft": 4.57,
+          "browOuterUpRight": 0.78,
+          "cheekPuff": 0.0,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 32.13,
+          "eyeBlinkRight": 26.85,
+          "eyeLookDownLeft": 59.49,
+          "eyeLookDownRight": 55.55,
+          "eyeLookInLeft": 0.12,
+          "eyeLookInRight": 16.04,
+          "eyeLookOutLeft": 69.04,
+          "eyeLookOutRight": 5.84,
+          "eyeLookUpLeft": 0.82,
+          "eyeLookUpRight": 0.53,
+          "eyeSquintLeft": 28.62,
+          "eyeSquintRight": 22.39,
+          "eyeWideLeft": 0.28,
+          "eyeWideRight": 0.25,
+          "jawForward": 0.01,
+          "jawLeft": 0.01,
+          "jawOpen": 0.03,
+          "jawRight": 0.01,
+          "mouthClose": 0.0,
+          "mouthDimpleLeft": 0.08,
+          "mouthDimpleRight": 0.92,
+          "mouthFrownLeft": 0.79,
+          "mouthFrownRight": 0.71,
+          "mouthFunnel": 0.04,
+          "mouthLeft": 0.02,
+          "mouthLowerDownLeft": 0.05,
+          "mouthLowerDownRight": 0.02,
+          "mouthPressLeft": 0.81,
+          "mouthPressRight": 3.85,
+          "mouthPucker": 1.97,
+          "mouthRight": 0.47,
+          "mouthRollLower": 0.2,
+          "mouthRollUpper": 0.03,
+          "mouthShrugLower": 10.81,
+          "mouthShrugUpper": 21.21,
+          "mouthSmileLeft": 0.2,
+          "mouthSmileRight": 0.51,
+          "mouthStretchLeft": 0.28,
+          "mouthStretchRight": 0.61,
+          "mouthUpperUpLeft": 1.12,
+          "mouthUpperUpRight": 3.67,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "eyeLookOutLeft",
+            "pct": 69.04
+          },
+          {
+            "name": "eyeLookDownLeft",
+            "pct": 59.49
+          },
+          {
+            "name": "eyeLookDownRight",
+            "pct": 55.55
+          },
+          {
+            "name": "eyeBlinkLeft",
+            "pct": 32.13
+          },
+          {
+            "name": "browDownRight",
+            "pct": 32.1
+          },
+          {
+            "name": "eyeSquintLeft",
+            "pct": 28.62
+          },
+          {
+            "name": "eyeBlinkRight",
+            "pct": 26.85
+          },
+          {
+            "name": "eyeSquintRight",
+            "pct": 22.39
+          }
+        ],
+        "photometry": {
+          "luma_mean": 89.4,
+          "luma_std": 37.2,
+          "luma_min": 16,
+          "luma_max": 222
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "A53",
+        "box": [
+          0.76166,
+          0.235343,
+          0.094406,
+          0.138548
+        ],
+        "detectors": {
+          "blazeface": 0.9153,
+          "yunet": 0.871
+        },
+        "geometry": {
+          "interocular_px": 313.0,
+          "interocular_frac_of_canvas_w": 0.0652,
+          "box_area_frac_of_canvas": 0.01308,
+          "box_aspect_h_over_w": 1.468,
+          "mesh_extent_px": [
+            487.8,
+            540.5
+          ],
+          "mesh_wider_than_box": true
+        },
+        "head_pose": {
+          "pitch_deg": 1.36,
+          "yaw_deg": -3.11,
+          "roll_deg": 2.88
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.0384,
+          "residual_p95_iod": 0.0839,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 1.54,
+          "browDownRight": 3.11,
+          "browInnerUp": 19.22,
+          "browOuterUpLeft": 5.16,
+          "browOuterUpRight": 3.33,
+          "cheekPuff": 0.0,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 12.01,
+          "eyeBlinkRight": 12.75,
+          "eyeLookDownLeft": 36.46,
+          "eyeLookDownRight": 35.69,
+          "eyeLookInLeft": 0.92,
+          "eyeLookInRight": 23.51,
+          "eyeLookOutLeft": 22.67,
+          "eyeLookOutRight": 1.97,
+          "eyeLookUpLeft": 2.96,
+          "eyeLookUpRight": 2.01,
+          "eyeSquintLeft": 59.81,
+          "eyeSquintRight": 35.61,
+          "eyeWideLeft": 0.76,
+          "eyeWideRight": 0.38,
+          "jawForward": 0.01,
+          "jawLeft": 0.13,
+          "jawOpen": 0.16,
+          "jawRight": 0.0,
+          "mouthClose": 0.01,
+          "mouthDimpleLeft": 0.78,
+          "mouthDimpleRight": 0.14,
+          "mouthFrownLeft": 0.47,
+          "mouthFrownRight": 1.08,
+          "mouthFunnel": 0.11,
+          "mouthLeft": 0.22,
+          "mouthLowerDownLeft": 0.11,
+          "mouthLowerDownRight": 0.2,
+          "mouthPressLeft": 0.77,
+          "mouthPressRight": 1.11,
+          "mouthPucker": 3.53,
+          "mouthRight": 0.02,
+          "mouthRollLower": 0.84,
+          "mouthRollUpper": 0.03,
+          "mouthShrugLower": 3.37,
+          "mouthShrugUpper": 8.11,
+          "mouthSmileLeft": 0.13,
+          "mouthSmileRight": 0.19,
+          "mouthStretchLeft": 0.07,
+          "mouthStretchRight": 3.93,
+          "mouthUpperUpLeft": 0.49,
+          "mouthUpperUpRight": 0.52,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "eyeSquintLeft",
+            "pct": 59.81
+          },
+          {
+            "name": "eyeLookDownLeft",
+            "pct": 36.46
+          },
+          {
+            "name": "eyeLookDownRight",
+            "pct": 35.69
+          },
+          {
+            "name": "eyeSquintRight",
+            "pct": 35.61
+          },
+          {
+            "name": "eyeLookInRight",
+            "pct": 23.51
+          },
+          {
+            "name": "eyeLookOutLeft",
+            "pct": 22.67
+          },
+          {
+            "name": "browInnerUp",
+            "pct": 19.22
+          },
+          {
+            "name": "eyeBlinkRight",
+            "pct": 12.75
+          }
+        ],
+        "photometry": {
+          "luma_mean": 80.8,
+          "luma_std": 28.4,
+          "luma_min": 20,
+          "luma_max": 244
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "A57",
+        "box": [
+          0.900691,
+          0.277049,
+          0.104009,
+          0.171983
+        ],
+        "detectors": {
+          "yunet": 0.9181,
+          "blazeface": 0.7638
+        },
+        "geometry": {
+          "interocular_px": 325.4,
+          "interocular_frac_of_canvas_w": 0.06779,
+          "box_area_frac_of_canvas": 0.017888,
+          "box_aspect_h_over_w": 1.654,
+          "mesh_extent_px": [
+            476.8,
+            541.7
+          ],
+          "mesh_wider_than_box": false
+        },
+        "head_pose": {
+          "pitch_deg": -2.61,
+          "yaw_deg": -9.18,
+          "roll_deg": 5.7
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.0381,
+          "residual_p95_iod": 0.0839,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 0.15,
+          "browDownRight": 1.46,
+          "browInnerUp": 29.18,
+          "browOuterUpLeft": 35.87,
+          "browOuterUpRight": 9.57,
+          "cheekPuff": 0.0,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 8.43,
+          "eyeBlinkRight": 16.91,
+          "eyeLookDownLeft": 27.76,
+          "eyeLookDownRight": 29.47,
+          "eyeLookInLeft": 0.26,
+          "eyeLookInRight": 53.91,
+          "eyeLookOutLeft": 53.17,
+          "eyeLookOutRight": 0.34,
+          "eyeLookUpLeft": 3.1,
+          "eyeLookUpRight": 2.33,
+          "eyeSquintLeft": 32.38,
+          "eyeSquintRight": 20.45,
+          "eyeWideLeft": 1.11,
+          "eyeWideRight": 0.45,
+          "jawForward": 0.05,
+          "jawLeft": 0.02,
+          "jawOpen": 0.08,
+          "jawRight": 0.01,
+          "mouthClose": 0.01,
+          "mouthDimpleLeft": 0.13,
+          "mouthDimpleRight": 0.71,
+          "mouthFrownLeft": 3.68,
+          "mouthFrownRight": 4.21,
+          "mouthFunnel": 0.13,
+          "mouthLeft": 0.0,
+          "mouthLowerDownLeft": 0.3,
+          "mouthLowerDownRight": 0.33,
+          "mouthPressLeft": 2.84,
+          "mouthPressRight": 3.21,
+          "mouthPucker": 2.64,
+          "mouthRight": 2.15,
+          "mouthRollLower": 0.41,
+          "mouthRollUpper": 0.07,
+          "mouthShrugLower": 0.37,
+          "mouthShrugUpper": 0.86,
+          "mouthSmileLeft": 0.41,
+          "mouthSmileRight": 0.71,
+          "mouthStretchLeft": 2.99,
+          "mouthStretchRight": 28.69,
+          "mouthUpperUpLeft": 0.01,
+          "mouthUpperUpRight": 0.05,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "eyeLookInRight",
+            "pct": 53.91
+          },
+          {
+            "name": "eyeLookOutLeft",
+            "pct": 53.17
+          },
+          {
+            "name": "browOuterUpLeft",
+            "pct": 35.87
+          },
+          {
+            "name": "eyeSquintLeft",
+            "pct": 32.38
+          },
+          {
+            "name": "eyeLookDownRight",
+            "pct": 29.47
+          },
+          {
+            "name": "browInnerUp",
+            "pct": 29.18
+          },
+          {
+            "name": "mouthStretchRight",
+            "pct": 28.69
+          },
+          {
+            "name": "eyeLookDownLeft",
+            "pct": 27.76
+          }
+        ],
+        "photometry": {
+          "luma_mean": 72.4,
+          "luma_std": 26.5,
+          "luma_min": 9,
+          "luma_max": 229
+        },
+        "embedding_ok": true
+      }
+    ],
+    "B": [
+      {
+        "face_id": "B02",
+        "box": [
+          0.115027,
+          0.312877,
+          0.138574,
+          0.194119
+        ],
+        "detectors": {
+          "blazeface": 0.9382,
+          "yunet": 0.9315
+        },
+        "geometry": {
+          "interocular_px": 375.8,
+          "interocular_frac_of_canvas_w": 0.07829,
+          "box_area_frac_of_canvas": 0.0269,
+          "box_aspect_h_over_w": 1.401,
+          "mesh_extent_px": [
+            671.9,
+            703.0
+          ],
+          "mesh_wider_than_box": true
+        },
+        "head_pose": {
+          "pitch_deg": 7.99,
+          "yaw_deg": 17.92,
+          "roll_deg": -18.29
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.05,
+          "residual_p95_iod": 0.2325,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 0.38,
+          "browDownRight": 0.48,
+          "browInnerUp": 19.31,
+          "browOuterUpLeft": 22.37,
+          "browOuterUpRight": 18.31,
+          "cheekPuff": 0.01,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 6.63,
+          "eyeBlinkRight": 3.65,
+          "eyeLookDownLeft": 7.87,
+          "eyeLookDownRight": 8.98,
+          "eyeLookInLeft": 70.04,
+          "eyeLookInRight": 0.17,
+          "eyeLookOutLeft": 0.22,
+          "eyeLookOutRight": 67.14,
+          "eyeLookUpLeft": 10.06,
+          "eyeLookUpRight": 7.86,
+          "eyeSquintLeft": 49.75,
+          "eyeSquintRight": 8.98,
+          "eyeWideLeft": 1.77,
+          "eyeWideRight": 0.55,
+          "jawForward": 0.06,
+          "jawLeft": 0.52,
+          "jawOpen": 0.18,
+          "jawRight": 0.0,
+          "mouthClose": 0.01,
+          "mouthDimpleLeft": 0.56,
+          "mouthDimpleRight": 0.92,
+          "mouthFrownLeft": 0.24,
+          "mouthFrownRight": 0.23,
+          "mouthFunnel": 0.35,
+          "mouthLeft": 0.09,
+          "mouthLowerDownLeft": 0.63,
+          "mouthLowerDownRight": 0.73,
+          "mouthPressLeft": 3.71,
+          "mouthPressRight": 14.71,
+          "mouthPucker": 0.21,
+          "mouthRight": 0.01,
+          "mouthRollLower": 0.18,
+          "mouthRollUpper": 0.07,
+          "mouthShrugLower": 0.4,
+          "mouthShrugUpper": 2.26,
+          "mouthSmileLeft": 3.38,
+          "mouthSmileRight": 6.63,
+          "mouthStretchLeft": 0.83,
+          "mouthStretchRight": 2.44,
+          "mouthUpperUpLeft": 0.36,
+          "mouthUpperUpRight": 0.65,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "eyeLookInLeft",
+            "pct": 70.04
+          },
+          {
+            "name": "eyeLookOutRight",
+            "pct": 67.14
+          },
+          {
+            "name": "eyeSquintLeft",
+            "pct": 49.75
+          },
+          {
+            "name": "browOuterUpLeft",
+            "pct": 22.37
+          },
+          {
+            "name": "browInnerUp",
+            "pct": 19.31
+          },
+          {
+            "name": "browOuterUpRight",
+            "pct": 18.31
+          },
+          {
+            "name": "mouthPressRight",
+            "pct": 14.71
+          },
+          {
+            "name": "eyeLookUpLeft",
+            "pct": 10.06
+          }
+        ],
+        "photometry": {
+          "luma_mean": 118.2,
+          "luma_std": 30.7,
+          "luma_min": 40,
+          "luma_max": 244
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "B05",
+        "box": [
+          0.338979,
+          0.16427,
+          0.107908,
+          0.156071
+        ],
+        "detectors": {
+          "blazeface": 0.9601,
+          "yunet": 0.9367
+        },
+        "geometry": {
+          "interocular_px": 313.3,
+          "interocular_frac_of_canvas_w": 0.06527,
+          "box_area_frac_of_canvas": 0.016841,
+          "box_aspect_h_over_w": 1.446,
+          "mesh_extent_px": [
+            526.3,
+            566.6
+          ],
+          "mesh_wider_than_box": true
+        },
+        "head_pose": {
+          "pitch_deg": -1.52,
+          "yaw_deg": 10.26,
+          "roll_deg": -13.22
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.0435,
+          "residual_p95_iod": 0.103,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 0.41,
+          "browDownRight": 0.13,
+          "browInnerUp": 21.38,
+          "browOuterUpLeft": 17.07,
+          "browOuterUpRight": 14.42,
+          "cheekPuff": 0.0,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 8.82,
+          "eyeBlinkRight": 7.65,
+          "eyeLookDownLeft": 53.66,
+          "eyeLookDownRight": 49.32,
+          "eyeLookInLeft": 8.45,
+          "eyeLookInRight": 4.95,
+          "eyeLookOutLeft": 4.07,
+          "eyeLookOutRight": 7.68,
+          "eyeLookUpLeft": 1.62,
+          "eyeLookUpRight": 0.86,
+          "eyeSquintLeft": 38.38,
+          "eyeSquintRight": 21.57,
+          "eyeWideLeft": 1.46,
+          "eyeWideRight": 0.41,
+          "jawForward": 0.01,
+          "jawLeft": 0.34,
+          "jawOpen": 0.66,
+          "jawRight": 0.0,
+          "mouthClose": 0.05,
+          "mouthDimpleLeft": 3.17,
+          "mouthDimpleRight": 1.12,
+          "mouthFrownLeft": 0.01,
+          "mouthFrownRight": 0.01,
+          "mouthFunnel": 0.33,
+          "mouthLeft": 0.79,
+          "mouthLowerDownLeft": 0.21,
+          "mouthLowerDownRight": 0.28,
+          "mouthPressLeft": 5.35,
+          "mouthPressRight": 7.54,
+          "mouthPucker": 0.97,
+          "mouthRight": 0.01,
+          "mouthRollLower": 1.09,
+          "mouthRollUpper": 0.58,
+          "mouthShrugLower": 1.2,
+          "mouthShrugUpper": 1.69,
+          "mouthSmileLeft": 0.14,
+          "mouthSmileRight": 0.1,
+          "mouthStretchLeft": 0.04,
+          "mouthStretchRight": 0.03,
+          "mouthUpperUpLeft": 0.14,
+          "mouthUpperUpRight": 0.18,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "eyeLookDownLeft",
+            "pct": 53.66
+          },
+          {
+            "name": "eyeLookDownRight",
+            "pct": 49.32
+          },
+          {
+            "name": "eyeSquintLeft",
+            "pct": 38.38
+          },
+          {
+            "name": "eyeSquintRight",
+            "pct": 21.57
+          },
+          {
+            "name": "browInnerUp",
+            "pct": 21.38
+          },
+          {
+            "name": "browOuterUpLeft",
+            "pct": 17.07
+          },
+          {
+            "name": "browOuterUpRight",
+            "pct": 14.42
+          },
+          {
+            "name": "eyeBlinkLeft",
+            "pct": 8.82
+          }
+        ],
+        "photometry": {
+          "luma_mean": 111.2,
+          "luma_std": 26.1,
+          "luma_min": 37,
+          "luma_max": 180
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "B09",
+        "box": [
+          0.411102,
+          0.337844,
+          0.066324,
+          0.095211
+        ],
+        "detectors": {
+          "blazeface": 0.8289,
+          "yunet": 0.6689
+        },
+        "geometry": {
+          "interocular_px": 200.9,
+          "interocular_frac_of_canvas_w": 0.04186,
+          "box_area_frac_of_canvas": 0.006315,
+          "box_aspect_h_over_w": 1.436,
+          "mesh_extent_px": [
+            314.9,
+            335.5
+          ],
+          "mesh_wider_than_box": false
+        },
+        "head_pose": {
+          "pitch_deg": -0.46,
+          "yaw_deg": 5.15,
+          "roll_deg": -14.04
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.032,
+          "residual_p95_iod": 0.0657,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 0.8,
+          "browDownRight": 0.65,
+          "browInnerUp": 15.45,
+          "browOuterUpLeft": 27.14,
+          "browOuterUpRight": 15.47,
+          "cheekPuff": 0.0,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 7.95,
+          "eyeBlinkRight": 1.97,
+          "eyeLookDownLeft": 31.12,
+          "eyeLookDownRight": 29.17,
+          "eyeLookInLeft": 3.41,
+          "eyeLookInRight": 2.35,
+          "eyeLookOutLeft": 12.86,
+          "eyeLookOutRight": 17.41,
+          "eyeLookUpLeft": 2.12,
+          "eyeLookUpRight": 1.82,
+          "eyeSquintLeft": 20.53,
+          "eyeSquintRight": 8.9,
+          "eyeWideLeft": 1.54,
+          "eyeWideRight": 1.98,
+          "jawForward": 0.0,
+          "jawLeft": 0.02,
+          "jawOpen": 0.03,
+          "jawRight": 0.0,
+          "mouthClose": 0.0,
+          "mouthDimpleLeft": 1.55,
+          "mouthDimpleRight": 7.47,
+          "mouthFrownLeft": 0.15,
+          "mouthFrownRight": 0.27,
+          "mouthFunnel": 0.01,
+          "mouthLeft": 0.08,
+          "mouthLowerDownLeft": 0.04,
+          "mouthLowerDownRight": 0.03,
+          "mouthPressLeft": 5.59,
+          "mouthPressRight": 41.33,
+          "mouthPucker": 0.14,
+          "mouthRight": 0.17,
+          "mouthRollLower": 0.44,
+          "mouthRollUpper": 0.06,
+          "mouthShrugLower": 36.3,
+          "mouthShrugUpper": 17.71,
+          "mouthSmileLeft": 1.3,
+          "mouthSmileRight": 3.9,
+          "mouthStretchLeft": 0.08,
+          "mouthStretchRight": 1.78,
+          "mouthUpperUpLeft": 2.08,
+          "mouthUpperUpRight": 7.66,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "mouthPressRight",
+            "pct": 41.33
+          },
+          {
+            "name": "mouthShrugLower",
+            "pct": 36.3
+          },
+          {
+            "name": "eyeLookDownLeft",
+            "pct": 31.12
+          },
+          {
+            "name": "eyeLookDownRight",
+            "pct": 29.17
+          },
+          {
+            "name": "browOuterUpLeft",
+            "pct": 27.14
+          },
+          {
+            "name": "eyeSquintLeft",
+            "pct": 20.53
+          },
+          {
+            "name": "mouthShrugUpper",
+            "pct": 17.71
+          },
+          {
+            "name": "eyeLookOutRight",
+            "pct": 17.41
+          }
+        ],
+        "photometry": {
+          "luma_mean": 62.4,
+          "luma_std": 15.8,
+          "luma_min": 31,
+          "luma_max": 164
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "B16",
+        "box": [
+          0.488633,
+          0.277212,
+          0.087927,
+          0.129598
+        ],
+        "detectors": {
+          "yunet": 0.9086,
+          "blazeface": 0.9005
+        },
+        "geometry": {
+          "interocular_px": 263.5,
+          "interocular_frac_of_canvas_w": 0.0549,
+          "box_area_frac_of_canvas": 0.011395,
+          "box_aspect_h_over_w": 1.474,
+          "mesh_extent_px": [
+            435.0,
+            477.4
+          ],
+          "mesh_wider_than_box": true
+        },
+        "head_pose": {
+          "pitch_deg": 7.06,
+          "yaw_deg": 5.67,
+          "roll_deg": -9.83
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.0371,
+          "residual_p95_iod": 0.0962,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 3.22,
+          "browDownRight": 3.18,
+          "browInnerUp": 5.94,
+          "browOuterUpLeft": 7.52,
+          "browOuterUpRight": 5.55,
+          "cheekPuff": 0.0,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 6.51,
+          "eyeBlinkRight": 10.09,
+          "eyeLookDownLeft": 9.6,
+          "eyeLookDownRight": 11.86,
+          "eyeLookInLeft": 10.48,
+          "eyeLookInRight": 3.49,
+          "eyeLookOutLeft": 3.14,
+          "eyeLookOutRight": 11.6,
+          "eyeLookUpLeft": 11.43,
+          "eyeLookUpRight": 8.12,
+          "eyeSquintLeft": 65.16,
+          "eyeSquintRight": 42.85,
+          "eyeWideLeft": 1.46,
+          "eyeWideRight": 0.3,
+          "jawForward": 0.02,
+          "jawLeft": 0.04,
+          "jawOpen": 0.35,
+          "jawRight": 0.0,
+          "mouthClose": 0.09,
+          "mouthDimpleLeft": 3.39,
+          "mouthDimpleRight": 0.47,
+          "mouthFrownLeft": 0.12,
+          "mouthFrownRight": 0.23,
+          "mouthFunnel": 0.04,
+          "mouthLeft": 0.01,
+          "mouthLowerDownLeft": 0.11,
+          "mouthLowerDownRight": 0.2,
+          "mouthPressLeft": 16.72,
+          "mouthPressRight": 14.07,
+          "mouthPucker": 0.15,
+          "mouthRight": 0.26,
+          "mouthRollLower": 1.44,
+          "mouthRollUpper": 0.19,
+          "mouthShrugLower": 1.05,
+          "mouthShrugUpper": 0.39,
+          "mouthSmileLeft": 2.09,
+          "mouthSmileRight": 3.03,
+          "mouthStretchLeft": 0.36,
+          "mouthStretchRight": 13.82,
+          "mouthUpperUpLeft": 0.02,
+          "mouthUpperUpRight": 0.01,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "eyeSquintLeft",
+            "pct": 65.16
+          },
+          {
+            "name": "eyeSquintRight",
+            "pct": 42.85
+          },
+          {
+            "name": "mouthPressLeft",
+            "pct": 16.72
+          },
+          {
+            "name": "mouthPressRight",
+            "pct": 14.07
+          },
+          {
+            "name": "mouthStretchRight",
+            "pct": 13.82
+          },
+          {
+            "name": "eyeLookDownRight",
+            "pct": 11.86
+          },
+          {
+            "name": "eyeLookOutRight",
+            "pct": 11.6
+          },
+          {
+            "name": "eyeLookUpLeft",
+            "pct": 11.43
+          }
+        ],
+        "photometry": {
+          "luma_mean": 106.3,
+          "luma_std": 32.2,
+          "luma_min": 35,
+          "luma_max": 177
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "B18",
+        "box": [
+          0.556583,
+          0.620668,
+          0.1209,
+          0.16013
+        ],
+        "detectors": {
+          "blazeface": 0.9132,
+          "yunet": 0.8583
+        },
+        "geometry": {
+          "interocular_px": 340.3,
+          "interocular_frac_of_canvas_w": 0.07089,
+          "box_area_frac_of_canvas": 0.01936,
+          "box_aspect_h_over_w": 1.324,
+          "mesh_extent_px": [
+            578.6,
+            625.2
+          ],
+          "mesh_wider_than_box": false
+        },
+        "head_pose": {
+          "pitch_deg": -1.49,
+          "yaw_deg": -10.37,
+          "roll_deg": 23.17
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.0437,
+          "residual_p95_iod": 0.0979,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 0.13,
+          "browDownRight": 0.06,
+          "browInnerUp": 63.37,
+          "browOuterUpLeft": 28.35,
+          "browOuterUpRight": 41.08,
+          "cheekPuff": 0.02,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 10.72,
+          "eyeBlinkRight": 6.13,
+          "eyeLookDownLeft": 14.34,
+          "eyeLookDownRight": 14.83,
+          "eyeLookInLeft": 0.67,
+          "eyeLookInRight": 55.43,
+          "eyeLookOutLeft": 53.4,
+          "eyeLookOutRight": 0.15,
+          "eyeLookUpLeft": 5.96,
+          "eyeLookUpRight": 5.69,
+          "eyeSquintLeft": 68.22,
+          "eyeSquintRight": 47.69,
+          "eyeWideLeft": 0.57,
+          "eyeWideRight": 1.02,
+          "jawForward": 0.14,
+          "jawLeft": 0.01,
+          "jawOpen": 1.35,
+          "jawRight": 0.17,
+          "mouthClose": 0.04,
+          "mouthDimpleLeft": 0.31,
+          "mouthDimpleRight": 0.35,
+          "mouthFrownLeft": 1.43,
+          "mouthFrownRight": 1.16,
+          "mouthFunnel": 0.94,
+          "mouthLeft": 0.05,
+          "mouthLowerDownLeft": 8.89,
+          "mouthLowerDownRight": 13.35,
+          "mouthPressLeft": 2.47,
+          "mouthPressRight": 2.09,
+          "mouthPucker": 0.9,
+          "mouthRight": 0.02,
+          "mouthRollLower": 0.56,
+          "mouthRollUpper": 0.37,
+          "mouthShrugLower": 0.34,
+          "mouthShrugUpper": 2.28,
+          "mouthSmileLeft": 49.61,
+          "mouthSmileRight": 42.28,
+          "mouthStretchLeft": 24.71,
+          "mouthStretchRight": 15.24,
+          "mouthUpperUpLeft": 13.36,
+          "mouthUpperUpRight": 14.23,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "eyeSquintLeft",
+            "pct": 68.22
+          },
+          {
+            "name": "browInnerUp",
+            "pct": 63.37
+          },
+          {
+            "name": "eyeLookInRight",
+            "pct": 55.43
+          },
+          {
+            "name": "eyeLookOutLeft",
+            "pct": 53.4
+          },
+          {
+            "name": "mouthSmileLeft",
+            "pct": 49.61
+          },
+          {
+            "name": "eyeSquintRight",
+            "pct": 47.69
+          },
+          {
+            "name": "mouthSmileRight",
+            "pct": 42.28
+          },
+          {
+            "name": "browOuterUpRight",
+            "pct": 41.08
+          }
+        ],
+        "photometry": {
+          "luma_mean": 125.4,
+          "luma_std": 34.8,
+          "luma_min": 26,
+          "luma_max": 236
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "B23",
+        "box": [
+          0.638693,
+          0.414858,
+          0.079848,
+          0.113637
+        ],
+        "detectors": {
+          "yunet": 0.9175,
+          "blazeface": 0.8885
+        },
+        "geometry": {
+          "interocular_px": 243.5,
+          "interocular_frac_of_canvas_w": 0.05073,
+          "box_area_frac_of_canvas": 0.009074,
+          "box_aspect_h_over_w": 1.423,
+          "mesh_extent_px": [
+            396.1,
+            423.4
+          ],
+          "mesh_wider_than_box": true
+        },
+        "head_pose": {
+          "pitch_deg": -8.05,
+          "yaw_deg": -2.17,
+          "roll_deg": 9.61
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.0349,
+          "residual_p95_iod": 0.0739,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 0.03,
+          "browDownRight": 0.02,
+          "browInnerUp": 73.74,
+          "browOuterUpLeft": 51.48,
+          "browOuterUpRight": 35.72,
+          "cheekPuff": 0.06,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 17.57,
+          "eyeBlinkRight": 8.25,
+          "eyeLookDownLeft": 47.34,
+          "eyeLookDownRight": 45.12,
+          "eyeLookInLeft": 2.75,
+          "eyeLookInRight": 23.63,
+          "eyeLookOutLeft": 20.86,
+          "eyeLookOutRight": 1.13,
+          "eyeLookUpLeft": 2.54,
+          "eyeLookUpRight": 1.9,
+          "eyeSquintLeft": 48.65,
+          "eyeSquintRight": 37.88,
+          "eyeWideLeft": 0.68,
+          "eyeWideRight": 1.59,
+          "jawForward": 0.83,
+          "jawLeft": 0.02,
+          "jawOpen": 1.42,
+          "jawRight": 0.19,
+          "mouthClose": 0.03,
+          "mouthDimpleLeft": 0.62,
+          "mouthDimpleRight": 0.64,
+          "mouthFrownLeft": 9.88,
+          "mouthFrownRight": 9.05,
+          "mouthFunnel": 0.61,
+          "mouthLeft": 0.01,
+          "mouthLowerDownLeft": 53.81,
+          "mouthLowerDownRight": 71.97,
+          "mouthPressLeft": 3.0,
+          "mouthPressRight": 3.32,
+          "mouthPucker": 0.57,
+          "mouthRight": 0.07,
+          "mouthRollLower": 1.55,
+          "mouthRollUpper": 0.48,
+          "mouthShrugLower": 0.93,
+          "mouthShrugUpper": 2.27,
+          "mouthSmileLeft": 25.15,
+          "mouthSmileRight": 23.94,
+          "mouthStretchLeft": 30.3,
+          "mouthStretchRight": 46.7,
+          "mouthUpperUpLeft": 47.51,
+          "mouthUpperUpRight": 57.73,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "browInnerUp",
+            "pct": 73.74
+          },
+          {
+            "name": "mouthLowerDownRight",
+            "pct": 71.97
+          },
+          {
+            "name": "mouthUpperUpRight",
+            "pct": 57.73
+          },
+          {
+            "name": "mouthLowerDownLeft",
+            "pct": 53.81
+          },
+          {
+            "name": "browOuterUpLeft",
+            "pct": 51.48
+          },
+          {
+            "name": "eyeSquintLeft",
+            "pct": 48.65
+          },
+          {
+            "name": "mouthUpperUpLeft",
+            "pct": 47.51
+          },
+          {
+            "name": "eyeLookDownLeft",
+            "pct": 47.34
+          }
+        ],
+        "photometry": {
+          "luma_mean": 123.9,
+          "luma_std": 26.4,
+          "luma_min": 41,
+          "luma_max": 250
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "B27",
+        "box": [
+          0.728866,
+          0.24994,
+          0.110816,
+          0.148739
+        ],
+        "detectors": {
+          "yunet": 0.8952,
+          "blazeface": 0.8765
+        },
+        "geometry": {
+          "interocular_px": 321.7,
+          "interocular_frac_of_canvas_w": 0.06703,
+          "box_area_frac_of_canvas": 0.016483,
+          "box_aspect_h_over_w": 1.342,
+          "mesh_extent_px": [
+            521.9,
+            555.2
+          ],
+          "mesh_wider_than_box": false
+        },
+        "head_pose": {
+          "pitch_deg": 5.08,
+          "yaw_deg": -10.15,
+          "roll_deg": 20.33
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.0366,
+          "residual_p95_iod": 0.0768,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 0.23,
+          "browDownRight": 2.75,
+          "browInnerUp": 23.99,
+          "browOuterUpLeft": 25.18,
+          "browOuterUpRight": 6.84,
+          "cheekPuff": 0.0,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 12.51,
+          "eyeBlinkRight": 8.31,
+          "eyeLookDownLeft": 10.06,
+          "eyeLookDownRight": 10.55,
+          "eyeLookInLeft": 1.15,
+          "eyeLookInRight": 29.47,
+          "eyeLookOutLeft": 30.62,
+          "eyeLookOutRight": 0.59,
+          "eyeLookUpLeft": 6.43,
+          "eyeLookUpRight": 7.84,
+          "eyeSquintLeft": 46.27,
+          "eyeSquintRight": 31.42,
+          "eyeWideLeft": 0.63,
+          "eyeWideRight": 0.63,
+          "jawForward": 0.02,
+          "jawLeft": 0.02,
+          "jawOpen": 0.11,
+          "jawRight": 0.02,
+          "mouthClose": 0.0,
+          "mouthDimpleLeft": 5.06,
+          "mouthDimpleRight": 0.05,
+          "mouthFrownLeft": 0.75,
+          "mouthFrownRight": 1.03,
+          "mouthFunnel": 0.04,
+          "mouthLeft": 1.05,
+          "mouthLowerDownLeft": 0.21,
+          "mouthLowerDownRight": 0.85,
+          "mouthPressLeft": 19.14,
+          "mouthPressRight": 1.3,
+          "mouthPucker": 1.56,
+          "mouthRight": 0.0,
+          "mouthRollLower": 1.87,
+          "mouthRollUpper": 0.1,
+          "mouthShrugLower": 2.27,
+          "mouthShrugUpper": 1.56,
+          "mouthSmileLeft": 0.13,
+          "mouthSmileRight": 0.03,
+          "mouthStretchLeft": 0.47,
+          "mouthStretchRight": 0.63,
+          "mouthUpperUpLeft": 0.03,
+          "mouthUpperUpRight": 0.01,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "eyeSquintLeft",
+            "pct": 46.27
+          },
+          {
+            "name": "eyeSquintRight",
+            "pct": 31.42
+          },
+          {
+            "name": "eyeLookOutLeft",
+            "pct": 30.62
+          },
+          {
+            "name": "eyeLookInRight",
+            "pct": 29.47
+          },
+          {
+            "name": "browOuterUpLeft",
+            "pct": 25.18
+          },
+          {
+            "name": "browInnerUp",
+            "pct": 23.99
+          },
+          {
+            "name": "mouthPressLeft",
+            "pct": 19.14
+          },
+          {
+            "name": "eyeBlinkLeft",
+            "pct": 12.51
+          }
+        ],
+        "photometry": {
+          "luma_mean": 119.0,
+          "luma_std": 33.1,
+          "luma_min": 37,
+          "luma_max": 205
+        },
+        "embedding_ok": true
+      },
+      {
+        "face_id": "B34",
+        "box": [
+          0.907438,
+          0.322226,
+          0.108427,
+          0.168366
+        ],
+        "detectors": {
+          "yunet": 0.9205,
+          "blazeface": 0.5365
+        },
+        "geometry": {
+          "interocular_px": 395.3,
+          "interocular_frac_of_canvas_w": 0.08235,
+          "box_area_frac_of_canvas": 0.018255,
+          "box_aspect_h_over_w": 1.553,
+          "mesh_extent_px": [
+            628.5,
+            670.8
+          ],
+          "mesh_wider_than_box": true
+        },
+        "head_pose": {
+          "pitch_deg": -1.72,
+          "yaw_deg": -13.3,
+          "roll_deg": 20.41
+        },
+        "symmetry": {
+          "residual_mean_iod": 0.0349,
+          "residual_p95_iod": 0.079,
+          "note": "mean distance from each mirrored landmark to the nearest real landmark, in interocular units. Lower is more bilaterally symmetric."
+        },
+        "blendshapes": {
+          "_neutral": 0.0,
+          "browDownLeft": 0.4,
+          "browDownRight": 0.32,
+          "browInnerUp": 25.86,
+          "browOuterUpLeft": 31.67,
+          "browOuterUpRight": 29.49,
+          "cheekPuff": 0.0,
+          "cheekSquintLeft": 0.0,
+          "cheekSquintRight": 0.0,
+          "eyeBlinkLeft": 5.73,
+          "eyeBlinkRight": 8.77,
+          "eyeLookDownLeft": 12.91,
+          "eyeLookDownRight": 15.11,
+          "eyeLookInLeft": 0.24,
+          "eyeLookInRight": 48.35,
+          "eyeLookOutLeft": 46.75,
+          "eyeLookOutRight": 0.57,
+          "eyeLookUpLeft": 6.25,
+          "eyeLookUpRight": 5.92,
+          "eyeSquintLeft": 48.45,
+          "eyeSquintRight": 42.13,
+          "eyeWideLeft": 1.26,
+          "eyeWideRight": 0.85,
+          "jawForward": 0.05,
+          "jawLeft": 0.0,
+          "jawOpen": 0.04,
+          "jawRight": 0.01,
+          "mouthClose": 0.0,
+          "mouthDimpleLeft": 1.31,
+          "mouthDimpleRight": 0.45,
+          "mouthFrownLeft": 21.21,
+          "mouthFrownRight": 22.84,
+          "mouthFunnel": 0.04,
+          "mouthLeft": 0.1,
+          "mouthLowerDownLeft": 0.11,
+          "mouthLowerDownRight": 0.19,
+          "mouthPressLeft": 7.61,
+          "mouthPressRight": 3.1,
+          "mouthPucker": 0.64,
+          "mouthRight": 0.01,
+          "mouthRollLower": 0.82,
+          "mouthRollUpper": 0.03,
+          "mouthShrugLower": 2.21,
+          "mouthShrugUpper": 1.54,
+          "mouthSmileLeft": 1.53,
+          "mouthSmileRight": 1.1,
+          "mouthStretchLeft": 18.54,
+          "mouthStretchRight": 34.6,
+          "mouthUpperUpLeft": 0.09,
+          "mouthUpperUpRight": 0.1,
+          "noseSneerLeft": 0.0,
+          "noseSneerRight": 0.0
+        },
+        "blendshapes_top8": [
+          {
+            "name": "eyeSquintLeft",
+            "pct": 48.45
+          },
+          {
+            "name": "eyeLookInRight",
+            "pct": 48.35
+          },
+          {
+            "name": "eyeLookOutLeft",
+            "pct": 46.75
+          },
+          {
+            "name": "eyeSquintRight",
+            "pct": 42.13
+          },
+          {
+            "name": "mouthStretchRight",
+            "pct": 34.6
+          },
+          {
+            "name": "browOuterUpLeft",
+            "pct": 31.67
+          },
+          {
+            "name": "browOuterUpRight",
+            "pct": 29.49
+          },
+          {
+            "name": "browInnerUp",
+            "pct": 25.86
+          }
+        ],
+        "photometry": {
+          "luma_mean": 117.8,
+          "luma_std": 27.6,
+          "luma_min": 40,
+          "luma_max": 200
+        },
+        "embedding_ok": true
+      }
+    ]
+  },
+  "cross_panel": [
+    {
+      "excess_over_match_baseline": 0.1008,
+      "panel_b_face": "B02",
+      "best_match_panel_a": "A29",
+      "cosine": 0.3446,
+      "runner_up": {
+        "face_id": "A43",
+        "cosine": 0.3225
+      },
+      "all": [
+        {
+          "face_id": "A29",
+          "cosine": 0.3446
+        },
+        {
+          "face_id": "A43",
+          "cosine": 0.3225
+        },
+        {
+          "face_id": "A19",
+          "cosine": 0.306
+        },
+        {
+          "face_id": "A17",
+          "cosine": 0.2278
+        },
+        {
+          "face_id": "A48",
+          "cosine": 0.227
+        },
+        {
+          "face_id": "A40",
+          "cosine": 0.2146
+        },
+        {
+          "face_id": "A05",
+          "cosine": 0.2144
+        },
+        {
+          "face_id": "A49",
+          "cosine": 0.1292
+        },
+        {
+          "face_id": "A53",
+          "cosine": 0.1207
+        },
+        {
+          "face_id": "A44",
+          "cosine": 0.0995
+        },
+        {
+          "face_id": "A57",
+          "cosine": 0.0895
+        },
+        {
+          "face_id": "A08",
+          "cosine": 0.0796
+        }
+      ]
+    },
+    {
+      "excess_over_match_baseline": 0.2029,
+      "panel_b_face": "B05",
+      "best_match_panel_a": "A48",
+      "cosine": 0.4181,
+      "runner_up": {
+        "face_id": "A43",
+        "cosine": 0.3634
+      },
+      "all": [
+        {
+          "face_id": "A48",
+          "cosine": 0.4181
+        },
+        {
+          "face_id": "A43",
+          "cosine": 0.3634
+        },
+        {
+          "face_id": "A19",
+          "cosine": 0.3267
+        },
+        {
+          "face_id": "A05",
+          "cosine": 0.2895
+        },
+        {
+          "face_id": "A44",
+          "cosine": 0.2439
+        },
+        {
+          "face_id": "A29",
+          "cosine": 0.2371
+        },
+        {
+          "face_id": "A49",
+          "cosine": 0.2164
+        },
+        {
+          "face_id": "A40",
+          "cosine": 0.1394
+        },
+        {
+          "face_id": "A57",
+          "cosine": 0.1058
+        },
+        {
+          "face_id": "A08",
+          "cosine": 0.0617
+        },
+        {
+          "face_id": "A17",
+          "cosine": 0.0181
+        },
+        {
+          "face_id": "A53",
+          "cosine": 0.0008
+        }
+      ]
+    },
+    {
+      "excess_over_match_baseline": 0.0259,
+      "panel_b_face": "B09",
+      "best_match_panel_a": "A05",
+      "cosine": 0.2159,
+      "runner_up": {
+        "face_id": "A17",
+        "cosine": 0.1892
+      },
+      "all": [
+        {
+          "face_id": "A05",
+          "cosine": 0.2159
+        },
+        {
+          "face_id": "A17",
+          "cosine": 0.1892
+        },
+        {
+          "face_id": "A29",
+          "cosine": 0.1695
+        },
+        {
+          "face_id": "A08",
+          "cosine": 0.1427
+        },
+        {
+          "face_id": "A43",
+          "cosine": 0.0628
+        },
+        {
+          "face_id": "A49",
+          "cosine": 0.0512
+        },
+        {
+          "face_id": "A57",
+          "cosine": 0.011
+        },
+        {
+          "face_id": "A53",
+          "cosine": 0.0087
+        },
+        {
+          "face_id": "A44",
+          "cosine": -0.0002
+        },
+        {
+          "face_id": "A19",
+          "cosine": -0.033
+        },
+        {
+          "face_id": "A48",
+          "cosine": -0.0472
+        },
+        {
+          "face_id": "A40",
+          "cosine": -0.05
+        }
+      ]
+    },
+    {
+      "excess_over_match_baseline": 0.1881,
+      "panel_b_face": "B16",
+      "best_match_panel_a": "A29",
+      "cosine": 0.4319,
+      "runner_up": {
+        "face_id": "A19",
+        "cosine": 0.306
+      },
+      "all": [
+        {
+          "face_id": "A29",
+          "cosine": 0.4319
+        },
+        {
+          "face_id": "A19",
+          "cosine": 0.306
+        },
+        {
+          "face_id": "A43",
+          "cosine": 0.3056
+        },
+        {
+          "face_id": "A48",
+          "cosine": 0.3015
+        },
+        {
+          "face_id": "A05",
+          "cosine": 0.2865
+        },
+        {
+          "face_id": "A40",
+          "cosine": 0.2015
+        },
+        {
+          "face_id": "A49",
+          "cosine": 0.1818
+        },
+        {
+          "face_id": "A44",
+          "cosine": 0.1072
+        },
+        {
+          "face_id": "A57",
+          "cosine": 0.0561
+        },
+        {
+          "face_id": "A17",
+          "cosine": 0.0521
+        },
+        {
+          "face_id": "A53",
+          "cosine": 0.0196
+        },
+        {
+          "face_id": "A08",
+          "cosine": -0.0333
+        }
+      ]
+    },
+    {
+      "excess_over_match_baseline": 0.0976,
+      "panel_b_face": "B18",
+      "best_match_panel_a": "A29",
+      "cosine": 0.3414,
+      "runner_up": {
+        "face_id": "A19",
+        "cosine": 0.3159
+      },
+      "all": [
+        {
+          "face_id": "A29",
+          "cosine": 0.3414
+        },
+        {
+          "face_id": "A19",
+          "cosine": 0.3159
+        },
+        {
+          "face_id": "A57",
+          "cosine": 0.2666
+        },
+        {
+          "face_id": "A48",
+          "cosine": 0.2604
+        },
+        {
+          "face_id": "A53",
+          "cosine": 0.2576
+        },
+        {
+          "face_id": "A44",
+          "cosine": 0.2368
+        },
+        {
+          "face_id": "A43",
+          "cosine": 0.2323
+        },
+        {
+          "face_id": "A49",
+          "cosine": 0.2184
+        },
+        {
+          "face_id": "A40",
+          "cosine": 0.1658
+        },
+        {
+          "face_id": "A05",
+          "cosine": 0.1641
+        },
+        {
+          "face_id": "A17",
+          "cosine": 0.1632
+        },
+        {
+          "face_id": "A08",
+          "cosine": 0.1318
+        }
+      ]
+    },
+    {
+      "excess_over_match_baseline": 0.1567,
+      "panel_b_face": "B23",
+      "best_match_panel_a": "A19",
+      "cosine": 0.3936,
+      "runner_up": {
+        "face_id": "A43",
+        "cosine": 0.3149
+      },
+      "all": [
+        {
+          "face_id": "A19",
+          "cosine": 0.3936
+        },
+        {
+          "face_id": "A43",
+          "cosine": 0.3149
+        },
+        {
+          "face_id": "A48",
+          "cosine": 0.289
+        },
+        {
+          "face_id": "A08",
+          "cosine": 0.2149
+        },
+        {
+          "face_id": "A49",
+          "cosine": 0.2127
+        },
+        {
+          "face_id": "A44",
+          "cosine": 0.2018
+        },
+        {
+          "face_id": "A05",
+          "cosine": 0.1693
+        },
+        {
+          "face_id": "A40",
+          "cosine": 0.1566
+        },
+        {
+          "face_id": "A29",
+          "cosine": 0.154
+        },
+        {
+          "face_id": "A53",
+          "cosine": 0.0934
+        },
+        {
+          "face_id": "A57",
+          "cosine": 0.024
+        },
+        {
+          "face_id": "A17",
+          "cosine": -0.0037
+        }
+      ]
+    },
+    {
+      "excess_over_match_baseline": 0.2576,
+      "panel_b_face": "B27",
+      "best_match_panel_a": "A29",
+      "cosine": 0.5014,
+      "runner_up": {
+        "face_id": "A44",
+        "cosine": 0.4166
+      },
+      "all": [
+        {
+          "face_id": "A29",
+          "cosine": 0.5014
+        },
+        {
+          "face_id": "A44",
+          "cosine": 0.4166
+        },
+        {
+          "face_id": "A43",
+          "cosine": 0.3547
+        },
+        {
+          "face_id": "A19",
+          "cosine": 0.3537
+        },
+        {
+          "face_id": "A48",
+          "cosine": 0.314
+        },
+        {
+          "face_id": "A49",
+          "cosine": 0.3119
+        },
+        {
+          "face_id": "A05",
+          "cosine": 0.2965
+        },
+        {
+          "face_id": "A40",
+          "cosine": 0.2941
+        },
+        {
+          "face_id": "A53",
+          "cosine": 0.2384
+        },
+        {
+          "face_id": "A57",
+          "cosine": 0.1607
+        },
+        {
+          "face_id": "A08",
+          "cosine": 0.1261
+        },
+        {
+          "face_id": "A17",
+          "cosine": 0.0736
+        }
+      ]
+    },
+    {
+      "excess_over_match_baseline": -0.0043,
+      "panel_b_face": "B34",
+      "best_match_panel_a": "A29",
+      "cosine": 0.2395,
+      "runner_up": {
+        "face_id": "A53",
+        "cosine": 0.2242
+      },
+      "all": [
+        {
+          "face_id": "A29",
+          "cosine": 0.2395
+        },
+        {
+          "face_id": "A53",
+          "cosine": 0.2242
+        },
+        {
+          "face_id": "A44",
+          "cosine": 0.2061
+        },
+        {
+          "face_id": "A57",
+          "cosine": 0.1868
+        },
+        {
+          "face_id": "A43",
+          "cosine": 0.1752
+        },
+        {
+          "face_id": "A19",
+          "cosine": 0.1208
+        },
+        {
+          "face_id": "A17",
+          "cosine": 0.1065
+        },
+        {
+          "face_id": "A40",
+          "cosine": 0.1045
+        },
+        {
+          "face_id": "A05",
+          "cosine": 0.0998
+        },
+        {
+          "face_id": "A49",
+          "cosine": 0.0698
+        },
+        {
+          "face_id": "A08",
+          "cosine": 0.0398
+        },
+        {
+          "face_id": "A48",
+          "cosine": 0.0082
+        }
+      ]
+    }
+  ]
+}

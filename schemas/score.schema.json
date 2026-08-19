@@ -4,21 +4,52 @@
   "title": "mimesis.score.v1",
   "description": "Timed score for one panel: three tracks (answer, reasoning, overlay) on one clock. Every time is absolute seconds from loop start. The renderer resolves state as a PURE FUNCTION of the current time -- it looks up what should be visible at t, it never accumulates elapsed time -- so a fifteen-minute loop cannot drift and a seek lands exactly. Produced by stage1/build_score.py.",
   "type": "object",
-  "required": ["schema", "panel", "session_id", "loop_duration_s", "clock", "tracks"],
+  "required": [
+    "schema",
+    "panel",
+    "session_id",
+    "loop_duration_s",
+    "clock",
+    "tracks"
+  ],
   "properties": {
-    "schema": { "const": "mimesis.score.v1" },
-    "panel": { "enum": ["A", "B"] },
-    "session_id": { "type": "string", "description": "Joins to claims.json." },
-    "loop_duration_s": { "type": "number", "description": "Full cycle length. Renderer uses t = (clock_seconds % loop_duration_s)." },
+    "schema": {
+      "const": "mimesis.score.v1"
+    },
+    "panel": {
+      "enum": [
+        "A",
+        "B"
+      ]
+    },
+    "session_id": {
+      "type": "string",
+      "description": "Joins to claims.json."
+    },
+    "loop_duration_s": {
+      "type": "number",
+      "description": "Full cycle length. Renderer uses t = (clock_seconds % loop_duration_s)."
+    },
     "clock": {
       "type": "object",
-      "required": ["source", "fallback"],
+      "required": [
+        "source",
+        "fallback"
+      ],
       "properties": {
         "source": {
-          "enum": ["audio.currentTime", "performance.now"],
+          "enum": [
+            "audio.currentTime",
+            "performance.now"
+          ],
           "description": "audio.currentTime when narration is present. Both panels read the SAME clock object; there is no second timebase anywhere in the show."
         },
-        "audio_file": { "type": ["string", "null"] },
+        "audio_file": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "fallback": {
           "const": "performance.now",
           "description": "With no audio file the renderer runs the identical lookup against a monotonic wall clock. No cue timing changes -- the score is authored so it is playable either way."
@@ -31,25 +62,56 @@
     },
     "tracks": {
       "type": "object",
-      "required": ["answer", "reasoning", "overlay"],
+      "required": [
+        "answer",
+        "reasoning",
+        "overlay"
+      ],
       "properties": {
         "answer": {
           "description": "Large serif, bare wall beside the painting. Revealed character by character, blur to sharp.",
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["cue_id", "t_in", "t_out", "text", "char_onsets_ms"],
+            "required": [
+              "cue_id",
+              "t_in",
+              "t_out",
+              "text",
+              "char_onsets_ms"
+            ],
             "properties": {
-              "cue_id": { "type": "string" },
-              "t_in": { "type": "number" },
-              "t_out": { "type": "number", "description": "When the block clears. Reading time, not reveal time." },
-              "text": { "type": "string", "description": "Verbatim from the answer." },
+              "cue_id": {
+                "type": "string"
+              },
+              "t_in": {
+                "type": "number"
+              },
+              "t_out": {
+                "type": "number",
+                "description": "When the block clears. Reading time, not reveal time."
+              },
+              "text": {
+                "type": "string",
+                "description": "Verbatim from the answer."
+              },
               "char_onsets_ms": {
                 "description": "Onset of each character relative to t_in, one entry per character of text. PRECOMPUTED, not derived at render time from a cadence: this is what makes reveal a pure lookup and lets sentence-end pauses be retimed in JSON without touching code. Character i is at blur 6px/0.4 opacity at (t_in + onsets[i]) and fully resolved 120ms later.",
-                "type": "array", "items": { "type": "number" }
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
               },
-              "claim_ids": { "type": "array", "items": { "type": "string" }, "description": "Claims from claims.json covered by this block." },
-              "section": { "type": "string" }
+              "claim_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Claims from claims.json covered by this block."
+              },
+              "section": {
+                "type": "string"
+              }
             }
           }
         },
@@ -58,14 +120,62 @@
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["cue_id", "t_in", "t_out", "text"],
+            "required": [
+              "cue_id",
+              "t_in",
+              "t_out",
+              "text"
+            ],
             "properties": {
-              "cue_id": { "type": "string" },
-              "t_in": { "type": "number" },
-              "t_out": { "type": "number" },
-              "text": { "type": "string" },
-              "line_interval_ms": { "type": "number", "description": "Cadence between lines within this cue." },
-              "section": { "type": "string", "description": "Matches an answer cue's section. This is the alignment that makes deliberation visibly precede output." }
+              "cue_id": {
+                "type": "string"
+              },
+              "t_in": {
+                "type": "number"
+              },
+              "t_out": {
+                "type": "number"
+              },
+              "text": {
+                "type": "string"
+              },
+              "line_interval_ms": {
+                "type": "number",
+                "description": "Cadence between lines within this cue."
+              },
+              "section": {
+                "type": "string",
+                "description": "Matches an answer cue's section. This is the alignment that makes deliberation visibly precede output."
+              },
+              "mentions": {
+                "type": "array",
+                "description": "Elements this reasoning span refers to, with the character offsets where each is named. This is what lets the overlay light up in step with the prose: parsed once in Stage 1, looked up at render time.",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "ref",
+                    "char_span"
+                  ],
+                  "properties": {
+                    "ref": {
+                      "type": "string",
+                      "description": "face_id or blob_id"
+                    },
+                    "char_span": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    },
+                    "basis": {
+                      "type": "string",
+                      "description": "The phrase in the trace that grounds the reference."
+                    }
+                  }
+                }
+              }
             }
           }
         },
@@ -74,44 +184,159 @@
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["cue_id", "t_in", "t_out", "cue", "source"],
+            "required": [
+              "cue_id",
+              "t_in",
+              "t_out",
+              "cue",
+              "source"
+            ],
             "properties": {
-              "cue_id": { "type": "string" },
-              "t_in": { "type": "number" },
-              "t_out": { "type": "number" },
+              "cue_id": {
+                "type": "string"
+              },
+              "t_in": {
+                "type": "number"
+              },
+              "t_out": {
+                "type": "number"
+              },
               "cue": {
                 "enum": [
                   "face_box",
                   "face_box_subdivision",
                   "face_mesh",
-                  "face_numerals",
+                  "face_mesh_contour",
+                  "face_landmarks_6",
                   "corner_brackets",
                   "no_mesh_marker",
+                  "face_numerals",
+                  "blendshape_bar",
+                  "blendshape_stack",
+                  "head_pose_readout",
+                  "symmetry_readout",
+                  "photometry_readout",
+                  "interocular_rule",
+                  "cross_panel_link",
+                  "cross_panel_readout",
+                  "consensus_flag",
+                  "noise_floor_rule",
+                  "response_field_cell",
+                  "response_field_sweep",
+                  "near_miss_marker",
+                  "blob_circle",
+                  "blob_ellipse",
+                  "blob_readout",
                   "flame_marker",
                   "unattached_flame_marker",
                   "count_readout",
-                  "claim_anchor"
+                  "claim_anchor",
+                  "reasoning_pointer"
                 ],
-                "description": "Closed set. Adding a cue type means adding a Stage 1 measurement that backs it."
+                "description": "Closed set. Every entry corresponds to a quantity Stage 1 measures; adding a cue type means adding a measurement, not a decoration. See docs/OVERLAY_VOCABULARY.md for the element-to-source table."
               },
               "source": {
                 "type": "object",
-                "required": ["file", "pointer"],
+                "required": [
+                  "file",
+                  "pointer"
+                ],
                 "description": "Provenance for this cue. `pointer` is a JSON Pointer into `file`.",
                 "properties": {
-                  "file": { "enum": ["detection", "flames", "claims", "reconcile"] },
-                  "pointer": { "type": "string", "description": "e.g. /faces/3 or /blobs/7" }
+                  "file": {
+                    "enum": [
+                      "detection",
+                      "flames",
+                      "claims",
+                      "reconcile",
+                      "face_analysis",
+                      "field",
+                      "overlay_plan",
+                      "noise_floor"
+                    ]
+                  },
+                  "pointer": {
+                    "type": "string",
+                    "description": "e.g. /faces/3 or /blobs/7"
+                  }
                 }
               },
-              "face_ids": { "type": "array", "items": { "type": "string" } },
-              "blob_ids": { "type": "array", "items": { "type": "string" } },
+              "face_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "blob_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "fields": {
                 "description": "Which measured values the numerals print, by key path into the source record. The renderer formats them; it never composes a number of its own.",
-                "type": "array", "items": { "type": "string" }
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "min_box_px": {
                 "type": "number",
                 "description": "Suppress this cue when the face box renders smaller than this many projector pixels. Nested sub-boxes and brackets inside a 40px box are noise, not data; the score decides, not the renderer."
+              },
+              "trigger": {
+                "type": "object",
+                "description": "Optional real-time binding to the reasoning track. When present the cue fires with the reasoning span that talks about it rather than on its own absolute t_in, so the overlay reacts to the machine's deliberation as it streams. t_in/t_out remain the fallback when no audio is present and as the bound cue's outer window.",
+                "required": [
+                  "track",
+                  "cue_id"
+                ],
+                "properties": {
+                  "track": {
+                    "const": "reasoning"
+                  },
+                  "cue_id": {
+                    "type": "string",
+                    "description": "The reasoning cue this element is bound to."
+                  },
+                  "on": {
+                    "enum": [
+                      "cue_start",
+                      "span_reveal",
+                      "cue_end"
+                    ],
+                    "default": "span_reveal",
+                    "description": "span_reveal fires when the specific character span inside the reasoning cue that names this face or blob is revealed."
+                  },
+                  "char_span": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    },
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "description": "Offsets into the reasoning cue's text naming this element."
+                  },
+                  "hold_ms": {
+                    "type": "number",
+                    "description": "How long the cue stays lit after firing."
+                  },
+                  "flash": {
+                    "type": "object",
+                    "description": "Optional hard on/off pattern, in milliseconds. No easing, no glow -- the pattern is literal.",
+                    "properties": {
+                      "on_ms": {
+                        "type": "number"
+                      },
+                      "off_ms": {
+                        "type": "number"
+                      },
+                      "cycles": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
               }
             }
           }
