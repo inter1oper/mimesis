@@ -4,7 +4,16 @@ Two-channel projection installation over two oil paintings, 40 × 30 cm each.
 
 Panel A was painted from a photograph of fourteen real classmates at a
 candlelight vigil. Panel B was painted from an AI-generated image made from a
-written description of that same photograph. Nobody was ever in Panel B's room.
+written description of that same photograph.
+
+Panel A is the **more crowded** canvas; Panel B, from the AI source, holds
+**fewer and more individuated** figures. That is worth stating explicitly
+because it inverts the intuition — the crowded, mushier canvas is the one with
+real people behind it. An early reading of these photographs guessed the
+opposite, from exactly that intuition, and was wrong.
+
+Whether anyone was ever in Panel B's room is a question the models are asked to
+sit with, not a fact this pipeline resolves.
 
 Multimodal models were each shown one panel, cold. The installation projects a
 surveillance overlay and the models' reasoning traces onto the oil, and their
@@ -20,9 +29,11 @@ the models disagree, the disagreement is preserved — it is the material.
 ## Stage 1 — Python analysis
 
 ```
+stage1/calibrate_noise_floor.py   -> what the detectors score on input with no faces
 stage1/rectify.py        photo of canvas  ->  rectified painting raster + homography
 stage1/detect_faces.py   rectified raster ->  faces, boxes, confidences, 478-pt meshes
 stage1/detect_flames.py  rectified raster ->  candle flames, and flames with no face
+stage1/plan_overlay.py   detection + projector -> per-face overlay detail tier
 stage1/parse_transcripts.py   (not written — waiting on transcript files)
 stage1/build_score.py         (not written — waiting on transcripts)
 stage1/reconcile.py           (not written — waiting on transcripts)
@@ -104,8 +115,10 @@ built on:
 
 ## Projection geometry
 
-See `docs/PROJECTION.md`. Short version: two projectors, and the reason is the
-landmark mesh, not the serif.
+One large projector, single raster, four keystoned zones. See
+`docs/PROJECTION.md` for what the pixel budget buys — the resolution decides
+whether the landmark mesh exists as a layer at all, and `stage1/plan_overlay.py`
+computes each face's detail tier from its measured box rather than by eye.
 
 ## Setup
 

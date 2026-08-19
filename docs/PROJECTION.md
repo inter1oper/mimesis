@@ -1,91 +1,79 @@
-# Projection geometry — recomputed for 40 × 30 cm canvases
+# Projection geometry — one projector, 40 × 30 cm canvases
 
-The earlier font note assumed a 2.5–3 m span and asked whether one projector
-was enough. With the canvas size now known (40 × 30 cm, landscape, both
-panels), the answer sharpens, and one of the constraints turns out to bind on
-the *overlay* layer rather than the text layer.
+Settled: **one large projector**, single raster, single coordinate space. Four
+zones (Panel A overlay, Panel A text, Panel B overlay, Panel B text) are laid
+out inside that one raster, each still carrying its own `matrix3d` keystone,
+because the paintings are physically hung and will not land on an ideal grid.
 
-## The table
+The only question left is what the pixel budget buys, because the two paintings
+and the two text columns share it.
 
-| Config | mm per px | Painting width in px | 34 px serif cap height | Comfortable reading distance |
-|---|---|---|---|---|
-| 1 × 1080p across 2.5 m | 1.30 | 307 | 31.0 mm | 6.2 m |
-| 1 × 1080p across 2.0 m | 1.04 | 384 | 24.8 mm | 5.0 m |
-| **2 × 1080p across 2.5 m** | **0.65** | **614** | **15.5 mm** | **3.1 m** |
-| 2 × 1080p across 3.0 m | 0.78 | 512 | 18.6 mm | 3.7 m |
-| 1 × 4K across 2.5 m | 0.65 | 614 | 15.5 mm | 3.1 m |
-| 1 × 4K across 3.0 m | 0.78 | 512 | 18.6 mm | 3.7 m |
+## The budget
 
-Comfortable reading distance uses cap height ≈ D/200, the usual signage rule.
+Two 40 cm paintings plus two text columns across a span `S`. A 34 px serif has
+roughly a 17 px average advance, so column characters-per-line follows directly.
 
-## Why one 1080p fails, and it is not the text
+| Config | mm/px | Painting (px wide) | Text column (px / chars) | Foreground face box | 34px cap | Lines |
+|---|---|---|---|---|---|---|
+| 1080p @ 2.5 m | 1.30 | 307 | 653 / 38 | 38 px | 31.0 mm | 19 |
+| 1080p @ 2.2 m | 1.15 | 349 | 611 / 36 | 44 px | 27.3 mm | 19 |
+| 1080p @ 1.8 m | 0.94 | 427 | 533 / 31 | 53 px | 22.3 mm | 19 |
+| **4K @ 2.2 m** | **0.57** | **698** | **1222 / 72** | **87 px** | 13.6 mm | 39 |
+| 4K @ 2.5 m | 0.65 | 614 | 1306 / 77 | 77 px | 15.5 mm | 39 |
+| 4K @ 3.0 m | 0.78 | 512 | 1408 / 83 | 64 px | 18.6 mm | 39 |
 
-At 1.30 mm/px the 34 px serif is *more* legible, not less — 31 mm caps read
-comfortably out to 6 m. The text layer survives a single projector fine.
+Foreground face box assumes a face at ~12.5% of painting width, eyeballed from
+the photographs. Stage 1a replaces that estimate with measured boxes.
 
-What dies is the overlay. A 40 cm painting becomes 307 projector pixels wide.
-Faces in these two paintings run roughly 5–13% of canvas width, so face boxes
-land between 15 and 38 px. A 478-point landmark mesh inside a 15 px box is not
-line work, it is a filled blob — which violates the no-fill rule that exists
-because fills bloom on gloss. The surveillance layer would be reduced to plain
-rectangles with numerals larger than the boxes they annotate.
+## What the resolution decides
 
-So: **two projectors, extended desktop, one browser window spanning both.** The
-reason is the mesh, not the serif.
+The overlay's landmark mesh needs roughly 4 projector px between adjacent points
+to read as strokes. Below that it fills, and fills bloom on gloss. That sets
+three thresholds on the rendered face box:
 
-## The seam
-
-Two side-by-side projectors put a blend seam at desktop x = 1920, dead centre
-of the wall. Lay the zones out so the seam falls in a gap, not across a
-painting or a text column. With paintings inboard and text outboard the seam
-sits between the two paintings, which is the one place a 2–3 mm registration
-error is invisible.
-
-A single 4K projector gives identical horizontal density with no seam and
-double the vertical room (2160 px ≈ 1.4 m tall at 0.65 mm/px, versus 702 mm for
-a 3840 × 1080 desktop). At 34 px / 1.65 leading that is 38 lines of answer text
-instead of 19. If the budget reaches a gallery-bright 4K, take it. If not, two
-1080p is genuinely fine.
-
-## Overlay detail ladder
-
-At 0.65 mm/px, with the painting 614 px wide:
-
-| Face size on canvas | Box in projector px | Point spacing in a 478-pt mesh |
+| Tier | Minimum box | Draws |
 |---|---|---|
-| ~12.5% of width (foreground) | 77 × 100 | 4.5 px |
-| ~8% (mid-ground) | 49 × 64 | 2.9 px |
-| ~5% (background) | 31 × 40 | 1.8 px |
+| `full_mesh` | 88 px | 478-point tessellation |
+| `contour` | 48 px | ~130 points: eye, lip, face oval |
+| `landmarks` | 24 px | 6 key points |
+| `box_only` | — | box, corner brackets, numerals |
 
-A mesh needs roughly 4 px between adjacent points to read as strokes rather
-than fill. That gives three tiers:
+So:
 
-| Tier | Minimum box | Draw |
-|---|---|---|
-| ≥ 88 px | face ≥ 5.7 cm on canvas | full 478-point mesh |
-| ≥ 48 px | face ≥ 3.1 cm | contour subset (~130 pts: eye, lip, face oval) |
-| ≥ 24 px | face ≥ 1.6 cm | 6 key landmarks only |
-| < 24 px | — | box and numerals only |
+- **4K at 2.2–2.5 m** puts foreground faces at 77–87 px — full mesh or close to
+  it on the front rank, contour on the middle, landmarks on the back. The whole
+  ladder is in play, and the text column is a comfortable 72–77 characters.
+- **1080p at any span** caps foreground faces around 38–53 px. Full mesh never
+  happens; the front rank gets contour at best, everything behind it gets
+  landmarks or box-only. The text column narrows to 31–38 characters, which is
+  a tight measure but reads fine for a slow character reveal.
 
-This is why `score.schema.json` carries `min_box_px` on every overlay cue: the
-score decides what detail a face gets, from its measured box size, and the
-renderer only obeys. Dropping detail on a small face is the honest move —
-drawing a mesh that resolves to a blob would be adding decoration the data
-cannot support, which is exactly what the brief rules out.
+Either works. The difference is whether the mesh exists as a layer at all. If
+it is 1080p, design the surveillance layer around boxes, brackets and numerals
+from the start and treat any mesh as a bonus on one or two faces — deliberately,
+rather than discovering it on the wall the night before.
 
-Face-size percentages above are eyeballed from the supplied photographs and are
-placeholders until Stage 1a runs. The pipeline emits exact box sizes; the tier
-assignment is then computed, not estimated.
+## The tier is computed, not chosen
 
-## Font choice is less coupled to the score than feared
+`stage1/plan_overlay.py` takes the detection output plus the projector geometry
+and emits, per face, the rendered box size in projector px and millimetres and
+the highest tier it supports. Those numbers become `min_box_px` on the overlay
+cues in the score.
 
-The worry was that substituting the serif late would change every line length
-in the score. It will change line *breaking*, but not timing: `score.schema.json`
-stores each answer cue as verbatim text plus a `char_onsets_ms` array — a
-per-character onset in milliseconds. Character timing is font-independent.
-Swapping Tiempos Text for Source Serif 4 rewraps the column and changes how
-many lines a block occupies; it does not move a single onset.
+    python stage1/plan_overlay.py --detection out/panel_a_detection.json \
+        --projector 3840x2160 --span-mm 2200
 
-So the font decision does not have to precede Stage 2. What has to precede
-Stage 2 is the *column width*, because that is what the reveal is laid out
-into. Fix the column geometry, and the face can change afterwards.
+A face whose mesh never converged is forced to `box_only` regardless of size —
+there is nothing to draw. That is the same rule as everywhere else in this
+project: absent data stays absent.
+
+## Font choice does not gate Stage 2
+
+The score stores each answer cue as verbatim text plus `char_onsets_ms`, one
+onset per character. Character timing is font-independent, so swapping Tiempos
+Text for Source Serif 4 rewraps the column without moving a single onset.
+
+What does need fixing before Stage 2 is the **column width in pixels**, since
+that is what the reveal lays out into — and from the table above, that follows
+from the projector and the span. Decide those two; the typeface can change
+afterwards.

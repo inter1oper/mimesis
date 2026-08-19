@@ -4,25 +4,49 @@
   "title": "mimesis.reconcile.v1",
   "description": "The three-way count table the brief asks for, per panel: what the detector found, what each model claimed, and the true number. Disagreement is preserved and reported, never reconciled away. Produced by stage1/reconcile.py.",
   "type": "object",
-  "required": ["schema", "panels"],
+  "required": [
+    "schema",
+    "panels"
+  ],
   "properties": {
-    "schema": { "const": "mimesis.reconcile.v1" },
+    "schema": {
+      "const": "mimesis.reconcile.v1"
+    },
     "panels": {
       "type": "object",
       "additionalProperties": {
         "type": "object",
-        "required": ["detector", "models", "truth"],
+        "required": [
+          "detector",
+          "models",
+          "truth"
+        ],
         "properties": {
           "detector": {
             "type": "object",
             "properties": {
-              "merged": { "type": "integer", "description": "Faces after merging both detectors." },
-              "both_detectors_agree": { "type": "integer" },
-              "blazeface_only": { "type": "integer" },
-              "yunet_only": { "type": "integer" },
-              "mesh_converged": { "type": "integer" },
-              "max_confidence": { "type": "number" },
-              "median_confidence": { "type": "number" }
+              "merged": {
+                "type": "integer",
+                "description": "Faces after merging both detectors."
+              },
+              "both_detectors_agree": {
+                "type": "integer"
+              },
+              "blazeface_only": {
+                "type": "integer"
+              },
+              "yunet_only": {
+                "type": "integer"
+              },
+              "mesh_converged": {
+                "type": "integer"
+              },
+              "max_confidence": {
+                "type": "number"
+              },
+              "median_confidence": {
+                "type": "number"
+              }
             }
           },
           "models": {
@@ -30,28 +54,64 @@
             "items": {
               "type": "object",
               "properties": {
-                "session_id": { "type": "string" },
-                "model": { "type": "string" },
-                "stated": { "type": ["integer", "null"] },
-                "hedged": { "type": "boolean" },
-                "delta_vs_truth": { "type": ["integer", "null"] },
-                "delta_vs_detector": { "type": ["integer", "null"] }
+                "session_id": {
+                  "type": "string"
+                },
+                "model": {
+                  "type": "string"
+                },
+                "stated": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "hedged": {
+                  "type": "boolean"
+                },
+                "delta_vs_truth": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "delta_vs_detector": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                }
               }
             }
           },
           "truth": {
             "type": "object",
-            "required": ["value", "basis"],
+            "required": [
+              "value",
+              "basis"
+            ],
             "properties": {
-              "value": { "type": ["integer", "null"] },
+              "value": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
               "basis": {
                 "type": "string",
-                "description": "How the true number is known. For Panel A this is the artist's knowledge of the source photograph. For Panel B, state plainly what 'true' even means when nobody was in the room -- e.g. 'figures depicted', with the count supplied by the artist. Never inferred by this pipeline."
+                "description": "How the true number is known, supplied by the artist, never inferred by this pipeline. Panel A: figures depicted, from the artist's knowledge of the source photograph. Panel B: figures depicted on the canvas. Whether those figures correspond to anyone is a question put to the models, not a quantity this table is trying to settle."
               }
             }
           },
-          "unattached_flames": { "type": "integer" },
-          "notes": { "type": "array", "items": { "type": "string" } }
+          "unattached_flames": {
+            "type": "integer"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
         }
       }
     }
