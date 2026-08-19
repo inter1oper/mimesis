@@ -1,548 +1,488 @@
 <!doctype html>
 <meta charset="utf-8">
 <title>mimesis</title>
-<!-- Source Serif 4 is the documented free fallback. Loading it over the network
-     is a convenience for review; in the gallery install the licensed face
-     locally and the stack below picks it up with no network at all. -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap">
 <style>
+/* Source Serif 4 is inlined by tools/make_standalone.py so the reveal renders
+   the intended face with no network. The stack below still prefers a licensed
+   Tiempos Text if one is installed on the machine. */
+@font-face{font-family:"MimesisSerif";font-weight:300;font-display:block;
+  src:url(FONT_LIGHT) format("truetype")}
+@font-face{font-family:"MimesisSerif";font-weight:400;font-display:block;
+  src:url(FONT_REGULAR) format("truetype")}
 :root{
-  --cyan:#00e5ff; --cyan-dim:#0a7f8c; --warm:#ff7a45;
-  --paper:#e8e4dc;                 /* off-white: white blooms on a projector */
+  --obs:#efece4;          /* DETECT, RESOLVE — observation */
+  --measure:#4df29a;      /* MEASURE — quantity taken */
+  --relate:#7ff5c4;       /* RELATE — comparison */
+  --doubt:#ff4a4a;        /* DOUBT — the floor, the rejects */
+  --paper:#efece4;
   --stroke:1px;
-  --num:10px;                      /* overlay numerals, 5-7mm at 0.91mm/px */
-  --trace:11px;                     /* reasoning telemetry */
-  --serif:34px;                     /* answer, 22mm cap */
+  --num:11px;
+  --serif:34px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%;background:#000;overflow:hidden;
-  font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;cursor:none}
+html,body{height:100%;background:#000;overflow:hidden;cursor:none;
+  font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
 body.config{cursor:default}
 #stage{position:fixed;inset:0}
 .zone{position:absolute;top:0;left:0;transform-origin:0 0;will-change:transform}
 .zone svg{display:block;overflow:visible}
-.zone .text{position:absolute;inset:0;padding:0 8px}
+.zone .text{position:absolute;inset:0}
 
-/* ---- overlay ink: strokes only, never fills, never white ---- */
-svg .s{fill:none;stroke:var(--cyan);stroke-width:var(--stroke);vector-effect:non-scaling-stroke}
-svg .dim{stroke:var(--cyan-dim)}
-svg .warn{stroke:var(--warm)}
-svg text{fill:var(--cyan);font-family:inherit;font-size:var(--num);
-  letter-spacing:.02em;dominant-baseline:hanging}
-svg text.warn{fill:var(--warm)}
-svg text.dim{fill:var(--cyan-dim)}
-/* the one filled element the brief allows: the plate behind a percentage.
-   kept dark and small so it cannot bloom on gloss. */
-svg rect.plate{fill:#04191c;stroke:var(--cyan-dim);stroke-width:var(--stroke);
-  vector-effect:non-scaling-stroke}
+svg .s{fill:none;stroke:currentColor;stroke-width:var(--stroke);
+  vector-effect:non-scaling-stroke;stroke-linecap:butt}
+svg text{fill:currentColor;font-family:ui-monospace,Menlo,Consolas,monospace;
+  font-size:var(--num);letter-spacing:.04em;dominant-baseline:hanging}
+svg .obs{color:var(--obs)} svg .measure{color:var(--measure)}
+svg .relate{color:var(--relate)} svg .doubt{color:var(--doubt)}
+svg .alarm{color:var(--doubt)}
+svg image{opacity:.5}
 
-/* ---- answer: large serif, off-white on black ---- */
-.answer{font-family:"Tiempos Text","Source Serif 4","Source Serif Pro",Georgia,
-  "Times New Roman",serif;
+.answer{font-family:"MimesisSerif","Tiempos Text",Georgia,serif;
   font-size:var(--serif);line-height:1.65;color:var(--paper);
-  letter-spacing:-.01em;font-weight:350}
-.answer .ch{white-space:pre-wrap}
-.caret{display:inline-block;width:1px;height:1.05em;background:var(--paper);
-  vertical-align:-.16em}
-/* ---- reasoning: telemetry, hard appear, dimmer, faster ---- */
-.trace{font-size:var(--trace);line-height:1.35;color:var(--cyan);opacity:.42;
-  white-space:pre-wrap}
+  letter-spacing:-.008em;font-weight:300}
+.caret{display:inline-block;width:1px;height:1.02em;background:var(--paper);
+  vertical-align:-.14em}
+.banner{font-family:ui-monospace,Menlo,monospace;font-size:11px;line-height:1.6;
+  color:var(--measure);opacity:.5;margin-bottom:1.2em;letter-spacing:.06em}
 
-/* ---- config mode ---- */
 .handle{position:fixed;width:22px;height:22px;margin:-11px 0 0 -11px;
-  border:1px solid var(--cyan);border-radius:50%;display:none;z-index:50}
-.handle::after{content:"";position:absolute;inset:9px;background:var(--cyan)}
+  border:1px solid var(--measure);border-radius:50%;display:none;z-index:50}
+.handle::after{content:"";position:absolute;inset:9px;background:var(--measure)}
 body.config .handle{display:block;cursor:grab}
-body.config .zone{outline:1px dashed var(--cyan-dim)}
-#hud{position:fixed;left:10px;top:10px;z-index:60;color:var(--cyan);
-  font-size:11px;line-height:1.6;display:none;white-space:pre;
-  background:#000a;padding:8px 10px;border:1px solid var(--cyan-dim)}
+body.config .zone{outline:1px dashed #2a4d3d}
+#hud{position:fixed;left:12px;top:12px;z-index:60;color:var(--measure);
+  font-size:11px;line-height:1.7;display:none;white-space:pre;
+  background:#000c;padding:10px 12px;border:1px solid #2a4d3d}
 body.config #hud{display:block}
-#status{position:fixed;right:10px;bottom:10px;z-index:60;color:var(--cyan-dim);
-  font-size:10px;text-align:right;white-space:pre}
+#status{position:fixed;right:12px;bottom:12px;z-index:60;color:#3a5a4d;
+  font-size:10px;text-align:right;white-space:pre;letter-spacing:.06em}
 </style>
 
-<div id="stage"></div>
-<div id="hud"></div>
-<div id="status"></div>
+<div id="stage"></div><div id="hud"></div><div id="status"></div>
 
 <script>
 "use strict";
-/* ======================================================================
+/* =====================================================================
    mimesis — presentation layer.
 
-   One clock. State is resolved as a PURE FUNCTION of that clock: the renderer
-   asks what should be visible at t, it never accumulates elapsed time. That is
-   what keeps a fifteen-minute loop from drifting and makes a seek land exactly.
+   One clock. Every visual state is a PURE FUNCTION of it: the renderer asks
+   what should be visible at t, and how far through its own growth each mark
+   is, without ever accumulating. A seek lands exactly; a fifteen-minute loop
+   cannot drift.
 
-   Every mark drawn here names a Stage 1 measurement through cue.source. There
-   is no decorative element in this file.
-   ====================================================================== */
+   The unit of composition is a box, a circle beside it, and a connector
+   carrying the number and the sentence that justifies it. Colour is time:
+   white while observing, green while measuring and relating, red for doubt.
+   ===================================================================== */
 
-const FILES = ["panel_a_detection","panel_b_detection","panel_a_flames","panel_b_flames",
+const FILES=["panel_a_detection","panel_b_detection","panel_a_flames","panel_b_flames",
   "panel_a_field","panel_b_field","panel_a_overlay_plan","panel_b_overlay_plan",
   "face_analysis","structure","stability","noise_floor","score_a","score_b"];
-const D = (window.MIMESIS_DATA)||{};
-const S = {}; // resolved state
+const D=(window.MIMESIS_DATA)||{};
+const IMG=(window.MIMESIS_IMAGES)||{};
 
-/* ---------- JSON Pointer, for cue.source ---------- */
-function ptr(obj, p){
-  if(p==null||p==="") return obj;
-  let cur=obj;
-  for(const raw of p.replace(/^\//,"").split("/")){
-    if(cur==null) return undefined;
-    cur=cur[raw.replace(/~1/g,"/").replace(/~0/g,"~")];
-  }
-  return cur;
-}
-function sourceDoc(panel, file){
-  const l=panel.toLowerCase();
-  switch(file){
-    case "detection": return D["panel_"+l+"_detection"];
-    case "flames": return D["panel_"+l+"_flames"];
-    case "field": return D["panel_"+l+"_field"];
-    case "overlay_plan": return D["panel_"+l+"_overlay_plan"];
-    case "face_analysis": return D.face_analysis;
-    case "structure": return D.structure;
-    case "stability": return D.stability;
-    case "noise_floor": return D.noise_floor;
-    default: return undefined;
-  }
-}
+function ptr(o,p){ if(p==null||p==="")return o; let c=o;
+  for(const k of p.replace(/^\//,"").split("/")){ if(c==null)return undefined;
+    c=c[k.replace(/~1/g,"/").replace(/~0/g,"~")]; } return c; }
+function sourceDoc(panel,file){ const l=panel.toLowerCase();
+  return {detection:D["panel_"+l+"_detection"],flames:D["panel_"+l+"_flames"],
+    field:D["panel_"+l+"_field"],overlay_plan:D["panel_"+l+"_overlay_plan"],
+    face_analysis:D.face_analysis,structure:D.structure,stability:D.stability,
+    noise_floor:D.noise_floor}[file]; }
 
-/* ---------- homography: unit rect -> four dragged corners -> matrix3d ------- */
+/* ---------- homography -> matrix3d ---------- */
 function homography(w,h,c){
-  // c = [[x,y] TL, TR, BR, BL] in screen px
-  const src=[[0,0],[w,0],[w,h],[0,h]], A=[], b=[];
-  for(let i=0;i<4;i++){
-    const [x,y]=src[i], [u,v]=c[i];
+  const src=[[0,0],[w,0],[w,h],[0,h]],A=[],b=[];
+  for(let i=0;i<4;i++){ const [x,y]=src[i],[u,v]=c[i];
     A.push([x,y,1,0,0,0,-u*x,-u*y]); b.push(u);
-    A.push([0,0,0,x,y,1,-v*x,-v*y]); b.push(v);
-  }
-  // gaussian elimination, 8x8
+    A.push([0,0,0,x,y,1,-v*x,-v*y]); b.push(v); }
   const M=A.map((r,i)=>r.concat([b[i]]));
-  for(let i=0;i<8;i++){
-    let p=i; for(let r=i+1;r<8;r++) if(Math.abs(M[r][i])>Math.abs(M[p][i])) p=r;
+  for(let i=0;i<8;i++){ let p=i;
+    for(let r=i+1;r<8;r++) if(Math.abs(M[r][i])>Math.abs(M[p][i])) p=r;
     [M[i],M[p]]=[M[p],M[i]];
     if(Math.abs(M[i][i])<1e-12) return null;
-    for(let r=0;r<8;r++){ if(r===i) continue;
-      const f=M[r][i]/M[i][i];
-      for(let k=i;k<9;k++) M[r][k]-=f*M[i][k];
-    }
-  }
+    for(let r=0;r<8;r++){ if(r===i) continue; const f=M[r][i]/M[i][i];
+      for(let k=i;k<9;k++) M[r][k]-=f*M[i][k]; } }
   const H=[]; for(let i=0;i<8;i++) H.push(M[i][8]/M[i][i]);
-  const [a,bb,cc,d,e,f,g,hh]=H;
-  return `matrix3d(${a},${d},0,${g},${bb},${e},0,${hh},0,0,1,0,${cc},${f},0,1)`;
+  return `matrix3d(${H[0]},${H[3]},0,${H[6]},${H[1]},${H[4]},0,${H[7]},0,0,1,0,${H[2]},${H[5]},0,1)`;
 }
 
 /* ---------- zones ---------- */
-const NOMINAL={overlay:[1000,750], text:[1121,1400]}; // text col: 65ch at 34px
-const ZONES=[
-  {id:"A-overlay",kind:"overlay",panel:"A"},
-  {id:"A-text",   kind:"text",   panel:"A"},
-  {id:"B-overlay",kind:"overlay",panel:"B"},
-  {id:"B-text",   kind:"text",   panel:"B"},
-];
-const LS_KEY="mimesis.zones.v1";
-
-function defaultCorners(z,i){
-  // Physically accurate default, from docs/PHYSICAL_SPEC.md: 4K across 3.5 m.
-  // Two 40 cm paintings are 439 px each and occupy 22% of the raster; the text
-  // columns hold a 65-character measure at a 22 mm cap; the rest stays black,
-  // which costs nothing on a dark wall. Paintings inboard so any seam or
-  // registration error lands in the gap between them.
+const NOMINAL={overlay:[1000,750],text:[1121,1400]};
+const ZONES=[{id:"A-overlay",kind:"overlay",panel:"A"},{id:"A-text",kind:"text",panel:"A"},
+  {id:"B-overlay",kind:"overlay",panel:"B"},{id:"B-text",kind:"text",panel:"B"}];
+const LS_KEY="mimesis.zones.v2";
+function defaultCorners(z){
+  // Physically accurate: 4K across 3.5 m, two 40 cm paintings at 22% of raster.
   const W=innerWidth,H=innerHeight;
-  const X={ "A-text":[0.0938,0.3857], "A-overlay":[0.3857,0.5000],
-            "B-overlay":[0.5000,0.6143], "B-text":[0.6143,0.9063] }[z.id];
-  const Y= z.kind==="overlay" ? [0.4236,0.5759] : [0.1759,0.8241];
+  const X={"A-text":[0.0938,0.3857],"A-overlay":[0.3857,0.5000],
+           "B-overlay":[0.5000,0.6143],"B-text":[0.6143,0.9063]}[z.id];
+  const Y=z.kind==="overlay"?[0.4236,0.5759]:[0.1759,0.8241];
   return [[X[0]*W,Y[0]*H],[X[1]*W,Y[0]*H],[X[1]*W,Y[1]*H],[X[0]*W,Y[1]*H]];
 }
-function loadZones(){
-  let saved=null;
-  try{ saved=JSON.parse(localStorage.getItem(LS_KEY)||"null"); }catch(e){}
-  ZONES.forEach((z,i)=>{
-    const [w,h]=NOMINAL[z.kind];
-    z.w=w; z.h=h;
-    z.corners=(saved&&saved[z.id])||defaultCorners(z,i);
-  });
-}
-function saveZones(){
-  const o={}; ZONES.forEach(z=>o[z.id]=z.corners);
-  localStorage.setItem(LS_KEY,JSON.stringify(o));
-}
-function applyZone(z){
-  z.el.style.width=z.w+"px"; z.el.style.height=z.h+"px";
-  const m=homography(z.w,z.h,z.corners);
-  if(m) z.el.style.transform=m;
-  z.handles.forEach((hd,i)=>{ hd.style.left=z.corners[i][0]+"px"; hd.style.top=z.corners[i][1]+"px"; });
-}
-
+function loadZones(){ let s=null; try{s=JSON.parse(localStorage.getItem(LS_KEY)||"null");}catch(e){}
+  ZONES.forEach(z=>{ const [w,h]=NOMINAL[z.kind]; z.w=w; z.h=h;
+    z.corners=(s&&s[z.id])||defaultCorners(z); }); }
+function saveZones(){ const o={}; ZONES.forEach(z=>o[z.id]=z.corners);
+  localStorage.setItem(LS_KEY,JSON.stringify(o)); }
+function applyZone(z){ z.el.style.width=z.w+"px"; z.el.style.height=z.h+"px";
+  const m=homography(z.w,z.h,z.corners); if(m) z.el.style.transform=m;
+  z.handles.forEach((hd,i)=>{hd.style.left=z.corners[i][0]+"px";hd.style.top=z.corners[i][1]+"px";}); }
 function buildZones(){
   const stage=document.getElementById("stage");
   ZONES.forEach(z=>{
     const el=document.createElement("div"); el.className="zone"; el.id=z.id;
     if(z.kind==="overlay"){
-      el.innerHTML=`<svg width="${z.w}" height="${z.h}" viewBox="0 0 ${z.w} ${z.h}"></svg>`;
-      z.svg=el.querySelector("svg");
-    }else{
+      const im=IMG["panel_"+z.panel.toLowerCase()];
+      el.innerHTML=`<svg width="${z.w}" height="${z.h}" viewBox="0 0 ${z.w} ${z.h}">`+
+        (im?`<image class="backdrop" href="${im}" x="0" y="0" width="${z.w}" height="${z.h}"/>`:``)+
+        `<g class="ink"></g></svg>`;
+      z.svg=el.querySelector("svg"); z.ink=el.querySelector(".ink");
+      z.backdrop=el.querySelector(".backdrop");
+    } else {
       el.innerHTML=`<div class="text"><div class="answer"></div></div>`;
       z.answerEl=el.querySelector(".answer");
     }
     stage.appendChild(el); z.el=el;
-    z.handles=[0,1,2,3].map(i=>{
-      const hd=document.createElement("div"); hd.className="handle";
-      document.body.appendChild(hd);
-      let drag=false;
-      hd.addEventListener("pointerdown",e=>{drag=true;hd.setPointerCapture(e.pointerId);
-        hd.style.cursor="grabbing";});
-      hd.addEventListener("pointermove",e=>{ if(!drag) return;
-        z.corners[i]=[e.clientX,e.clientY]; applyZone(z); });
-      hd.addEventListener("pointerup",e=>{drag=false;hd.style.cursor="grab";saveZones();});
-      return hd;
-    });
+    z.handles=[0,1,2,3].map(i=>{ const hd=document.createElement("div");
+      hd.className="handle"; document.body.appendChild(hd); let drag=false;
+      hd.addEventListener("pointerdown",e=>{drag=true;hd.setPointerCapture(e.pointerId);});
+      hd.addEventListener("pointermove",e=>{ if(drag){z.corners[i]=[e.clientX,e.clientY];applyZone(z);} });
+      hd.addEventListener("pointerup",()=>{drag=false;saveZones();});
+      return hd; });
     applyZone(z);
   });
 }
 
-/* ---------- the clock ---------- */
-let audio=null;
-function clockSeconds(){
-  if(audio && !audio.paused) return audio.currentTime;
-  return performance.now()/1000;
-}
-function loopT(score){ const L=score.loop_duration_s||900; return ((clockSeconds()%L)+L)%L; }
+/* ---------- clock ---------- */
+let audio=null, showBackdrop=true;
+function clockSeconds(){ return (audio&&!audio.paused)?audio.currentTime:performance.now()/1000; }
+function loopT(s){ const L=s.loop_duration_s||900; return ((clockSeconds()%L)+L)%L; }
+/* growth: linear, hard-edged. no easing anywhere in this file. */
+function grow(t,t_in,secs){ if(!secs) return 1; return Math.max(0,Math.min(1,(t-t_in)/secs)); }
+function lit(t,hz){ return hz? (Math.floor(t*hz*2)%2)===0 : true; }
 
-/* ---------- flash: a pure function of t, hard on/off, no easing ---------- */
-function lit(t, hz){
-  if(!hz) return true;
-  return (Math.floor(t*hz*2)%2)===0;
-}
-
-/* ---------- draw ---------- */
+/* ---------- svg ---------- */
 const NS="http://www.w3.org/2000/svg";
-function mk(tag,attrs,txt){
-  const e=document.createElementNS(NS,tag);
-  for(const k in attrs) e.setAttribute(k,attrs[k]);
-  if(txt!=null) e.textContent=txt;
-  return e;
-}
-function faceById(panel,id){
-  const d=sourceDoc(panel,"detection");
-  return d && d.faces.find(f=>f.face_id===id);
-}
+function mk(tag,a,txt){ const e=document.createElementNS(NS,tag);
+  for(const k in a) if(a[k]!=null) e.setAttribute(k,a[k]);
+  if(txt!=null) e.textContent=txt; return e; }
+/* a label types in, hard, one character at a time — no blur out here.
+   the blur reveal belongs to the answer, this layer is telemetry. */
+function typed(text,t,t0,cps){ const n=Math.floor(Math.max(0,(t-t0))*cps);
+  return text.slice(0,Math.min(text.length,n)); }
+
 function drawOverlay(z){
-  const score=D["score_"+z.panel.toLowerCase()];
-  if(!score) return;
-  const t=loopT(score), W=z.w, H=z.h;
-  const g=document.createDocumentFragment();
-  let drawn=0;
+  const score=D["score_"+z.panel.toLowerCase()]; if(!score) return 0;
+  const t=loopT(score),W=z.w,H=z.h,P=z.panel;
+  const det=sourceDoc(P,"detection");
+  const face=id=>det.faces.find(f=>f.face_id===id);
+  const g=document.createDocumentFragment(); let n=0;
+  if(z.backdrop) z.backdrop.style.display=showBackdrop?"":"none";
 
   for(const c of score.tracks.overlay){
-    if(t<c.t_in || t>=c.t_out) continue;
-    // flash rate comes from the measurement, never from this file
+    if(t<c.t_in||t>=c.t_out) continue;
     if(c.flash_from){
-      const rec=ptr(sourceDoc(z.panel,c.flash_from.file), c.flash_from.pointer);
-      const hz=rec? rec[c.flash_from.field] : 0;
-      if(!lit(t,hz)) continue;
+      const rec=ptr(sourceDoc(P,c.flash_from.file),c.flash_from.pointer);
+      if(!lit(t,rec?rec[c.flash_from.field]:0)) continue;
     }
-    const rec=ptr(sourceDoc(z.panel,c.source.file), c.source.pointer);
+    const rec=ptr(sourceDoc(P,c.source.file),c.source.pointer);
     if(rec===undefined) continue;
-    drawn+=draw(g,c,rec,z,W,H,t);
+    n+=drawCue(g,c,rec,face,W,H,t,score);
   }
-  z.svg.replaceChildren(g);
-  return drawn;
+  z.ink.replaceChildren(g);
+  return n;
 }
 
-function box(rec){ return rec && rec.box; }
-function draw(g,c,rec,z,W,H,t){
-  const P=z.panel;
-  const F=(id)=>faceById(P,id);
-  const push=(e)=>{g.appendChild(e);};
-  const b=(id)=>{const f=F(id); return f&&f.box;};
+function drawCue(g,c,rec,face,W,H,t,score){
+  const cls=(c.alarm?"alarm":c.role||"obs");
+  const push=e=>g.appendChild(e);
+  const F=id=>{const f=face(id); return f&&f.box;};
+  const b=c.face_ids&&F(c.face_ids[0]);
+  const cx=b?(b[0]+b[2]/2)*W:0, cy=b?(b[1]+b[3]/2)*H:0;
+  const node=c.at?[c.at[0]*W,c.at[1]*H]:null;
+  const k=grow(t,c.t_in,c.grow_s);
 
   switch(c.cue){
-  case "face_box": case "tentative_track": case "lost_track": {
-    const bx=box(rec); if(!bx) break;
-    const cls = c.cue==="face_box" ? "s" : "s dim";
-    push(mk("rect",{class:cls,x:bx[0]*W,y:bx[1]*H,width:bx[2]*W,height:bx[3]*H}));
-    if(c.cue!=="face_box"){
-      push(mk("text",{class:"dim",x:bx[0]*W,y:(bx[1]+bx[3])*H+2},
-        c.cue==="tentative_track"?"TENTATIVE":"LOST"));
+
+  case "box_emerge": {
+    if(!b) break;
+    const x0=b[0]*W,y0=b[1]*H,x1=(b[0]+b[2])*W,y1=(b[1]+b[3])*H;
+    const arm=Math.max(4,(x1-x0)*0.30)*k;
+    [[x0,y0,1,1],[x1,y0,-1,1],[x0,y1,1,-1],[x1,y1,-1,-1]].forEach(([ax,ay,dx,dy])=>
+      push(mk("path",{class:"s "+cls,d:`M${ax+dx*arm} ${ay}H${ax}V${ay+dy*arm}`})));
+    if(k>=1) push(mk("rect",{class:"s "+cls,x:x0,y:y0,width:x1-x0,height:y1-y0}));
+    return 1;
+  }
+  case "box_subdivide": {
+    if(!b) break;
+    const x0=b[0]*W,y0=b[1]*H,w=b[2]*W,h=b[3]*H,m=c.cells||3;
+    for(let i=1;i<m;i++){
+      const f=Math.min(1,k*m-i+1); if(f<=0) continue;
+      push(mk("line",{class:"s "+cls,x1:x0+w*i/m,y1:y0,x2:x0+w*i/m,y2:y0+h*f}));
+      push(mk("line",{class:"s "+cls,x1:x0,y1:y0+h*i/m,x2:x0+w*f,y2:y0+h*i/m}));
     }
     return 1;
   }
-  case "corner_brackets": {
-    const bx=box(rec); if(!bx) break;
-    const x0=bx[0]*W,y0=bx[1]*H,x1=(bx[0]+bx[2])*W,y1=(bx[1]+bx[3])*H;
-    const k=Math.max(5,(x1-x0)*0.24);
-    [[x0,y0,1,1],[x1,y0,-1,1],[x0,y1,1,-1],[x1,y1,-1,-1]].forEach(([ax,ay,dx,dy])=>{
-      push(mk("path",{class:"s",d:`M${ax+dx*k} ${ay}H${ax}V${ay+dy*k}`}));
-    });
+  case "box_fail": {
+    if(!b) break;
+    const x0=b[0]*W,y0=b[1]*H,x1=(b[0]+b[2])*W,y1=(b[1]+b[3])*H;
+    push(mk("path",{class:"s alarm",
+      d:`M${x0} ${y0}L${x0+(x1-x0)*k} ${y0+(y1-y0)*k}M${x1} ${y0}L${x1-(x1-x0)*k} ${y0+(y1-y0)*k}`}));
     return 1;
   }
-  case "face_numerals": {
-    const bx=box(rec); if(!bx) break;
-    const d=rec.detectors||{};
-    const y=bx[1]*H-14;
-    push(mk("text",{x:bx[0]*W,y},
-      `${rec.face_id}  BF ${(d.blazeface?d.blazeface.score:0).toFixed(3)}  YN ${(d.yunet?d.yunet.score:0).toFixed(3)}`));
+  case "node": case "node_pulse": {
+    if(!node) break;
+    const r=(c.r||0.019)*W*k;
+    push(mk("circle",{class:"s "+cls,cx:node[0],cy:node[1],r}));
+    if(c.value&&k>=1)
+      push(mk("text",{class:cls,x:node[0]-r*0.72,y:node[1]-4},c.value));
+    if(c.cue==="node_pulse"&&k>=1)
+      push(mk("circle",{class:"s "+cls,cx:node[0],cy:node[1],r:r*1.5,
+        "stroke-dasharray":"2 6"}));
     return 1;
   }
-  case "consensus_flag": {
-    const bx=box(rec); if(!bx) break;
-    const n=(rec.consensus||[]).length;
-    push(mk("text",{class:n>1?"":"warn",x:bx[0]*W,y:bx[1]*H-3},
-      n>1?"CONFIRMED 2/2":"SINGLE 1/2"));
+  case "connector": {
+    if(!b||!node) break;
+    // leaves the box at its nearest edge, arrives at the circle's rim
+    const dx=node[0]-cx, dy=node[1]-cy, L=Math.hypot(dx,dy)||1;
+    const ux=dx/L, uy=dy/L, r=0.019*W;
+    const sx=cx+ux*Math.min(b[2]*W,b[3]*H)*0.55, sy=cy+uy*Math.min(b[2]*W,b[3]*H)*0.55;
+    const ex=node[0]-ux*r, ey=node[1]-uy*r;
+    push(mk("line",{class:"s "+cls,x1:sx,y1:sy,x2:sx+(ex-sx)*k,y2:sy+(ey-sy)*k}));
     return 1;
   }
-  case "no_mesh_marker": {
-    const bx=box(rec); if(!bx) break;
-    const x0=bx[0]*W,y0=bx[1]*H,x1=(bx[0]+bx[2])*W,y1=(bx[1]+bx[3])*H;
-    push(mk("path",{class:"s warn",d:`M${x0} ${y0}L${x1} ${y1}M${x1} ${y0}L${x0} ${y1}`}));
+  case "connector_label": {
+    // the number and the sentence ride the connector. nothing floats free.
+    if(!b||!node) break;
+    const mx=(cx+node[0])/2, my=(cy+node[1])/2;
+    const flip = mx > W*0.72;                 // keep labels inside the canvas
+    const anchor = flip?"end":"start";
+    const x = flip? mx-6 : mx+6;
+    const y = my + 8 + (c.row||0)*13;
+    const l1=typed(c.label||"",t,c.t_in,46);
+    push(mk("line",{class:"s "+cls,x1:flip?x+2:x-8,y1:y-4,x2:flip?x+8:x-2,y2:y-4,opacity:.8}));
+    push(mk("text",{class:cls,x,y:y-9,"text-anchor":anchor},l1));
+    if(c.label2&&l1.length>=(c.label||"").length){
+      const l2=typed(c.label2,t,c.t_in+(c.label||"").length/46,46);
+      (l2.match(/.{1,44}(\s|$)/g)||[]).forEach((seg,i)=>
+        push(mk("text",{class:cls,x,y:y+4+i*12,"text-anchor":anchor,opacity:.6},seg.trim())));
+    }
     return 1;
   }
-  case "face_mesh": case "face_mesh_contour": case "face_landmarks_6": {
-    const pts=rec; if(!Array.isArray(pts)) break;
-    const step = c.cue==="face_mesh"?1:(c.cue==="face_mesh_contour"?4:80);
+  case "box_content": {
+    if(!b) break;
+    const x0=b[0]*W,y0=b[1]*H,w=b[2]*W,h=b[3]*H;
+    if(c.mode==="confidence"){
+      // a bar inside the box, length = the score that admitted it
+      push(mk("line",{class:"s "+cls,x1:x0+2,y1:y0+h-3,
+        x2:x0+2+(w-4)*c.value*k,y2:y0+h-3}));
+    } else if(c.mode==="subdivide"){
+      const m=c.cells||3;
+      for(let i=1;i<m;i++){
+        const f=Math.min(1,k*m-i+1); if(f<=0) continue;
+        push(mk("line",{class:"s "+cls,x1:x0+w*i/m,y1:y0,x2:x0+w*i/m,y2:y0+h*f}));
+        push(mk("line",{class:"s "+cls,x1:x0,y1:y0+h*i/m,x2:x0+w*f,y2:y0+h*i/m}));
+      }
+    } else if(c.mode==="fail"){
+      push(mk("path",{class:"s alarm",
+        d:`M${x0} ${y0}L${x0+w*k} ${y0+h*k}M${x0+w} ${y0}L${x0+w-w*k} ${y0+h*k}`}));
+    } else if(c.mode==="bars"){
+      // the box fills with what was measured of the face inside it
+      const bars=c.bars||[], bh=Math.max(2,(h-6)/Math.max(1,bars.length));
+      bars.forEach((bar,i)=>{
+        const f=Math.min(1,Math.max(0,k*bars.length-i));
+        const y=y0+3+i*bh;
+        push(mk("line",{class:"s "+cls,x1:x0+2,y1:y,x2:x0+2+(w-4)*(bar[1]/100)*f,y2:y}));
+      });
+    }
+    return 1;
+  }
+  case "mesh_full": case "mesh_contour": case "mesh_points": {
+    if(!Array.isArray(rec)) break;
+    const step=c.cue==="mesh_full"?1:(c.cue==="mesh_contour"?4:60);
+    const lim=Math.floor(rec.length*Math.min(1,(t-c.t_in)/1.4));
     let d="";
-    for(let i=0;i<pts.length;i+=step){ d+=`M${pts[i][0]*W} ${pts[i][1]*H}h.6`; }
-    push(mk("path",{class:"s",d}));
+    for(let i=0;i<lim;i+=step) d+=`M${rec[i][0]*W} ${rec[i][1]*H}h.7`;
+    push(mk("path",{class:"s "+cls,d,opacity:.85}));
     return 1;
   }
-  case "blendshape_stack": {
-    const list=rec; if(!Array.isArray(list)) break;
-    const f=F(c.face_ids[0]); if(!f) break;
-    const x=f.box[0]*W, y0=(f.box[1]+f.box[3])*H+6;
-    list.slice(0,4).forEach((bs,i)=>{
-      const y=y0+i*13, w=96;
-      push(mk("rect",{class:"plate",x,y,width:w,height:11}));
-      push(mk("text",{x:x+2,y:y+1},`${bs.name.slice(0,13)} ${bs.pct.toFixed(1)}%`));
-      push(mk("line",{class:"s",x1:x,y1:y+11,x2:x+w*bs.pct/100,y2:y+11}));
-    });
-    return 1;
-  }
-  case "head_pose_readout": {
-    const f=F(c.face_ids[0]); if(!f) break;
-    push(mk("text",{x:(f.box[0]+f.box[2])*W+4,y:f.box[1]*H},
-      `Y${rec.yaw_deg>=0?"+":""}${rec.yaw_deg.toFixed(1)} P${rec.pitch_deg>=0?"+":""}${rec.pitch_deg.toFixed(1)} R${rec.roll_deg>=0?"+":""}${rec.roll_deg.toFixed(1)}`));
-    return 1;
-  }
-  case "symmetry_readout": {
-    const f=F(c.face_ids[0]); if(!f) break;
-    push(mk("text",{x:(f.box[0]+f.box[2])*W+4,y:f.box[1]*H+12},
-      `SYM ${rec.residual_mean_iod.toFixed(4)}`));
-    return 1;
-  }
-  case "photometry_readout": {
-    const f=F(c.face_ids[0]); if(!f) break;
-    push(mk("text",{class:"dim",x:(f.box[0]+f.box[2])*W+4,y:f.box[1]*H+24},
-      `L ${rec.luma_mean.toFixed(0)} s${rec.luma_std.toFixed(0)}`));
-    return 1;
-  }
-  case "interocular_rule": {
-    const f=F(c.face_ids[0]); if(!f) break;
-    const y=(f.box[1]+f.box[3]*0.42)*H;
-    push(mk("line",{class:"s dim",x1:f.box[0]*W,y1:y,x2:(f.box[0]+f.box[2])*W,y2:y}));
-    push(mk("text",{class:"dim",x:f.box[0]*W,y:y+2},`IOD ${rec.interocular_px.toFixed(0)}`));
-    return 1;
-  }
-  case "response_field_cell": {
-    const [gx,gy]=c.cell, fld=sourceDoc(P,"field").response_field;
-    const [GW,GH]=fld.grid;
-    push(mk("rect",{class:"s dim",x:gx/GW*W,y:gy/GH*H,width:W/GW,height:H/GH}));
-    return 1;
-  }
-  case "response_field_sweep": {
-    const fld=rec, [GW,GH]=fld.grid;
-    const frac=(t-c.t_in)/Math.max(0.001,(c.t_out-c.t_in));
-    const x=frac*W;
-    push(mk("line",{class:"s",x1:x,y1:0,x2:x,y2:H}));
-    const gx=Math.min(GW-1,Math.floor(frac*GW));
-    let mx=0; for(let gy=0;gy<GH;gy++) mx=Math.max(mx,fld.values[gy][gx]);
-    push(mk("text",{x:x+4,y:6},`SCAN ${(frac*100).toFixed(0)}%  MAX ${mx.toFixed(3)}`));
+  case "relation": {
+    const a=F(c.face_ids[0]), bb=F(c.face_ids[1]);
+    if(!a) break;
+    const nodes=score.nodes||{};
+    const p1=nodes[c.face_ids[0]]?[nodes[c.face_ids[0]][0]*W,nodes[c.face_ids[0]][1]*H]
+                                 :[(a[0]+a[2]/2)*W,(a[1]+a[3]/2)*H];
+    let p2;
+    if(bb) p2=nodes[c.face_ids[1]]?[nodes[c.face_ids[1]][0]*W,nodes[c.face_ids[1]][1]*H]
+                                  :[(bb[0]+bb[2]/2)*W,(bb[1]+bb[3]/2)*H];
+    else p2=[c.cross? (c.face_ids[1][0]==="A"?-0.12*W:1.12*W) : p1[0], p1[1]-0.10*H];
+    const e=mk("line",{class:"s "+cls,x1:p1[0],y1:p1[1],
+      x2:p1[0]+(p2[0]-p1[0])*k,y2:p1[1]+(p2[1]-p1[1])*k});
+    if(c.style==="dashed") e.setAttribute("stroke-dasharray","7 6");
+    push(e);
+    if(k>=1){
+      const mx=(p1[0]+p2[0])/2,my=(p1[1]+p2[1])/2;
+      const l1=typed(c.label||"",t,c.t_in+(c.grow_s||0),40);
+      push(mk("text",{class:cls,x:mx+5,y:my-15},l1));
+      if(c.label2&&l1.length>=(c.label||"").length){
+        const w=Math.min(1,(t-c.t_in-(c.grow_s||0)-(c.label||"").length/40));
+        const l2=typed(c.label2,t,c.t_in+(c.grow_s||0)+(c.label||"").length/40,40);
+        // second line wraps at ~46 chars so it stays on the connector
+        l2.match(/.{1,46}(\s|$)/g)?.forEach((seg,i)=>
+          push(mk("text",{class:cls,x:mx+5,y:my-2+i*13,opacity:.62},seg.trim())));
+      }
+    }
     return 1;
   }
   case "gaze_ray": {
-    const f=F(c.face_ids[0]); if(!f) break;
-    const cx=(f.box[0]+f.box[2]/2)*W, cy=(f.box[1]+f.box[3]/2)*H;
-    const d=rec.direction, n=Math.hypot(d[0],d[1])||1;
-    push(mk("line",{class:"s",x1:cx,y1:cy,x2:cx+d[0]/n*W*0.5,y2:cy+d[1]/n*W*0.5}));
+    if(!b) break;
+    const d=rec.direction,L=Math.hypot(d[0],d[1])||1;
+    push(mk("line",{class:"s "+cls,x1:cx,y1:cy,
+      x2:cx+d[0]/L*W*0.46*k,y2:cy+d[1]/L*W*0.46*k,opacity:.7}));
     return 1;
   }
-  case "gaze_convergence": {
-    if(!rec.converges) break;
-    const cx=rec.point[0]*W, cy=rec.point[1]*H;
-    [8,17,26].forEach(r=>push(mk("circle",{class:"s",cx,cy,r})));
-    push(mk("path",{class:"s",d:`M${cx-34} ${cy}h68M${cx} ${cy-34}v68`}));
-    push(mk("text",{x:cx+38,y:cy-6},
-      `CONVERGENCE res ${rec.residual_mean.toFixed(4)} n=${rec.rays}`));
+  case "convergence": {
+    const px=c.at[0]*W,py=c.at[1]*H;
+    const kk=grow(t,c.t_in,1.2);
+    [9,19,29].forEach((r,i)=>{ if(kk>i/3)
+      push(mk("circle",{class:"s "+cls,cx:px,cy:py,r:r*Math.min(1,kk*3-i)})); });
+    if(kk>=1){
+      push(mk("path",{class:"s "+cls,d:`M${px-38} ${py}h76M${px} ${py-38}v76`}));
+      const l1=typed(c.label,t,c.t_in+1.2,40);
+      push(mk("text",{class:cls,x:px+42,y:py-14},l1));
+      if(l1.length>=c.label.length)
+        push(mk("text",{class:cls,x:px+42,y:py-1,opacity:.62},
+          typed(c.label2,t,c.t_in+1.2+c.label.length/40,40)));
+    }
     return 1;
   }
-  case "proximity_edge": case "mst_edge": case "similarity_edge": case "cross_panel_link": {
-    const a=b(c.face_ids[0]), bb2=b(c.face_ids[1]);
-    if(!a||!bb2) break;
-    const x1=(a[0]+a[2]/2)*W,y1=(a[1]+a[3]/2)*H,x2=(bb2[0]+bb2[2]/2)*W,y2=(bb2[1]+bb2[3]/2)*H;
-    const dash = c.cue.startsWith("similar")||c.cue.startsWith("cross") ? "6 5" : null;
-    const e=mk("line",{class:c.cue==="mst_edge"?"s":"s dim",x1,y1,x2,y2});
-    if(dash) e.setAttribute("stroke-dasharray",dash);
-    push(e);
-    if(rec.cosine!=null)
-      push(mk("text",{class:"dim",x:(x1+x2)/2,y:(y1+y2)/2-11},`cos ${rec.cosine.toFixed(3)}`));
-    else if(rec.distance_canvas!=null && c.cue==="mst_edge")
-      push(mk("text",{class:"dim",x:(x1+x2)/2,y:(y1+y2)/2-11},rec.distance_canvas.toFixed(3)));
+  case "ghost": {
+    if(!b) break;
+    const x0=b[0]*W,y0=b[1]*H;
+    const gw=b[2]*W, gh=b[3]*H;
+    push(mk("rect",{class:"s doubt",x:x0,y:y0,width:gw,height:gh,opacity:.75}));
+    if(c.hatch){ let d="";
+      for(let o=-gh;o<gw;o+=7) d+=`M${x0+Math.max(0,o)} ${y0+Math.max(0,-o)}`+
+        `L${x0+Math.min(gw,o+gh)} ${y0+Math.min(gh,gw-o)}`;
+      push(mk("path",{class:"s doubt",d,opacity:.28})); }
+    push(mk("text",{class:"doubt",x:x0,y:y0+gh+3,opacity:.8},c.state.toUpperCase()));
     return 1;
   }
-  case "attribution_link": case "unattached_flame_marker": {
-    const fl=sourceDoc(P,"flames");
-    const blob=fl.blobs.find(x=>x.blob_id===c.blob_ids[0]);
-    const f=b(c.face_ids[0]);
-    if(!blob) break;
-    const bx=blob.centroid[0]*W, by=blob.centroid[1]*H;
-    const warn=c.cue==="unattached_flame_marker";
-    push(mk("circle",{class:warn?"s warn":"s dim",cx:bx,cy:by,r:7}));
-    if(f) push(mk("line",{class:warn?"s warn":"s dim",x1:bx,y1:by,
-      x2:(f[0]+f[2]/2)*W,y2:(f[1]+f[3]/2)*H}));
-    push(mk("text",{class:warn?"warn":"dim",x:bx+9,y:by-9},
-      warn?`NO FACE ${rec.distance_face_heights.toFixed(2)}h`
-          :`${rec.distance_face_heights.toFixed(2)}h`));
+  case "disagreement": {
+    const p1=rec.blazeface_centre,p2=rec.yunet_centre;
+    push(mk("line",{class:"s doubt",x1:p1[0]*W,y1:p1[1]*H,
+      x2:p2[0]*W,y2:p2[1]*H}));
+    push(mk("circle",{class:"s doubt",cx:p1[0]*W,cy:p1[1]*H,r:3}));
+    push(mk("rect",{class:"s doubt",x:p2[0]*W-3,y:p2[1]*H-3,width:6,height:6}));
+    push(mk("text",{class:"doubt",x:p2[0]*W+7,y:p2[1]*H+5},
+      typed(c.label,t,c.t_in,44)));
     return 1;
   }
-  case "disagreement_vector": {
-    const p1=rec.blazeface_centre, p2=rec.yunet_centre;
-    push(mk("line",{class:"s warn",x1:p1[0]*W,y1:p1[1]*H,x2:p2[0]*W,y2:p2[1]*H}));
-    push(mk("circle",{class:"s warn",cx:p1[0]*W,cy:p1[1]*H,r:3}));
-    push(mk("rect",{class:"s warn",x:p2[0]*W-3,y:p2[1]*H-3,width:6,height:6}));
-    push(mk("text",{class:"warn",x:p2[0]*W+6,y:p2[1]*H+6},
-      `IoU ${rec.box_iou.toFixed(2)}`));
+  case "orphan": {
+    const fls=sourceDoc(score.panel,"flames");
+    const blob=fls.blobs.find(x=>x.blob_id===c.blob_ids[0]); if(!blob) break;
+    const bx=blob.centroid[0]*W,by=blob.centroid[1]*H;
+    const kk=grow(t,c.t_in,1.0);
+    push(mk("circle",{class:"s doubt",cx:bx,cy:by,r:8+10*kk}));
+    if(b) push(mk("line",{class:"s doubt","stroke-dasharray":"5 5",
+      x1:bx,y1:by,x2:bx+(cx-bx)*kk,y2:by+(cy-by)*kk}));
+    if(kk>=1){
+      const l1=typed(c.label,t,c.t_in+1,40);
+      push(mk("text",{class:"doubt",x:bx+22,y:by-16},l1));
+      if(l1.length>=c.label.length)
+        push(mk("text",{class:"doubt",x:bx+22,y:by-3,opacity:.62},
+          typed(c.label2,t,c.t_in+1+c.label.length/40,40)));
+    }
     return 1;
   }
-  case "blob_circle": {
-    const r=rec.equiv_radius_frac*W;
-    if(r<2) break;
-    push(mk("circle",{class:"s dim",cx:rec.centroid[0]*W,cy:rec.centroid[1]*H,r}));
-    return 1;
-  }
-  case "blob_readout": {
-    const r=rec.equiv_radius_frac*W;
-    push(mk("text",{class:"dim",x:rec.centroid[0]*W+r+3,y:rec.centroid[1]*H},
-      `${rec.area_pct_of_canvas.toFixed(2)}%`));
-    return 1;
-  }
-  case "count_readout": {
-    push(mk("text",{x:6,y:H-30},
-      `MERGED ${rec.merged}   CONFIRMED ${rec.both_detectors_agree}   MESH ${rec.mesh_converged}`));
-    return 1;
-  }
-  case "noise_floor_rule": {
-    push(mk("line",{class:"s dim",x1:6,y1:H-16,x2:W-6,y2:H-16}));
-    push(mk("text",{class:"dim",x:6,y:H-14},
-      `FALSE-POSITIVE CEILING  BF ${rec.blazeface.false_positive_ceiling}  YN ${rec.yunet.false_positive_ceiling}`));
+  case "floor": case "tally": {
+    const y=c.cue==="floor"?H-34:H-12;
+    push(mk("line",{class:"s doubt",x1:6,y1:y-6,
+      x2:6+(W-12)*grow(t,c.t_in,1.4),y2:y-6,opacity:.5}));
+    push(mk("text",{class:"doubt",x:6,y:y-2},typed(c.label,t,c.t_in,50)));
+    const l1=typed(c.label,t,c.t_in,50);
+    if(c.label2&&l1.length>=c.label.length)
+      push(mk("text",{class:"doubt",x:6,y:y+11,opacity:.62},
+        typed(c.label2,t,c.t_in+c.label.length/50,50)));
     return 1;
   }
   }
   return 0;
 }
 
-/* ---------- text tracks ---------- */
+/* ---------- text ---------- */
 function drawText(z){
-  const score=D["score_"+z.panel.toLowerCase()];
-  if(!score) return;
-  const t=loopT(score);
-  const el=z.answerEl;
+  const score=D["score_"+z.panel.toLowerCase()]; if(!score) return;
+  const t=loopT(score), el=z.answerEl;
   const cue=score.tracks.answer.find(c=>t>=c.t_in&&t<c.t_out);
-  if(!cue){
-    if(el.dataset.mode!=="idle"){
-      el.dataset.mode="idle";
-      const st=score.source_state||{};
-      el.innerHTML=
-        `<div class="trace">PANEL ${z.panel} · ANSWER TRACK · ${st.answer||"empty"}\n`+
-        `overlay cues ${score.tracks.overlay.length} · loop ${score.loop_duration_s}s\n`+
-        `no transcript supplied — this track is empty by design, not filled with placeholder prose</div>`;
-    }
-    return;
-  }
-  // pure lookup reveal: every character's state derives from t alone
-  const ms=(t-cue.t_in)*1000, on=cue.char_onsets_ms, R=(score.reveal||{}).blur_resolve_ms||120;
+  const st=(score.source_state||{}).answer||"";
+  const banner=st.startsWith("type_specimen")
+    ? `<div class="banner">PANEL ${z.panel} · TYPE SPECIMEN — NOT MODEL OUTPUT · AWAITING TRANSCRIPTS</div>`
+    : `<div class="banner">PANEL ${z.panel} · ANSWER TRACK EMPTY · AWAITING TRANSCRIPTS</div>`;
+  if(!cue){ el.innerHTML=banner; return; }
+  const ms=(t-cue.t_in)*1000, on=cue.char_onsets_ms,
+        R=(score.reveal||{}).blur_resolve_ms||120;
   let html="";
   for(let i=0;i<cue.text.length;i++){
-    const age=ms-on[i];
-    if(age<0) break;
+    const age=ms-on[i]; if(age<0) break;
     if(age<R){ const k=age/R;
-      html+=`<span class="ch" style="filter:blur(${(6*(1-k)).toFixed(2)}px);opacity:${(0.4+0.6*k).toFixed(3)}">${esc(cue.text[i])}</span>`;
-    } else html+=`<span class="ch">${esc(cue.text[i])}</span>`;
+      html+=`<span style="filter:blur(${(6*(1-k)).toFixed(2)}px);opacity:${(0.4+0.6*k).toFixed(3)}">${esc(cue.text[i])}</span>`;
+    } else html+=esc(cue.text[i]);
   }
-  el.dataset.mode="reveal";
-  const st=(score.source_state||{}).answer||"";
-  const banner = st.startsWith("type_specimen")
-    ? `<div class="trace">PANEL ${z.panel} · TYPE SPECIMEN — NOT MODEL OUTPUT · awaiting transcripts</div>`
-    : "";
   el.innerHTML=banner+html+`<span class="caret"></span>`;
 }
-function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/ /g,"&nbsp;");}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
 
 /* ---------- loop ---------- */
-let lastDrawn=0;
+function currentPass(score,t){
+  let cur="—";
+  for(const p of (score.passes||[])) if(t>=p.t_in&&t<p.t_out) cur=p.name;
+  return cur;
+}
 function frame(){
-  lastDrawn=0;
-  for(const z of ZONES){
-    if(z.kind==="overlay") lastDrawn+=drawOverlay(z)||0;
-    else drawText(z);
-  }
+  let marks=0;
+  for(const z of ZONES){ if(z.kind==="overlay") marks+=drawOverlay(z)||0; else drawText(z); }
   const sa=D.score_a;
-  document.getElementById("status").textContent=
-    sa ? `t ${loopT(sa).toFixed(1)}s / ${sa.loop_duration_s}s   marks ${lastDrawn}   `+
-         `${audio&&!audio.paused?"audio":"wall clock"}   [c] config` : "";
+  if(sa){ const t=loopT(sa);
+    document.getElementById("status").textContent=
+      `${currentPass(sa,t)}   t ${t.toFixed(1)} / ${sa.loop_duration_s}s   marks ${marks}   `+
+      `${showBackdrop?"backdrop on":"backdrop off"}   [c] config  [p] backdrop`; }
   requestAnimationFrame(frame);
 }
 
-/* ---------- config mode, export/import ---------- */
-function hud(){
-  document.getElementById("hud").textContent=
+/* ---------- keys ---------- */
+function hud(){ document.getElementById("hud").textContent=
 `CONFIG MODE
   drag the four handles per zone to keystone onto the painting
-  c  leave config          e  export alignment JSON
-  i  import alignment      r  reset to defaults
-  zones: ${ZONES.map(z=>z.id).join(", ")}`;
-}
+  c  leave config     p  painting backdrop (preview only — off in the gallery)
+  e  export alignment    i  import alignment    r  reset zones`; }
 addEventListener("keydown",e=>{
   const k=e.key.toLowerCase();
   if(k==="c"){ document.body.classList.toggle("config"); hud(); }
-  else if(k==="e"&&document.body.classList.contains("config")){
-    const o={}; ZONES.forEach(z=>o[z.id]=z.corners);
+  else if(k==="p"){ showBackdrop=!showBackdrop; }
+  else if(!document.body.classList.contains("config")) return;
+  else if(k==="e"){ const o={}; ZONES.forEach(z=>o[z.id]=z.corners);
     const a=document.createElement("a");
     a.href=URL.createObjectURL(new Blob([JSON.stringify(o,null,2)],{type:"application/json"}));
-    a.download="mimesis-alignment.json"; a.click();
-  }
-  else if(k==="i"&&document.body.classList.contains("config")){
-    const inp=document.createElement("input"); inp.type="file"; inp.accept=".json";
-    inp.onchange=()=>{ const f=inp.files[0]; if(!f) return;
-      const fr=new FileReader();
-      fr.onload=()=>{ try{ const o=JSON.parse(fr.result);
-        ZONES.forEach(z=>{ if(o[z.id]) z.corners=o[z.id]; applyZone(z); });
-        saveZones(); }catch(err){ alert("bad alignment file: "+err.message); } };
-      fr.readAsText(f); };
-    inp.click();
-  }
-  else if(k==="r"&&document.body.classList.contains("config")){
-    ZONES.forEach((z,i)=>{ z.corners=defaultCorners(z,i); applyZone(z); }); saveZones();
-  }
+    a.download="mimesis-alignment.json"; a.click(); }
+  else if(k==="i"){ const inp=document.createElement("input"); inp.type="file";
+    inp.accept=".json"; inp.onchange=()=>{ const f=inp.files[0]; if(!f)return;
+      const fr=new FileReader(); fr.onload=()=>{ try{ const o=JSON.parse(fr.result);
+        ZONES.forEach(z=>{ if(o[z.id]) z.corners=o[z.id]; applyZone(z); }); saveZones();
+      }catch(err){ alert("bad alignment file: "+err.message); } };
+      fr.readAsText(f); }; inp.click(); }
+  else if(k==="r"){ ZONES.forEach(z=>{z.corners=defaultCorners(z);applyZone(z);}); saveZones(); }
 });
 addEventListener("resize",()=>ZONES.forEach(applyZone));
 
 /* ---------- boot ---------- */
 async function boot(){
   if(!window.MIMESIS_DATA){
-    try{
-      await Promise.all(FILES.map(async n=>{
-        const r=await fetch("data/"+n+".json");
-        if(r.ok) D[n]=await r.json();
-      }));
-    }catch(e){
-      document.getElementById("status").textContent=
-        "could not load data/ — serve this directory over http, or open the standalone build";
-    }
+    try{ await Promise.all(FILES.map(async n=>{ const r=await fetch("data/"+n+".json");
+      if(r.ok) D[n]=await r.json(); })); }
+    catch(e){ document.getElementById("status").textContent=
+      "could not load data/ — serve over http, or open the standalone build"; }
   }
   loadZones(); buildZones(); hud(); frame();
 }
