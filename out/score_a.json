@@ -5970,7 +5970,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-status_block-0181",
+        "cue_id": "A-status_block-0159",
         "cue": "status_block",
         "pass": "DETECT",
         "role": "obs",
@@ -5990,7 +5990,7 @@
         ]
       },
       {
-        "cue_id": "A-connector-0002",
+        "cue_id": "A-connector-0001",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -6010,27 +6010,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0001",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 0.5,
-        "t_out": 49.5,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/47"
-        },
-        "face_ids": [
-          "A48"
-        ],
-        "at": [
-          0.89301,
-          0.7365
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0003",
+        "cue_id": "A-connector_label-0002",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -6050,7 +6030,7 @@
         "label": "0.972"
       },
       {
-        "cue_id": "A-box_emerge-0004",
+        "cue_id": "A-box_emerge-0003",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -6066,7 +6046,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0006",
+        "cue_id": "A-connector-0004",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -6086,27 +6066,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0005",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 17.0,
-        "t_out": 66.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/28"
-        },
-        "face_ids": [
-          "A29"
-        ],
-        "at": [
-          0.4117,
-          0.36961
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0007",
+        "cue_id": "A-connector_label-0005",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -6126,7 +6086,7 @@
         "label": "0.935"
       },
       {
-        "cue_id": "A-box_emerge-0008",
+        "cue_id": "A-box_emerge-0006",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -6142,7 +6102,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0010",
+        "cue_id": "A-connector-0007",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -6162,27 +6122,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0009",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 33.5,
-        "t_out": 82.5,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/56"
-        },
-        "face_ids": [
-          "A57"
-        ],
-        "at": [
-          0.9527,
-          0.07671
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0011",
+        "cue_id": "A-connector_label-0008",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -6202,7 +6142,7 @@
         "label": "0.918"
       },
       {
-        "cue_id": "A-box_emerge-0012",
+        "cue_id": "A-box_emerge-0009",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -6218,7 +6158,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0014",
+        "cue_id": "A-connector-0010",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -6238,27 +6178,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0013",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 50.0,
-        "t_out": 99.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/52"
-        },
-        "face_ids": [
-          "A53"
-        ],
-        "at": [
-          0.96798,
-          0.51132
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0015",
+        "cue_id": "A-connector_label-0011",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -6278,7 +6198,7 @@
         "label": "0.915"
       },
       {
-        "cue_id": "A-box_emerge-0016",
+        "cue_id": "A-box_emerge-0012",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -6294,7 +6214,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0018",
+        "cue_id": "A-connector-0013",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -6314,27 +6234,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0017",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 66.5,
-        "t_out": 115.5,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/18"
-        },
-        "face_ids": [
-          "A19"
-        ],
-        "at": [
-          0.1341,
-          0.15635
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0019",
+        "cue_id": "A-connector_label-0014",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -6354,7 +6254,7 @@
         "label": "0.913"
       },
       {
-        "cue_id": "A-box_emerge-0020",
+        "cue_id": "A-box_emerge-0015",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -6370,7 +6270,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0022",
+        "cue_id": "A-connector-0016",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -6390,27 +6290,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0021",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 83.0,
-        "t_out": 132.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/39"
-        },
-        "face_ids": [
-          "A40"
-        ],
-        "at": [
-          0.49946,
-          0.12383
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0023",
+        "cue_id": "A-connector_label-0017",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -6430,7 +6310,7 @@
         "label": "0.909"
       },
       {
-        "cue_id": "A-box_emerge-0024",
+        "cue_id": "A-box_emerge-0018",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -6446,7 +6326,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0026",
+        "cue_id": "A-connector-0019",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -6466,27 +6346,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0025",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 99.5,
-        "t_out": 148.5,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/43"
-        },
-        "face_ids": [
-          "A44"
-        ],
-        "at": [
-          0.55339,
-          0.56726
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0027",
+        "cue_id": "A-connector_label-0020",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -6506,7 +6366,7 @@
         "label": "0.881"
       },
       {
-        "cue_id": "A-box_emerge-0028",
+        "cue_id": "A-box_emerge-0021",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -6522,7 +6382,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0030",
+        "cue_id": "A-connector-0022",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -6542,27 +6402,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0029",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 116.0,
-        "t_out": 165.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/42"
-        },
-        "face_ids": [
-          "A43"
-        ],
-        "at": [
-          0.85596,
-          0.17988
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0031",
+        "cue_id": "A-connector_label-0023",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -6582,7 +6422,7 @@
         "label": "0.878"
       },
       {
-        "cue_id": "A-box_emerge-0032",
+        "cue_id": "A-box_emerge-0024",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -6598,7 +6438,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0034",
+        "cue_id": "A-connector-0025",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -6618,27 +6458,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0033",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 132.5,
-        "t_out": 181.5,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/7"
-        },
-        "face_ids": [
-          "A08"
-        ],
-        "at": [
-          0.07528,
-          0.08679
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0035",
+        "cue_id": "A-connector_label-0026",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -6658,7 +6478,7 @@
         "label": "0.863"
       },
       {
-        "cue_id": "A-box_emerge-0036",
+        "cue_id": "A-box_emerge-0027",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -6674,7 +6494,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0038",
+        "cue_id": "A-connector-0028",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -6694,27 +6514,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0037",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 149.0,
-        "t_out": 198.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/4"
-        },
-        "face_ids": [
-          "A05"
-        ],
-        "at": [
-          0.18508,
-          0.49132
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0039",
+        "cue_id": "A-connector_label-0029",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -6734,7 +6534,7 @@
         "label": "0.828"
       },
       {
-        "cue_id": "A-box_emerge-0040",
+        "cue_id": "A-box_emerge-0030",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -6750,7 +6550,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0042",
+        "cue_id": "A-connector-0031",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -6770,27 +6570,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0041",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 165.5,
-        "t_out": 198.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/48"
-        },
-        "face_ids": [
-          "A49"
-        ],
-        "at": [
-          0.58958,
-          0.05447
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0043",
+        "cue_id": "A-connector_label-0032",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -6810,7 +6590,7 @@
         "label": "0.796"
       },
       {
-        "cue_id": "A-box_emerge-0048",
+        "cue_id": "A-box_emerge-0036",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -6826,7 +6606,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-mesh_points-0049",
+        "cue_id": "A-mesh_points-0037",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -6841,7 +6621,7 @@
         ]
       },
       {
-        "cue_id": "A-connector_label-0050",
+        "cue_id": "A-connector_label-0038",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -6861,7 +6641,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "A-box_emerge-0044",
+        "cue_id": "A-box_emerge-0033",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -6877,7 +6657,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0046",
+        "cue_id": "A-connector-0034",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -6897,27 +6677,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0045",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 182.0,
-        "t_out": 198.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/16"
-        },
-        "face_ids": [
-          "A17"
-        ],
-        "at": [
-          0.12255,
-          0.34664
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0047",
+        "cue_id": "A-connector_label-0035",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -6937,7 +6697,7 @@
         "label": "0.392"
       },
       {
-        "cue_id": "A-box_emerge-0051",
+        "cue_id": "A-box_emerge-0039",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -6953,7 +6713,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-mesh_points-0052",
+        "cue_id": "A-mesh_points-0040",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -6968,7 +6728,7 @@
         ]
       },
       {
-        "cue_id": "A-connector_label-0053",
+        "cue_id": "A-connector_label-0041",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -6988,7 +6748,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "A-box_emerge-0054",
+        "cue_id": "A-box_emerge-0042",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7004,7 +6764,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-mesh_points-0055",
+        "cue_id": "A-mesh_points-0043",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7019,7 +6779,7 @@
         ]
       },
       {
-        "cue_id": "A-connector_label-0056",
+        "cue_id": "A-connector_label-0044",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7039,7 +6799,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "A-box_emerge-0057",
+        "cue_id": "A-box_emerge-0045",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7055,7 +6815,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-mesh_points-0058",
+        "cue_id": "A-mesh_points-0046",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7070,7 +6830,7 @@
         ]
       },
       {
-        "cue_id": "A-connector_label-0059",
+        "cue_id": "A-connector_label-0047",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7090,7 +6850,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "A-box_emerge-0060",
+        "cue_id": "A-box_emerge-0048",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7106,7 +6866,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-mesh_points-0061",
+        "cue_id": "A-mesh_points-0049",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7121,7 +6881,7 @@
         ]
       },
       {
-        "cue_id": "A-connector_label-0062",
+        "cue_id": "A-connector_label-0050",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7141,7 +6901,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "A-box_emerge-0063",
+        "cue_id": "A-box_emerge-0051",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7157,7 +6917,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-mesh_points-0064",
+        "cue_id": "A-mesh_points-0052",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7172,7 +6932,7 @@
         ]
       },
       {
-        "cue_id": "A-connector_label-0065",
+        "cue_id": "A-connector_label-0053",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7192,7 +6952,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "A-box_emerge-0066",
+        "cue_id": "A-box_emerge-0054",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7208,7 +6968,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-mesh_points-0067",
+        "cue_id": "A-mesh_points-0055",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7223,7 +6983,7 @@
         ]
       },
       {
-        "cue_id": "A-connector_label-0068",
+        "cue_id": "A-connector_label-0056",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7243,7 +7003,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "A-box_emerge-0069",
+        "cue_id": "A-box_emerge-0057",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7259,7 +7019,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-mesh_points-0070",
+        "cue_id": "A-mesh_points-0058",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7274,7 +7034,7 @@
         ]
       },
       {
-        "cue_id": "A-connector_label-0071",
+        "cue_id": "A-connector_label-0059",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7294,7 +7054,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "A-box_content-0073",
+        "cue_id": "A-box_content-0061",
         "cue": "box_content",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7312,7 +7072,7 @@
         "alarm": true
       },
       {
-        "cue_id": "A-box_emerge-0072",
+        "cue_id": "A-box_emerge-0060",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7328,7 +7088,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector_label-0074",
+        "cue_id": "A-connector_label-0062",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7349,7 +7109,7 @@
         "label": "no geometry"
       },
       {
-        "cue_id": "A-box_emerge-0075",
+        "cue_id": "A-box_emerge-0063",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7365,7 +7125,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-mesh_points-0076",
+        "cue_id": "A-mesh_points-0064",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7380,7 +7140,7 @@
         ]
       },
       {
-        "cue_id": "A-connector_label-0077",
+        "cue_id": "A-connector_label-0065",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7400,7 +7160,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "A-box_emerge-0078",
+        "cue_id": "A-box_emerge-0066",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7416,7 +7176,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-mesh_points-0079",
+        "cue_id": "A-mesh_points-0067",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7431,7 +7191,7 @@
         ]
       },
       {
-        "cue_id": "A-connector_label-0080",
+        "cue_id": "A-connector_label-0068",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7451,7 +7211,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "A-box_emerge-0084",
+        "cue_id": "A-box_emerge-0072",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -7467,7 +7227,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-claim_word-0126",
+        "cue_id": "A-claim_word-0104",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -7486,7 +7246,7 @@
         "alarm": false
       },
       {
-        "cue_id": "A-connector-0086",
+        "cue_id": "A-connector-0073",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -7506,27 +7266,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0085",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 351.4,
-        "t_out": 402.75,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/47"
-        },
-        "face_ids": [
-          "A48"
-        ],
-        "at": [
-          0.89301,
-          0.7365
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0087",
+        "cue_id": "A-connector_label-0074",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -7546,7 +7286,7 @@
         "label": "yaw -3"
       },
       {
-        "cue_id": "A-box_content-0082",
+        "cue_id": "A-box_content-0070",
         "cue": "box_content",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7564,7 +7304,7 @@
         "alarm": true
       },
       {
-        "cue_id": "A-box_emerge-0081",
+        "cue_id": "A-box_emerge-0069",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7580,7 +7320,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector_label-0083",
+        "cue_id": "A-connector_label-0071",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -7601,7 +7341,7 @@
         "label": "no geometry"
       },
       {
-        "cue_id": "A-box_emerge-0088",
+        "cue_id": "A-box_emerge-0075",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -7617,7 +7357,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0090",
+        "cue_id": "A-connector-0076",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -7637,27 +7377,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0089",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 368.65,
-        "t_out": 420.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/28"
-        },
-        "face_ids": [
-          "A29"
-        ],
-        "at": [
-          0.4117,
-          0.36961
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0091",
+        "cue_id": "A-connector_label-0077",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -7677,7 +7397,7 @@
         "label": "yaw +3"
       },
       {
-        "cue_id": "A-claim_word-0127",
+        "cue_id": "A-claim_word-0105",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -7696,7 +7416,7 @@
         "alarm": false
       },
       {
-        "cue_id": "A-box_emerge-0092",
+        "cue_id": "A-box_emerge-0078",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -7712,7 +7432,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0094",
+        "cue_id": "A-connector-0079",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -7732,27 +7452,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0093",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 385.9,
-        "t_out": 437.25,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/56"
-        },
-        "face_ids": [
-          "A57"
-        ],
-        "at": [
-          0.9527,
-          0.07671
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0095",
+        "cue_id": "A-connector_label-0080",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -7772,7 +7472,7 @@
         "label": "yaw -9"
       },
       {
-        "cue_id": "A-claim_word-0128",
+        "cue_id": "A-claim_word-0106",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -7791,7 +7491,7 @@
         "alarm": false
       },
       {
-        "cue_id": "A-box_emerge-0096",
+        "cue_id": "A-box_emerge-0081",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -7807,7 +7507,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0098",
+        "cue_id": "A-connector-0082",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -7827,27 +7527,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0097",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 403.15,
-        "t_out": 454.5,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/52"
-        },
-        "face_ids": [
-          "A53"
-        ],
-        "at": [
-          0.96798,
-          0.51132
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0099",
+        "cue_id": "A-connector_label-0083",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -7867,7 +7547,7 @@
         "label": "yaw -3"
       },
       {
-        "cue_id": "A-claim_word-0129",
+        "cue_id": "A-claim_word-0107",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -7886,7 +7566,7 @@
         "alarm": false
       },
       {
-        "cue_id": "A-box_emerge-0100",
+        "cue_id": "A-box_emerge-0084",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -7902,7 +7582,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0102",
+        "cue_id": "A-connector-0085",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -7922,27 +7602,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0101",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 420.4,
-        "t_out": 471.75,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/18"
-        },
-        "face_ids": [
-          "A19"
-        ],
-        "at": [
-          0.1341,
-          0.15635
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0103",
+        "cue_id": "A-connector_label-0086",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -7962,7 +7622,7 @@
         "label": "yaw +7"
       },
       {
-        "cue_id": "A-claim_word-0130",
+        "cue_id": "A-claim_word-0108",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -7981,7 +7641,7 @@
         "alarm": false
       },
       {
-        "cue_id": "A-box_emerge-0104",
+        "cue_id": "A-box_emerge-0087",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -7997,7 +7657,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0106",
+        "cue_id": "A-connector-0088",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -8017,27 +7677,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0105",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 437.65,
-        "t_out": 489.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/39"
-        },
-        "face_ids": [
-          "A40"
-        ],
-        "at": [
-          0.49946,
-          0.12383
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0107",
+        "cue_id": "A-connector_label-0089",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -8057,7 +7697,7 @@
         "label": "yaw -3"
       },
       {
-        "cue_id": "A-box_emerge-0108",
+        "cue_id": "A-box_emerge-0090",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -8073,7 +7713,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-claim_word-0131",
+        "cue_id": "A-claim_word-0109",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -8092,7 +7732,7 @@
         "alarm": false
       },
       {
-        "cue_id": "A-connector-0110",
+        "cue_id": "A-connector-0091",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -8112,27 +7752,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0109",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 454.9,
-        "t_out": 506.25,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/43"
-        },
-        "face_ids": [
-          "A44"
-        ],
-        "at": [
-          0.55339,
-          0.56726
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0111",
+        "cue_id": "A-connector_label-0092",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -8152,7 +7772,7 @@
         "label": "yaw -7"
       },
       {
-        "cue_id": "A-box_emerge-0112",
+        "cue_id": "A-box_emerge-0093",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -8168,7 +7788,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0114",
+        "cue_id": "A-connector-0094",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -8188,27 +7808,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0113",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 472.15,
-        "t_out": 523.5,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/42"
-        },
-        "face_ids": [
-          "A43"
-        ],
-        "at": [
-          0.85596,
-          0.17988
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0115",
+        "cue_id": "A-connector_label-0095",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -8228,7 +7828,7 @@
         "label": "yaw -6"
       },
       {
-        "cue_id": "A-claim_word-0132",
+        "cue_id": "A-claim_word-0110",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -8247,7 +7847,7 @@
         "alarm": false
       },
       {
-        "cue_id": "A-box_emerge-0116",
+        "cue_id": "A-box_emerge-0096",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -8263,7 +7863,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-claim_word-0133",
+        "cue_id": "A-claim_word-0111",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -8282,7 +7882,7 @@
         "alarm": false
       },
       {
-        "cue_id": "A-box_emerge-0117",
+        "cue_id": "A-box_emerge-0097",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -8298,7 +7898,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0119",
+        "cue_id": "A-connector-0098",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -8318,27 +7918,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0118",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 506.65,
-        "t_out": 558.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/4"
-        },
-        "face_ids": [
-          "A05"
-        ],
-        "at": [
-          0.18508,
-          0.49132
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0120",
+        "cue_id": "A-connector_label-0099",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -8358,7 +7938,7 @@
         "label": "yaw +25"
       },
       {
-        "cue_id": "A-claim_word-0134",
+        "cue_id": "A-claim_word-0112",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -8377,7 +7957,7 @@
         "alarm": false
       },
       {
-        "cue_id": "A-box_emerge-0121",
+        "cue_id": "A-box_emerge-0100",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -8393,7 +7973,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-connector-0123",
+        "cue_id": "A-connector-0101",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -8413,27 +7993,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-node-0122",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 523.9,
-        "t_out": 558.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/48"
-        },
-        "face_ids": [
-          "A49"
-        ],
-        "at": [
-          0.58958,
-          0.05447
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "A-connector_label-0124",
+        "cue_id": "A-connector_label-0102",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -8453,7 +8013,7 @@
         "label": "yaw -6"
       },
       {
-        "cue_id": "A-box_emerge-0136",
+        "cue_id": "A-box_emerge-0114",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -8469,7 +8029,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-box_emerge-0137",
+        "cue_id": "A-box_emerge-0115",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -8485,7 +8045,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-relation-0138",
+        "cue_id": "A-relation-0116",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -8504,7 +8064,7 @@
         "label": "cos 0.392"
       },
       {
-        "cue_id": "A-claim_word-0135",
+        "cue_id": "A-claim_word-0113",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -8523,7 +8083,7 @@
         "alarm": false
       },
       {
-        "cue_id": "A-box_emerge-0125",
+        "cue_id": "A-box_emerge-0103",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -8539,7 +8099,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "A-box_emerge-0139",
+        "cue_id": "A-box_emerge-0117",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -8555,7 +8115,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-box_emerge-0140",
+        "cue_id": "A-box_emerge-0118",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -8571,7 +8131,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-relation-0141",
+        "cue_id": "A-relation-0119",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -8590,7 +8150,7 @@
         "label": "cos 0.386"
       },
       {
-        "cue_id": "A-box_emerge-0142",
+        "cue_id": "A-box_emerge-0120",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -8606,7 +8166,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-box_emerge-0143",
+        "cue_id": "A-box_emerge-0121",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -8622,7 +8182,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-relation-0144",
+        "cue_id": "A-relation-0122",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -8641,7 +8201,7 @@
         "label": "cos 0.408"
       },
       {
-        "cue_id": "A-box_emerge-0145",
+        "cue_id": "A-box_emerge-0123",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -8657,7 +8217,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-box_emerge-0146",
+        "cue_id": "A-box_emerge-0124",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -8673,7 +8233,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-relation-0147",
+        "cue_id": "A-relation-0125",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -8692,7 +8252,7 @@
         "label": "cos 0.491"
       },
       {
-        "cue_id": "A-gaze_ray-0154",
+        "cue_id": "A-gaze_ray-0132",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -8708,7 +8268,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "A-gaze_ray-0155",
+        "cue_id": "A-gaze_ray-0133",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -8724,7 +8284,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "A-gaze_ray-0156",
+        "cue_id": "A-gaze_ray-0134",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -8740,7 +8300,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "A-gaze_ray-0157",
+        "cue_id": "A-gaze_ray-0135",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -8756,7 +8316,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "A-gaze_ray-0158",
+        "cue_id": "A-gaze_ray-0136",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -8772,7 +8332,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "A-gaze_ray-0159",
+        "cue_id": "A-gaze_ray-0137",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -8788,7 +8348,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "A-gaze_ray-0160",
+        "cue_id": "A-gaze_ray-0138",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -8804,7 +8364,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "A-gaze_ray-0161",
+        "cue_id": "A-gaze_ray-0139",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -8820,7 +8380,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "A-gaze_ray-0162",
+        "cue_id": "A-gaze_ray-0140",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -8836,7 +8396,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "A-gaze_ray-0163",
+        "cue_id": "A-gaze_ray-0141",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -8852,7 +8412,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "A-box_emerge-0148",
+        "cue_id": "A-box_emerge-0126",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -8868,7 +8428,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-box_emerge-0149",
+        "cue_id": "A-box_emerge-0127",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -8884,7 +8444,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-relation-0150",
+        "cue_id": "A-relation-0128",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -8903,7 +8463,7 @@
         "label": "cos 0.443"
       },
       {
-        "cue_id": "A-convergence-0164",
+        "cue_id": "A-convergence-0142",
         "cue": "convergence",
         "pass": "RELATE",
         "role": "relate",
@@ -8920,7 +8480,7 @@
         "label": "res 0.0613"
       },
       {
-        "cue_id": "A-box_emerge-0151",
+        "cue_id": "A-box_emerge-0129",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -8936,7 +8496,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-box_emerge-0152",
+        "cue_id": "A-box_emerge-0130",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -8952,7 +8512,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "A-relation-0153",
+        "cue_id": "A-relation-0131",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -8971,7 +8531,7 @@
         "label": "cos 0.389"
       },
       {
-        "cue_id": "A-ghost-0165",
+        "cue_id": "A-ghost-0143",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -8992,7 +8552,7 @@
         }
       },
       {
-        "cue_id": "A-orphan-0179",
+        "cue_id": "A-orphan-0157",
         "cue": "orphan",
         "pass": "DOUBT",
         "role": "doubt",
@@ -9012,7 +8572,7 @@
         "label": "no face"
       },
       {
-        "cue_id": "A-ghost-0166",
+        "cue_id": "A-ghost-0144",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -9033,7 +8593,7 @@
         }
       },
       {
-        "cue_id": "A-ghost-0167",
+        "cue_id": "A-ghost-0145",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -9054,7 +8614,7 @@
         }
       },
       {
-        "cue_id": "A-ghost-0168",
+        "cue_id": "A-ghost-0146",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -9075,7 +8635,7 @@
         }
       },
       {
-        "cue_id": "A-ghost-0169",
+        "cue_id": "A-ghost-0147",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -9096,7 +8656,7 @@
         }
       },
       {
-        "cue_id": "A-floor-0180",
+        "cue_id": "A-floor-0158",
         "cue": "floor",
         "pass": "DOUBT",
         "role": "doubt",
@@ -9109,7 +8669,7 @@
         "label": "floor 0.6814"
       },
       {
-        "cue_id": "A-ghost-0170",
+        "cue_id": "A-ghost-0148",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -9130,7 +8690,7 @@
         }
       },
       {
-        "cue_id": "A-ghost-0171",
+        "cue_id": "A-ghost-0149",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -9151,7 +8711,7 @@
         }
       },
       {
-        "cue_id": "A-ghost-0172",
+        "cue_id": "A-ghost-0150",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -9172,7 +8732,7 @@
         }
       },
       {
-        "cue_id": "A-ghost-0173",
+        "cue_id": "A-ghost-0151",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -9193,7 +8753,7 @@
         }
       },
       {
-        "cue_id": "A-ghost-0174",
+        "cue_id": "A-ghost-0152",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -9214,7 +8774,7 @@
         }
       },
       {
-        "cue_id": "A-ghost-0175",
+        "cue_id": "A-ghost-0153",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -9235,7 +8795,7 @@
         }
       },
       {
-        "cue_id": "A-ghost-0176",
+        "cue_id": "A-ghost-0154",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -9256,7 +8816,7 @@
         }
       },
       {
-        "cue_id": "A-ghost-0177",
+        "cue_id": "A-ghost-0155",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -9277,7 +8837,7 @@
         }
       },
       {
-        "cue_id": "A-ghost-0178",
+        "cue_id": "A-ghost-0156",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",

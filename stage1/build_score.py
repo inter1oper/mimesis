@@ -177,8 +177,8 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
     # DENSITY
     #
     # The reference images carry roughly fifteen marks. Attention moves; it
-    # does not accumulate. So each face gets an ATTENTION WINDOW -- box,
-    # circle, connector and one label appear together and retire together --
+    # does not accumulate. So each face gets an ATTENTION WINDOW -- box, a
+    # leader line and one label appear together and retire together --
     # and the windows are spaced so only CONCURRENT of them overlap. The paint
     # stays visible, which is the point of projecting onto it.
     # ------------------------------------------------------------------
@@ -211,8 +211,6 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
         d = f["detectors"]; bf, yn = d["blazeface"]["score"], d["yunet"]["score"]
         add("box_emerge", "DETECT", "detection", f"/faces/{i}", a, b,
             face_ids=[fid], grow_s=0.8)
-        add("node", "DETECT", "detection", f"/faces/{i}", a + 0.5, b,
-            face_ids=[fid], at=nodes[fid], r=0.017)
         add("connector", "DETECT", "detection", f"/faces/{i}", a + 0.5, b,
             face_ids=[fid], at=nodes[fid], grow_s=0.6)
         add("connector_label", "DETECT", "detection", f"/faces/{i}", a + 1.1, b,
@@ -245,8 +243,6 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
         r = anal.get(fid)
         if r and r.get("head_pose"):
             k = anal_index[fid]
-            add("node", "MEASURE", "detection", f"/faces/{i}", a + 0.4, b,
-                face_ids=[fid], at=nodes[fid], r=0.017)
             add("connector", "MEASURE", "detection", f"/faces/{i}", a + 0.4, b,
                 face_ids=[fid], at=nodes[fid], grow_s=0.6)
             add("connector_label", "MEASURE", "face_analysis",

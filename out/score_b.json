@@ -10899,7 +10899,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-status_block-0144",
+        "cue_id": "B-status_block-0128",
         "cue": "status_block",
         "pass": "DETECT",
         "role": "obs",
@@ -10919,7 +10919,7 @@
         ]
       },
       {
-        "cue_id": "B-connector-0002",
+        "cue_id": "B-connector-0001",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -10939,27 +10939,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0001",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 0.5,
-        "t_out": 74.25,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/4"
-        },
-        "face_ids": [
-          "B05"
-        ],
-        "at": [
-          0.08849,
-          0.11048
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "B-connector_label-0003",
+        "cue_id": "B-connector_label-0002",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -10979,7 +10959,7 @@
         "label": "0.960"
       },
       {
-        "cue_id": "B-box_emerge-0004",
+        "cue_id": "B-box_emerge-0003",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -10995,7 +10975,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0006",
+        "cue_id": "B-connector-0004",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -11015,27 +10995,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0005",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 25.25,
-        "t_out": 99.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/1"
-        },
-        "face_ids": [
-          "B02"
-        ],
-        "at": [
-          0.18431,
-          0.72781
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "B-connector_label-0007",
+        "cue_id": "B-connector_label-0005",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -11055,7 +11015,7 @@
         "label": "0.938"
       },
       {
-        "cue_id": "B-box_emerge-0008",
+        "cue_id": "B-box_emerge-0006",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -11071,7 +11031,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0010",
+        "cue_id": "B-connector-0007",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -11091,27 +11051,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0009",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 50.0,
-        "t_out": 123.75,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/33"
-        },
-        "face_ids": [
-          "B34"
-        ],
-        "at": [
-          0.96165,
-          0.12524
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "B-connector_label-0011",
+        "cue_id": "B-connector_label-0008",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -11131,7 +11071,7 @@
         "label": "0.920"
       },
       {
-        "cue_id": "B-box_emerge-0012",
+        "cue_id": "B-box_emerge-0009",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -11147,7 +11087,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0014",
+        "cue_id": "B-connector-0010",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -11167,27 +11107,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0013",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 74.75,
-        "t_out": 148.5,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/22"
-        },
-        "face_ids": [
-          "B23"
-        ],
-        "at": [
-          0.91323,
-          0.57327
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "B-connector_label-0015",
+        "cue_id": "B-connector_label-0011",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -11207,7 +11127,7 @@
         "label": "0.917"
       },
       {
-        "cue_id": "B-box_emerge-0016",
+        "cue_id": "B-box_emerge-0012",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -11223,7 +11143,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0018",
+        "cue_id": "B-connector-0013",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -11243,27 +11163,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0017",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 99.5,
-        "t_out": 173.25,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/17"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": [
-          0.92815,
-          0.83545
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "B-connector_label-0019",
+        "cue_id": "B-connector_label-0014",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -11283,7 +11183,7 @@
         "label": "0.913"
       },
       {
-        "cue_id": "B-box_emerge-0020",
+        "cue_id": "B-box_emerge-0015",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -11299,7 +11199,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0022",
+        "cue_id": "B-connector-0016",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -11319,27 +11219,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0021",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 124.25,
-        "t_out": 198.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/15"
-        },
-        "face_ids": [
-          "B16"
-        ],
-        "at": [
-          0.38198,
-          0.53767
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "B-connector_label-0023",
+        "cue_id": "B-connector_label-0017",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -11359,7 +11239,7 @@
         "label": "0.909"
       },
       {
-        "cue_id": "B-box_emerge-0024",
+        "cue_id": "B-box_emerge-0018",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -11375,7 +11255,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0026",
+        "cue_id": "B-connector-0019",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -11395,27 +11275,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0025",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 149.0,
-        "t_out": 198.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/26"
-        },
-        "face_ids": [
-          "B27"
-        ],
-        "at": [
-          0.61547,
-          0.10503
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "B-connector_label-0027",
+        "cue_id": "B-connector_label-0020",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -11435,7 +11295,7 @@
         "label": "0.895"
       },
       {
-        "cue_id": "B-box_emerge-0032",
+        "cue_id": "B-box_emerge-0024",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11451,7 +11311,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-mesh_points-0033",
+        "cue_id": "B-mesh_points-0025",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11466,7 +11326,7 @@
         ]
       },
       {
-        "cue_id": "B-connector_label-0034",
+        "cue_id": "B-connector_label-0026",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11486,7 +11346,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "B-box_emerge-0028",
+        "cue_id": "B-box_emerge-0021",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
@@ -11502,7 +11362,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0030",
+        "cue_id": "B-connector-0022",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
@@ -11522,27 +11382,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0029",
-        "cue": "node",
-        "pass": "DETECT",
-        "role": "obs",
-        "t_in": 173.75,
-        "t_out": 198.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/8"
-        },
-        "face_ids": [
-          "B09"
-        ],
-        "at": [
-          0.23997,
-          0.29699
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "B-connector_label-0031",
+        "cue_id": "B-connector_label-0023",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
@@ -11562,7 +11402,7 @@
         "label": "0.829"
       },
       {
-        "cue_id": "B-box_emerge-0035",
+        "cue_id": "B-box_emerge-0027",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11578,7 +11418,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-mesh_contour-0036",
+        "cue_id": "B-mesh_contour-0028",
         "cue": "mesh_contour",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11593,7 +11433,7 @@
         ]
       },
       {
-        "cue_id": "B-connector_label-0037",
+        "cue_id": "B-connector_label-0029",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11613,7 +11453,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "B-box_emerge-0038",
+        "cue_id": "B-box_emerge-0030",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11629,7 +11469,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-mesh_points-0039",
+        "cue_id": "B-mesh_points-0031",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11644,7 +11484,7 @@
         ]
       },
       {
-        "cue_id": "B-connector_label-0040",
+        "cue_id": "B-connector_label-0032",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11664,7 +11504,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "B-box_emerge-0041",
+        "cue_id": "B-box_emerge-0033",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11680,7 +11520,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-mesh_points-0042",
+        "cue_id": "B-mesh_points-0034",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11695,7 +11535,7 @@
         ]
       },
       {
-        "cue_id": "B-connector_label-0043",
+        "cue_id": "B-connector_label-0035",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11715,7 +11555,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "B-box_emerge-0044",
+        "cue_id": "B-box_emerge-0036",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11731,7 +11571,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-mesh_contour-0045",
+        "cue_id": "B-mesh_contour-0037",
         "cue": "mesh_contour",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11746,7 +11586,7 @@
         ]
       },
       {
-        "cue_id": "B-connector_label-0046",
+        "cue_id": "B-connector_label-0038",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11766,7 +11606,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "B-box_emerge-0047",
+        "cue_id": "B-box_emerge-0039",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11782,7 +11622,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-mesh_points-0048",
+        "cue_id": "B-mesh_points-0040",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11797,7 +11637,7 @@
         ]
       },
       {
-        "cue_id": "B-connector_label-0049",
+        "cue_id": "B-connector_label-0041",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11817,7 +11657,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "B-box_emerge-0050",
+        "cue_id": "B-box_emerge-0042",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11833,7 +11673,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-mesh_contour-0051",
+        "cue_id": "B-mesh_contour-0043",
         "cue": "mesh_contour",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11848,7 +11688,7 @@
         ]
       },
       {
-        "cue_id": "B-connector_label-0052",
+        "cue_id": "B-connector_label-0044",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11868,7 +11708,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "B-box_emerge-0056",
+        "cue_id": "B-box_emerge-0048",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -11884,7 +11724,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-claim_word-0092",
+        "cue_id": "B-claim_word-0076",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -11903,7 +11743,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-connector-0058",
+        "cue_id": "B-connector-0049",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -11923,27 +11763,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0057",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 351.4,
-        "t_out": 428.625,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/4"
-        },
-        "face_ids": [
-          "B05"
-        ],
-        "at": [
-          0.08849,
-          0.11048
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "B-connector_label-0059",
+        "cue_id": "B-connector_label-0050",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -11963,7 +11783,7 @@
         "label": "yaw +10"
       },
       {
-        "cue_id": "B-box_emerge-0053",
+        "cue_id": "B-box_emerge-0045",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -11979,7 +11799,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-claim_word-0060",
+        "cue_id": "B-claim_word-0051",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -11997,7 +11817,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-mesh_points-0054",
+        "cue_id": "B-mesh_points-0046",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -12012,7 +11832,7 @@
         ]
       },
       {
-        "cue_id": "B-connector_label-0055",
+        "cue_id": "B-connector_label-0047",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -12032,7 +11852,7 @@
         "label": "478/478"
       },
       {
-        "cue_id": "B-claim_word-0093",
+        "cue_id": "B-claim_word-0077",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -12051,7 +11871,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-box_emerge-0061",
+        "cue_id": "B-box_emerge-0052",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -12067,7 +11887,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0063",
+        "cue_id": "B-connector-0053",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -12087,27 +11907,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0062",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 377.275,
-        "t_out": 454.5,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/1"
-        },
-        "face_ids": [
-          "B02"
-        ],
-        "at": [
-          0.18431,
-          0.72781
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "B-connector_label-0064",
+        "cue_id": "B-connector_label-0054",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -12127,7 +11927,7 @@
         "label": "yaw +18"
       },
       {
-        "cue_id": "B-claim_word-0065",
+        "cue_id": "B-claim_word-0055",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -12145,7 +11945,7 @@
         "alarm": true
       },
       {
-        "cue_id": "B-claim_word-0094",
+        "cue_id": "B-claim_word-0078",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -12164,7 +11964,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-box_emerge-0066",
+        "cue_id": "B-box_emerge-0056",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -12180,7 +11980,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0068",
+        "cue_id": "B-connector-0057",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -12200,27 +12000,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0067",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 403.15,
-        "t_out": 480.375,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/33"
-        },
-        "face_ids": [
-          "B34"
-        ],
-        "at": [
-          0.96165,
-          0.12524
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "B-connector_label-0069",
+        "cue_id": "B-connector_label-0058",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -12240,7 +12020,7 @@
         "label": "yaw -13"
       },
       {
-        "cue_id": "B-claim_word-0070",
+        "cue_id": "B-claim_word-0059",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -12258,7 +12038,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-claim_word-0095",
+        "cue_id": "B-claim_word-0079",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -12277,7 +12057,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-box_emerge-0071",
+        "cue_id": "B-box_emerge-0060",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -12293,7 +12073,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0073",
+        "cue_id": "B-connector-0061",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -12313,27 +12093,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0072",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 429.025,
-        "t_out": 506.25,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/22"
-        },
-        "face_ids": [
-          "B23"
-        ],
-        "at": [
-          0.91323,
-          0.57327
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "B-connector_label-0074",
+        "cue_id": "B-connector_label-0062",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -12353,7 +12113,7 @@
         "label": "yaw -2"
       },
       {
-        "cue_id": "B-claim_word-0096",
+        "cue_id": "B-claim_word-0080",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -12372,7 +12132,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-box_emerge-0075",
+        "cue_id": "B-box_emerge-0063",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -12388,7 +12148,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-claim_word-0097",
+        "cue_id": "B-claim_word-0081",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -12407,7 +12167,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-connector-0077",
+        "cue_id": "B-connector-0064",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -12427,27 +12187,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0076",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 454.9,
-        "t_out": 532.125,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/17"
-        },
-        "face_ids": [
-          "B18"
-        ],
-        "at": [
-          0.92815,
-          0.83545
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "B-connector_label-0078",
+        "cue_id": "B-connector_label-0065",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -12467,7 +12207,7 @@
         "label": "yaw -10"
       },
       {
-        "cue_id": "B-claim_word-0079",
+        "cue_id": "B-claim_word-0066",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -12485,7 +12225,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-claim_word-0098",
+        "cue_id": "B-claim_word-0082",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -12504,7 +12244,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-box_emerge-0080",
+        "cue_id": "B-box_emerge-0067",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -12520,7 +12260,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0082",
+        "cue_id": "B-connector-0068",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -12540,27 +12280,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0081",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 480.775,
-        "t_out": 558.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/15"
-        },
-        "face_ids": [
-          "B16"
-        ],
-        "at": [
-          0.38198,
-          0.53767
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "B-connector_label-0083",
+        "cue_id": "B-connector_label-0069",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -12580,7 +12300,7 @@
         "label": "yaw +6"
       },
       {
-        "cue_id": "B-claim_word-0099",
+        "cue_id": "B-claim_word-0083",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -12599,7 +12319,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-box_emerge-0084",
+        "cue_id": "B-box_emerge-0070",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -12615,7 +12335,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0086",
+        "cue_id": "B-connector-0071",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -12635,27 +12355,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0085",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 506.65,
-        "t_out": 558.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/26"
-        },
-        "face_ids": [
-          "B27"
-        ],
-        "at": [
-          0.61547,
-          0.10503
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "B-connector_label-0087",
+        "cue_id": "B-connector_label-0072",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -12675,7 +12375,7 @@
         "label": "yaw -10"
       },
       {
-        "cue_id": "B-claim_word-0100",
+        "cue_id": "B-claim_word-0084",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -12694,7 +12394,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-box_emerge-0102",
+        "cue_id": "B-box_emerge-0086",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -12710,7 +12410,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-box_emerge-0103",
+        "cue_id": "B-box_emerge-0087",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -12726,7 +12426,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-relation-0104",
+        "cue_id": "B-relation-0088",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -12745,7 +12445,7 @@
         "label": "cos 0.467"
       },
       {
-        "cue_id": "B-box_emerge-0088",
+        "cue_id": "B-box_emerge-0073",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -12761,7 +12461,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0090",
+        "cue_id": "B-connector-0074",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -12781,27 +12481,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-node-0089",
-        "cue": "node",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 532.525,
-        "t_out": 558.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/8"
-        },
-        "face_ids": [
-          "B09"
-        ],
-        "at": [
-          0.23997,
-          0.29699
-        ],
-        "r": 0.017
-      },
-      {
-        "cue_id": "B-connector_label-0091",
+        "cue_id": "B-connector_label-0075",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -12821,7 +12501,7 @@
         "label": "yaw +5"
       },
       {
-        "cue_id": "B-claim_word-0101",
+        "cue_id": "B-claim_word-0085",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -12840,7 +12520,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-box_emerge-0105",
+        "cue_id": "B-box_emerge-0089",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -12856,7 +12536,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-box_emerge-0106",
+        "cue_id": "B-box_emerge-0090",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -12872,7 +12552,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-relation-0107",
+        "cue_id": "B-relation-0091",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -12891,7 +12571,7 @@
         "label": "cos 0.561"
       },
       {
-        "cue_id": "B-box_emerge-0108",
+        "cue_id": "B-box_emerge-0092",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -12907,7 +12587,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-box_emerge-0109",
+        "cue_id": "B-box_emerge-0093",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -12923,7 +12603,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-relation-0110",
+        "cue_id": "B-relation-0094",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -12942,7 +12622,7 @@
         "label": "cos 0.404"
       },
       {
-        "cue_id": "B-box_emerge-0111",
+        "cue_id": "B-box_emerge-0095",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -12958,7 +12638,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-box_emerge-0112",
+        "cue_id": "B-box_emerge-0096",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -12974,7 +12654,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-relation-0113",
+        "cue_id": "B-relation-0097",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -12993,7 +12673,7 @@
         "label": "cos 0.385"
       },
       {
-        "cue_id": "B-gaze_ray-0120",
+        "cue_id": "B-gaze_ray-0104",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -13009,7 +12689,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "B-gaze_ray-0121",
+        "cue_id": "B-gaze_ray-0105",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -13025,7 +12705,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "B-gaze_ray-0122",
+        "cue_id": "B-gaze_ray-0106",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -13041,7 +12721,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "B-gaze_ray-0123",
+        "cue_id": "B-gaze_ray-0107",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -13057,7 +12737,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "B-gaze_ray-0124",
+        "cue_id": "B-gaze_ray-0108",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -13073,7 +12753,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "B-gaze_ray-0125",
+        "cue_id": "B-gaze_ray-0109",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -13089,7 +12769,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "B-gaze_ray-0126",
+        "cue_id": "B-gaze_ray-0110",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -13105,7 +12785,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "B-gaze_ray-0127",
+        "cue_id": "B-gaze_ray-0111",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -13121,7 +12801,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "B-box_emerge-0114",
+        "cue_id": "B-box_emerge-0098",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -13137,7 +12817,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-box_emerge-0115",
+        "cue_id": "B-box_emerge-0099",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -13153,7 +12833,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-relation-0116",
+        "cue_id": "B-relation-0100",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -13172,7 +12852,7 @@
         "label": "cos 0.439"
       },
       {
-        "cue_id": "B-convergence-0128",
+        "cue_id": "B-convergence-0112",
         "cue": "convergence",
         "pass": "RELATE",
         "role": "relate",
@@ -13189,7 +12869,7 @@
         "label": "res 0.1175"
       },
       {
-        "cue_id": "B-box_emerge-0117",
+        "cue_id": "B-box_emerge-0101",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -13205,7 +12885,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-box_emerge-0118",
+        "cue_id": "B-box_emerge-0102",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -13221,7 +12901,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-relation-0119",
+        "cue_id": "B-relation-0103",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -13240,7 +12920,7 @@
         "label": "cos 0.374"
       },
       {
-        "cue_id": "B-ghost-0129",
+        "cue_id": "B-ghost-0113",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -13261,7 +12941,7 @@
         }
       },
       {
-        "cue_id": "B-orphan-0142",
+        "cue_id": "B-orphan-0126",
         "cue": "orphan",
         "pass": "DOUBT",
         "role": "doubt",
@@ -13281,7 +12961,7 @@
         "label": "no face"
       },
       {
-        "cue_id": "B-ghost-0130",
+        "cue_id": "B-ghost-0114",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -13302,7 +12982,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0131",
+        "cue_id": "B-ghost-0115",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -13323,7 +13003,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0132",
+        "cue_id": "B-ghost-0116",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -13344,7 +13024,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0133",
+        "cue_id": "B-ghost-0117",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -13365,7 +13045,7 @@
         }
       },
       {
-        "cue_id": "B-floor-0143",
+        "cue_id": "B-floor-0127",
         "cue": "floor",
         "pass": "DOUBT",
         "role": "doubt",
@@ -13378,7 +13058,7 @@
         "label": "floor 0.6814"
       },
       {
-        "cue_id": "B-ghost-0134",
+        "cue_id": "B-ghost-0118",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -13399,7 +13079,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0135",
+        "cue_id": "B-ghost-0119",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -13420,7 +13100,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0136",
+        "cue_id": "B-ghost-0120",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -13441,7 +13121,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0137",
+        "cue_id": "B-ghost-0121",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -13462,7 +13142,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0138",
+        "cue_id": "B-ghost-0122",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -13483,7 +13163,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0139",
+        "cue_id": "B-ghost-0123",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -13504,7 +13184,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0140",
+        "cue_id": "B-ghost-0124",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -13525,7 +13205,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0141",
+        "cue_id": "B-ghost-0125",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
