@@ -41,6 +41,15 @@ svg .relate{color:var(--relate)} svg .doubt{color:var(--doubt)}
 svg text.alarm,svg .tab.alarm{color:var(--doubt)}
 svg text{fill:currentColor}
 svg image{opacity:.5}
+/* field layers: the painting's own topography, drawn once and then only
+   faded. dense by nature -- this is where the overwhelm lives, and none of it
+   is generative: every curve is an iso-luminance contour of the paint, every
+   vector a measured gradient, every triangle an edge of the face mesh. */
+svg .fld{fill:none;vector-effect:non-scaling-stroke;stroke-width:0.7px}
+svg .iso{stroke:var(--obs)}
+svg .flow{stroke:var(--measure)}
+svg .outline{stroke:var(--relate)}
+svg .wire{stroke:var(--obs);stroke-width:0.5px}
 /* a label tab: small dark plate behind the word, as on a detector readout.
    the only filled element in the overlay, kept dark so it cannot bloom. */
 svg rect.tab{fill:#0a0a0aE6;stroke:currentColor;stroke-width:var(--stroke);
@@ -102,7 +111,7 @@ body.config #hud{display:block}
 
 const FILES=["panel_a_detection","panel_b_detection","panel_a_flames","panel_b_flames",
   "panel_a_field","panel_b_field","panel_a_overlay_plan","panel_b_overlay_plan",
-  "face_analysis","structure","stability","noise_floor","score_a","score_b","claims","face_features"];
+  "face_analysis","structure","stability","noise_floor","score_a","score_b","claims","face_features","panel_a_fields","panel_b_fields"];
 const D=(window.MIMESIS_DATA)||{};
 const IMG=(window.MIMESIS_IMAGES)||{};
 
@@ -112,6 +121,7 @@ function ptr(o,p){ if(p==null||p==="")return o; let c=o;
 function sourceDoc(panel,file){ const l=panel.toLowerCase();
   return {detection:D["panel_"+l+"_detection"],flames:D["panel_"+l+"_flames"],
     field:D["panel_"+l+"_field"],overlay_plan:D["panel_"+l+"_overlay_plan"],
+    fields:D["panel_"+l+"_fields"],
     face_analysis:D.face_analysis,structure:D.structure,stability:D.stability,
     noise_floor:D.noise_floor,claims:D.claims,
     face_features:D.face_features}[file]; }
@@ -191,8 +201,9 @@ function buildZones(){
       const im=IMG["panel_"+z.panel.toLowerCase()];
       el.innerHTML=`<svg width="${z.w}" height="${z.h}" viewBox="0 0 ${z.w} ${z.h}">`+
         (im?`<image class="backdrop" href="${im}" x="0" y="0" width="${z.w}" height="${z.h}"/>`:``)+
-        `<g class="ink"></g></svg>`;
-      z.svg=el.querySelector("svg"); z.ink=el.querySelector(".ink");
+        `<g class="fields"></g><g class="ink"></g></svg>`;
+      z.svg=el.querySelector("svg");
+      z.fields=el.querySelector(".fields"); z.ink=el.querySelector(".ink");
       z.backdrop=el.querySelector(".backdrop");
     } else {
       el.innerHTML=`<div class="text"><div class="answer"></div></div>`;
@@ -210,7 +221,7 @@ function buildZones(){
 }
 
 /* ---------- clock ---------- */
-let audio=null, showBackdrop=true, showGrid=false;
+let audio=null, showBackdrop=true, showGrid=false, showFields=true;
 function clockSeconds(){ return (audio&&!audio.paused)?audio.currentTime:performance.now()/1000; }
 function loopT(s){ const L=s.loop_duration_s||900; return ((clockSeconds()%L)+L)%L; }
 /* growth: linear, hard-edged. no easing anywhere in this file. */
@@ -228,11 +239,92 @@ function typed(text,t,t0,cps){ if(!text) return "";
   const n=Math.floor(Math.max(0,(t-t0))*cps);
   return text.slice(0,Math.min(text.length,n)); }
 
+/* ---------- field layers ----------
+   Built once as SVG paths. Per frame only group opacity changes, so drawing
+   fifty thousand contour points costs the same as drawing none. */
+function buildFields(z){
+  const F=D["panel_"+z.panel.toLowerCase()+"_fields"];
+  z.fieldsBuilt=true;
+  if(!F||!z.fields) return;
+  const W=z.w,H=z.h,g=z.fields;
+  const P=(pts)=>pts.map((p,i)=>(i?"L":"M")+(p[0]*W).toFixed(1)+" "+(p[1]*H).toFixed(1)).join("");
+
+  z.isoGroups=[];
+  F.iso_contours.forEach(lv=>{
+    const el=mk("path",{class:"fld iso",d:lv.polylines.map(P).join(""),opacity:0});
+    g.appendChild(el); z.isoGroups.push({el,frac:lv.level_frac});
+  });
+
+  const fl=F.flow, [GW,GH]=fl.grid;
+  let d="";
+  fl.cells.forEach(c=>{
+    const x=(c.c[0]+0.5)/GW*W, y=(c.c[1]+0.5)/GH*H;
+    const L=Math.min(W/GW,H/GH)*0.9*c.m;
+    d+=`M${(x-c.d[0]*L/2).toFixed(1)} ${(y-c.d[1]*L/2).toFixed(1)}`+
+       `L${(x+c.d[0]*L/2).toFixed(1)} ${(y+c.d[1]*L/2).toFixed(1)}`;
+  });
+  z.flowEl=mk("path",{class:"fld flow",d,opacity:0}); g.appendChild(z.flowEl);
+
+  z.outlineEl=mk("path",{class:"fld outline",
+    d:F.blob_outlines.map(o=>P(o.poly)+"Z").join(""),opacity:0});
+  g.appendChild(z.outlineEl);
+
+  // full mesh wireframe per face, from the shared triangulation
+  z.wires={};
+  const det=sourceDoc(z.panel,"detection"), topo=F.mesh_topology;
+  if(topo){
+    for(const f of det.faces){
+      if(!f.landmarks||f.landmarks.length<468) continue;
+      let wd="";
+      for(const [a,b] of topo.edges){
+        const p=f.landmarks[a], q=f.landmarks[b];
+        if(!p||!q) continue;
+        wd+=`M${(p[0]*W).toFixed(1)} ${(p[1]*H).toFixed(1)}`+
+            `L${(q[0]*W).toFixed(1)} ${(q[1]*H).toFixed(1)}`;
+      }
+      const el=mk("path",{class:"fld wire",d:wd,opacity:0});
+      g.appendChild(el); z.wires[f.face_id]=el;
+    }
+  }
+}
+
+function drawFields(z,t,score){
+  if(!z.fieldsBuilt) buildFields(z);
+  if(!z.isoGroups) return 0;
+  const L=score.loop_duration_s||900, ph=t/L;
+  if(!showFields){
+    z.isoGroups.forEach(o=>o.el.setAttribute("opacity",0));
+    if(z.flowEl) z.flowEl.setAttribute("opacity",0);
+    if(z.outlineEl) z.outlineEl.setAttribute("opacity",0);
+    for(const k in z.wires) z.wires[k].setAttribute("opacity",0);
+    return 0;
+  }
+  // a band of luminance levels sweeps the range twice per loop: the painting's
+  // topography read from shadow up to flame and back
+  const sweep=(Math.sin(ph*Math.PI*4)*0.5+0.5);
+  let n=0;
+  z.isoGroups.forEach(o=>{
+    const d=Math.abs(o.frac-sweep);
+    const a=Math.max(0,0.62-d*1.5);
+    o.el.setAttribute("opacity",a.toFixed(3)); if(a>0.01) n++;
+  });
+  if(z.flowEl) z.flowEl.setAttribute("opacity",(0.12+0.28*Math.abs(Math.sin(ph*Math.PI*2))).toFixed(3));
+  if(z.outlineEl) z.outlineEl.setAttribute("opacity",0.24);
+  // a face wears its wireframe while it holds attention
+  const live=new Set();
+  for(const c of score.tracks.overlay){
+    if(t>=c.t_in&&t<c.t_out&&c.face_ids) c.face_ids.forEach(f=>live.add(f));
+  }
+  for(const k in z.wires) z.wires[k].setAttribute("opacity",live.has(k)?0.42:0.09);
+  return n+2;
+}
+
 function drawOverlay(z){
   const score=D["score_"+z.panel.toLowerCase()]; if(!score) return 0;
   const t=loopT(score),W=z.w,H=z.h,P=z.panel;
   const det=sourceDoc(P,"detection");
   const face=id=>det.faces.find(f=>f.face_id===id);
+  drawFields(z,t,score);
   const g=document.createDocumentFragment(); let n=0;
   if(z.backdrop) z.backdrop.style.display=showBackdrop?"":"none";
   if(showGrid){
@@ -647,7 +739,7 @@ function frame(){
     document.getElementById("status").textContent=
       `${currentPass(sa,t)}   t ${t.toFixed(1)} / ${sa.loop_duration_s}s   marks ${marks}   `+
       `${showBackdrop?"backdrop":"no backdrop"}${showGrid?"  GRID":""}   `+
-      `[c] config  [p] backdrop  [g] target`; }
+      `[c] config  [p] backdrop  [g] target  [f] fields`; }
   requestAnimationFrame(frame);
 }
 
@@ -657,12 +749,14 @@ function hud(){ document.getElementById("hud").textContent=
   drag the four handles per zone to keystone onto the painting
   c  leave config     p  painting backdrop (preview only — off in the gallery)
   g  alignment target — border, corner crosshairs, centre cross, tenths grid
+  f  field layers — iso-luminance contours, gradient flow, mesh wireframe
   e  export alignment    i  import alignment    r  reset zones`; }
 addEventListener("keydown",e=>{
   const k=e.key.toLowerCase();
   if(k==="c"){ document.body.classList.toggle("config"); hud(); }
   else if(k==="p"){ showBackdrop=!showBackdrop; }
   else if(k==="g"){ showGrid=!showGrid; }
+  else if(k==="f"){ showFields=!showFields; }
   else if(!document.body.classList.contains("config")) return;
   else if(k==="e"){ const o={}; ZONES.forEach(z=>o[z.id]=z.corners);
     const a=document.createElement("a");
