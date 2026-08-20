@@ -60,6 +60,7 @@ svg text.status{font-size:10px;letter-spacing:.08em;opacity:.75}
           mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%)}
 .column{position:absolute;left:0;right:0;top:0;will-change:transform}
 .column p{margin:0 0 .72em}
+.caret{position:absolute;width:1px;background:var(--paper);display:none}
 .column p.supplied{opacity:.72}
 .column p.unsupported{opacity:.72}
 .column p.unsupported::after{content:" \2014 UNSUPPORTED";font-family:ui-monospace,monospace;
@@ -521,52 +522,103 @@ function drawCue(g,c,rec,face,W,H,t,score){
 }
 
 /* ---------- text ----------
-   The answer scrolls as one continuous column. Position is a pure function of
-   the clock: the whole column passes exactly once per loop, so a seek lands at
-   the right line and fifteen minutes cannot drift. Built once, then only
-   transformed. */
+   The answer is typed as one continuous stream with a per-character blur
+   resolve, and the column scrolls to keep the caret in view. Position and
+   reveal are both pure functions of the clock, so a seek lands mid-word
+   correctly and the loop cannot drift.
+
+   The stream is built once as character spans. Per frame only the handful of
+   characters still resolving are touched, so typing 14,000 characters costs
+   the same as typing ten. */
 function buildColumn(z,score){
-  const el=z.answerEl;
+  const st=score.answer_stream, el=z.answerEl;
   const sess=(score.source_state||{}).sessions||[];
-  const st=(score.source_state||{}).answer||"";
-  const head = st==="model_output"
-    ? `PANEL ${z.panel} · ${sess.join(" · ")}`
-    : st.startsWith("type_specimen")
-    ? `PANEL ${z.panel} · TYPE SPECIMEN — NOT MODEL OUTPUT`
-    : `PANEL ${z.panel} · ANSWER TRACK EMPTY · AWAITING TRANSCRIPTS`;
-  // Markdown markers are stripped for DISPLAY only. claims.json keeps the text
-  // verbatim with its character offsets intact; this is typesetting, not editing.
-  const clean = s => s.replace(/^\s*[*\-]\s+/,"").replace(/^#{1,6}\s*/,"")
-                      .replace(/\*\*(.+?)\*\*/g,"$1").replace(/\*(.+?)\*/g,"$1")
-                      .replace(/\s+/g," ").trim();
-  let body="", sec=null;
-  for(const c of score.tracks.answer){
-    if(c.section&&c.section!==sec){ sec=c.section;
-      body+=`<div class="sec">${esc(clean(sec))}</div>`; }
-    const txt=clean(c.text);
-    // a claim that is only its own heading would print the heading twice
-    if(!txt || (sec&&clean(sec).toLowerCase()===txt.toLowerCase())) continue;
-    const cls=[c.evidence==="supplied"?"supplied":"",
-               c.unsupportable?"unsupported":""].filter(Boolean).join(" ");
-    body+=`<p class="${cls}">${esc(txt)}</p>`;
-  }
-  const html=`<div class="banner">${head}</div>`+
-             `<div class="viewport"><div class="column">${body}</div></div>`;
-  el.innerHTML=html;
+  const head = st ? `PANEL ${z.panel} · ${sess.join(" · ")}`
+                  : `PANEL ${z.panel} · ANSWER TRACK EMPTY · AWAITING TRANSCRIPTS`;
+  el.innerHTML=`<div class="banner">${head}</div>`+
+    `<div class="viewport"><div class="column"></div><div class="caret"></div></div>`;
   z.viewport=el.querySelector(".viewport");
   z.column=el.querySelector(".column");
-  z.builtFor=score.tracks.answer.length;
+  z.caretEl=el.querySelector(".caret");
+  z.chars=[]; z.settled=0; z.lastIdx=-1;
+  z.builtFor = st ? st.text.length : 0;
+  if(!st) return;
+
+  const text=st.text;
+  let node=null, i=0;
+  for(const seg of st.segments){
+    const cls = seg.kind==="section" ? "sec"
+      : [seg.evidence==="supplied"?"supplied":"",
+         seg.unsupportable?"unsupported":""].filter(Boolean).join(" ");
+    node=document.createElement(seg.kind==="section"?"div":"p");
+    node.className=cls;
+    // characters before this segment (the newlines between them) still need spans
+    while(i<seg.start){ z.chars.push(null); i++; }
+    for(;i<seg.end;i++){
+      const sp=document.createElement("span");
+      sp.textContent=text[i];
+      sp.style.visibility="hidden";
+      node.appendChild(sp);
+      z.chars.push(sp);
+    }
+    z.column.appendChild(node);
+  }
+  while(z.chars.length<text.length) z.chars.push(null);
 }
+
 function drawText(z){
   const score=D["score_"+z.panel.toLowerCase()]; if(!score) return;
-  if(z.builtFor!==score.tracks.answer.length) buildColumn(z,score);
-  if(!z.column) return;
-  const t=loopT(score), L=score.loop_duration_s||900;
-  const ch=z.column.scrollHeight, vh=z.viewport.clientHeight;
-  // start just below the viewport, end just above the column's last line
-  const travel=ch+vh*0.25;
-  const y=vh - (t/L)*travel;
-  z.column.style.transform=`translateY(${y.toFixed(2)}px)`;
+  const st=score.answer_stream;
+  const want = st ? st.text.length : 0;
+  if(z.builtFor!==want) buildColumn(z,score);
+  if(!st||!z.chars) return;
+
+  const on=st.char_onsets_ms, n=on.length;
+  const ms=((clockSeconds()*1000)%st.cycle_ms+st.cycle_ms)%st.cycle_ms;
+
+  // binary search: the last character whose onset has passed
+  let lo=0, hi=n-1, idx=-1;
+  while(lo<=hi){ const mid=(lo+hi)>>1;
+    if(on[mid]<=ms){ idx=mid; lo=mid+1; } else hi=mid-1; }
+
+  const BL=st.blur_resolve_ms||110;
+  const win=Math.max(4,Math.ceil(BL/14)+2);
+
+  if(idx<z.lastIdx){                       // cycle restarted
+    for(let i=0;i<=z.lastIdx&&i<n;i++){ const sp=z.chars[i];
+      if(sp){ sp.style.cssText="visibility:hidden"; } }
+    z.settled=0;
+  }
+  for(let i=z.settled;i<=idx-win&&i<n;i++){
+    const sp=z.chars[i]; if(sp) sp.style.cssText="";
+    z.settled=i+1;
+  }
+  for(let i=Math.max(0,idx-win);i<=idx&&i<n;i++){
+    const sp=z.chars[i]; if(!sp) continue;
+    const age=ms-on[i];
+    if(age<0){ sp.style.cssText="visibility:hidden"; continue; }
+    const k=Math.min(1,age/BL);
+    sp.style.cssText = k>=1 ? ""
+      : `filter:blur(${(6*(1-k)).toFixed(2)}px);opacity:${(0.35+0.65*k).toFixed(3)}`;
+  }
+  z.lastIdx=idx;
+
+  // the column follows the caret, so the newest line sits at a constant height
+  let anchor=null;
+  for(let i=idx;i>=0&&i>idx-400;i--){ if(z.chars[i]){ anchor=z.chars[i]; break; } }
+  const vh=z.viewport.clientHeight, ch=z.column.scrollHeight;
+  if(anchor){
+    const top=anchor.offsetTop, lh=anchor.offsetHeight||30;
+    let y=vh*0.68-top;
+    y=Math.min(0,Math.max(y,vh-ch));
+    z.column.style.transform=`translateY(${y.toFixed(1)}px)`;
+    z.caretEl.style.cssText=
+      `left:${(anchor.offsetLeft+anchor.offsetWidth).toFixed(1)}px;`+
+      `top:${(top+y).toFixed(1)}px;height:${lh}px;display:block`;
+  } else {
+    z.column.style.transform="translateY(0px)";
+    z.caretEl.style.display="none";
+  }
 }
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
 

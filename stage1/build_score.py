@@ -45,11 +45,17 @@ import json
 import math
 import pathlib
 
-CHAR_MS = 21.0
-CHAR_JITTER_MS = 3.5
-SENTENCE_PAUSE_MS = 420.0
-COMMA_PAUSE_MS = 130.0
-BLUR_RESOLVE_MS = 120.0
+# Typing cadence for the answer stream. The answer is typed as ONE continuous
+# stream rather than one cue per claim: giving each claim its own slot across a
+# fifteen-minute loop meant every claim typed itself and then sat idle, which is
+# what made it crawl. The stream types straight through, holds, and repeats.
+CHAR_MS = 18.0
+CHAR_JITTER_MS = 3.0
+SENTENCE_PAUSE_MS = 200.0
+COMMA_PAUSE_MS = 80.0
+PARA_PAUSE_MS = 340.0
+BLUR_RESOLVE_MS = 110.0
+STREAM_HOLD_MS = 4000.0        # pause on the finished text before it restarts
 
 # Pass name, window as a fraction of the loop, colour role.
 PASSES = [
@@ -70,15 +76,73 @@ SPECIMEN = [
 
 
 def char_onsets(text: str) -> list[float]:
+    """Onset in ms for every character. Deterministic: the jitter is a function
+    of the character index, so a retime is reproducible and a seek is exact."""
     out, t = [], 0.0
     for i, ch in enumerate(text):
-        out.append(round(t, 2))
+        out.append(round(t, 1))
         t += CHAR_MS + CHAR_JITTER_MS * (((i * 2654435761) % 1000) / 1000.0 - 0.5) * 2
-        if ch in ".!?":
+        if ch == "\n":
+            t += PARA_PAUSE_MS
+        elif ch in ".!?":
             t += SENTENCE_PAUSE_MS
         elif ch in ",;:":
             t += COMMA_PAUSE_MS
     return out
+
+
+def strip_markdown(t: str) -> str:
+    import re as _re
+    t = _re.sub(r"^\s*[*\-]\s+", "", t)
+    t = _re.sub(r"^#{1,6}\s*", "", t)
+    t = _re.sub(r"\*\*(.+?)\*\*", r"\1", t)
+    t = _re.sub(r"\*(.+?)\*", r"\1", t)
+    return _re.sub(r"\s+", " ", t).strip()
+
+
+def build_stream(claim_sessions, panel):
+    """
+    One continuous typed stream for the panel, with a segment table so the
+    renderer can mark observed against supplied without re-parsing anything.
+
+    Markdown markers are dropped here, for display only; claims.json keeps every
+    claim verbatim with its offsets intact.
+    """
+    parts, segs, sec = [], [], None
+    pos = 0
+    for sess in claim_sessions:
+        for c in sess["answer_claims"]:
+            txt = strip_markdown(c["text"])
+            if not txt:
+                continue
+            head = None
+            if c.get("section") and c["section"] != sec:
+                sec = c["section"]
+                head = strip_markdown(sec)
+            # A claim whose text IS its heading is emitted once, as the section,
+            # and then skipped below -- not suppressed in both places.
+            if head:
+                parts.append(head + "\n")
+                segs.append({"start": pos, "end": pos + len(head),
+                             "kind": "section"})
+                pos += len(head) + 1
+            if strip_markdown(sec or "").lower() == txt.lower():
+                continue
+            parts.append(txt + "\n")
+            segs.append({"start": pos, "end": pos + len(txt),
+                         "kind": "claim", "evidence": c["evidence"],
+                         "unsupportable": c["unsupportable"],
+                         "claim_id": c["claim_id"], "session": sess["session_id"]})
+            pos += len(txt) + 1
+    text = "".join(parts)
+    onsets = char_onsets(text)
+    total = (onsets[-1] + CHAR_MS) if onsets else 0.0
+    return {"text": text, "char_onsets_ms": onsets,
+            "cycle_ms": round(total + STREAM_HOLD_MS, 1),
+            "type_ms": round(total, 1),
+            "blur_resolve_ms": BLUR_RESOLVE_MS,
+            "hold_ms": STREAM_HOLD_MS,
+            "segments": segs}
 
 
 def window(name: str, loop: float) -> tuple[float, float]:
@@ -319,19 +383,10 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
 
     cues.sort(key=lambda c: (c["t_in"], c["cue_id"]))
 
-    answer, reasoning = [], []
+    answer, reasoning, stream = [], [], None
     if mine:
         sess = mine[0]
-        cl = [c2 for c2 in sess["answer_claims"] if len(c2["text"]) > 40]
-        span = loop / max(1, len(cl))
-        for i, c2 in enumerate(cl):
-            answer.append({"cue_id": f"{panel}-ans-{i:03d}",
-                           "t_in": round(i * span, 3),
-                           "t_out": round((i + 1) * span, 3),
-                           "text": c2["text"], "char_onsets_ms": char_onsets(c2["text"]),
-                           "claim_ids": [c2["claim_id"]], "section": c2["section"],
-                           "evidence": c2["evidence"],
-                           "unsupportable": c2["unsupportable"]})
+        stream = build_stream(mine, panel)
         rf = sess["source"].get("reasoning_file")
         if rf and pathlib.Path(rf).exists():
             raw = pathlib.Path(rf).read_text()
@@ -368,7 +423,7 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
         "reveal": {"char_ms": CHAR_MS, "sentence_pause_ms": SENTENCE_PAUSE_MS,
                    "comma_pause_ms": COMMA_PAUSE_MS, "blur_resolve_ms": BLUR_RESOLVE_MS},
         "source_state": {
-            "answer": ("model_output" if mine else
+            "answer": ("model_output" if stream else
                        ("type_specimen_not_model_output" if specimen
                         else "awaiting_transcripts")),
             "reasoning": ("model_output" if reasoning else "not_supplied"),
@@ -380,6 +435,7 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
                      "reasoning track carries the model's words and these remain the "
                      "instrument layer beneath."),
         },
+        "answer_stream": stream,
         "tracks": {"answer": answer, "reasoning": reasoning, "overlay": cues},
     }
 
