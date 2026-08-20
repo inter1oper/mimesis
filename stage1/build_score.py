@@ -200,7 +200,7 @@ def place_nodes(faces, aspect: float) -> dict:
 
 
 def build(panel: str, out: pathlib.Path, loop: float, lead: float,
-          specimen: bool = False) -> dict:
+          specimen: bool = False, cycle: float = 45.0) -> dict:
     p = panel.lower()
     det = json.loads((out / f"panel_{p}_detection.json").read_text())
     fl = json.loads((out / f"panel_{p}_flames.json").read_text())
@@ -254,7 +254,7 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
     CONCURRENT = 3.0
 
     def windows(items, pass_name):
-        t0, t1 = window(pass_name, loop)
+        t0, t1 = window(pass_name, cycle)
         n = max(1, len(items))
         step = (t1 - t0) / n
         hold = step * CONCURRENT
@@ -279,24 +279,24 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
         fid = f["face_id"]; i = idx[fid]
         d = f["detectors"]; bf, yn = d["blazeface"]["score"], d["yunet"]["score"]
         add("box_emerge", "DETECT", "detection", f"/faces/{i}", a, b,
-            face_ids=[fid], grow_s=0.8)
-        add("connector", "DETECT", "detection", f"/faces/{i}", a + 0.5, b,
-            face_ids=[fid], at=nodes[fid], grow_s=0.6)
-        add("connector_label", "DETECT", "detection", f"/faces/{i}", a + 1.1, b,
+            face_ids=[fid], grow_s=0.16)
+        add("connector", "DETECT", "detection", f"/faces/{i}", a + 0.10, b,
+            face_ids=[fid], at=nodes[fid], grow_s=0.12)
+        add("connector_label", "DETECT", "detection", f"/faces/{i}", a + 0.22, b,
             face_ids=[fid], at=nodes[fid], label=f"{max(bf, yn):.3f}")
 
     # ---------- PASS 2 RESOLVE: geometry, or the absence of it ----------
     for f, a, b in windows(cons, "RESOLVE"):
         fid = f["face_id"]; i = idx[fid]
         add("box_emerge", "RESOLVE", "detection", f"/faces/{i}", a, b,
-            face_ids=[fid], grow_s=0.8)
+            face_ids=[fid], grow_s=0.16)
         if f["mesh_ok"]:
             t_ = tier.get(fid, {}).get("effective_tier", "box_only")
             cue = {"full_mesh": "mesh_full", "contour": "mesh_contour",
                    "landmarks": "mesh_points"}.get(t_, "mesh_points")
-            add(cue, "RESOLVE", "detection", f"/faces/{i}/landmarks", a + 0.5, b,
+            add(cue, "RESOLVE", "detection", f"/faces/{i}/landmarks", a + 0.10, b,
                 face_ids=[fid])
-            add("connector_label", "RESOLVE", "detection", f"/faces/{i}", a + 0.9, b,
+            add("connector_label", "RESOLVE", "detection", f"/faces/{i}", a + 0.20, b,
                 face_ids=[fid], at=nodes[fid], label=f"{len(f['landmarks'])}/478")
             # take the face apart: eye, eye, nose, mouth, one after another
             if fid in feats:
@@ -312,31 +312,31 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
                         continue
                     add("feature_box", "RESOLVE", "face_features",
                         f"/panels/{panel}/{fi}/features/{key}",
-                        a + 1.1 + j * step, b, face_ids=[fid], feature=key,
-                        label=lab, grow_s=0.45)
+                        a + 0.24 + j * step, b, face_ids=[fid], feature=key,
+                        label=lab, grow_s=0.10)
         else:
             add("box_content", "RESOLVE", "detection", f"/faces/{i}", a, b,
-                face_ids=[fid], mode="fail", grow_s=0.7, alarm=True)
-            add("connector_label", "RESOLVE", "detection", f"/faces/{i}", a + 0.5, b,
+                face_ids=[fid], mode="fail", grow_s=0.14, alarm=True)
+            add("connector_label", "RESOLVE", "detection", f"/faces/{i}", a + 0.10, b,
                 face_ids=[fid], at=nodes[fid], alarm=True, label="no geometry")
 
     # ---------- PASS 3 MEASURE: the model's word, and one number ----------
     for f, a, b in windows(cons, "MEASURE"):
         fid = f["face_id"]; i = idx[fid]
         add("box_emerge", "MEASURE", "detection", f"/faces/{i}", a, b,
-            face_ids=[fid], grow_s=0.8)
+            face_ids=[fid], grow_s=0.16)
         r = anal.get(fid)
         if r and r.get("head_pose"):
             k = anal_index[fid]
-            add("connector", "MEASURE", "detection", f"/faces/{i}", a + 0.4, b,
-                face_ids=[fid], at=nodes[fid], grow_s=0.6)
+            add("connector", "MEASURE", "detection", f"/faces/{i}", a + 0.09, b,
+                face_ids=[fid], at=nodes[fid], grow_s=0.12)
             add("connector_label", "MEASURE", "face_analysis",
                 f"/panels/{panel}/{k}/head_pose", a + 1.0, b,
                 face_ids=[fid], at=nodes[fid],
                 label=f"yaw {r['head_pose']['yaw_deg']:+.0f}")
         if fid in kw_by_face:
             w, unsup = kw_by_face[fid]
-            add("claim_word", "MEASURE", "claims", "/0", a + 1.4, b,
+            add("claim_word", "MEASURE", "claims", "/0", a + 0.30, b,
                 face_ids=[fid], label=w, unsupportable=unsup, alarm=unsup)
 
     # a few of the model's unanchored words, drifting on the canvas
@@ -357,17 +357,17 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
     for (n, e), a, b in windows(rel[:6], "RELATE"):
         for fid in (e["from"], e["to"]):
             add("box_emerge", "RELATE", "detection", f"/faces/{idx[fid]}", a, b,
-                face_ids=[fid], grow_s=0.6)
-        add("relation", "RELATE", "structure", f"/edges/{n}", a + 0.4, b,
-            face_ids=[e["from"], e["to"]], grow_s=0.9, style="dashed",
+                face_ids=[fid], grow_s=0.12)
+        add("relation", "RELATE", "structure", f"/edges/{n}", a + 0.09, b,
+            face_ids=[e["from"], e["to"]], grow_s=0.18, style="dashed",
             label=f"cos {e['cosine']:.3f}")
     gz = stru["per_panel"][panel]["gaze_convergence"]
-    ga, gb = window("RELATE", loop)
+    ga, gb = window("RELATE", cycle)
     if gz.get("converges"):
         for e_i, e in [(n, e) for n, e in enumerate(E)
                        if e["type"] == "gaze" and e["from"] in nodes]:
             add("gaze_ray", "RELATE", "structure", f"/edges/{e_i}",
-                ga + (gb - ga) * 0.55, gb, face_ids=[e["from"]], grow_s=1.4)
+                ga + (gb - ga) * 0.55, gb, face_ids=[e["from"]], grow_s=0.30)
         add("convergence", "RELATE", "structure",
             f"/per_panel/{panel}/gaze_convergence",
             ga + (gb - ga) * 0.7, gb, at=gz["point"],
@@ -376,7 +376,7 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
     # ---------- PASS 5 DOUBT: what was thrown away ----------
     ghosts = [f for f in faces if len(f["detectors"]) < 2
               and (stabr.get(f["face_id"], {}).get("flash_hz", 0) or 0) > 0]
-    da, db = window("DOUBT", loop)
+    da, db = window("DOUBT", cycle)
     for f, a, b in windows(ghosts[:14], "DOUBT"):
         fid = f["face_id"]; i = idx[fid]
         add("ghost", "DOUBT", "detection", f"/faces/{i}", a, b, face_ids=[fid],
@@ -394,7 +394,7 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
     # ---------- the status block, always on ----------
     if mine:
         s0 = mine[0]
-        add("status_block", "DETECT", "claims", f"/{sessions.index(s0)}", 0.0, loop,
+        add("status_block", "DETECT", "claims", f"/{sessions.index(s0)}", 0.0, cycle,
             lines=[f"PANEL      {panel}",
                    f"DETECTED   {det['counts']['merged']}",
                    f"CONFIRMED  {det['counts']['both_detectors_agree']}",
@@ -434,10 +434,11 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
         "panel": panel,
         "session_id": None,
         "loop_duration_s": loop,
+        "overlay_cycle_s": cycle,
         "clock": {"source": "performance.now", "audio_file": None,
                   "fallback": "performance.now"},
         "lead_offset_s": lead,
-        "passes": [{"name": n, "t_in": round(a * loop, 2), "t_out": round(b * loop, 2),
+        "passes": [{"name": n, "t_in": round(a * cycle, 2), "t_out": round(b * cycle, 2),
                     "role": r} for n, a, b, r in PASSES],
         "nodes": nodes,
         "stability_passes": total_passes,
@@ -485,19 +486,25 @@ def main() -> None:
     ap.add_argument("--loop", type=float, default=900.0)
     ap.add_argument("--lead", type=float, default=-4.0)
     ap.add_argument("--specimen", action="store_true")
+    ap.add_argument("--cycle", type=float, default=45.0,
+                    help="Seconds for one full DETECT..DOUBT pass of the overlay. "
+                         "The overlay repeats this many times inside the master "
+                         "loop; the text stream keeps its own cycle. Both are read "
+                         "off the same clock.")
     ap.add_argument("--selftest", action="store_true")
     args = ap.parse_args()
     if args.selftest:
         selftest(); return
     selftest()
     for panel in ("A", "B"):
-        doc = build(panel, args.out, args.loop, args.lead, args.specimen)
+        doc = build(panel, args.out, args.loop, args.lead, args.specimen, args.cycle)
         (args.out / f"score_{panel.lower()}.json").write_text(json.dumps(doc, indent=2))
         kinds, per_pass = {}, {}
         for c in doc["tracks"]["overlay"]:
             kinds[c["cue"]] = kinds.get(c["cue"], 0) + 1
             per_pass[c["pass"]] = per_pass.get(c["pass"], 0) + 1
-        print(f"panel {panel}: {len(doc['tracks']['overlay'])} cues, "
+        print(f"panel {panel}: cycle {args.loop/args.cycle:.0f}x per loop, "
+              f"{len(doc['tracks']['overlay'])} cues, "
               f"{len(kinds)} types, nodes {len(doc['nodes'])}")
         print(f"   per pass: {per_pass}")
 

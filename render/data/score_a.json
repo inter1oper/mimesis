@@ -3,6 +3,7 @@
   "panel": "A",
   "session_id": null,
   "loop_duration_s": 900.0,
+  "overlay_cycle_s": 45.0,
   "clock": {
     "source": "performance.now",
     "audio_file": null,
@@ -13,31 +14,31 @@
     {
       "name": "DETECT",
       "t_in": 0.0,
-      "t_out": 198.0,
+      "t_out": 9.9,
       "role": "obs"
     },
     {
       "name": "RESOLVE",
-      "t_in": 171.0,
-      "t_out": 378.0,
+      "t_in": 8.55,
+      "t_out": 18.9,
       "role": "obs"
     },
     {
       "name": "MEASURE",
-      "t_in": 351.0,
-      "t_out": 558.0,
+      "t_in": 17.55,
+      "t_out": 27.9,
       "role": "measure"
     },
     {
       "name": "RELATE",
-      "t_in": 531.0,
-      "t_out": 747.0,
+      "t_in": 26.55,
+      "t_out": 37.35,
       "role": "relate"
     },
     {
       "name": "DOUBT",
-      "t_in": 720.0,
-      "t_out": 900.0,
+      "t_in": 36.0,
+      "t_out": 45.0,
       "role": "doubt"
     }
   ],
@@ -5783,7 +5784,7 @@
         "pass": "DETECT",
         "role": "obs",
         "t_in": 0.0,
-        "t_out": 49.5,
+        "t_out": 2.475,
         "source": {
           "file": "detection",
           "pointer": "/faces/47"
@@ -5791,7 +5792,7 @@
         "face_ids": [
           "A48"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-status_block-0209",
@@ -5799,7 +5800,7 @@
         "pass": "DETECT",
         "role": "obs",
         "t_in": 0.0,
-        "t_out": 900.0,
+        "t_out": 45.0,
         "source": {
           "file": "claims",
           "pointer": "/1"
@@ -5818,8 +5819,8 @@
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 0.5,
-        "t_out": 49.5,
+        "t_in": 0.1,
+        "t_out": 2.475,
         "source": {
           "file": "detection",
           "pointer": "/faces/47"
@@ -5831,15 +5832,15 @@
           0.89301,
           0.7365
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-connector_label-0002",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 1.1,
-        "t_out": 49.5,
+        "t_in": 0.22,
+        "t_out": 2.475,
         "source": {
           "file": "detection",
           "pointer": "/faces/47"
@@ -5858,8 +5859,8 @@
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 16.5,
-        "t_out": 66.0,
+        "t_in": 0.825,
+        "t_out": 3.3,
         "source": {
           "file": "detection",
           "pointer": "/faces/28"
@@ -5867,15 +5868,15 @@
         "face_ids": [
           "A29"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0004",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 17.0,
-        "t_out": 66.0,
+        "t_in": 0.925,
+        "t_out": 3.3,
         "source": {
           "file": "detection",
           "pointer": "/faces/28"
@@ -5887,15 +5888,15 @@
           0.4117,
           0.36961
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-connector_label-0005",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 17.6,
-        "t_out": 66.0,
+        "t_in": 1.045,
+        "t_out": 3.3,
         "source": {
           "file": "detection",
           "pointer": "/faces/28"
@@ -5914,8 +5915,8 @@
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 33.0,
-        "t_out": 82.5,
+        "t_in": 1.65,
+        "t_out": 4.125,
         "source": {
           "file": "detection",
           "pointer": "/faces/56"
@@ -5923,15 +5924,15 @@
         "face_ids": [
           "A57"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0007",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 33.5,
-        "t_out": 82.5,
+        "t_in": 1.75,
+        "t_out": 4.125,
         "source": {
           "file": "detection",
           "pointer": "/faces/56"
@@ -5943,15 +5944,15 @@
           0.9527,
           0.07671
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-connector_label-0008",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 34.1,
-        "t_out": 82.5,
+        "t_in": 1.87,
+        "t_out": 4.125,
         "source": {
           "file": "detection",
           "pointer": "/faces/56"
@@ -5970,8 +5971,8 @@
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 49.5,
-        "t_out": 99.0,
+        "t_in": 2.475,
+        "t_out": 4.95,
         "source": {
           "file": "detection",
           "pointer": "/faces/52"
@@ -5979,15 +5980,15 @@
         "face_ids": [
           "A53"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0010",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 50.0,
-        "t_out": 99.0,
+        "t_in": 2.575,
+        "t_out": 4.95,
         "source": {
           "file": "detection",
           "pointer": "/faces/52"
@@ -5999,15 +6000,15 @@
           0.96798,
           0.51132
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-connector_label-0011",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 50.6,
-        "t_out": 99.0,
+        "t_in": 2.695,
+        "t_out": 4.95,
         "source": {
           "file": "detection",
           "pointer": "/faces/52"
@@ -6026,8 +6027,8 @@
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 66.0,
-        "t_out": 115.5,
+        "t_in": 3.3,
+        "t_out": 5.775,
         "source": {
           "file": "detection",
           "pointer": "/faces/18"
@@ -6035,15 +6036,15 @@
         "face_ids": [
           "A19"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0013",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 66.5,
-        "t_out": 115.5,
+        "t_in": 3.4,
+        "t_out": 5.775,
         "source": {
           "file": "detection",
           "pointer": "/faces/18"
@@ -6055,15 +6056,15 @@
           0.1341,
           0.15635
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-connector_label-0014",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 67.1,
-        "t_out": 115.5,
+        "t_in": 3.52,
+        "t_out": 5.775,
         "source": {
           "file": "detection",
           "pointer": "/faces/18"
@@ -6082,8 +6083,8 @@
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 82.5,
-        "t_out": 132.0,
+        "t_in": 4.125,
+        "t_out": 6.6,
         "source": {
           "file": "detection",
           "pointer": "/faces/39"
@@ -6091,15 +6092,15 @@
         "face_ids": [
           "A40"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0016",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 83.0,
-        "t_out": 132.0,
+        "t_in": 4.225,
+        "t_out": 6.6,
         "source": {
           "file": "detection",
           "pointer": "/faces/39"
@@ -6111,15 +6112,15 @@
           0.49946,
           0.12383
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-connector_label-0017",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 83.6,
-        "t_out": 132.0,
+        "t_in": 4.345,
+        "t_out": 6.6,
         "source": {
           "file": "detection",
           "pointer": "/faces/39"
@@ -6138,8 +6139,8 @@
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 99.0,
-        "t_out": 148.5,
+        "t_in": 4.95,
+        "t_out": 7.425,
         "source": {
           "file": "detection",
           "pointer": "/faces/43"
@@ -6147,15 +6148,15 @@
         "face_ids": [
           "A44"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0019",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 99.5,
-        "t_out": 148.5,
+        "t_in": 5.05,
+        "t_out": 7.425,
         "source": {
           "file": "detection",
           "pointer": "/faces/43"
@@ -6167,15 +6168,15 @@
           0.55339,
           0.56726
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-connector_label-0020",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 100.1,
-        "t_out": 148.5,
+        "t_in": 5.17,
+        "t_out": 7.425,
         "source": {
           "file": "detection",
           "pointer": "/faces/43"
@@ -6194,8 +6195,8 @@
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 115.5,
-        "t_out": 165.0,
+        "t_in": 5.775,
+        "t_out": 8.25,
         "source": {
           "file": "detection",
           "pointer": "/faces/42"
@@ -6203,15 +6204,15 @@
         "face_ids": [
           "A43"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0022",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 116.0,
-        "t_out": 165.0,
+        "t_in": 5.875,
+        "t_out": 8.25,
         "source": {
           "file": "detection",
           "pointer": "/faces/42"
@@ -6223,15 +6224,15 @@
           0.85596,
           0.17988
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-connector_label-0023",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 116.6,
-        "t_out": 165.0,
+        "t_in": 5.995,
+        "t_out": 8.25,
         "source": {
           "file": "detection",
           "pointer": "/faces/42"
@@ -6250,8 +6251,8 @@
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 132.0,
-        "t_out": 181.5,
+        "t_in": 6.6,
+        "t_out": 9.075,
         "source": {
           "file": "detection",
           "pointer": "/faces/7"
@@ -6259,15 +6260,15 @@
         "face_ids": [
           "A08"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0025",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 132.5,
-        "t_out": 181.5,
+        "t_in": 6.7,
+        "t_out": 9.075,
         "source": {
           "file": "detection",
           "pointer": "/faces/7"
@@ -6279,15 +6280,15 @@
           0.07528,
           0.08679
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-connector_label-0026",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 133.1,
-        "t_out": 181.5,
+        "t_in": 6.82,
+        "t_out": 9.075,
         "source": {
           "file": "detection",
           "pointer": "/faces/7"
@@ -6306,8 +6307,8 @@
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 148.5,
-        "t_out": 198.0,
+        "t_in": 7.425,
+        "t_out": 9.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/4"
@@ -6315,15 +6316,15 @@
         "face_ids": [
           "A05"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0028",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 149.0,
-        "t_out": 198.0,
+        "t_in": 7.525,
+        "t_out": 9.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/4"
@@ -6335,15 +6336,15 @@
           0.18508,
           0.49132
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-connector_label-0029",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 149.6,
-        "t_out": 198.0,
+        "t_in": 7.645,
+        "t_out": 9.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/4"
@@ -6362,8 +6363,8 @@
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 165.0,
-        "t_out": 198.0,
+        "t_in": 8.25,
+        "t_out": 9.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/48"
@@ -6371,15 +6372,15 @@
         "face_ids": [
           "A49"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0031",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 165.5,
-        "t_out": 198.0,
+        "t_in": 8.35,
+        "t_out": 9.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/48"
@@ -6391,15 +6392,15 @@
           0.58958,
           0.05447
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-connector_label-0032",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 166.1,
-        "t_out": 198.0,
+        "t_in": 8.47,
+        "t_out": 9.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/48"
@@ -6418,8 +6419,8 @@
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 171.0,
-        "t_out": 222.75,
+        "t_in": 8.55,
+        "t_out": 11.137,
         "source": {
           "file": "detection",
           "pointer": "/faces/47"
@@ -6427,15 +6428,15 @@
         "face_ids": [
           "A48"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-mesh_points-0037",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 171.5,
-        "t_out": 222.75,
+        "t_in": 8.65,
+        "t_out": 11.137,
         "source": {
           "file": "detection",
           "pointer": "/faces/47/landmarks"
@@ -6449,8 +6450,8 @@
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 171.9,
-        "t_out": 222.75,
+        "t_in": 8.75,
+        "t_out": 11.137,
         "source": {
           "file": "detection",
           "pointer": "/faces/47"
@@ -6469,8 +6470,8 @@
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 172.1,
-        "t_out": 222.75,
+        "t_in": 8.79,
+        "t_out": 11.137,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/6/features/eye_r"
@@ -6480,33 +6481,15 @@
         ],
         "feature": "eye_r",
         "label": "eye 0.27",
-        "grow_s": 0.45
-      },
-      {
-        "cue_id": "A-feature_box-0040",
-        "cue": "feature_box",
-        "pass": "RESOLVE",
-        "role": "obs",
-        "t_in": 180.725,
-        "t_out": 222.75,
-        "source": {
-          "file": "face_features",
-          "pointer": "/panels/A/6/features/eye_l"
-        },
-        "face_ids": [
-          "A48"
-        ],
-        "feature": "eye_l",
-        "label": "eye 0.26",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-box_emerge-0033",
         "cue": "box_emerge",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 181.5,
-        "t_out": 198.0,
+        "t_in": 9.075,
+        "t_out": 9.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/16"
@@ -6514,15 +6497,15 @@
         "face_ids": [
           "A17"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0034",
         "cue": "connector",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 182.0,
-        "t_out": 198.0,
+        "t_in": 9.175,
+        "t_out": 9.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/16"
@@ -6534,15 +6517,33 @@
           0.12255,
           0.34664
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
+      },
+      {
+        "cue_id": "A-feature_box-0040",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 9.221,
+        "t_out": 11.137,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/A/6/features/eye_l"
+        },
+        "face_ids": [
+          "A48"
+        ],
+        "feature": "eye_l",
+        "label": "eye 0.26",
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-connector_label-0035",
         "cue": "connector_label",
         "pass": "DETECT",
         "role": "obs",
-        "t_in": 182.6,
-        "t_out": 198.0,
+        "t_in": 9.295,
+        "t_out": 9.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/16"
@@ -6561,8 +6562,8 @@
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 188.25,
-        "t_out": 240.0,
+        "t_in": 9.413,
+        "t_out": 12.0,
         "source": {
           "file": "detection",
           "pointer": "/faces/28"
@@ -6570,15 +6571,15 @@
         "face_ids": [
           "A29"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-mesh_points-0045",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 188.75,
-        "t_out": 240.0,
+        "t_in": 9.513,
+        "t_out": 12.0,
         "source": {
           "file": "detection",
           "pointer": "/faces/28/landmarks"
@@ -6592,8 +6593,8 @@
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 189.15,
-        "t_out": 240.0,
+        "t_in": 9.613,
+        "t_out": 12.0,
         "source": {
           "file": "detection",
           "pointer": "/faces/28"
@@ -6612,8 +6613,8 @@
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 189.35,
-        "t_out": 222.75,
+        "t_in": 9.652,
+        "t_out": 11.137,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/6/features/iris_r"
@@ -6623,15 +6624,15 @@
         ],
         "feature": "iris_r",
         "label": "iris 0.137",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0047",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 189.35,
-        "t_out": 240.0,
+        "t_in": 9.653,
+        "t_out": 12.0,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/2/features/eye_r"
@@ -6641,15 +6642,15 @@
         ],
         "feature": "eye_r",
         "label": "eye 0.28",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0042",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 197.975,
-        "t_out": 222.75,
+        "t_in": 10.084,
+        "t_out": 11.137,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/6/features/nose"
@@ -6659,15 +6660,15 @@
         ],
         "feature": "nose",
         "label": "nose",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0048",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 197.975,
-        "t_out": 240.0,
+        "t_in": 10.084,
+        "t_out": 12.0,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/2/features/eye_l"
@@ -6677,15 +6678,15 @@
         ],
         "feature": "eye_l",
         "label": "eye 0.32",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-box_emerge-0052",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 205.5,
-        "t_out": 257.25,
+        "t_in": 10.275,
+        "t_out": 12.863,
         "source": {
           "file": "detection",
           "pointer": "/faces/56"
@@ -6693,15 +6694,15 @@
         "face_ids": [
           "A57"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-mesh_points-0053",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 206.0,
-        "t_out": 257.25,
+        "t_in": 10.375,
+        "t_out": 12.863,
         "source": {
           "file": "detection",
           "pointer": "/faces/56/landmarks"
@@ -6715,8 +6716,8 @@
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 206.4,
-        "t_out": 257.25,
+        "t_in": 10.475,
+        "t_out": 12.863,
         "source": {
           "file": "detection",
           "pointer": "/faces/56"
@@ -6735,8 +6736,8 @@
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 206.6,
-        "t_out": 222.75,
+        "t_in": 10.515,
+        "t_out": 11.137,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/6/features/lips_in"
@@ -6746,15 +6747,15 @@
         ],
         "feature": "lips_in",
         "label": "mouth 0.23",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0049",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 206.6,
-        "t_out": 240.0,
+        "t_in": 10.515,
+        "t_out": 12.0,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/2/features/iris_r"
@@ -6764,15 +6765,15 @@
         ],
         "feature": "iris_r",
         "label": "iris 0.134",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0055",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 206.6,
-        "t_out": 257.25,
+        "t_in": 10.515,
+        "t_out": 12.863,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/9/features/eye_r"
@@ -6782,15 +6783,15 @@
         ],
         "feature": "eye_r",
         "label": "eye 0.29",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0050",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 215.225,
-        "t_out": 240.0,
+        "t_in": 10.946,
+        "t_out": 12.0,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/2/features/nose"
@@ -6800,15 +6801,15 @@
         ],
         "feature": "nose",
         "label": "nose",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0056",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 215.225,
-        "t_out": 257.25,
+        "t_in": 10.946,
+        "t_out": 12.863,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/9/features/eye_l"
@@ -6818,15 +6819,15 @@
         ],
         "feature": "eye_l",
         "label": "eye 0.29",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-box_emerge-0060",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 222.75,
-        "t_out": 274.5,
+        "t_in": 11.137,
+        "t_out": 13.725,
         "source": {
           "file": "detection",
           "pointer": "/faces/52"
@@ -6834,15 +6835,15 @@
         "face_ids": [
           "A53"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-mesh_points-0061",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 223.25,
-        "t_out": 274.5,
+        "t_in": 11.237,
+        "t_out": 13.725,
         "source": {
           "file": "detection",
           "pointer": "/faces/52/landmarks"
@@ -6856,8 +6857,8 @@
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 223.65,
-        "t_out": 274.5,
+        "t_in": 11.337,
+        "t_out": 13.725,
         "source": {
           "file": "detection",
           "pointer": "/faces/52"
@@ -6872,48 +6873,12 @@
         "label": "478/478"
       },
       {
-        "cue_id": "A-feature_box-0051",
-        "cue": "feature_box",
-        "pass": "RESOLVE",
-        "role": "obs",
-        "t_in": 223.85,
-        "t_out": 240.0,
-        "source": {
-          "file": "face_features",
-          "pointer": "/panels/A/2/features/lips_in"
-        },
-        "face_ids": [
-          "A29"
-        ],
-        "feature": "lips_in",
-        "label": "mouth 0.15",
-        "grow_s": 0.45
-      },
-      {
-        "cue_id": "A-feature_box-0057",
-        "cue": "feature_box",
-        "pass": "RESOLVE",
-        "role": "obs",
-        "t_in": 223.85,
-        "t_out": 257.25,
-        "source": {
-          "file": "face_features",
-          "pointer": "/panels/A/9/features/iris_r"
-        },
-        "face_ids": [
-          "A57"
-        ],
-        "feature": "iris_r",
-        "label": "iris 0.132",
-        "grow_s": 0.45
-      },
-      {
         "cue_id": "A-feature_box-0063",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 223.85,
-        "t_out": 274.5,
+        "t_in": 11.377,
+        "t_out": 13.725,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/8/features/eye_r"
@@ -6923,15 +6888,51 @@
         ],
         "feature": "eye_r",
         "label": "eye 0.27",
-        "grow_s": 0.45
+        "grow_s": 0.1
+      },
+      {
+        "cue_id": "A-feature_box-0051",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 11.378,
+        "t_out": 12.0,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/A/2/features/lips_in"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "feature": "lips_in",
+        "label": "mouth 0.15",
+        "grow_s": 0.1
+      },
+      {
+        "cue_id": "A-feature_box-0057",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 11.378,
+        "t_out": 12.863,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/A/9/features/iris_r"
+        },
+        "face_ids": [
+          "A57"
+        ],
+        "feature": "iris_r",
+        "label": "iris 0.132",
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0058",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 232.475,
-        "t_out": 257.25,
+        "t_in": 11.809,
+        "t_out": 12.863,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/9/features/nose"
@@ -6941,15 +6942,15 @@
         ],
         "feature": "nose",
         "label": "nose",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0064",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 232.475,
-        "t_out": 274.5,
+        "t_in": 11.809,
+        "t_out": 13.725,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/8/features/eye_l"
@@ -6959,15 +6960,15 @@
         ],
         "feature": "eye_l",
         "label": "eye 0.25",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-box_emerge-0068",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 240.0,
-        "t_out": 291.75,
+        "t_in": 12.0,
+        "t_out": 14.587,
         "source": {
           "file": "detection",
           "pointer": "/faces/18"
@@ -6975,15 +6976,15 @@
         "face_ids": [
           "A19"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-mesh_points-0069",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 240.5,
-        "t_out": 291.75,
+        "t_in": 12.1,
+        "t_out": 14.587,
         "source": {
           "file": "detection",
           "pointer": "/faces/18/landmarks"
@@ -6997,8 +6998,8 @@
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 240.9,
-        "t_out": 291.75,
+        "t_in": 12.2,
+        "t_out": 14.587,
         "source": {
           "file": "detection",
           "pointer": "/faces/18"
@@ -7017,8 +7018,8 @@
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 241.1,
-        "t_out": 257.25,
+        "t_in": 12.24,
+        "t_out": 12.863,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/9/features/lips_in"
@@ -7028,15 +7029,15 @@
         ],
         "feature": "lips_in",
         "label": "mouth 0.04",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0065",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 241.1,
-        "t_out": 274.5,
+        "t_in": 12.24,
+        "t_out": 13.725,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/8/features/iris_r"
@@ -7046,15 +7047,15 @@
         ],
         "feature": "iris_r",
         "label": "iris 0.129",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0071",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 241.1,
-        "t_out": 291.75,
+        "t_in": 12.24,
+        "t_out": 14.587,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/1/features/eye_r"
@@ -7064,15 +7065,15 @@
         ],
         "feature": "eye_r",
         "label": "eye 0.33",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0066",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 249.725,
-        "t_out": 274.5,
+        "t_in": 12.671,
+        "t_out": 13.725,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/8/features/nose"
@@ -7082,15 +7083,15 @@
         ],
         "feature": "nose",
         "label": "nose",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0072",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 249.725,
-        "t_out": 291.75,
+        "t_in": 12.671,
+        "t_out": 14.587,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/1/features/eye_l"
@@ -7100,15 +7101,15 @@
         ],
         "feature": "eye_l",
         "label": "eye 0.34",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-box_emerge-0076",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 257.25,
-        "t_out": 309.0,
+        "t_in": 12.863,
+        "t_out": 15.45,
         "source": {
           "file": "detection",
           "pointer": "/faces/39"
@@ -7116,15 +7117,15 @@
         "face_ids": [
           "A40"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-mesh_points-0077",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 257.75,
-        "t_out": 309.0,
+        "t_in": 12.963,
+        "t_out": 15.45,
         "source": {
           "file": "detection",
           "pointer": "/faces/39/landmarks"
@@ -7138,8 +7139,8 @@
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 258.15,
-        "t_out": 309.0,
+        "t_in": 13.062,
+        "t_out": 15.45,
         "source": {
           "file": "detection",
           "pointer": "/faces/39"
@@ -7158,8 +7159,8 @@
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 258.35,
-        "t_out": 274.5,
+        "t_in": 13.102,
+        "t_out": 13.725,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/8/features/lips_in"
@@ -7169,15 +7170,15 @@
         ],
         "feature": "lips_in",
         "label": "mouth 0.05",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0073",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 258.35,
-        "t_out": 291.75,
+        "t_in": 13.102,
+        "t_out": 14.587,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/1/features/iris_r"
@@ -7187,15 +7188,15 @@
         ],
         "feature": "iris_r",
         "label": "iris 0.148",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0079",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 258.35,
-        "t_out": 309.0,
+        "t_in": 13.103,
+        "t_out": 15.45,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/3/features/eye_r"
@@ -7205,15 +7206,15 @@
         ],
         "feature": "eye_r",
         "label": "eye 0.26",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0074",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 266.975,
-        "t_out": 291.75,
+        "t_in": 13.534,
+        "t_out": 14.587,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/1/features/nose"
@@ -7223,15 +7224,15 @@
         ],
         "feature": "nose",
         "label": "nose",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0080",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 266.975,
-        "t_out": 309.0,
+        "t_in": 13.534,
+        "t_out": 15.45,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/3/features/eye_l"
@@ -7241,15 +7242,15 @@
         ],
         "feature": "eye_l",
         "label": "eye 0.22",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-box_emerge-0084",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 274.5,
-        "t_out": 326.25,
+        "t_in": 13.725,
+        "t_out": 16.312,
         "source": {
           "file": "detection",
           "pointer": "/faces/43"
@@ -7257,15 +7258,15 @@
         "face_ids": [
           "A44"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-mesh_points-0085",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 275.0,
-        "t_out": 326.25,
+        "t_in": 13.825,
+        "t_out": 16.312,
         "source": {
           "file": "detection",
           "pointer": "/faces/43/landmarks"
@@ -7279,8 +7280,8 @@
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 275.4,
-        "t_out": 326.25,
+        "t_in": 13.925,
+        "t_out": 16.312,
         "source": {
           "file": "detection",
           "pointer": "/faces/43"
@@ -7299,8 +7300,8 @@
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 275.6,
-        "t_out": 291.75,
+        "t_in": 13.965,
+        "t_out": 14.587,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/1/features/lips_in"
@@ -7310,15 +7311,15 @@
         ],
         "feature": "lips_in",
         "label": "mouth 0.01",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0081",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 275.6,
-        "t_out": 309.0,
+        "t_in": 13.965,
+        "t_out": 15.45,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/3/features/iris_r"
@@ -7328,15 +7329,15 @@
         ],
         "feature": "iris_r",
         "label": "iris 0.132",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0087",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 275.6,
-        "t_out": 326.25,
+        "t_in": 13.965,
+        "t_out": 16.312,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/5/features/eye_r"
@@ -7346,15 +7347,15 @@
         ],
         "feature": "eye_r",
         "label": "eye 0.27",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0082",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 284.225,
-        "t_out": 309.0,
+        "t_in": 14.396,
+        "t_out": 15.45,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/3/features/nose"
@@ -7364,15 +7365,15 @@
         ],
         "feature": "nose",
         "label": "nose",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0088",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 284.225,
-        "t_out": 326.25,
+        "t_in": 14.396,
+        "t_out": 16.312,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/5/features/eye_l"
@@ -7382,15 +7383,15 @@
         ],
         "feature": "eye_l",
         "label": "eye 0.16",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-box_emerge-0092",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 291.75,
-        "t_out": 343.5,
+        "t_in": 14.587,
+        "t_out": 17.175,
         "source": {
           "file": "detection",
           "pointer": "/faces/42"
@@ -7398,15 +7399,15 @@
         "face_ids": [
           "A43"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-mesh_points-0093",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 292.25,
-        "t_out": 343.5,
+        "t_in": 14.687,
+        "t_out": 17.175,
         "source": {
           "file": "detection",
           "pointer": "/faces/42/landmarks"
@@ -7420,8 +7421,8 @@
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 292.65,
-        "t_out": 343.5,
+        "t_in": 14.787,
+        "t_out": 17.175,
         "source": {
           "file": "detection",
           "pointer": "/faces/42"
@@ -7436,48 +7437,12 @@
         "label": "478/478"
       },
       {
-        "cue_id": "A-feature_box-0083",
-        "cue": "feature_box",
-        "pass": "RESOLVE",
-        "role": "obs",
-        "t_in": 292.85,
-        "t_out": 309.0,
-        "source": {
-          "file": "face_features",
-          "pointer": "/panels/A/3/features/lips_in"
-        },
-        "face_ids": [
-          "A40"
-        ],
-        "feature": "lips_in",
-        "label": "mouth 0.05",
-        "grow_s": 0.45
-      },
-      {
-        "cue_id": "A-feature_box-0089",
-        "cue": "feature_box",
-        "pass": "RESOLVE",
-        "role": "obs",
-        "t_in": 292.85,
-        "t_out": 326.25,
-        "source": {
-          "file": "face_features",
-          "pointer": "/panels/A/5/features/iris_r"
-        },
-        "face_ids": [
-          "A44"
-        ],
-        "feature": "iris_r",
-        "label": "iris 0.116",
-        "grow_s": 0.45
-      },
-      {
         "cue_id": "A-feature_box-0095",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 292.85,
-        "t_out": 343.5,
+        "t_in": 14.827,
+        "t_out": 17.175,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/4/features/eye_r"
@@ -7487,15 +7452,51 @@
         ],
         "feature": "eye_r",
         "label": "eye 0.36",
-        "grow_s": 0.45
+        "grow_s": 0.1
+      },
+      {
+        "cue_id": "A-feature_box-0083",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 14.828,
+        "t_out": 15.45,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/A/3/features/lips_in"
+        },
+        "face_ids": [
+          "A40"
+        ],
+        "feature": "lips_in",
+        "label": "mouth 0.05",
+        "grow_s": 0.1
+      },
+      {
+        "cue_id": "A-feature_box-0089",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 14.828,
+        "t_out": 16.312,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/A/5/features/iris_r"
+        },
+        "face_ids": [
+          "A44"
+        ],
+        "feature": "iris_r",
+        "label": "iris 0.116",
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0090",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 301.475,
-        "t_out": 326.25,
+        "t_in": 15.259,
+        "t_out": 16.312,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/5/features/nose"
@@ -7505,15 +7506,15 @@
         ],
         "feature": "nose",
         "label": "nose",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0096",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 301.475,
-        "t_out": 343.5,
+        "t_in": 15.259,
+        "t_out": 17.175,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/4/features/eye_l"
@@ -7523,15 +7524,15 @@
         ],
         "feature": "eye_l",
         "label": "eye 0.36",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-box_content-0101",
         "cue": "box_content",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 309.0,
-        "t_out": 360.75,
+        "t_in": 15.45,
+        "t_out": 18.037,
         "source": {
           "file": "detection",
           "pointer": "/faces/7"
@@ -7540,7 +7541,7 @@
           "A08"
         ],
         "mode": "fail",
-        "grow_s": 0.7,
+        "grow_s": 0.14,
         "alarm": true
       },
       {
@@ -7548,8 +7549,8 @@
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 309.0,
-        "t_out": 360.75,
+        "t_in": 15.45,
+        "t_out": 18.037,
         "source": {
           "file": "detection",
           "pointer": "/faces/7"
@@ -7557,15 +7558,15 @@
         "face_ids": [
           "A08"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector_label-0102",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 309.5,
-        "t_out": 360.75,
+        "t_in": 15.55,
+        "t_out": 18.037,
         "source": {
           "file": "detection",
           "pointer": "/faces/7"
@@ -7585,8 +7586,8 @@
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 310.1,
-        "t_out": 326.25,
+        "t_in": 15.69,
+        "t_out": 16.312,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/5/features/lips_in"
@@ -7596,15 +7597,15 @@
         ],
         "feature": "lips_in",
         "label": "mouth 0.01",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0097",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 310.1,
-        "t_out": 343.5,
+        "t_in": 15.69,
+        "t_out": 17.175,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/4/features/iris_r"
@@ -7614,15 +7615,15 @@
         ],
         "feature": "iris_r",
         "label": "iris 0.132",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0098",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 318.725,
-        "t_out": 343.5,
+        "t_in": 16.121,
+        "t_out": 17.175,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/4/features/nose"
@@ -7632,15 +7633,15 @@
         ],
         "feature": "nose",
         "label": "nose",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-box_emerge-0103",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 326.25,
-        "t_out": 378.0,
+        "t_in": 16.312,
+        "t_out": 18.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/4"
@@ -7648,15 +7649,15 @@
         "face_ids": [
           "A05"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-mesh_points-0104",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 326.75,
-        "t_out": 378.0,
+        "t_in": 16.413,
+        "t_out": 18.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/4/landmarks"
@@ -7670,8 +7671,8 @@
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 327.15,
-        "t_out": 378.0,
+        "t_in": 16.512,
+        "t_out": 18.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/4"
@@ -7690,8 +7691,8 @@
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 327.35,
-        "t_out": 343.5,
+        "t_in": 16.552,
+        "t_out": 17.175,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/4/features/lips_in"
@@ -7701,15 +7702,15 @@
         ],
         "feature": "lips_in",
         "label": "mouth 0.19",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0106",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 327.35,
-        "t_out": 378.0,
+        "t_in": 16.552,
+        "t_out": 18.9,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/0/features/eye_r"
@@ -7719,15 +7720,15 @@
         ],
         "feature": "eye_r",
         "label": "eye 0.31",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0107",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 335.975,
-        "t_out": 378.0,
+        "t_in": 16.984,
+        "t_out": 18.9,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/0/features/eye_l"
@@ -7737,15 +7738,15 @@
         ],
         "feature": "eye_l",
         "label": "eye 0.39",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-box_emerge-0111",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 343.5,
-        "t_out": 378.0,
+        "t_in": 17.175,
+        "t_out": 18.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/48"
@@ -7753,15 +7754,15 @@
         "face_ids": [
           "A49"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-mesh_points-0112",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 344.0,
-        "t_out": 378.0,
+        "t_in": 17.275,
+        "t_out": 18.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/48/landmarks"
@@ -7775,8 +7776,8 @@
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 344.4,
-        "t_out": 378.0,
+        "t_in": 17.375,
+        "t_out": 18.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/48"
@@ -7795,8 +7796,8 @@
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 344.6,
-        "t_out": 378.0,
+        "t_in": 17.415,
+        "t_out": 18.9,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/0/features/iris_r"
@@ -7806,15 +7807,15 @@
         ],
         "feature": "iris_r",
         "label": "iris 0.159",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0114",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 344.6,
-        "t_out": 378.0,
+        "t_in": 17.415,
+        "t_out": 18.9,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/7/features/eye_r"
@@ -7824,33 +7825,15 @@
         ],
         "feature": "eye_r",
         "label": "eye 0.24",
-        "grow_s": 0.45
-      },
-      {
-        "cue_id": "A-feature_box-0115",
-        "cue": "feature_box",
-        "pass": "RESOLVE",
-        "role": "obs",
-        "t_in": 350.35,
-        "t_out": 378.0,
-        "source": {
-          "file": "face_features",
-          "pointer": "/panels/A/7/features/eye_l"
-        },
-        "face_ids": [
-          "A49"
-        ],
-        "feature": "eye_l",
-        "label": "eye 0.20",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-box_emerge-0122",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 351.0,
-        "t_out": 402.75,
+        "t_in": 17.55,
+        "t_out": 20.137,
         "source": {
           "file": "detection",
           "pointer": "/faces/47"
@@ -7858,15 +7841,15 @@
         "face_ids": [
           "A48"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-claim_word-0154",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 351.0,
-        "t_out": 413.1,
+        "t_in": 17.55,
+        "t_out": 20.655,
         "source": {
           "file": "claims",
           "pointer": "/1/answer_claims/4"
@@ -7884,8 +7867,8 @@
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 351.4,
-        "t_out": 402.75,
+        "t_in": 17.64,
+        "t_out": 20.137,
         "source": {
           "file": "detection",
           "pointer": "/faces/47"
@@ -7897,35 +7880,33 @@
           0.89301,
           0.7365
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
-        "cue_id": "A-connector_label-0124",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 352.0,
-        "t_out": 402.75,
+        "cue_id": "A-feature_box-0115",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 17.702,
+        "t_out": 18.9,
         "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/A/8/head_pose"
+          "file": "face_features",
+          "pointer": "/panels/A/7/features/eye_l"
         },
         "face_ids": [
-          "A48"
+          "A49"
         ],
-        "at": [
-          0.89301,
-          0.7365
-        ],
-        "label": "yaw -3"
+        "feature": "eye_l",
+        "label": "eye 0.20",
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0109",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 353.225,
-        "t_out": 378.0,
+        "t_in": 17.846,
+        "t_out": 18.9,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/0/features/nose"
@@ -7935,15 +7916,15 @@
         ],
         "feature": "nose",
         "label": "nose",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0116",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 356.1,
-        "t_out": 378.0,
+        "t_in": 17.99,
+        "t_out": 18.9,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/7/features/iris_r"
@@ -7953,15 +7934,15 @@
         ],
         "feature": "iris_r",
         "label": "iris 0.115",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-box_content-0120",
         "cue": "box_content",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 360.75,
-        "t_out": 378.0,
+        "t_in": 18.037,
+        "t_out": 18.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/16"
@@ -7970,7 +7951,7 @@
           "A17"
         ],
         "mode": "fail",
-        "grow_s": 0.7,
+        "grow_s": 0.14,
         "alarm": true
       },
       {
@@ -7978,8 +7959,8 @@
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 360.75,
-        "t_out": 378.0,
+        "t_in": 18.037,
+        "t_out": 18.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/16"
@@ -7987,15 +7968,15 @@
         "face_ids": [
           "A17"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector_label-0121",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 361.25,
-        "t_out": 378.0,
+        "t_in": 18.137,
+        "t_out": 18.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/16"
@@ -8015,8 +7996,8 @@
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 361.85,
-        "t_out": 378.0,
+        "t_in": 18.277,
+        "t_out": 18.9,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/0/features/lips_in"
@@ -8026,15 +8007,15 @@
         ],
         "feature": "lips_in",
         "label": "mouth 0.03",
-        "grow_s": 0.45
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-feature_box-0117",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 361.85,
-        "t_out": 378.0,
+        "t_in": 18.277,
+        "t_out": 18.9,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/7/features/nose"
@@ -8044,15 +8025,71 @@
         ],
         "feature": "nose",
         "label": "nose",
-        "grow_s": 0.45
+        "grow_s": 0.1
+      },
+      {
+        "cue_id": "A-box_emerge-0125",
+        "cue": "box_emerge",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 18.413,
+        "t_out": 21.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/28"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "grow_s": 0.16
+      },
+      {
+        "cue_id": "A-connector-0126",
+        "cue": "connector",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 18.503,
+        "t_out": 21.0,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/28"
+        },
+        "face_ids": [
+          "A29"
+        ],
+        "at": [
+          0.4117,
+          0.36961
+        ],
+        "grow_s": 0.12
+      },
+      {
+        "cue_id": "A-connector_label-0124",
+        "cue": "connector_label",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 18.55,
+        "t_out": 20.137,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/8/head_pose"
+        },
+        "face_ids": [
+          "A48"
+        ],
+        "at": [
+          0.89301,
+          0.7365
+        ],
+        "label": "yaw -3"
       },
       {
         "cue_id": "A-feature_box-0118",
         "cue": "feature_box",
         "pass": "RESOLVE",
         "role": "obs",
-        "t_in": 367.6,
-        "t_out": 378.0,
+        "t_in": 18.565,
+        "t_out": 18.9,
         "source": {
           "file": "face_features",
           "pointer": "/panels/A/7/features/lips_in"
@@ -8062,71 +8099,15 @@
         ],
         "feature": "lips_in",
         "label": "mouth 0.04",
-        "grow_s": 0.45
-      },
-      {
-        "cue_id": "A-box_emerge-0125",
-        "cue": "box_emerge",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 368.25,
-        "t_out": 420.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/28"
-        },
-        "face_ids": [
-          "A29"
-        ],
-        "grow_s": 0.8
-      },
-      {
-        "cue_id": "A-connector-0126",
-        "cue": "connector",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 368.65,
-        "t_out": 420.0,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/28"
-        },
-        "face_ids": [
-          "A29"
-        ],
-        "at": [
-          0.4117,
-          0.36961
-        ],
-        "grow_s": 0.6
-      },
-      {
-        "cue_id": "A-connector_label-0127",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 369.25,
-        "t_out": 420.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/A/4/head_pose"
-        },
-        "face_ids": [
-          "A29"
-        ],
-        "at": [
-          0.4117,
-          0.36961
-        ],
-        "label": "yaw +3"
+        "grow_s": 0.1
       },
       {
         "cue_id": "A-claim_word-0155",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 371.7,
-        "t_out": 433.8,
+        "t_in": 18.585,
+        "t_out": 21.69,
         "source": {
           "file": "claims",
           "pointer": "/1/answer_claims/5"
@@ -8144,8 +8125,8 @@
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 385.5,
-        "t_out": 437.25,
+        "t_in": 19.275,
+        "t_out": 21.862,
         "source": {
           "file": "detection",
           "pointer": "/faces/56"
@@ -8153,15 +8134,15 @@
         "face_ids": [
           "A57"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0129",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 385.9,
-        "t_out": 437.25,
+        "t_in": 19.365,
+        "t_out": 21.862,
         "source": {
           "file": "detection",
           "pointer": "/faces/56"
@@ -8173,35 +8154,35 @@
           0.9527,
           0.07671
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
-        "cue_id": "A-connector_label-0130",
+        "cue_id": "A-connector_label-0127",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 386.5,
-        "t_out": 437.25,
+        "t_in": 19.413,
+        "t_out": 21.0,
         "source": {
           "file": "face_analysis",
-          "pointer": "/panels/A/11/head_pose"
+          "pointer": "/panels/A/4/head_pose"
         },
         "face_ids": [
-          "A57"
+          "A29"
         ],
         "at": [
-          0.9527,
-          0.07671
+          0.4117,
+          0.36961
         ],
-        "label": "yaw -9"
+        "label": "yaw +3"
       },
       {
         "cue_id": "A-claim_word-0156",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 392.4,
-        "t_out": 454.5,
+        "t_in": 19.62,
+        "t_out": 22.725,
         "source": {
           "file": "claims",
           "pointer": "/1/answer_claims/9"
@@ -8219,8 +8200,8 @@
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 402.75,
-        "t_out": 454.5,
+        "t_in": 20.137,
+        "t_out": 22.725,
         "source": {
           "file": "detection",
           "pointer": "/faces/52"
@@ -8228,15 +8209,15 @@
         "face_ids": [
           "A53"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0132",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 403.15,
-        "t_out": 454.5,
+        "t_in": 20.227,
+        "t_out": 22.725,
         "source": {
           "file": "detection",
           "pointer": "/faces/52"
@@ -8248,35 +8229,35 @@
           0.96798,
           0.51132
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
-        "cue_id": "A-connector_label-0133",
+        "cue_id": "A-connector_label-0130",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 403.75,
-        "t_out": 454.5,
+        "t_in": 20.275,
+        "t_out": 21.862,
         "source": {
           "file": "face_analysis",
-          "pointer": "/panels/A/10/head_pose"
+          "pointer": "/panels/A/11/head_pose"
         },
         "face_ids": [
-          "A53"
+          "A57"
         ],
         "at": [
-          0.96798,
-          0.51132
+          0.9527,
+          0.07671
         ],
-        "label": "yaw -3"
+        "label": "yaw -9"
       },
       {
         "cue_id": "A-claim_word-0157",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 413.1,
-        "t_out": 475.2,
+        "t_in": 20.655,
+        "t_out": 23.76,
         "source": {
           "file": "claims",
           "pointer": "/1/answer_claims/10"
@@ -8294,8 +8275,8 @@
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 420.0,
-        "t_out": 471.75,
+        "t_in": 21.0,
+        "t_out": 23.587,
         "source": {
           "file": "detection",
           "pointer": "/faces/18"
@@ -8303,15 +8284,15 @@
         "face_ids": [
           "A19"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0135",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 420.4,
-        "t_out": 471.75,
+        "t_in": 21.09,
+        "t_out": 23.587,
         "source": {
           "file": "detection",
           "pointer": "/faces/18"
@@ -8323,35 +8304,35 @@
           0.1341,
           0.15635
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
-        "cue_id": "A-connector_label-0136",
+        "cue_id": "A-connector_label-0133",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 421.0,
-        "t_out": 471.75,
+        "t_in": 21.137,
+        "t_out": 22.725,
         "source": {
           "file": "face_analysis",
-          "pointer": "/panels/A/3/head_pose"
+          "pointer": "/panels/A/10/head_pose"
         },
         "face_ids": [
-          "A19"
+          "A53"
         ],
         "at": [
-          0.1341,
-          0.15635
+          0.96798,
+          0.51132
         ],
-        "label": "yaw +7"
+        "label": "yaw -3"
       },
       {
         "cue_id": "A-claim_word-0158",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 433.8,
-        "t_out": 495.9,
+        "t_in": 21.69,
+        "t_out": 24.795,
         "source": {
           "file": "claims",
           "pointer": "/1/answer_claims/11"
@@ -8369,8 +8350,8 @@
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 437.25,
-        "t_out": 489.0,
+        "t_in": 21.863,
+        "t_out": 24.45,
         "source": {
           "file": "detection",
           "pointer": "/faces/39"
@@ -8378,15 +8359,15 @@
         "face_ids": [
           "A40"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0138",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 437.65,
-        "t_out": 489.0,
+        "t_in": 21.953,
+        "t_out": 24.45,
         "source": {
           "file": "detection",
           "pointer": "/faces/39"
@@ -8398,35 +8379,35 @@
           0.49946,
           0.12383
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
-        "cue_id": "A-connector_label-0139",
+        "cue_id": "A-connector_label-0136",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 438.25,
-        "t_out": 489.0,
+        "t_in": 22.0,
+        "t_out": 23.587,
         "source": {
           "file": "face_analysis",
-          "pointer": "/panels/A/5/head_pose"
+          "pointer": "/panels/A/3/head_pose"
         },
         "face_ids": [
-          "A40"
+          "A19"
         ],
         "at": [
-          0.49946,
-          0.12383
+          0.1341,
+          0.15635
         ],
-        "label": "yaw -3"
+        "label": "yaw +7"
       },
       {
         "cue_id": "A-box_emerge-0140",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 454.5,
-        "t_out": 506.25,
+        "t_in": 22.725,
+        "t_out": 25.312,
         "source": {
           "file": "detection",
           "pointer": "/faces/43"
@@ -8434,15 +8415,15 @@
         "face_ids": [
           "A44"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-claim_word-0159",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 454.5,
-        "t_out": 516.6,
+        "t_in": 22.725,
+        "t_out": 25.83,
         "source": {
           "file": "claims",
           "pointer": "/1/answer_claims/15"
@@ -8460,8 +8441,8 @@
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 454.9,
-        "t_out": 506.25,
+        "t_in": 22.815,
+        "t_out": 25.312,
         "source": {
           "file": "detection",
           "pointer": "/faces/43"
@@ -8473,15 +8454,71 @@
           0.55339,
           0.56726
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
+      },
+      {
+        "cue_id": "A-connector_label-0139",
+        "cue": "connector_label",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 22.863,
+        "t_out": 24.45,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/5/head_pose"
+        },
+        "face_ids": [
+          "A40"
+        ],
+        "at": [
+          0.49946,
+          0.12383
+        ],
+        "label": "yaw -3"
+      },
+      {
+        "cue_id": "A-box_emerge-0143",
+        "cue": "box_emerge",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 23.587,
+        "t_out": 26.175,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/42"
+        },
+        "face_ids": [
+          "A43"
+        ],
+        "grow_s": 0.16
+      },
+      {
+        "cue_id": "A-connector-0144",
+        "cue": "connector",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 23.677,
+        "t_out": 26.175,
+        "source": {
+          "file": "detection",
+          "pointer": "/faces/42"
+        },
+        "face_ids": [
+          "A43"
+        ],
+        "at": [
+          0.85596,
+          0.17988
+        ],
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-connector_label-0142",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 455.5,
-        "t_out": 506.25,
+        "t_in": 23.725,
+        "t_out": 25.312,
         "source": {
           "file": "face_analysis",
           "pointer": "/panels/A/7/head_pose"
@@ -8496,68 +8533,12 @@
         "label": "yaw -7"
       },
       {
-        "cue_id": "A-box_emerge-0143",
-        "cue": "box_emerge",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 471.75,
-        "t_out": 523.5,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/42"
-        },
-        "face_ids": [
-          "A43"
-        ],
-        "grow_s": 0.8
-      },
-      {
-        "cue_id": "A-connector-0144",
-        "cue": "connector",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 472.15,
-        "t_out": 523.5,
-        "source": {
-          "file": "detection",
-          "pointer": "/faces/42"
-        },
-        "face_ids": [
-          "A43"
-        ],
-        "at": [
-          0.85596,
-          0.17988
-        ],
-        "grow_s": 0.6
-      },
-      {
-        "cue_id": "A-connector_label-0145",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 472.75,
-        "t_out": 523.5,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/A/6/head_pose"
-        },
-        "face_ids": [
-          "A43"
-        ],
-        "at": [
-          0.85596,
-          0.17988
-        ],
-        "label": "yaw -6"
-      },
-      {
         "cue_id": "A-claim_word-0160",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 475.2,
-        "t_out": 537.3,
+        "t_in": 23.76,
+        "t_out": 26.865,
         "source": {
           "file": "claims",
           "pointer": "/1/answer_claims/16"
@@ -8575,8 +8556,8 @@
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 489.0,
-        "t_out": 540.75,
+        "t_in": 24.45,
+        "t_out": 27.037,
         "source": {
           "file": "detection",
           "pointer": "/faces/7"
@@ -8584,15 +8565,35 @@
         "face_ids": [
           "A08"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
+      },
+      {
+        "cue_id": "A-connector_label-0145",
+        "cue": "connector_label",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 24.587,
+        "t_out": 26.175,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/6/head_pose"
+        },
+        "face_ids": [
+          "A43"
+        ],
+        "at": [
+          0.85596,
+          0.17988
+        ],
+        "label": "yaw -6"
       },
       {
         "cue_id": "A-claim_word-0161",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 495.9,
-        "t_out": 558.0,
+        "t_in": 24.795,
+        "t_out": 27.9,
         "source": {
           "file": "claims",
           "pointer": "/1/answer_claims/19"
@@ -8610,8 +8611,8 @@
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 506.25,
-        "t_out": 558.0,
+        "t_in": 25.312,
+        "t_out": 27.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/4"
@@ -8619,15 +8620,15 @@
         "face_ids": [
           "A05"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0148",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 506.65,
-        "t_out": 558.0,
+        "t_in": 25.402,
+        "t_out": 27.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/4"
@@ -8639,35 +8640,15 @@
           0.18508,
           0.49132
         ],
-        "grow_s": 0.6
-      },
-      {
-        "cue_id": "A-connector_label-0149",
-        "cue": "connector_label",
-        "pass": "MEASURE",
-        "role": "measure",
-        "t_in": 507.25,
-        "t_out": 558.0,
-        "source": {
-          "file": "face_analysis",
-          "pointer": "/panels/A/0/head_pose"
-        },
-        "face_ids": [
-          "A05"
-        ],
-        "at": [
-          0.18508,
-          0.49132
-        ],
-        "label": "yaw +25"
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-claim_word-0162",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 516.6,
-        "t_out": 558.0,
+        "t_in": 25.83,
+        "t_out": 27.9,
         "source": {
           "file": "claims",
           "pointer": "/1/answer_claims/20"
@@ -8685,8 +8666,8 @@
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 523.5,
-        "t_out": 558.0,
+        "t_in": 26.175,
+        "t_out": 27.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/48"
@@ -8694,15 +8675,15 @@
         "face_ids": [
           "A49"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
       },
       {
         "cue_id": "A-connector-0151",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 523.9,
-        "t_out": 558.0,
+        "t_in": 26.265,
+        "t_out": 27.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/48"
@@ -8714,35 +8695,35 @@
           0.58958,
           0.05447
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
-        "cue_id": "A-connector_label-0152",
+        "cue_id": "A-connector_label-0149",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 524.5,
-        "t_out": 558.0,
+        "t_in": 26.312,
+        "t_out": 27.9,
         "source": {
           "file": "face_analysis",
-          "pointer": "/panels/A/9/head_pose"
+          "pointer": "/panels/A/0/head_pose"
         },
         "face_ids": [
-          "A49"
+          "A05"
         ],
         "at": [
-          0.58958,
-          0.05447
+          0.18508,
+          0.49132
         ],
-        "label": "yaw -6"
+        "label": "yaw +25"
       },
       {
         "cue_id": "A-box_emerge-0164",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 531.0,
-        "t_out": 639.0,
+        "t_in": 26.55,
+        "t_out": 31.95,
         "source": {
           "file": "detection",
           "pointer": "/faces/7"
@@ -8750,15 +8731,15 @@
         "face_ids": [
           "A08"
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-box_emerge-0165",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 531.0,
-        "t_out": 639.0,
+        "t_in": 26.55,
+        "t_out": 31.95,
         "source": {
           "file": "detection",
           "pointer": "/faces/48"
@@ -8766,15 +8747,15 @@
         "face_ids": [
           "A49"
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-relation-0166",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 531.4,
-        "t_out": 639.0,
+        "t_in": 26.64,
+        "t_out": 31.95,
         "source": {
           "file": "structure",
           "pointer": "/edges/152"
@@ -8783,7 +8764,7 @@
           "A08",
           "A49"
         ],
-        "grow_s": 0.9,
+        "grow_s": 0.18,
         "style": "dashed",
         "label": "cos 0.392"
       },
@@ -8792,8 +8773,8 @@
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 537.3,
-        "t_out": 558.0,
+        "t_in": 26.865,
+        "t_out": 27.9,
         "source": {
           "file": "claims",
           "pointer": "/1/answer_claims/21"
@@ -8811,8 +8792,8 @@
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
-        "t_in": 540.75,
-        "t_out": 558.0,
+        "t_in": 27.037,
+        "t_out": 27.9,
         "source": {
           "file": "detection",
           "pointer": "/faces/16"
@@ -8820,15 +8801,35 @@
         "face_ids": [
           "A17"
         ],
-        "grow_s": 0.8
+        "grow_s": 0.16
+      },
+      {
+        "cue_id": "A-connector_label-0152",
+        "cue": "connector_label",
+        "pass": "MEASURE",
+        "role": "measure",
+        "t_in": 27.175,
+        "t_out": 27.9,
+        "source": {
+          "file": "face_analysis",
+          "pointer": "/panels/A/9/head_pose"
+        },
+        "face_ids": [
+          "A49"
+        ],
+        "at": [
+          0.58958,
+          0.05447
+        ],
+        "label": "yaw -6"
       },
       {
         "cue_id": "A-box_emerge-0167",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 567.0,
-        "t_out": 675.0,
+        "t_in": 28.35,
+        "t_out": 33.75,
         "source": {
           "file": "detection",
           "pointer": "/faces/16"
@@ -8836,15 +8837,15 @@
         "face_ids": [
           "A17"
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-box_emerge-0168",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 567.0,
-        "t_out": 675.0,
+        "t_in": 28.35,
+        "t_out": 33.75,
         "source": {
           "file": "detection",
           "pointer": "/faces/52"
@@ -8852,15 +8853,15 @@
         "face_ids": [
           "A53"
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-relation-0169",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 567.4,
-        "t_out": 675.0,
+        "t_in": 28.44,
+        "t_out": 33.75,
         "source": {
           "file": "structure",
           "pointer": "/edges/170"
@@ -8869,7 +8870,7 @@
           "A17",
           "A53"
         ],
-        "grow_s": 0.9,
+        "grow_s": 0.18,
         "style": "dashed",
         "label": "cos 0.386"
       },
@@ -8878,8 +8879,8 @@
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 603.0,
-        "t_out": 711.0,
+        "t_in": 30.15,
+        "t_out": 35.55,
         "source": {
           "file": "detection",
           "pointer": "/faces/18"
@@ -8887,15 +8888,15 @@
         "face_ids": [
           "A19"
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-box_emerge-0171",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 603.0,
-        "t_out": 711.0,
+        "t_in": 30.15,
+        "t_out": 35.55,
         "source": {
           "file": "detection",
           "pointer": "/faces/42"
@@ -8903,15 +8904,15 @@
         "face_ids": [
           "A43"
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-relation-0172",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 603.4,
-        "t_out": 711.0,
+        "t_in": 30.24,
+        "t_out": 35.55,
         "source": {
           "file": "structure",
           "pointer": "/edges/182"
@@ -8920,7 +8921,7 @@
           "A19",
           "A43"
         ],
-        "grow_s": 0.9,
+        "grow_s": 0.18,
         "style": "dashed",
         "label": "cos 0.408"
       },
@@ -8929,8 +8930,8 @@
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 639.0,
-        "t_out": 747.0,
+        "t_in": 31.95,
+        "t_out": 37.35,
         "source": {
           "file": "detection",
           "pointer": "/faces/18"
@@ -8938,15 +8939,15 @@
         "face_ids": [
           "A19"
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-box_emerge-0174",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 639.0,
-        "t_out": 747.0,
+        "t_in": 31.95,
+        "t_out": 37.35,
         "source": {
           "file": "detection",
           "pointer": "/faces/47"
@@ -8954,15 +8955,15 @@
         "face_ids": [
           "A48"
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-relation-0175",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 639.4,
-        "t_out": 747.0,
+        "t_in": 32.04,
+        "t_out": 37.35,
         "source": {
           "file": "structure",
           "pointer": "/edges/184"
@@ -8971,7 +8972,7 @@
           "A19",
           "A48"
         ],
-        "grow_s": 0.9,
+        "grow_s": 0.18,
         "style": "dashed",
         "label": "cos 0.491"
       },
@@ -8980,8 +8981,8 @@
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 649.8,
-        "t_out": 747.0,
+        "t_in": 32.49,
+        "t_out": 37.35,
         "source": {
           "file": "structure",
           "pointer": "/edges/0"
@@ -8989,15 +8990,15 @@
         "face_ids": [
           "A05"
         ],
-        "grow_s": 1.4
+        "grow_s": 0.3
       },
       {
         "cue_id": "A-gaze_ray-0183",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 649.8,
-        "t_out": 747.0,
+        "t_in": 32.49,
+        "t_out": 37.35,
         "source": {
           "file": "structure",
           "pointer": "/edges/1"
@@ -9005,15 +9006,15 @@
         "face_ids": [
           "A19"
         ],
-        "grow_s": 1.4
+        "grow_s": 0.3
       },
       {
         "cue_id": "A-gaze_ray-0184",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 649.8,
-        "t_out": 747.0,
+        "t_in": 32.49,
+        "t_out": 37.35,
         "source": {
           "file": "structure",
           "pointer": "/edges/2"
@@ -9021,15 +9022,15 @@
         "face_ids": [
           "A29"
         ],
-        "grow_s": 1.4
+        "grow_s": 0.3
       },
       {
         "cue_id": "A-gaze_ray-0185",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 649.8,
-        "t_out": 747.0,
+        "t_in": 32.49,
+        "t_out": 37.35,
         "source": {
           "file": "structure",
           "pointer": "/edges/3"
@@ -9037,15 +9038,15 @@
         "face_ids": [
           "A40"
         ],
-        "grow_s": 1.4
+        "grow_s": 0.3
       },
       {
         "cue_id": "A-gaze_ray-0186",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 649.8,
-        "t_out": 747.0,
+        "t_in": 32.49,
+        "t_out": 37.35,
         "source": {
           "file": "structure",
           "pointer": "/edges/4"
@@ -9053,15 +9054,15 @@
         "face_ids": [
           "A43"
         ],
-        "grow_s": 1.4
+        "grow_s": 0.3
       },
       {
         "cue_id": "A-gaze_ray-0187",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 649.8,
-        "t_out": 747.0,
+        "t_in": 32.49,
+        "t_out": 37.35,
         "source": {
           "file": "structure",
           "pointer": "/edges/5"
@@ -9069,15 +9070,15 @@
         "face_ids": [
           "A44"
         ],
-        "grow_s": 1.4
+        "grow_s": 0.3
       },
       {
         "cue_id": "A-gaze_ray-0188",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 649.8,
-        "t_out": 747.0,
+        "t_in": 32.49,
+        "t_out": 37.35,
         "source": {
           "file": "structure",
           "pointer": "/edges/6"
@@ -9085,15 +9086,15 @@
         "face_ids": [
           "A48"
         ],
-        "grow_s": 1.4
+        "grow_s": 0.3
       },
       {
         "cue_id": "A-gaze_ray-0189",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 649.8,
-        "t_out": 747.0,
+        "t_in": 32.49,
+        "t_out": 37.35,
         "source": {
           "file": "structure",
           "pointer": "/edges/7"
@@ -9101,15 +9102,15 @@
         "face_ids": [
           "A49"
         ],
-        "grow_s": 1.4
+        "grow_s": 0.3
       },
       {
         "cue_id": "A-gaze_ray-0190",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 649.8,
-        "t_out": 747.0,
+        "t_in": 32.49,
+        "t_out": 37.35,
         "source": {
           "file": "structure",
           "pointer": "/edges/8"
@@ -9117,15 +9118,15 @@
         "face_ids": [
           "A53"
         ],
-        "grow_s": 1.4
+        "grow_s": 0.3
       },
       {
         "cue_id": "A-gaze_ray-0191",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 649.8,
-        "t_out": 747.0,
+        "t_in": 32.49,
+        "t_out": 37.35,
         "source": {
           "file": "structure",
           "pointer": "/edges/9"
@@ -9133,15 +9134,15 @@
         "face_ids": [
           "A57"
         ],
-        "grow_s": 1.4
+        "grow_s": 0.3
       },
       {
         "cue_id": "A-box_emerge-0176",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 675.0,
-        "t_out": 747.0,
+        "t_in": 33.75,
+        "t_out": 37.35,
         "source": {
           "file": "detection",
           "pointer": "/faces/39"
@@ -9149,15 +9150,15 @@
         "face_ids": [
           "A40"
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-box_emerge-0177",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 675.0,
-        "t_out": 747.0,
+        "t_in": 33.75,
+        "t_out": 37.35,
         "source": {
           "file": "detection",
           "pointer": "/faces/47"
@@ -9165,15 +9166,15 @@
         "face_ids": [
           "A48"
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-relation-0178",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 675.4,
-        "t_out": 747.0,
+        "t_in": 33.84,
+        "t_out": 37.35,
         "source": {
           "file": "structure",
           "pointer": "/edges/213"
@@ -9182,7 +9183,7 @@
           "A40",
           "A48"
         ],
-        "grow_s": 0.9,
+        "grow_s": 0.18,
         "style": "dashed",
         "label": "cos 0.443"
       },
@@ -9191,8 +9192,8 @@
         "cue": "convergence",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 682.2,
-        "t_out": 747.0,
+        "t_in": 34.11,
+        "t_out": 37.35,
         "source": {
           "file": "structure",
           "pointer": "/per_panel/A/gaze_convergence"
@@ -9208,8 +9209,8 @@
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 711.0,
-        "t_out": 747.0,
+        "t_in": 35.55,
+        "t_out": 37.35,
         "source": {
           "file": "detection",
           "pointer": "/faces/42"
@@ -9217,15 +9218,15 @@
         "face_ids": [
           "A43"
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-box_emerge-0180",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 711.0,
-        "t_out": 747.0,
+        "t_in": 35.55,
+        "t_out": 37.35,
         "source": {
           "file": "detection",
           "pointer": "/faces/47"
@@ -9233,15 +9234,15 @@
         "face_ids": [
           "A48"
         ],
-        "grow_s": 0.6
+        "grow_s": 0.12
       },
       {
         "cue_id": "A-relation-0181",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
-        "t_in": 711.4,
-        "t_out": 747.0,
+        "t_in": 35.64,
+        "t_out": 37.35,
         "source": {
           "file": "structure",
           "pointer": "/edges/226"
@@ -9250,7 +9251,7 @@
           "A43",
           "A48"
         ],
-        "grow_s": 0.9,
+        "grow_s": 0.18,
         "style": "dashed",
         "label": "cos 0.389"
       },
@@ -9259,8 +9260,8 @@
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 720.0,
-        "t_out": 758.571,
+        "t_in": 36.0,
+        "t_out": 37.929,
         "source": {
           "file": "detection",
           "pointer": "/faces/0"
@@ -9280,8 +9281,8 @@
         "cue": "orphan",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 720.0,
-        "t_out": 900.0,
+        "t_in": 36.0,
+        "t_out": 45.0,
         "source": {
           "file": "structure",
           "pointer": "/edges/61"
@@ -9300,8 +9301,8 @@
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 732.857,
-        "t_out": 771.429,
+        "t_in": 36.643,
+        "t_out": 38.571,
         "source": {
           "file": "detection",
           "pointer": "/faces/3"
@@ -9321,8 +9322,8 @@
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 745.714,
-        "t_out": 784.286,
+        "t_in": 37.286,
+        "t_out": 39.214,
         "source": {
           "file": "detection",
           "pointer": "/faces/6"
@@ -9342,8 +9343,8 @@
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 758.571,
-        "t_out": 797.143,
+        "t_in": 37.929,
+        "t_out": 39.857,
         "source": {
           "file": "detection",
           "pointer": "/faces/9"
@@ -9363,8 +9364,8 @@
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 771.429,
-        "t_out": 810.0,
+        "t_in": 38.571,
+        "t_out": 40.5,
         "source": {
           "file": "detection",
           "pointer": "/faces/12"
@@ -9384,8 +9385,8 @@
         "cue": "floor",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 783.0,
-        "t_out": 900.0,
+        "t_in": 39.15,
+        "t_out": 45.0,
         "source": {
           "file": "noise_floor",
           "pointer": "/floor"
@@ -9397,8 +9398,8 @@
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 784.286,
-        "t_out": 822.857,
+        "t_in": 39.214,
+        "t_out": 41.143,
         "source": {
           "file": "detection",
           "pointer": "/faces/13"
@@ -9418,8 +9419,8 @@
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 797.143,
-        "t_out": 835.714,
+        "t_in": 39.857,
+        "t_out": 41.786,
         "source": {
           "file": "detection",
           "pointer": "/faces/14"
@@ -9439,8 +9440,8 @@
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 810.0,
-        "t_out": 848.571,
+        "t_in": 40.5,
+        "t_out": 42.429,
         "source": {
           "file": "detection",
           "pointer": "/faces/15"
@@ -9460,8 +9461,8 @@
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 822.857,
-        "t_out": 861.429,
+        "t_in": 41.143,
+        "t_out": 43.071,
         "source": {
           "file": "detection",
           "pointer": "/faces/19"
@@ -9481,8 +9482,8 @@
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 835.714,
-        "t_out": 874.286,
+        "t_in": 41.786,
+        "t_out": 43.714,
         "source": {
           "file": "detection",
           "pointer": "/faces/21"
@@ -9502,8 +9503,8 @@
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 848.571,
-        "t_out": 887.143,
+        "t_in": 42.429,
+        "t_out": 44.357,
         "source": {
           "file": "detection",
           "pointer": "/faces/22"
@@ -9523,8 +9524,8 @@
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 861.429,
-        "t_out": 900.0,
+        "t_in": 43.071,
+        "t_out": 45.0,
         "source": {
           "file": "detection",
           "pointer": "/faces/24"
@@ -9544,8 +9545,8 @@
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 874.286,
-        "t_out": 900.0,
+        "t_in": 43.714,
+        "t_out": 45.0,
         "source": {
           "file": "detection",
           "pointer": "/faces/25"
@@ -9565,8 +9566,8 @@
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
-        "t_in": 887.143,
-        "t_out": 900.0,
+        "t_in": 44.357,
+        "t_out": 45.0,
         "source": {
           "file": "detection",
           "pointer": "/faces/26"

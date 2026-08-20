@@ -230,6 +230,11 @@ function buildZones(){
 let audio=null, showBackdrop=true, showGrid=false, showFields=true;
 function clockSeconds(){ return (audio&&!audio.paused)?audio.currentTime:performance.now()/1000; }
 function loopT(s){ const L=s.loop_duration_s||900; return ((clockSeconds()%L)+L)%L; }
+/* the overlay runs its own fast cycle, repeating many times inside the master
+   loop. same clock, shorter modulus -- so it reads as a live instrument rather
+   than something paced to a fifteen-minute score. */
+function cycleT(s){ const C=s.overlay_cycle_s||s.loop_duration_s||900;
+  return ((clockSeconds()%C)+C)%C; }
 /* growth: linear, hard-edged. no easing anywhere in this file. */
 function grow(t,t_in,secs){ if(!secs) return 1; return Math.max(0,Math.min(1,(t-t_in)/secs)); }
 function lit(t,hz){ return hz? (Math.floor(t*hz*2)%2)===0 : true; }
@@ -335,7 +340,7 @@ function buildFields(z){
 function drawFields(z,t,score){
   if(!z.fieldsBuilt) buildFields(z);
   if(!z.isoGroups) return 0;
-  const L=score.loop_duration_s||900, ph=t/L;
+  const C=score.overlay_cycle_s||score.loop_duration_s||900, ph=t/C;
   const off=e=>e&&e.setAttribute("opacity",0);
   if(!showFields){
     z.isoGroups.forEach(o=>off(o.el));
@@ -346,18 +351,18 @@ function drawFields(z,t,score){
   }
   // a band of luminance levels sweeps the range twice per loop: the painting's
   // topography read from shadow up to flame and back
-  const sweep=(Math.sin(ph*Math.PI*4)*0.5+0.5);
+  const sweep=(Math.sin(ph*Math.PI*6)*0.5+0.5);
   let n=0;
   z.isoGroups.forEach(o=>{
     const d=Math.abs(o.frac-sweep);
     const a=Math.max(0,0.62-d*1.5);
     o.el.setAttribute("opacity",a.toFixed(3)); if(a>0.01) n++;
   });
-  if(z.flowEl) z.flowEl.setAttribute("opacity",(0.12+0.28*Math.abs(Math.sin(ph*Math.PI*2))).toFixed(3));
+  if(z.flowEl) z.flowEl.setAttribute("opacity",(0.12+0.28*Math.abs(Math.sin(ph*Math.PI*4))).toFixed(3));
   if(z.outlineEl) z.outlineEl.setAttribute("opacity",0.24);
   // square layers: scan windows pulse with the pass, blob boxes hold steady
   if(z.tileEl) z.tileEl.setAttribute("opacity",
-    (0.10+0.22*Math.abs(Math.sin(ph*Math.PI*6))).toFixed(3));
+    (0.10+0.22*Math.abs(Math.sin(ph*Math.PI*10))).toFixed(3));
   if(z.blobEl) z.blobEl.setAttribute("opacity",0.16);
   // a face wears its wireframe and its feature boxes while it holds attention
   const live=new Set();
@@ -371,7 +376,7 @@ function drawFields(z,t,score){
 
 function drawOverlay(z){
   const score=D["score_"+z.panel.toLowerCase()]; if(!score) return 0;
-  const t=loopT(score),W=z.w,H=z.h,P=z.panel;
+  const t=cycleT(score),W=z.w,H=z.h,P=z.panel;
   const det=sourceDoc(P,"detection");
   const face=id=>det.faces.find(f=>f.face_id===id);
   drawFields(z,t,score);
@@ -489,10 +494,10 @@ function drawCue(g,c,rec,face,W,H,t,score){
     const anchor = flip?"end":"start";
     const x = flip? node[0]-5 : node[0]+5;
     const y = node[1] + 5 + (c.row||0)*13;
-    const l1=typed(c.label||"",t,c.t_in,26);
+    const l1=typed(c.label||"",t,c.t_in,110);
     if(l1) tab(g,x,y,l1,cls,anchor,W,H);
     if(c.label2&&l1.length>=(c.label||"").length){
-      const l2=typed(c.label2,t,c.t_in+(c.label||"").length/26,26);
+      const l2=typed(c.label2,t,c.t_in+(c.label||"").length/110,110);
       if(l2) tab(g,x,y+13,l2,cls,anchor,W,H);
     }
     return 1;
@@ -538,7 +543,7 @@ function drawCue(g,c,rec,face,W,H,t,score){
   case "mesh_full": case "mesh_contour": case "mesh_points": {
     if(!Array.isArray(rec)) break;
     const step=c.cue==="mesh_full"?1:(c.cue==="mesh_contour"?4:60);
-    const lim=Math.floor(rec.length*Math.min(1,(t-c.t_in)/1.4));
+    const lim=Math.floor(rec.length*Math.min(1,(t-c.t_in)/0.30));
     let d="";
     for(let i=0;i<lim;i+=step) d+=`M${rec[i][0]*W} ${rec[i][1]*H}h.7`;
     push(mk("path",{class:"s "+cls,d,opacity:.85}));
@@ -564,7 +569,7 @@ function drawCue(g,c,rec,face,W,H,t,score){
       push(mk("text",{class:cls,x:mx+5,y:my-15},l1));
       if(c.label2&&l1.length>=(c.label||"").length){
         const w=Math.min(1,(t-c.t_in-(c.grow_s||0)-(c.label||"").length/40));
-        const l2=typed(c.label2,t,c.t_in+(c.grow_s||0)+(c.label||"").length/40,40);
+        const l2=typed(c.label2,t,c.t_in+(c.grow_s||0)+(c.label||"").length/110,110);
         // second line wraps at ~46 chars so it stays on the connector
         l2.match(/.{1,46}(\s|$)/g)?.forEach((seg,i)=>
           push(mk("text",{class:cls,x:mx+5,y:my-2+i*13,opacity:.62},seg.trim())));
@@ -578,12 +583,12 @@ function drawCue(g,c,rec,face,W,H,t,score){
     let ax,ay;
     if(b){ ax=(b[0]+b[2])*W+10; ay=b[1]*H+6; }
     else { ax=c.at[0]*W; ay=c.at[1]*H; }
-    const kk=grow(t,c.t_in,0.5);
+    const kk=grow(t,c.t_in,0.12);
     // a loose box, offset from what it labels — not a tight fit to a feature
     const bw=w+16*kk, bh=20+10*kk;
     push(mk("rect",{class:"s "+cls,x:ax,y:ay-bh+8,width:bw,height:bh,opacity:.55}));
     if(kk>=1){
-      tab(g,ax+4,ay+4,typed(c.label,t,c.t_in+0.5,18),cls,"start",W,H);
+      tab(g,ax+4,ay+4,typed(c.label,t,c.t_in+0.10,110),cls,"start",W,H);
       if(b) push(mk("line",{class:"s "+cls,opacity:.45,
         x1:ax,y1:ay-bh/2+8,x2:(b[0]+b[2])*W,y2:(b[1]+b[3]/2)*H}));
       if(c.unsupportable)
@@ -607,16 +612,16 @@ function drawCue(g,c,rec,face,W,H,t,score){
   }
   case "convergence": {
     const px=c.at[0]*W,py=c.at[1]*H;
-    const kk=grow(t,c.t_in,1.2);
+    const kk=grow(t,c.t_in,0.26);
     [9,19,29].forEach((r,i)=>{ if(kk>i/3)
       push(mk("circle",{class:"s "+cls,cx:px,cy:py,r:r*Math.min(1,kk*3-i)})); });
     if(kk>=1){
       push(mk("path",{class:"s "+cls,d:`M${px-38} ${py}h76M${px} ${py-38}v76`}));
-      const l1=typed(c.label,t,c.t_in+1.2,40);
+      const l1=typed(c.label,t,c.t_in+0.26,110);
       push(mk("text",{class:cls,x:px+42,y:py-14},l1));
       if(c.label2&&l1.length>=(c.label||"").length)
         push(mk("text",{class:cls,x:px+42,y:py-1,opacity:.62},
-          typed(c.label2,t,c.t_in+1.2+c.label.length/40,40)));
+          typed(c.label2,t,c.t_in+0.26+c.label.length/110,110)));
     }
     return 1;
   }
@@ -639,35 +644,35 @@ function drawCue(g,c,rec,face,W,H,t,score){
     push(mk("circle",{class:"s doubt",cx:p1[0]*W,cy:p1[1]*H,r:3}));
     push(mk("rect",{class:"s doubt",x:p2[0]*W-3,y:p2[1]*H-3,width:6,height:6}));
     push(mk("text",{class:"doubt",x:p2[0]*W+7,y:p2[1]*H+5},
-      typed(c.label,t,c.t_in,44)));
+      typed(c.label,t,c.t_in,110)));
     return 1;
   }
   case "orphan": {
     const fls=sourceDoc(score.panel,"flames");
     const blob=fls.blobs.find(x=>x.blob_id===c.blob_ids[0]); if(!blob) break;
     const bx=blob.centroid[0]*W,by=blob.centroid[1]*H;
-    const kk=grow(t,c.t_in,1.0);
+    const kk=grow(t,c.t_in,0.22);
     push(mk("circle",{class:"s doubt",cx:bx,cy:by,r:8+10*kk}));
     if(b) push(mk("line",{class:"s doubt","stroke-dasharray":"5 5",
       x1:bx,y1:by,x2:bx+(cx-bx)*kk,y2:by+(cy-by)*kk}));
     if(kk>=1){
-      const l1=typed(c.label,t,c.t_in+1,40);
+      const l1=typed(c.label,t,c.t_in+0.2,110);
       push(mk("text",{class:"doubt",x:bx+22,y:by-16},l1));
       if(c.label2&&l1.length>=(c.label||"").length)
         push(mk("text",{class:"doubt",x:bx+22,y:by-3,opacity:.62},
-          typed(c.label2,t,c.t_in+1+c.label.length/40,40)));
+          typed(c.label2,t,c.t_in+0.2+c.label.length/110,110)));
     }
     return 1;
   }
   case "floor": case "tally": {
     const y=c.cue==="floor"?H-34:H-12;
     push(mk("line",{class:"s doubt",x1:6,y1:y-6,
-      x2:6+(W-12)*grow(t,c.t_in,1.4),y2:y-6,opacity:.5}));
-    push(mk("text",{class:"doubt",x:6,y:y-2},typed(c.label,t,c.t_in,50)));
-    const l1=typed(c.label,t,c.t_in,50);
+      x2:6+(W-12)*grow(t,c.t_in,0.30),y2:y-6,opacity:.5}));
+    push(mk("text",{class:"doubt",x:6,y:y-2},typed(c.label,t,c.t_in,110)));
+    const l1=typed(c.label,t,c.t_in,110);
     if(c.label2&&l1.length>=c.label.length)
       push(mk("text",{class:"doubt",x:6,y:y+11,opacity:.62},
-        typed(c.label2,t,c.t_in+c.label.length/50,50)));
+        typed(c.label2,t,c.t_in+c.label.length/110,110)));
     return 1;
   }
   }
@@ -787,7 +792,8 @@ function frame(){
   const sa=D.score_a;
   if(sa){ const t=loopT(sa);
     document.getElementById("status").textContent=
-      `${currentPass(sa,t)}   t ${t.toFixed(1)} / ${sa.loop_duration_s}s   marks ${marks}   `+
+      `${currentPass(sa,cycleT(sa))}   cycle ${cycleT(sa).toFixed(1)}/${sa.overlay_cycle_s||"-"}s   `+
+      `loop ${t.toFixed(0)}/${sa.loop_duration_s}s   marks ${marks}   `+
       `${showBackdrop?"backdrop":"no backdrop"}${showGrid?"  GRID":""}   `+
       `[c] config  [p] backdrop  [g] target  [f] fields`; }
   requestAnimationFrame(frame);
