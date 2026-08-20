@@ -58,9 +58,10 @@ svg .blobbox{stroke:var(--relate);stroke-width:0.6px}
 svg .featbox{stroke:var(--measure);stroke-width:0.7px}
 /* a label tab: small dark plate behind the word, as on a detector readout.
    the only filled element in the overlay, kept dark so it cannot bloom. */
-svg rect.tab{fill:#0a0a0aE6;stroke:currentColor;stroke-width:var(--stroke);
-  vector-effect:non-scaling-stroke}
-svg text.tab{font-size:10px;letter-spacing:.05em}
+/* the plate behind a label carries no border: the only rectangles with an
+   outline are the ones that mean something. */
+svg rect.tab{fill:#080808F2;stroke:none}
+svg text.tab{font-size:10px;letter-spacing:.05em;dominant-baseline:hanging}
 svg text.trace{font-size:9px;letter-spacing:.02em;opacity:.30}
 svg text.status{font-size:10px;letter-spacing:.08em;opacity:.75}
 
@@ -425,16 +426,22 @@ function drawOverlay(z){
   return n;
 }
 
-function tab(g,x,y,txt,cls,anchor,W,H){
+/* A label plate whose named CORNER sits exactly on (x,y), so a leader line
+   ending at that point meets the corner rather than crossing the plate.
+   corner is one of "tl","tr","bl","br" -- the corner that is pinned. */
+function tab(g,x,y,txt,cls,corner,W,H){
   const w=txt.length*6.0+7, h=12.5;
-  let x0 = anchor==="end" ? x-w : x;
-  // keep the plate inside the zone: a tab half off the canvas reads as damage
-  if(W){ x0=Math.max(2,Math.min(x0,W-w-2)); }
-  if(H){ y=Math.max(h+1,Math.min(y,H-2)); }
-  g.appendChild(mk("rect",{class:"tab "+cls,x:x0,y:y-h+2.5,width:w,height:h}));
-  g.appendChild(mk("text",{class:"tab "+cls,x:x0+3.5,y:y-h+5},txt));
-  return w;
+  let x0 = (corner==="tr"||corner==="br") ? x-w : x;
+  let y0 = (corner==="bl"||corner==="br") ? y-h : y;
+  if(W){ x0=Math.max(1,Math.min(x0,W-w-1)); }
+  if(H){ y0=Math.max(1,Math.min(y0,H-h-1)); }
+  g.appendChild(mk("rect",{class:"tab "+cls,x:x0,y:y0,width:w,height:h}));
+  g.appendChild(mk("text",{class:"tab "+cls,x:x0+3.5,y:y0+2.5},txt));
+  return {x:x0,y:y0,w,h};
 }
+/* which corner of the plate should be pinned, given the direction the leader
+   line arrives from */
+function cornerFor(dx,dy){ return (dy>=0?"t":"b")+(dx>=0?"l":"r"); }
 
 function drawCue(g,c,rec,face,W,H,t,score){
   const cls=(c.alarm?"alarm":c.role||"obs");
@@ -490,15 +497,15 @@ function drawCue(g,c,rec,face,W,H,t,score){
   case "connector_label": {
     // the number and the sentence ride the connector. nothing floats free.
     if(!node) break;
-    const flip = node[0] > W*0.72;            // keep labels inside the canvas
-    const anchor = flip?"end":"start";
-    const x = flip? node[0]-5 : node[0]+5;
-    const y = node[1] + 5 + (c.row||0)*13;
+    // the plate's corner lands on the end of the leader line
+    const dirx=node[0]-cx, diry=node[1]-cy;
+    const corner=cornerFor(dirx,diry);
+    const y=node[1] + (corner[0]==="t" ? (c.row||0)*13 : -(c.row||0)*13);
     const l1=typed(c.label||"",t,c.t_in,110);
-    if(l1) tab(g,x,y,l1,cls,anchor,W,H);
+    if(l1) tab(g,node[0],y,l1,cls,corner,W,H);
     if(c.label2&&l1.length>=(c.label||"").length){
       const l2=typed(c.label2,t,c.t_in+(c.label||"").length/110,110);
-      if(l2) tab(g,x,y+13,l2,cls,anchor,W,H);
+      if(l2) tab(g,node[0],y+(corner[0]==="t"?13:-13),l2,cls,corner,W,H);
     }
     return 1;
   }
@@ -509,7 +516,7 @@ function drawCue(g,c,rec,face,W,H,t,score){
     const pad=2.5;
     push(mk("rect",{class:"s "+cls,x:x0-pad,y:y0-pad,
       width:(w+pad*2)*k,height:(h+pad*2)*k,opacity:.9}));
-    if(k>=1&&c.label) tab(g,x0-pad,y0-pad-1,c.label,cls,"start",W,H);
+    if(k>=1&&c.label) tab(g,x0-pad,y0-pad-13,c.label,cls,"tl",W,H);
     return 1;
   }
   case "box_content": {
@@ -581,18 +588,18 @@ function drawCue(g,c,rec,face,W,H,t,score){
     // one word, verbatim from a model claim, tabbed and tied to what it names
     const w=(c.label||"").length*6+7;
     let ax,ay;
-    if(b){ ax=(b[0]+b[2])*W+10; ay=b[1]*H+6; }
+    if(b){ ax=(b[0]+b[2])*W+14; ay=b[1]*H; }
     else { ax=c.at[0]*W; ay=c.at[1]*H; }
     const kk=grow(t,c.t_in,0.12);
-    // a loose box, offset from what it labels — not a tight fit to a feature
-    const bw=w+16*kk, bh=20+10*kk;
-    push(mk("rect",{class:"s "+cls,x:ax,y:ay-bh+8,width:bw,height:bh,opacity:.55}));
+    const bw=(w+16)*kk, bh=22*kk;
+    push(mk("rect",{class:"s "+cls,x:ax,y:ay,width:bw,height:bh,opacity:.55}));
     if(kk>=1){
-      tab(g,ax+4,ay+4,typed(c.label,t,c.t_in+0.10,110),cls,"start",W,H);
-      if(b) push(mk("line",{class:"s "+cls,opacity:.45,
-        x1:ax,y1:ay-bh/2+8,x2:(b[0]+b[2])*W,y2:(b[1]+b[3]/2)*H}));
+      // the loose box and the plate share the corner the line arrives at
+      if(b) push(mk("line",{class:"s "+cls,opacity:.5,
+        x1:(b[0]+b[2])*W,y1:(b[1]+b[3]/2)*H,x2:ax,y2:ay}));
+      tab(g,ax,ay,typed(c.label,t,c.t_in+0.10,110),cls,"tl",W,H);
       if(c.unsupportable)
-        push(mk("text",{class:"alarm",x:ax+4,y:ay+10,"font-size":8},"UNSUPPORTED"));
+        push(mk("text",{class:"alarm",x:ax,y:ay+bh+2,"font-size":8},"UNSUPPORTED"));
     }
     return 1;
   }

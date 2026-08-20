@@ -301,10 +301,13 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
             # take the face apart: eye, eye, nose, mouth, one after another
             if fid in feats:
                 fi, fr = feats[fid]
+                # most feature boxes carry no label, as in the reference; only
+                # the two that would otherwise be unreadable get a number, and
+                # they sit at opposite ends of the face so they cannot stack
                 order = [("eye_r", f"eye {fr['ear_r']:.2f}"),
-                         ("eye_l", f"eye {fr['ear_l']:.2f}"),
-                         ("iris_r", f"iris {fr['features'].get('iris_r',{}).get('iris_ratio',0):.3f}"),
-                         ("nose", "nose"),
+                         ("eye_l", None),
+                         ("iris_r", None),
+                         ("nose", None),
                          ("lips_in", f"mouth {fr['mar']:.2f}")]
                 step = (b - a) / (len(order) + 1)
                 for j, (key, lab) in enumerate(order):
