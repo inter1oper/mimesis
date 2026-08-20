@@ -78,3 +78,6 @@ done
 
 echo "== detection stability and track states (drives flash rates)"
 "$PY" stage1/stability.py --out "$OUT" --faces all
+
+echo "== per-feature geometry: eyes, brows, nose, mouth, irises"
+"$PY" stage1/face_features.py --out "$OUT"

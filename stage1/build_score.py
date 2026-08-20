@@ -209,6 +209,11 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
     stru = json.loads((out / "structure.json").read_text())
     fa = json.loads((out / "face_analysis.json").read_text())
     nf = json.loads((out / "noise_floor.json").read_text())
+    ff_path = out / "face_features.json"
+    feats = {}
+    if ff_path.exists():
+        ffd = json.loads(ff_path.read_text())
+        feats = {r["face_id"]: (i, r) for i, r in enumerate(ffd["panels"].get(panel, []))}
     claims_path = out / "claims.json"
     sessions = json.loads(claims_path.read_text()) if claims_path.exists() else []
     mine = [s_ for s_ in sessions if s_.get("panel") == panel]
@@ -293,6 +298,22 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
                 face_ids=[fid])
             add("connector_label", "RESOLVE", "detection", f"/faces/{i}", a + 0.9, b,
                 face_ids=[fid], at=nodes[fid], label=f"{len(f['landmarks'])}/478")
+            # take the face apart: eye, eye, nose, mouth, one after another
+            if fid in feats:
+                fi, fr = feats[fid]
+                order = [("eye_r", f"eye {fr['ear_r']:.2f}"),
+                         ("eye_l", f"eye {fr['ear_l']:.2f}"),
+                         ("iris_r", f"iris {fr['features'].get('iris_r',{}).get('iris_ratio',0):.3f}"),
+                         ("nose", "nose"),
+                         ("lips_in", f"mouth {fr['mar']:.2f}")]
+                step = (b - a) / (len(order) + 1)
+                for j, (key, lab) in enumerate(order):
+                    if key not in fr["features"]:
+                        continue
+                    add("feature_box", "RESOLVE", "face_features",
+                        f"/panels/{panel}/{fi}/features/{key}",
+                        a + 1.1 + j * step, b, face_ids=[fid], feature=key,
+                        label=lab, grow_s=0.45)
         else:
             add("box_content", "RESOLVE", "detection", f"/faces/{i}", a, b,
                 face_ids=[fid], mode="fail", grow_s=0.7, alarm=True)

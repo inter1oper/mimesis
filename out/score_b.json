@@ -16016,7 +16016,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-status_block-0128",
+        "cue_id": "B-status_block-0168",
         "cue": "status_block",
         "pass": "DETECT",
         "role": "obs",
@@ -16463,6 +16463,24 @@
         "label": "478/478"
       },
       {
+        "cue_id": "B-feature_box-0027",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 172.1,
+        "t_out": 248.625,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/1/features/eye_r"
+        },
+        "face_ids": [
+          "B05"
+        ],
+        "feature": "eye_r",
+        "label": "eye 0.28",
+        "grow_s": 0.45
+      },
+      {
         "cue_id": "B-box_emerge-0021",
         "cue": "box_emerge",
         "pass": "DETECT",
@@ -16519,7 +16537,25 @@
         "label": "0.829"
       },
       {
-        "cue_id": "B-box_emerge-0027",
+        "cue_id": "B-feature_box-0028",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 185.037,
+        "t_out": 248.625,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/1/features/eye_l"
+        },
+        "face_ids": [
+          "B05"
+        ],
+        "feature": "eye_l",
+        "label": "eye 0.32",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-box_emerge-0032",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16535,7 +16571,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-mesh_contour-0028",
+        "cue_id": "B-mesh_contour-0033",
         "cue": "mesh_contour",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16550,7 +16586,7 @@
         ]
       },
       {
-        "cue_id": "B-connector_label-0029",
+        "cue_id": "B-connector_label-0034",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16570,7 +16606,79 @@
         "label": "478/478"
       },
       {
-        "cue_id": "B-box_emerge-0030",
+        "cue_id": "B-feature_box-0029",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 197.975,
+        "t_out": 248.625,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/1/features/iris_r"
+        },
+        "face_ids": [
+          "B05"
+        ],
+        "feature": "iris_r",
+        "label": "iris 0.145",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0035",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 197.975,
+        "t_out": 274.5,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/0/features/eye_r"
+        },
+        "face_ids": [
+          "B02"
+        ],
+        "feature": "eye_r",
+        "label": "eye 0.32",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0030",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 210.912,
+        "t_out": 248.625,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/1/features/nose"
+        },
+        "face_ids": [
+          "B05"
+        ],
+        "feature": "nose",
+        "label": "nose",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0036",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 210.912,
+        "t_out": 274.5,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/0/features/eye_l"
+        },
+        "face_ids": [
+          "B02"
+        ],
+        "feature": "eye_l",
+        "label": "eye 0.37",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-box_emerge-0040",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16586,7 +16694,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-mesh_points-0031",
+        "cue_id": "B-mesh_points-0041",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16601,7 +16709,7 @@
         ]
       },
       {
-        "cue_id": "B-connector_label-0032",
+        "cue_id": "B-connector_label-0042",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16621,7 +16729,97 @@
         "label": "478/478"
       },
       {
-        "cue_id": "B-box_emerge-0033",
+        "cue_id": "B-feature_box-0031",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 223.85,
+        "t_out": 248.625,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/1/features/lips_in"
+        },
+        "face_ids": [
+          "B05"
+        ],
+        "feature": "lips_in",
+        "label": "mouth 0.11",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0037",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 223.85,
+        "t_out": 274.5,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/0/features/iris_r"
+        },
+        "face_ids": [
+          "B02"
+        ],
+        "feature": "iris_r",
+        "label": "iris 0.141",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0043",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 223.85,
+        "t_out": 300.375,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/7/features/eye_r"
+        },
+        "face_ids": [
+          "B34"
+        ],
+        "feature": "eye_r",
+        "label": "eye 0.27",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0038",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 236.787,
+        "t_out": 274.5,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/0/features/nose"
+        },
+        "face_ids": [
+          "B02"
+        ],
+        "feature": "nose",
+        "label": "nose",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0044",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 236.787,
+        "t_out": 300.375,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/7/features/eye_l"
+        },
+        "face_ids": [
+          "B34"
+        ],
+        "feature": "eye_l",
+        "label": "eye 0.28",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-box_emerge-0048",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16637,7 +16835,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-mesh_points-0034",
+        "cue_id": "B-mesh_points-0049",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16652,7 +16850,7 @@
         ]
       },
       {
-        "cue_id": "B-connector_label-0035",
+        "cue_id": "B-connector_label-0050",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16672,7 +16870,97 @@
         "label": "478/478"
       },
       {
-        "cue_id": "B-box_emerge-0036",
+        "cue_id": "B-feature_box-0039",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 249.725,
+        "t_out": 274.5,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/0/features/lips_in"
+        },
+        "face_ids": [
+          "B02"
+        ],
+        "feature": "lips_in",
+        "label": "mouth 0.09",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0045",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 249.725,
+        "t_out": 300.375,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/7/features/iris_r"
+        },
+        "face_ids": [
+          "B34"
+        ],
+        "feature": "iris_r",
+        "label": "iris 0.131",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0051",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 249.725,
+        "t_out": 326.25,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/5/features/eye_r"
+        },
+        "face_ids": [
+          "B23"
+        ],
+        "feature": "eye_r",
+        "label": "eye 0.27",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0046",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 262.663,
+        "t_out": 300.375,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/7/features/nose"
+        },
+        "face_ids": [
+          "B34"
+        ],
+        "feature": "nose",
+        "label": "nose",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0052",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 262.663,
+        "t_out": 326.25,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/5/features/eye_l"
+        },
+        "face_ids": [
+          "B23"
+        ],
+        "feature": "eye_l",
+        "label": "eye 0.24",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-box_emerge-0056",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16688,7 +16976,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-mesh_contour-0037",
+        "cue_id": "B-mesh_contour-0057",
         "cue": "mesh_contour",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16703,7 +16991,7 @@
         ]
       },
       {
-        "cue_id": "B-connector_label-0038",
+        "cue_id": "B-connector_label-0058",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16723,7 +17011,97 @@
         "label": "478/478"
       },
       {
-        "cue_id": "B-box_emerge-0039",
+        "cue_id": "B-feature_box-0047",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 275.6,
+        "t_out": 300.375,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/7/features/lips_in"
+        },
+        "face_ids": [
+          "B34"
+        ],
+        "feature": "lips_in",
+        "label": "mouth 0.01",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0053",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 275.6,
+        "t_out": 326.25,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/5/features/iris_r"
+        },
+        "face_ids": [
+          "B23"
+        ],
+        "feature": "iris_r",
+        "label": "iris 0.136",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0059",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 275.6,
+        "t_out": 352.125,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/4/features/eye_r"
+        },
+        "face_ids": [
+          "B18"
+        ],
+        "feature": "eye_r",
+        "label": "eye 0.30",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0054",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 288.538,
+        "t_out": 326.25,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/5/features/nose"
+        },
+        "face_ids": [
+          "B23"
+        ],
+        "feature": "nose",
+        "label": "nose",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0060",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 288.538,
+        "t_out": 352.125,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/4/features/eye_l"
+        },
+        "face_ids": [
+          "B18"
+        ],
+        "feature": "eye_l",
+        "label": "eye 0.25",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-box_emerge-0064",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16739,7 +17117,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-mesh_points-0040",
+        "cue_id": "B-mesh_points-0065",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16754,7 +17132,7 @@
         ]
       },
       {
-        "cue_id": "B-connector_label-0041",
+        "cue_id": "B-connector_label-0066",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16774,7 +17152,97 @@
         "label": "478/478"
       },
       {
-        "cue_id": "B-box_emerge-0042",
+        "cue_id": "B-feature_box-0055",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 301.475,
+        "t_out": 326.25,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/5/features/lips_in"
+        },
+        "face_ids": [
+          "B23"
+        ],
+        "feature": "lips_in",
+        "label": "mouth 0.27",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0061",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 301.475,
+        "t_out": 352.125,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/4/features/iris_r"
+        },
+        "face_ids": [
+          "B18"
+        ],
+        "feature": "iris_r",
+        "label": "iris 0.129",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0067",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 301.475,
+        "t_out": 378.0,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/3/features/eye_r"
+        },
+        "face_ids": [
+          "B16"
+        ],
+        "feature": "eye_r",
+        "label": "eye 0.32",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0062",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 314.413,
+        "t_out": 352.125,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/4/features/nose"
+        },
+        "face_ids": [
+          "B18"
+        ],
+        "feature": "nose",
+        "label": "nose",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0068",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 314.413,
+        "t_out": 378.0,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/3/features/eye_l"
+        },
+        "face_ids": [
+          "B16"
+        ],
+        "feature": "eye_l",
+        "label": "eye 0.35",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-box_emerge-0072",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16790,7 +17258,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-mesh_contour-0043",
+        "cue_id": "B-mesh_contour-0073",
         "cue": "mesh_contour",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16805,7 +17273,7 @@
         ]
       },
       {
-        "cue_id": "B-connector_label-0044",
+        "cue_id": "B-connector_label-0074",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16825,7 +17293,115 @@
         "label": "478/478"
       },
       {
-        "cue_id": "B-box_emerge-0048",
+        "cue_id": "B-feature_box-0063",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 327.35,
+        "t_out": 352.125,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/4/features/lips_in"
+        },
+        "face_ids": [
+          "B18"
+        ],
+        "feature": "lips_in",
+        "label": "mouth 0.17",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0069",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 327.35,
+        "t_out": 378.0,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/3/features/iris_r"
+        },
+        "face_ids": [
+          "B16"
+        ],
+        "feature": "iris_r",
+        "label": "iris 0.139",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0075",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 327.35,
+        "t_out": 378.0,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/6/features/eye_r"
+        },
+        "face_ids": [
+          "B27"
+        ],
+        "feature": "eye_r",
+        "label": "eye 0.33",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0076",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 335.975,
+        "t_out": 378.0,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/6/features/eye_l"
+        },
+        "face_ids": [
+          "B27"
+        ],
+        "feature": "eye_l",
+        "label": "eye 0.27",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0070",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 340.288,
+        "t_out": 378.0,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/3/features/nose"
+        },
+        "face_ids": [
+          "B16"
+        ],
+        "feature": "nose",
+        "label": "nose",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0077",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 344.6,
+        "t_out": 378.0,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/6/features/iris_r"
+        },
+        "face_ids": [
+          "B27"
+        ],
+        "feature": "iris_r",
+        "label": "iris 0.129",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-box_emerge-0088",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -16841,7 +17417,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-claim_word-0076",
+        "cue_id": "B-claim_word-0116",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -16860,7 +17436,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-connector-0049",
+        "cue_id": "B-connector-0089",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -16880,7 +17456,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-connector_label-0050",
+        "cue_id": "B-connector_label-0090",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -16900,7 +17476,7 @@
         "label": "yaw +10"
       },
       {
-        "cue_id": "B-box_emerge-0045",
+        "cue_id": "B-box_emerge-0080",
         "cue": "box_emerge",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16916,7 +17492,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-claim_word-0051",
+        "cue_id": "B-claim_word-0091",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -16934,7 +17510,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-mesh_points-0046",
+        "cue_id": "B-mesh_points-0081",
         "cue": "mesh_points",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16949,7 +17525,7 @@
         ]
       },
       {
-        "cue_id": "B-connector_label-0047",
+        "cue_id": "B-connector_label-0082",
         "cue": "connector_label",
         "pass": "RESOLVE",
         "role": "obs",
@@ -16969,7 +17545,151 @@
         "label": "478/478"
       },
       {
-        "cue_id": "B-claim_word-0077",
+        "cue_id": "B-feature_box-0071",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 353.225,
+        "t_out": 378.0,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/3/features/lips_in"
+        },
+        "face_ids": [
+          "B16"
+        ],
+        "feature": "lips_in",
+        "label": "mouth 0.02",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0078",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 353.225,
+        "t_out": 378.0,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/6/features/nose"
+        },
+        "face_ids": [
+          "B27"
+        ],
+        "feature": "nose",
+        "label": "nose",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0083",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 353.225,
+        "t_out": 378.0,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/2/features/eye_r"
+        },
+        "face_ids": [
+          "B09"
+        ],
+        "feature": "eye_r",
+        "label": "eye 0.33",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0084",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 357.538,
+        "t_out": 378.0,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/2/features/eye_l"
+        },
+        "face_ids": [
+          "B09"
+        ],
+        "feature": "eye_l",
+        "label": "eye 0.36",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0079",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 361.85,
+        "t_out": 378.0,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/6/features/lips_in"
+        },
+        "face_ids": [
+          "B27"
+        ],
+        "feature": "lips_in",
+        "label": "mouth 0.02",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0085",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 361.85,
+        "t_out": 378.0,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/2/features/iris_r"
+        },
+        "face_ids": [
+          "B09"
+        ],
+        "feature": "iris_r",
+        "label": "iris 0.153",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0086",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 366.163,
+        "t_out": 378.0,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/2/features/nose"
+        },
+        "face_ids": [
+          "B09"
+        ],
+        "feature": "nose",
+        "label": "nose",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-feature_box-0087",
+        "cue": "feature_box",
+        "pass": "RESOLVE",
+        "role": "obs",
+        "t_in": 370.475,
+        "t_out": 378.0,
+        "source": {
+          "file": "face_features",
+          "pointer": "/panels/B/2/features/lips_in"
+        },
+        "face_ids": [
+          "B09"
+        ],
+        "feature": "lips_in",
+        "label": "mouth 0.02",
+        "grow_s": 0.45
+      },
+      {
+        "cue_id": "B-claim_word-0117",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -16988,7 +17708,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-box_emerge-0052",
+        "cue_id": "B-box_emerge-0092",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -17004,7 +17724,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0053",
+        "cue_id": "B-connector-0093",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -17024,7 +17744,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-connector_label-0054",
+        "cue_id": "B-connector_label-0094",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -17044,7 +17764,7 @@
         "label": "yaw +18"
       },
       {
-        "cue_id": "B-claim_word-0055",
+        "cue_id": "B-claim_word-0095",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -17062,7 +17782,7 @@
         "alarm": true
       },
       {
-        "cue_id": "B-claim_word-0078",
+        "cue_id": "B-claim_word-0118",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -17081,7 +17801,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-box_emerge-0056",
+        "cue_id": "B-box_emerge-0096",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -17097,7 +17817,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0057",
+        "cue_id": "B-connector-0097",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -17117,7 +17837,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-connector_label-0058",
+        "cue_id": "B-connector_label-0098",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -17137,7 +17857,7 @@
         "label": "yaw -13"
       },
       {
-        "cue_id": "B-claim_word-0059",
+        "cue_id": "B-claim_word-0099",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -17155,7 +17875,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-claim_word-0079",
+        "cue_id": "B-claim_word-0119",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -17174,7 +17894,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-box_emerge-0060",
+        "cue_id": "B-box_emerge-0100",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -17190,7 +17910,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0061",
+        "cue_id": "B-connector-0101",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -17210,7 +17930,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-connector_label-0062",
+        "cue_id": "B-connector_label-0102",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -17230,7 +17950,7 @@
         "label": "yaw -2"
       },
       {
-        "cue_id": "B-claim_word-0080",
+        "cue_id": "B-claim_word-0120",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -17249,7 +17969,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-box_emerge-0063",
+        "cue_id": "B-box_emerge-0103",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -17265,7 +17985,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-claim_word-0081",
+        "cue_id": "B-claim_word-0121",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -17284,7 +18004,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-connector-0064",
+        "cue_id": "B-connector-0104",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -17304,7 +18024,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-connector_label-0065",
+        "cue_id": "B-connector_label-0105",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -17324,7 +18044,7 @@
         "label": "yaw -10"
       },
       {
-        "cue_id": "B-claim_word-0066",
+        "cue_id": "B-claim_word-0106",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -17342,7 +18062,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-claim_word-0082",
+        "cue_id": "B-claim_word-0122",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -17361,7 +18081,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-box_emerge-0067",
+        "cue_id": "B-box_emerge-0107",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -17377,7 +18097,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0068",
+        "cue_id": "B-connector-0108",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -17397,7 +18117,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-connector_label-0069",
+        "cue_id": "B-connector_label-0109",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -17417,7 +18137,7 @@
         "label": "yaw +6"
       },
       {
-        "cue_id": "B-claim_word-0083",
+        "cue_id": "B-claim_word-0123",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -17436,7 +18156,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-box_emerge-0070",
+        "cue_id": "B-box_emerge-0110",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -17452,7 +18172,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0071",
+        "cue_id": "B-connector-0111",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -17472,7 +18192,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-connector_label-0072",
+        "cue_id": "B-connector_label-0112",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -17492,7 +18212,7 @@
         "label": "yaw -10"
       },
       {
-        "cue_id": "B-claim_word-0084",
+        "cue_id": "B-claim_word-0124",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -17511,7 +18231,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-box_emerge-0086",
+        "cue_id": "B-box_emerge-0126",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -17527,7 +18247,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-box_emerge-0087",
+        "cue_id": "B-box_emerge-0127",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -17543,7 +18263,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-relation-0088",
+        "cue_id": "B-relation-0128",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -17562,7 +18282,7 @@
         "label": "cos 0.467"
       },
       {
-        "cue_id": "B-box_emerge-0073",
+        "cue_id": "B-box_emerge-0113",
         "cue": "box_emerge",
         "pass": "MEASURE",
         "role": "measure",
@@ -17578,7 +18298,7 @@
         "grow_s": 0.8
       },
       {
-        "cue_id": "B-connector-0074",
+        "cue_id": "B-connector-0114",
         "cue": "connector",
         "pass": "MEASURE",
         "role": "measure",
@@ -17598,7 +18318,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-connector_label-0075",
+        "cue_id": "B-connector_label-0115",
         "cue": "connector_label",
         "pass": "MEASURE",
         "role": "measure",
@@ -17618,7 +18338,7 @@
         "label": "yaw +5"
       },
       {
-        "cue_id": "B-claim_word-0085",
+        "cue_id": "B-claim_word-0125",
         "cue": "claim_word",
         "pass": "MEASURE",
         "role": "measure",
@@ -17637,7 +18357,7 @@
         "alarm": false
       },
       {
-        "cue_id": "B-box_emerge-0089",
+        "cue_id": "B-box_emerge-0129",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -17653,7 +18373,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-box_emerge-0090",
+        "cue_id": "B-box_emerge-0130",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -17669,7 +18389,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-relation-0091",
+        "cue_id": "B-relation-0131",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -17688,7 +18408,7 @@
         "label": "cos 0.561"
       },
       {
-        "cue_id": "B-box_emerge-0092",
+        "cue_id": "B-box_emerge-0132",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -17704,7 +18424,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-box_emerge-0093",
+        "cue_id": "B-box_emerge-0133",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -17720,7 +18440,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-relation-0094",
+        "cue_id": "B-relation-0134",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -17739,7 +18459,7 @@
         "label": "cos 0.404"
       },
       {
-        "cue_id": "B-box_emerge-0095",
+        "cue_id": "B-box_emerge-0135",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -17755,7 +18475,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-box_emerge-0096",
+        "cue_id": "B-box_emerge-0136",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -17771,7 +18491,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-relation-0097",
+        "cue_id": "B-relation-0137",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -17790,7 +18510,7 @@
         "label": "cos 0.385"
       },
       {
-        "cue_id": "B-gaze_ray-0104",
+        "cue_id": "B-gaze_ray-0144",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -17806,7 +18526,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "B-gaze_ray-0105",
+        "cue_id": "B-gaze_ray-0145",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -17822,7 +18542,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "B-gaze_ray-0106",
+        "cue_id": "B-gaze_ray-0146",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -17838,7 +18558,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "B-gaze_ray-0107",
+        "cue_id": "B-gaze_ray-0147",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -17854,7 +18574,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "B-gaze_ray-0108",
+        "cue_id": "B-gaze_ray-0148",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -17870,7 +18590,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "B-gaze_ray-0109",
+        "cue_id": "B-gaze_ray-0149",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -17886,7 +18606,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "B-gaze_ray-0110",
+        "cue_id": "B-gaze_ray-0150",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -17902,7 +18622,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "B-gaze_ray-0111",
+        "cue_id": "B-gaze_ray-0151",
         "cue": "gaze_ray",
         "pass": "RELATE",
         "role": "relate",
@@ -17918,7 +18638,7 @@
         "grow_s": 1.4
       },
       {
-        "cue_id": "B-box_emerge-0098",
+        "cue_id": "B-box_emerge-0138",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -17934,7 +18654,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-box_emerge-0099",
+        "cue_id": "B-box_emerge-0139",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -17950,7 +18670,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-relation-0100",
+        "cue_id": "B-relation-0140",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -17969,7 +18689,7 @@
         "label": "cos 0.439"
       },
       {
-        "cue_id": "B-convergence-0112",
+        "cue_id": "B-convergence-0152",
         "cue": "convergence",
         "pass": "RELATE",
         "role": "relate",
@@ -17986,7 +18706,7 @@
         "label": "res 0.1175"
       },
       {
-        "cue_id": "B-box_emerge-0101",
+        "cue_id": "B-box_emerge-0141",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -18002,7 +18722,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-box_emerge-0102",
+        "cue_id": "B-box_emerge-0142",
         "cue": "box_emerge",
         "pass": "RELATE",
         "role": "relate",
@@ -18018,7 +18738,7 @@
         "grow_s": 0.6
       },
       {
-        "cue_id": "B-relation-0103",
+        "cue_id": "B-relation-0143",
         "cue": "relation",
         "pass": "RELATE",
         "role": "relate",
@@ -18037,7 +18757,7 @@
         "label": "cos 0.374"
       },
       {
-        "cue_id": "B-ghost-0113",
+        "cue_id": "B-ghost-0153",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -18058,7 +18778,7 @@
         }
       },
       {
-        "cue_id": "B-orphan-0126",
+        "cue_id": "B-orphan-0166",
         "cue": "orphan",
         "pass": "DOUBT",
         "role": "doubt",
@@ -18078,7 +18798,7 @@
         "label": "no face"
       },
       {
-        "cue_id": "B-ghost-0114",
+        "cue_id": "B-ghost-0154",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -18099,7 +18819,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0115",
+        "cue_id": "B-ghost-0155",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -18120,7 +18840,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0116",
+        "cue_id": "B-ghost-0156",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -18141,7 +18861,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0117",
+        "cue_id": "B-ghost-0157",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -18162,7 +18882,7 @@
         }
       },
       {
-        "cue_id": "B-floor-0127",
+        "cue_id": "B-floor-0167",
         "cue": "floor",
         "pass": "DOUBT",
         "role": "doubt",
@@ -18175,7 +18895,7 @@
         "label": "floor 0.6814"
       },
       {
-        "cue_id": "B-ghost-0118",
+        "cue_id": "B-ghost-0158",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -18196,7 +18916,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0119",
+        "cue_id": "B-ghost-0159",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -18217,7 +18937,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0120",
+        "cue_id": "B-ghost-0160",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -18238,7 +18958,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0121",
+        "cue_id": "B-ghost-0161",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -18259,7 +18979,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0122",
+        "cue_id": "B-ghost-0162",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -18280,7 +19000,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0123",
+        "cue_id": "B-ghost-0163",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -18301,7 +19021,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0124",
+        "cue_id": "B-ghost-0164",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",
@@ -18322,7 +19042,7 @@
         }
       },
       {
-        "cue_id": "B-ghost-0125",
+        "cue_id": "B-ghost-0165",
         "cue": "ghost",
         "pass": "DOUBT",
         "role": "doubt",

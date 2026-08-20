@@ -102,7 +102,7 @@ body.config #hud{display:block}
 
 const FILES=["panel_a_detection","panel_b_detection","panel_a_flames","panel_b_flames",
   "panel_a_field","panel_b_field","panel_a_overlay_plan","panel_b_overlay_plan",
-  "face_analysis","structure","stability","noise_floor","score_a","score_b","claims"];
+  "face_analysis","structure","stability","noise_floor","score_a","score_b","claims","face_features"];
 const D=(window.MIMESIS_DATA)||{};
 const IMG=(window.MIMESIS_IMAGES)||{};
 
@@ -113,7 +113,8 @@ function sourceDoc(panel,file){ const l=panel.toLowerCase();
   return {detection:D["panel_"+l+"_detection"],flames:D["panel_"+l+"_flames"],
     field:D["panel_"+l+"_field"],overlay_plan:D["panel_"+l+"_overlay_plan"],
     face_analysis:D.face_analysis,structure:D.structure,stability:D.stability,
-    noise_floor:D.noise_floor,claims:D.claims}[file]; }
+    noise_floor:D.noise_floor,claims:D.claims,
+    face_features:D.face_features}[file]; }
 
 /* ---------- homography -> matrix3d ---------- */
 function homography(w,h,c){
@@ -352,6 +353,16 @@ function drawCue(g,c,rec,face,W,H,t,score){
       const l2=typed(c.label2,t,c.t_in+(c.label||"").length/26,26);
       if(l2) tab(g,x,y+13,l2,cls,anchor,W,H);
     }
+    return 1;
+  }
+  case "feature_box": {
+    // a box on the eye, the nose, the mouth — the face taken apart
+    const bx=rec.box; if(!bx) break;
+    const x0=bx[0]*W, y0=bx[1]*H, w=bx[2]*W, h=bx[3]*H;
+    const pad=2.5;
+    push(mk("rect",{class:"s "+cls,x:x0-pad,y:y0-pad,
+      width:(w+pad*2)*k,height:(h+pad*2)*k,opacity:.9}));
+    if(k>=1&&c.label) tab(g,x0-pad,y0-pad-1,c.label,cls,"start",W,H);
     return 1;
   }
   case "box_content": {
