@@ -50,6 +50,12 @@ svg .iso{stroke:var(--obs)}
 svg .flow{stroke:var(--measure)}
 svg .outline{stroke:var(--relate)}
 svg .wire{stroke:var(--obs);stroke-width:0.5px}
+/* square layers. every rectangle here was produced by the pipeline: the
+   windows the detector actually scanned, the bounding box of every measured
+   blob, and the box of every named facial feature. */
+svg .tiles{stroke:var(--obs);stroke-width:0.6px}
+svg .blobbox{stroke:var(--relate);stroke-width:0.6px}
+svg .featbox{stroke:var(--measure);stroke-width:0.7px}
 /* a label tab: small dark plate behind the word, as on a detector readout.
    the only filled element in the overlay, kept dark so it cannot bloom. */
 svg rect.tab{fill:#0a0a0aE6;stroke:currentColor;stroke-width:var(--stroke);
@@ -269,6 +275,44 @@ function buildFields(z){
     d:F.blob_outlines.map(o=>P(o.poly)+"Z").join(""),opacity:0});
   g.appendChild(z.outlineEl);
 
+  const R=(x,y,w,h)=>`M${(x*W).toFixed(1)} ${(y*H).toFixed(1)}h${(w*W).toFixed(1)}`+
+    `v${(h*H).toFixed(1)}h${(-w*W).toFixed(1)}Z`;
+
+  // the windows the detector actually scanned, nested at four scales
+  const det0=sourceDoc(z.panel,"detection");
+  const tiles=new Set();
+  for(const f of det0.faces){
+    const hint=(f.detectors.blazeface||{}).scale_hint||"";
+    const m=/^tile([\d.]+)@(\d+),(\d+)$/.exec(hint);
+    if(m) tiles.add(m[1]+","+m[2]+","+m[3]);
+  }
+  const PW=det0.painting_rect_px[0], PH=det0.painting_rect_px[1];
+  let td="";
+  tiles.forEach(k=>{ const [fr,tx,ty]=k.split(",").map(Number);
+    const side=Math.max(PW,PH)*fr;
+    td+=R(tx/PW, ty/PH, Math.min(side,PW-tx)/PW, Math.min(side,PH-ty)/PH); });
+  z.tileEl=mk("path",{class:"fld tiles",d:td,opacity:0}); g.appendChild(z.tileEl);
+
+  // the bounding box of every measured blob
+  const fld2=sourceDoc(z.panel,"field");
+  z.blobEl=mk("path",{class:"fld blobbox",
+    d:(fld2?fld2.blobs:[]).map(b=>R(b.box[0],b.box[1],b.box[2],b.box[3])).join(""),
+    opacity:0});
+  g.appendChild(z.blobEl);
+
+  // every named feature of every face: eye, eye, brow, brow, nose, lips, oval, irises
+  z.featEls={};
+  const FF=D.face_features;
+  if(FF&&FF.panels[z.panel]){
+    for(const r of FF.panels[z.panel]){
+      let fd="";
+      for(const k in r.features){ const b=r.features[k].box;
+        fd+=R(b[0],b[1],b[2],b[3]); }
+      const el=mk("path",{class:"fld featbox",d:fd,opacity:0});
+      g.appendChild(el); z.featEls[r.face_id]=el;
+    }
+  }
+
   // full mesh wireframe per face, from the shared triangulation
   z.wires={};
   const det=sourceDoc(z.panel,"detection"), topo=F.mesh_topology;
@@ -292,11 +336,12 @@ function drawFields(z,t,score){
   if(!z.fieldsBuilt) buildFields(z);
   if(!z.isoGroups) return 0;
   const L=score.loop_duration_s||900, ph=t/L;
+  const off=e=>e&&e.setAttribute("opacity",0);
   if(!showFields){
-    z.isoGroups.forEach(o=>o.el.setAttribute("opacity",0));
-    if(z.flowEl) z.flowEl.setAttribute("opacity",0);
-    if(z.outlineEl) z.outlineEl.setAttribute("opacity",0);
-    for(const k in z.wires) z.wires[k].setAttribute("opacity",0);
+    z.isoGroups.forEach(o=>off(o.el));
+    off(z.flowEl); off(z.outlineEl); off(z.tileEl); off(z.blobEl);
+    for(const k in z.wires) off(z.wires[k]);
+    for(const k in z.featEls) off(z.featEls[k]);
     return 0;
   }
   // a band of luminance levels sweeps the range twice per loop: the painting's
@@ -310,13 +355,18 @@ function drawFields(z,t,score){
   });
   if(z.flowEl) z.flowEl.setAttribute("opacity",(0.12+0.28*Math.abs(Math.sin(ph*Math.PI*2))).toFixed(3));
   if(z.outlineEl) z.outlineEl.setAttribute("opacity",0.24);
-  // a face wears its wireframe while it holds attention
+  // square layers: scan windows pulse with the pass, blob boxes hold steady
+  if(z.tileEl) z.tileEl.setAttribute("opacity",
+    (0.10+0.22*Math.abs(Math.sin(ph*Math.PI*6))).toFixed(3));
+  if(z.blobEl) z.blobEl.setAttribute("opacity",0.16);
+  // a face wears its wireframe and its feature boxes while it holds attention
   const live=new Set();
   for(const c of score.tracks.overlay){
     if(t>=c.t_in&&t<c.t_out&&c.face_ids) c.face_ids.forEach(f=>live.add(f));
   }
   for(const k in z.wires) z.wires[k].setAttribute("opacity",live.has(k)?0.42:0.09);
-  return n+2;
+  for(const k in z.featEls) z.featEls[k].setAttribute("opacity",live.has(k)?0.65:0.18);
+  return n+4;
 }
 
 function drawOverlay(z){
