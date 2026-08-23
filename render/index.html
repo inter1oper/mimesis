@@ -236,35 +236,55 @@ function buildZones(){
 
    Browsers refuse to start audio without a gesture, so the show waits on one
    keypress. In the gallery that is the same keypress that starts the piece. */
-let audio=null, audioReady=false, showBackdrop=true, showGrid=false, showFields=true;
-function clockSeconds(){
-  if(audio && audioReady && !audio.paused) return audio.currentTime;
+let AUD={}, audioStarted=false, showBackdrop=true, showGrid=false, showFields=true;
+
+/* Each panel is driven by ITS OWN narration. The two recordings are different
+   lengths -- 363s and 376s -- and a panel's words have to match the voice
+   describing that panel, so these are two channels on two clocks rather than
+   one clock shared. Within a panel nothing can drift: overlay cycle, typed
+   answer and reasoning trace all read the same audio.currentTime. Between
+   panels they are deliberately independent, which is what a two-channel
+   installation is. */
+function clockSeconds(panel){
+  const a=AUD[panel];
+  if(a && a.ready && !a.el.paused) return a.el.currentTime;
   return performance.now()/1000;
 }
-function setupAudio(score){
-  const src=(window.MIMESIS_AUDIO)||((score.clock||{}).audio_file);
-  if(!src) return;
-  audio=new Audio(src);
-  audio.loop=true; audio.preload="auto";
-  audio.addEventListener("loadedmetadata",()=>{
-    // the voice becomes the master duration: the score is retimed to it rather
-    // than the narration being cut to fit the score
-    if(isFinite(audio.duration)&&audio.duration>1){
-      for(const k of ["score_a","score_b"]) if(D[k]) D[k].loop_duration_s=audio.duration;
-    }
-  });
+function setupAudio(){
+  for(const P of ["A","B"]){
+    const sc=D["score_"+P.toLowerCase()]; if(!sc) continue;
+    const src=(window.MIMESIS_AUDIO&&window.MIMESIS_AUDIO[P])||((sc.clock||{}).audio_file);
+    if(!src) continue;
+    const el=new Audio(src);
+    el.loop=true; el.preload="auto";
+    el.addEventListener("loadedmetadata",()=>{
+      if(isFinite(el.duration)&&el.duration>1) sc.loop_duration_s=el.duration;
+    });
+    AUD[P]={el,ready:false};
+  }
+  if(!Object.keys(AUD).length) return;
+  // browsers refuse to start audio without a gesture; both voices start together
   const start=()=>{
-    audio.play().then(()=>{audioReady=true;}).catch(()=>{});
+    for(const P in AUD){
+      AUD[P].el.play().then(()=>{AUD[P].ready=true;audioStarted=true;}).catch(()=>{});
+    }
     removeEventListener("keydown",start); removeEventListener("pointerdown",start);
   };
   addEventListener("keydown",start); addEventListener("pointerdown",start);
 }
-function loopT(s){ const L=s.loop_duration_s||900; return ((clockSeconds()%L)+L)%L; }
+function audioState(){
+  const n=Object.keys(AUD).length;
+  if(!n) return "no voice";
+  return audioStarted ? `VOICE ${n}ch` : "press any key to start the voice";
+}
+
+function loopT(s){ const L=s.loop_duration_s||900;
+  return ((clockSeconds(s.panel)%L)+L)%L; }
 /* the overlay runs its own fast cycle, repeating many times inside the master
    loop. same clock, shorter modulus -- so it reads as a live instrument rather
    than something paced to a fifteen-minute score. */
 function cycleT(s){ const C=s.overlay_cycle_s||s.loop_duration_s||900;
-  return ((clockSeconds()%C)+C)%C; }
+  return ((clockSeconds(s.panel)%C)+C)%C; }
 /* growth: linear, hard-edged. no easing anywhere in this file. */
 function grow(t,t_in,secs){ if(!secs) return 1; return Math.max(0,Math.min(1,(t-t_in)/secs)); }
 function lit(t,hz){ return hz? (Math.floor(t*hz*2)%2)===0 : true; }
@@ -768,7 +788,7 @@ function drawText(z){
   if(!st||!z.chars) return;
 
   const on=st.char_onsets_ms, n=on.length;
-  const ms=((clockSeconds()*1000)%st.cycle_ms+st.cycle_ms)%st.cycle_ms;
+  const ms=((clockSeconds(score.panel)*1000)%st.cycle_ms+st.cycle_ms)%st.cycle_ms;
 
   // binary search: the last character whose onset has passed
   let lo=0, hi=n-1, idx=-1;
@@ -830,7 +850,7 @@ function frame(){
     document.getElementById("status").textContent=
       `${currentPass(sa,cycleT(sa))}   cycle ${cycleT(sa).toFixed(1)}/${sa.overlay_cycle_s||"-"}s   `+
       `loop ${t.toFixed(0)}/${Math.round(sa.loop_duration_s)}s   marks ${marks}   `+
-      `${audio?(audioReady?"VOICE":"press any key to start the voice"):"no voice"}   `+
+      `${audioState()}   `+
       `${showBackdrop?"backdrop":"no backdrop"}${showGrid?"  GRID":""}   `+
       `[c] config  [p] backdrop  [g] target  [f] fields`; }
   requestAnimationFrame(frame);
@@ -874,7 +894,7 @@ async function boot(){
       "could not load data/ — serve over http, or open the standalone build"; }
   }
   loadZones(); buildZones(); hud();
-  if(D.score_a) setupAudio(D.score_a);
+  setupAudio();
   frame();
 }
 boot();

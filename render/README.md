@@ -1,7 +1,13 @@
 # Presentation layer
 
-    mimesis_standalone.html   one self-contained file — open by double-click
+    mimesis_standalone.html   the show — open by double-click
+    audio/                    the two narrations; MUST travel beside the html
     index.html + data/        the same renderer, fetching JSON over http
+
+The html is self-contained apart from the audio. The two voices come to about
+12 MB, which base64 inflates past what belongs inside one file, so they are
+referenced. Keep `audio/` in the same folder as the html and it works from
+`file://` with no server.
 
 Use the standalone file in the gallery. `index.html` needs a server, because
 browsers refuse `fetch()` from `file://`:
@@ -31,15 +37,37 @@ The default zone layout is the physically accurate one from
 occupying 22% of the raster, text columns holding a 65-character measure at a
 22 mm cap, and the rest black.
 
-## The clock
+## The clocks
 
-One clock for both panels. State is resolved as a pure function of it — the
-renderer asks what should be visible at `t`, it never accumulates elapsed time.
-That is what keeps a fifteen-minute loop from drifting and makes a seek land
-exactly, including mid-character in the reveal.
+**Two channels, two clocks.** Each panel is driven by its own narration —
+363 s for Panel A, 376 s for Panel B. The recordings are different lengths and
+a panel's words have to match the voice describing that panel, so sharing one
+clock would put one of them permanently out of step with its own audio.
 
-With no audio it reads `performance.now()`. Set `clock.audio_file` in the score
-and it reads `audio.currentTime` instead; no cue timing changes.
+Within a panel nothing can drift: the overlay cycle, the typed answer and the
+reasoning trace all read the same `audio.currentTime`. Between panels they are
+deliberately independent, which is what a two-channel installation is.
+
+Three cycles run inside each panel's clock:
+
+| | Panel A | Panel B |
+|---|---|---|
+| narration loop | 363 s | 376 s |
+| answer stream | fitted to the voice | fitted to the voice |
+| overlay cycle | 45 s, 8.1× per loop | 45 s, 8.4× per loop |
+
+The typed answer is paced to the voice: the stream finishes as the narration
+does. The shape of the cadence — the pauses at sentence and clause ends — is
+preserved and only the tempo changes. Panel A's text is short for its recording
+so it types at 3.07× the base cadence; Panel B's forensic transcript nearly
+fills its own narration already, at 1.02×.
+
+With no audio present the identical lookup runs against `performance.now()` and
+no cue timing changes.
+
+**Starting the voice.** Browsers refuse to start audio without a gesture. The
+show waits on one keypress or click — the status line says so until it gets one
+— and then both voices start together.
 
 ## What is real and what is waiting
 

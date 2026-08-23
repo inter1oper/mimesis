@@ -47,12 +47,12 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-images", action="store_true")
     ap.add_argument("--backdrop-width", type=int, default=1400)
-    ap.add_argument("--audio", type=pathlib.Path, default=None,
-                    help="Narration to inline. Under the inline cap it is embedded "
-                         "as a data URI so the file stays self-contained; over it, "
-                         "the page references the path instead and the audio must "
-                         "sit beside the html.")
-    ap.add_argument("--audio-inline-cap-mb", type=float, default=6.0)
+    ap.add_argument("--audio-dir", type=pathlib.Path,
+                    default=root / "render/audio",
+                    help="Directory holding panel_a_voice.mp3 and panel_b_voice.mp3. "
+                         "The two narrations total roughly 12 MB, which base64 "
+                         "inflates past what belongs in one html file, so they are "
+                         "referenced and must travel beside it.")
     args = ap.parse_args()
 
     src = (root / "render/index.html").read_text()
@@ -70,22 +70,16 @@ def main() -> None:
             if uri:
                 images["panel_" + p] = uri
 
-    audio_js = ""
-    if args.audio:
-        if not args.audio.exists():
-            raise SystemExit(f"no such audio file: {args.audio}")
-        mb = args.audio.stat().st_size / 1024 / 1024
-        mime = {".mp3": "audio/mpeg", ".m4a": "audio/mp4", ".aac": "audio/aac",
-                ".wav": "audio/wav", ".ogg": "audio/ogg",
-                ".flac": "audio/flac"}.get(args.audio.suffix.lower(), "audio/mpeg")
-        if mb <= args.audio_inline_cap_mb:
-            audio_js = "window.MIMESIS_AUDIO=" + json.dumps(b64(args.audio, mime)) + ";"
-            print(f"  narration inlined: {args.audio.name} ({mb:.1f} MB)")
-        else:
-            audio_js = "window.MIMESIS_AUDIO=" + json.dumps(args.audio.name) + ";"
-            print(f"  narration referenced, not inlined: {args.audio.name} "
-                  f"({mb:.1f} MB > {args.audio_inline_cap_mb} MB cap) — "
-                  f"keep it beside the html")
+    audio_js, voices = "", {}
+    if args.audio_dir and args.audio_dir.exists():
+        for P in ("A", "B"):
+            f = args.audio_dir / f"panel_{P.lower()}_voice.mp3"
+            if f.exists():
+                voices[P] = f"audio/{f.name}"
+                print(f"  voice {P}: {f.name} "
+                      f"({f.stat().st_size/1024/1024:.1f} MB, referenced)")
+    if voices:
+        audio_js = "window.MIMESIS_AUDIO=" + json.dumps(voices) + ";"
 
     head = ("<script>" + audio_js + "window.MIMESIS_DATA="
             + json.dumps(data, separators=(",", ":")) + ";"

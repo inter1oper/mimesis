@@ -100,7 +100,7 @@ def strip_markdown(t: str) -> str:
     return _re.sub(r"\s+", " ", t).strip()
 
 
-def build_stream(claim_sessions, panel):
+def build_stream(claim_sessions, panel, fit_seconds: float | None = None):
     """
     One continuous typed stream for the panel, with a segment table so the
     renderer can mark observed against supplied without re-parsing anything.
@@ -137,7 +137,17 @@ def build_stream(claim_sessions, panel):
     text = "".join(parts)
     onsets = char_onsets(text)
     total = (onsets[-1] + CHAR_MS) if onsets else 0.0
+    scale = 1.0
+    if fit_seconds and total > 0:
+        # With narration, the typing is paced to the voice: the stream finishes
+        # as the voice does. The relative shape of the cadence -- the pauses at
+        # sentence and clause ends -- is preserved, only the tempo changes.
+        target = max(1.0, fit_seconds * 1000.0 - STREAM_HOLD_MS)
+        scale = target / total
+        onsets = [round(o * scale, 1) for o in onsets]
+        total = target
     return {"text": text, "char_onsets_ms": onsets,
+            "fit_to_audio": bool(fit_seconds), "cadence_scale": round(scale, 4),
             "cycle_ms": round(total + STREAM_HOLD_MS, 1),
             "type_ms": round(total, 1),
             "blur_resolve_ms": BLUR_RESOLVE_MS,
@@ -201,7 +211,8 @@ def place_nodes(faces, aspect: float) -> dict:
 
 def build(panel: str, out: pathlib.Path, loop: float, lead: float,
           specimen: bool = False, cycle: float = 45.0,
-          audio_file: str | None = None) -> dict:
+          audio_file: str | None = None,
+          audio_seconds: float | None = None) -> dict:
     p = panel.lower()
     det = json.loads((out / f"panel_{p}_detection.json").read_text())
     fl = json.loads((out / f"panel_{p}_flames.json").read_text())
@@ -411,7 +422,7 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
     answer, reasoning, stream = [], [], None
     if mine:
         sess = mine[0]
-        stream = build_stream(mine, panel)
+        stream = build_stream(mine, panel, audio_seconds)
         rf = sess["source"].get("reasoning_file")
         if rf and pathlib.Path(rf).exists():
             raw = pathlib.Path(rf).read_text()
@@ -437,10 +448,11 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
         "schema": "mimesis.score.v2",
         "panel": panel,
         "session_id": None,
-        "loop_duration_s": loop,
+        "loop_duration_s": (audio_seconds or loop),
         "overlay_cycle_s": cycle,
         "clock": {"source": "audio.currentTime" if audio_file else "performance.now",
                   "audio_file": audio_file,
+                  "audio_seconds": audio_seconds,
                   "fallback": "performance.now",
                   "note": ("With narration present every track reads "
                            "audio.currentTime, so nothing can drift from the "
@@ -501,23 +513,42 @@ def main() -> None:
                          "The overlay repeats this many times inside the master "
                          "loop; the text stream keeps its own cycle. Both are read "
                          "off the same clock.")
-    ap.add_argument("--audio", default=None,
-                    help="Path to the narration, relative to the renderer. When set, "
-                         "every track is driven from audio.currentTime and the "
-                         "voice's duration becomes the master loop.")
+    ap.add_argument("--audio-dir", type=pathlib.Path, default=None,
+                    help="Directory holding panel_a_voice.mp3 and panel_b_voice.mp3. "
+                         "Each panel is driven from its OWN narration: the two "
+                         "recordings are different lengths, and a panel's words have "
+                         "to match the voice describing that panel, so the panels are "
+                         "separate channels on separate clocks rather than one.")
     ap.add_argument("--selftest", action="store_true")
     args = ap.parse_args()
     if args.selftest:
         selftest(); return
     selftest()
     for panel in ("A", "B"):
-        doc = build(panel, args.out, args.loop, args.lead, args.specimen, args.cycle, args.audio)
+        af, asec = None, None
+        if args.audio_dir:
+            cand = args.audio_dir / f"panel_{panel.lower()}_voice.mp3"
+            if cand.exists():
+                af = f"audio/{cand.name}"
+                try:
+                    from mutagen.mp3 import MP3
+                    asec = round(float(MP3(str(cand)).info.length), 2)
+                except Exception:
+                    asec = None
+        doc = build(panel, args.out, args.loop, args.lead, args.specimen,
+                    args.cycle, af, asec)
         (args.out / f"score_{panel.lower()}.json").write_text(json.dumps(doc, indent=2))
         kinds, per_pass = {}, {}
         for c in doc["tracks"]["overlay"]:
             kinds[c["cue"]] = kinds.get(c["cue"], 0) + 1
             per_pass[c["pass"]] = per_pass.get(c["pass"], 0) + 1
-        print(f"panel {panel}: cycle {args.loop/args.cycle:.0f}x per loop, "
+        L = doc["loop_duration_s"]
+        st = doc.get("answer_stream") or {}
+        print(f"panel {panel}: loop {L:.0f}s"
+              + (f" (voice {af})" if af else " (wall clock)")
+              + f", stream {'fitted' if st.get('fit_to_audio') else 'free'}"
+              + (f" x{st.get('cadence_scale')}" if st.get('fit_to_audio') else "")
+              + f", cycle {L/args.cycle:.1f}x per loop, "
               f"{len(doc['tracks']['overlay'])} cues, "
               f"{len(kinds)} types, nodes {len(doc['nodes'])}")
         print(f"   per pass: {per_pass}")
