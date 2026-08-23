@@ -81,3 +81,12 @@ echo "== detection stability and track states (drives flash rates)"
 
 echo "== per-feature geometry: eyes, brows, nose, mouth, irises"
 "$PY" stage1/face_features.py --out "$OUT"
+
+if [ -d data/audio ]; then
+  echo "== aligning each narration to its panel's transcript"
+  for panel in A B; do
+    lower=$(echo "$panel" | tr 'A-Z' 'a-z')
+    v="data/audio/panel_${lower}_voice.mp3"
+    [ -f "$v" ] && "$PY" stage1/align_voice.py --panel "$panel" --audio "$v" --out "$OUT"
+  done
+fi

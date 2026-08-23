@@ -56,18 +56,50 @@ Three cycles run inside each panel's clock:
 | answer stream | fitted to the voice | fitted to the voice |
 | overlay cycle | 45 s, 8.1× per loop | 45 s, 8.4× per loop |
 
-The typed answer is paced to the voice: the stream finishes as the narration
-does. The shape of the cadence — the pauses at sentence and clause ends — is
-preserved and only the tempo changes. Panel A's text is short for its recording
-so it types at 3.07× the base cadence; Panel B's forensic transcript nearly
-fills its own narration already, at 1.02×.
+**The typing is aligned to the voice, not merely fitted to it.**
+`stage1/align_voice.py` transcribes each recording with word-level timestamps,
+matches the recognised words against the transcript, and takes the character
+onsets from the audio. A word appears as it is spoken. Coverage — the fraction
+of transcript words that anchored to a recognised word — is **95%** on Panel A
+and **97%** on Panel B. Regions the recogniser got wrong are interpolated at
+the local speaking rate between the anchors either side, so they stay plausible
+rather than stalling.
+
+The aligner also decides WHICH transcript the voice is reading, from the
+recording rather than from directory order. Panel B carries two sessions and
+its voice reads only one:
+
+| candidate | coverage |
+|---|---|
+| session3_narrative | **96.6%** |
+| both sessions concatenated | 30.9% |
+| session1_forensic | 2.8% |
+
+So Panel B's spoken answer is `session3_narrative`. `session1_forensic` — the
+figure-by-figure inventory — has no narration and is not the spoken text; it
+still supplies claims, keywords and counts to the overlay.
 
 With no audio present the identical lookup runs against `performance.now()` and
 no cue timing changes.
 
+**Left and right.** Panel A's voice is hard-panned left, Panel B's right,
+matching where each painting hangs, so a listener standing in front of one
+panel hears the voice describing it. Done with a Web Audio `StereoPannerNode`;
+if Web Audio is unavailable both voices stay centre and the status line says
+so. The audio elements remain the clock source either way.
+
 **Starting the voice.** Browsers refuse to start audio without a gesture. The
 show waits on one keypress or click — the status line says so until it gets one
-— and then both voices start together.
+— and then both voices start together and the audio context resumes.
+
+## Re-running the alignment
+
+    python stage1/align_voice.py --panel A --audio data/audio/panel_a_voice.mp3
+    python stage1/align_voice.py --panel B --audio data/audio/panel_b_voice.mp3
+    python stage1/build_score.py --out out --cycle 45 --audio-dir data/audio
+
+The recogniser output is cached in `out/asr_*.json`, so re-running to try a
+different session or a larger model does not re-transcribe.
 
 ## What is real and what is waiting
 

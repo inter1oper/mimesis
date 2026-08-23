@@ -422,7 +422,33 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
     answer, reasoning, stream = [], [], None
     if mine:
         sess = mine[0]
-        stream = build_stream(mine, panel, audio_seconds)
+        # The spoken answer is whichever session the voice actually reads, which
+        # align_voice.py determines from the recording rather than from the
+        # directory order. The other sessions still supply claims, keywords and
+        # counts to the overlay -- they are simply not the narrated text.
+        al = out / f"align_{panel.lower()}.json"
+        voiced = mine
+        if al.exists():
+            names = set(json.loads(al.read_text()).get("narrated_sessions") or [])
+            if names:
+                voiced = [x for x in mine if x["session_id"] in names] or mine
+                sess = voiced[0]
+        stream = build_stream(voiced, panel, audio_seconds)
+        # if the voice has been aligned, its measured onsets replace the fitted
+        # ones: the text then appears as the words are actually spoken, rather
+        # than merely finishing when the recording does
+        if stream and al.exists():
+            a = json.loads(al.read_text())
+            if a.get("stream_chars") == len(stream["text"]) and a.get("char_onsets_ms"):
+                stream["char_onsets_ms"] = a["char_onsets_ms"]
+                stream["fit_to_audio"] = "aligned"
+                stream["alignment"] = {"coverage": a["coverage"],
+                                       "anchors": a["anchors"],
+                                       "model": a["model"]}
+                last = a["char_onsets_ms"][-1]
+                stream["type_ms"] = round(last, 1)
+                stream["cycle_ms"] = round((audio_seconds or 0) * 1000.0
+                                           or last + STREAM_HOLD_MS, 1)
         rf = sess["source"].get("reasoning_file")
         if rf and pathlib.Path(rf).exists():
             raw = pathlib.Path(rf).read_text()
@@ -472,6 +498,7 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
                         else "awaiting_transcripts")),
             "reasoning": ("model_output" if reasoning else "not_supplied"),
             "sessions": [x["session_id"] for x in mine],
+            "narrated": [x["session_id"] for x in voiced] if mine else [],
             "overlay": "complete",
             "note": ("Connector labels are the pipeline's own reasoning, generated "
                      "from measured values. They are not model transcripts and must "
@@ -546,8 +573,10 @@ def main() -> None:
         st = doc.get("answer_stream") or {}
         print(f"panel {panel}: loop {L:.0f}s"
               + (f" (voice {af})" if af else " (wall clock)")
-              + f", stream {'fitted' if st.get('fit_to_audio') else 'free'}"
-              + (f" x{st.get('cadence_scale')}" if st.get('fit_to_audio') else "")
+              + (f", stream ALIGNED {st['alignment']['coverage']*100:.0f}% coverage"
+                 if st.get("fit_to_audio") == "aligned"
+                 else f", stream {'fitted' if st.get('fit_to_audio') else 'free'}"
+                      + (f" x{st.get('cadence_scale')}" if st.get('fit_to_audio') else ""))
               + f", cycle {L/args.cycle:.1f}x per loop, "
               f"{len(doc['tracks']['overlay'])} cues, "
               f"{len(kinds)} types, nodes {len(doc['nodes'])}")

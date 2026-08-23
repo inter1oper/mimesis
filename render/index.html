@@ -250,6 +250,21 @@ function clockSeconds(panel){
   if(a && a.ready && !a.el.paused) return a.el.currentTime;
   return performance.now()/1000;
 }
+/* Panel A's voice to the left speaker, Panel B's to the right -- matching where
+   each painting hangs, so a listener standing in front of one panel hears the
+   voice describing it. Web Audio, hard pan; the elements themselves stay the
+   clock source. */
+let actx=null;
+function panAudio(P,el){
+  try{
+    actx = actx || new (window.AudioContext||window.webkitAudioContext)();
+    const src=actx.createMediaElementSource(el);
+    const pan=actx.createStereoPanner();
+    pan.pan.value = (P==="A" ? -1 : 1);
+    src.connect(pan).connect(actx.destination);
+    return true;
+  }catch(e){ return false; }   // no Web Audio: both voices stay centre
+}
 function setupAudio(){
   for(const P of ["A","B"]){
     const sc=D["score_"+P.toLowerCase()]; if(!sc) continue;
@@ -260,11 +275,13 @@ function setupAudio(){
     el.addEventListener("loadedmetadata",()=>{
       if(isFinite(el.duration)&&el.duration>1) sc.loop_duration_s=el.duration;
     });
-    AUD[P]={el,ready:false};
+    AUD[P]={el,ready:false,panned:panAudio(P,el),
+            side:(P==="A"?"L":"R")};
   }
   if(!Object.keys(AUD).length) return;
   // browsers refuse to start audio without a gesture; both voices start together
   const start=()=>{
+    if(actx && actx.state==="suspended") actx.resume();
     for(const P in AUD){
       AUD[P].el.play().then(()=>{AUD[P].ready=true;audioStarted=true;}).catch(()=>{});
     }
@@ -273,9 +290,12 @@ function setupAudio(){
   addEventListener("keydown",start); addEventListener("pointerdown",start);
 }
 function audioState(){
-  const n=Object.keys(AUD).length;
-  if(!n) return "no voice";
-  return audioStarted ? `VOICE ${n}ch` : "press any key to start the voice";
+  const ks=Object.keys(AUD);
+  if(!ks.length) return "no voice";
+  if(!audioStarted) return "press any key to start the voice";
+  const panned=ks.every(k=>AUD[k].panned);
+  return "VOICE " + ks.map(k=>k+"\u2192"+AUD[k].side).join(" ") +
+         (panned ? "" : " (centre — no Web Audio)");
 }
 
 function loopT(s){ const L=s.loop_duration_s||900;
