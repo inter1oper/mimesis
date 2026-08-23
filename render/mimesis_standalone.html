@@ -229,8 +229,37 @@ function buildZones(){
 }
 
 /* ---------- clock ---------- */
-let audio=null, showBackdrop=true, showGrid=false, showFields=true;
-function clockSeconds(){ return (audio&&!audio.paused)?audio.currentTime:performance.now()/1000; }
+/* ---------- the clock ----------
+   With narration loaded every track reads audio.currentTime, so the overlay,
+   the typed answer and the reasoning trace are all locked to the voice and
+   cannot drift from it or from each other. With no audio the identical lookup
+   runs against a monotonic wall clock and no cue timing changes.
+
+   Browsers refuse to start audio without a gesture, so the show waits on one
+   keypress. In the gallery that is the same keypress that starts the piece. */
+let audio=null, audioReady=false, showBackdrop=true, showGrid=false, showFields=true;
+function clockSeconds(){
+  if(audio && audioReady && !audio.paused) return audio.currentTime;
+  return performance.now()/1000;
+}
+function setupAudio(score){
+  const src=(window.MIMESIS_AUDIO)||((score.clock||{}).audio_file);
+  if(!src) return;
+  audio=new Audio(src);
+  audio.loop=true; audio.preload="auto";
+  audio.addEventListener("loadedmetadata",()=>{
+    // the voice becomes the master duration: the score is retimed to it rather
+    // than the narration being cut to fit the score
+    if(isFinite(audio.duration)&&audio.duration>1){
+      for(const k of ["score_a","score_b"]) if(D[k]) D[k].loop_duration_s=audio.duration;
+    }
+  });
+  const start=()=>{
+    audio.play().then(()=>{audioReady=true;}).catch(()=>{});
+    removeEventListener("keydown",start); removeEventListener("pointerdown",start);
+  };
+  addEventListener("keydown",start); addEventListener("pointerdown",start);
+}
 function loopT(s){ const L=s.loop_duration_s||900; return ((clockSeconds()%L)+L)%L; }
 /* the overlay runs its own fast cycle, repeating many times inside the master
    loop. same clock, shorter modulus -- so it reads as a live instrument rather
@@ -801,7 +830,8 @@ function frame(){
   if(sa){ const t=loopT(sa);
     document.getElementById("status").textContent=
       `${currentPass(sa,cycleT(sa))}   cycle ${cycleT(sa).toFixed(1)}/${sa.overlay_cycle_s||"-"}s   `+
-      `loop ${t.toFixed(0)}/${sa.loop_duration_s}s   marks ${marks}   `+
+      `loop ${t.toFixed(0)}/${Math.round(sa.loop_duration_s)}s   marks ${marks}   `+
+      `${audio?(audioReady?"VOICE":"press any key to start the voice"):"no voice"}   `+
       `${showBackdrop?"backdrop":"no backdrop"}${showGrid?"  GRID":""}   `+
       `[c] config  [p] backdrop  [g] target  [f] fields`; }
   requestAnimationFrame(frame);
@@ -844,7 +874,9 @@ async function boot(){
     catch(e){ document.getElementById("status").textContent=
       "could not load data/ — serve over http, or open the standalone build"; }
   }
-  loadZones(); buildZones(); hud(); frame();
+  loadZones(); buildZones(); hud();
+  if(D.score_a) setupAudio(D.score_a);
+  frame();
 }
 boot();
 </script>

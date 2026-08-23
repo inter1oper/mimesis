@@ -200,7 +200,8 @@ def place_nodes(faces, aspect: float) -> dict:
 
 
 def build(panel: str, out: pathlib.Path, loop: float, lead: float,
-          specimen: bool = False, cycle: float = 45.0) -> dict:
+          specimen: bool = False, cycle: float = 45.0,
+          audio_file: str | None = None) -> dict:
     p = panel.lower()
     det = json.loads((out / f"panel_{p}_detection.json").read_text())
     fl = json.loads((out / f"panel_{p}_flames.json").read_text())
@@ -438,8 +439,14 @@ def build(panel: str, out: pathlib.Path, loop: float, lead: float,
         "session_id": None,
         "loop_duration_s": loop,
         "overlay_cycle_s": cycle,
-        "clock": {"source": "performance.now", "audio_file": None,
-                  "fallback": "performance.now"},
+        "clock": {"source": "audio.currentTime" if audio_file else "performance.now",
+                  "audio_file": audio_file,
+                  "fallback": "performance.now",
+                  "note": ("With narration present every track reads "
+                           "audio.currentTime, so nothing can drift from the "
+                           "voice or from anything else. Without it the same "
+                           "lookup runs against a wall clock and no cue timing "
+                           "changes.")},
         "lead_offset_s": lead,
         "passes": [{"name": n, "t_in": round(a * cycle, 2), "t_out": round(b * cycle, 2),
                     "role": r} for n, a, b, r in PASSES],
@@ -494,13 +501,17 @@ def main() -> None:
                          "The overlay repeats this many times inside the master "
                          "loop; the text stream keeps its own cycle. Both are read "
                          "off the same clock.")
+    ap.add_argument("--audio", default=None,
+                    help="Path to the narration, relative to the renderer. When set, "
+                         "every track is driven from audio.currentTime and the "
+                         "voice's duration becomes the master loop.")
     ap.add_argument("--selftest", action="store_true")
     args = ap.parse_args()
     if args.selftest:
         selftest(); return
     selftest()
     for panel in ("A", "B"):
-        doc = build(panel, args.out, args.loop, args.lead, args.specimen, args.cycle)
+        doc = build(panel, args.out, args.loop, args.lead, args.specimen, args.cycle, args.audio)
         (args.out / f"score_{panel.lower()}.json").write_text(json.dumps(doc, indent=2))
         kinds, per_pass = {}, {}
         for c in doc["tracks"]["overlay"]:
